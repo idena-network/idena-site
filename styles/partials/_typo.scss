@@ -1,0 +1,238 @@
+@import 'variables.scss';
+
+html {
+  height: 100%;
+
+  @media (#{$min_phones--big}) and (#{$max_tablets--landscape}) {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  font-size: rem($font-size-base);
+  line-height: 1.7;
+  color: $gray-dark;
+  position: relative;
+  background-color: #f5f6f7;
+  text-rendering: optimizeLegibility;
+
+  @include fontantialias(true);
+
+  @media (#{$max_phones--big}) {
+    font-size: 18px;
+
+    &.menu-opened {
+      overflow: hidden;
+    }
+  }
+}
+
+a:focus,
+input:focus,
+button:focus {
+  outline: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  transition: all $transition;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+p,
+ol,
+ul,
+blockquote {
+  margin-bottom: rem(32px);
+
+  a {
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  @media (#{$max_phones--big}) {
+    margin-bottom: 24px;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  color: $gray-dark;
+}
+
+h1,
+.h1 {
+  font-size: rem(52px);
+  line-height: rem(60px);
+  margin-bottom: rem(46px);
+  font-weight: 600;
+
+  @media (#{$max_phones--big}) {
+    font-size: 38px;
+    line-height: normal;
+    margin-bottom: 25px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: rem(44px);
+  line-height: rem(52px);
+  margin-bottom: rem(48px);
+  font-weight: 600;
+
+  @media (#{$max_phones--big}) {
+    font-size: 30px;
+    line-height: normal;
+    margin-bottom: 24px;
+  }
+}
+
+h3,
+.h3 {
+  margin-bottom: rem(32px);
+  font-size: rem(28px);
+  line-height: rem(32px);
+  font-weight: 600;
+
+  @media (#{$max_phones--big}) {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: rem(21px);
+  line-height: rem(32px);
+  margin-bottom: rem(9px);
+  margin-top: rem(48px);
+  font-weight: 600;
+
+  &:first-child {
+    margin-top: 0 !important;
+  }
+
+  @media (#{$max_phones--big}) {
+    font-size: 18px;
+    line-height: 32px;
+    margin-top: 24px;
+    margin-bottom: 4px;
+  }
+}
+
+h5,
+.h5 {
+  margin-bottom: rem(13px);
+  font-weight: lighter;
+  color: #6c757d;
+  letter-spacing: 0;
+  line-height: normal;
+
+  @media (#{$max_phones--big}) {
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+}
+
+b {
+  font-weight: 600;
+}
+
+small {
+  font-size: 14px;
+  line-height: 1.43;
+  font-weight: inherit;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $border-color;
+  margin: 40px 0 20px;
+
+  @media (#{$max_phones--big}) {
+    border-bottom: 0;
+  }
+}
+
+blockquote {
+  text-align: center;
+  font-size: rem(28px);
+  line-height: rem(40px);
+  color: $gray;
+  position: relative;
+  padding-top: rem(22px);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: rem(-20px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 26px;
+    height: 20px;
+    background: url('/static/images/quote.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  @media (#{$max_phones--big}) {
+    font-size: 16px;
+    line-height: 1.8;
+
+    &:before {
+      top: -10px;
+    }
+  }
+}
+
+@media (#{$max_phones--big}) {
+  // TODO mobile font-size
+}
+
+.fig {
+  margin: rem(45px) 0;
+  color: $gray;
+  letter-spacing: 0;
+  font-size: rem(16px);
+  line-height: rem(28px);
+  text-align: center;
+
+  @media (#{$max_phones--big}) {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 900px;
+    margin-bottom: rem(25px);
+  }
+
+  p {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

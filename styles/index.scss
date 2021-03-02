@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/carousel';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/pagination';
+@import '~bootstrap/scss/custom-forms';
+@import '~bootstrap/scss/list-group';
+
+@import 'partials/variables';
+@import 'partials/functions';
+@import 'partials/mixins';
+@import 'partials/typo';
+
+@import 'partials/overrides';
+@import 'partials/icons';
+@import 'partials/fonts';
+@import 'partials/sections';
+@import 'partials/page';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/menu';
+@import 'partials/social';
+
+a {
+  transition: color $transition;
+}
+
+#donate_tabs + .tab-content > .active {
+  @media (#{$max_tablets}) {
+    word-break: break-all;
+  }
+}
+
+.donate_container {
+  margin-bottom: rem(50px);
+}

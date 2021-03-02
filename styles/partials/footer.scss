@@ -1,0 +1,35 @@
+.footer {
+  padding: rem(40px 0);
+  color: $cloud;
+  font-size: rem(18px);
+  line-height: rem(32px);
+  letter-spacing: 0;
+
+  @media (#{$max_phones--big}) {
+    padding: 16px 0;
+  }
+}
+
+.copy {
+  font-size: rem(16px);
+  line-height: rem(24px);
+  color: $gray;
+
+  @media (#{$max_phones--big}) {
+    font-size: 13px;
+  }
+}
+
+.donate {
+  a {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: $gray;
+
+    @media (#{$max_phones--big}) {
+      font-size: 16px;
+      padding: 25px 0;
+    }
+
+  }
+}
