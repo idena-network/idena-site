@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Layout from '../shared/components/layout'
 
 export default function Home() {
@@ -69,7 +70,7 @@ export default function Home() {
                       <div className="row justify-content-center">
                         <a
                           style={{marginLeft: 15}}
-                          href="/web"
+                          href="/webclient"
                           className="btn btn-link"
                         >
                           <i className="icon icon--web"></i>
@@ -159,10 +160,12 @@ export default function Home() {
               </p>
               <p>
                 To start mining Idena, you need to{' '}
-                <a href="/faq#faq-start-1">prove you're a unique human</a>. It
-                does not require the disclosure of any personal data (no KYC).
-                You have to appear online when the validation ceremony starts
-                and solve a series of flip-tests (CAPTCHAs).
+                <Link href="/faq">
+                  <a>prove you're a unique human</a>
+                </Link>
+                . It does not require the disclosure of any personal data (no
+                KYC). You have to appear online when the validation ceremony
+                starts and solve a series of flip-tests (CAPTCHAs).
               </p>
 
               <p>

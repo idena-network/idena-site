@@ -7,12 +7,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.5.3",
     "next": "10.0.5",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^5.0.0",
     "react": "17.0.1",
+    "react-accessible-accordion": "^3.3.4",
     "react-dom": "17.0.1",
     "react-helmet": "^6.1.0",
     "sass-rem": "^2.0.1"
@@ -29,7 +31,8 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "eslint-plugin-testcafe": "^0.2.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "babel-eslint": "^10.1.0"
   },
   "prettier": {
     "trailingComma": "es5",
