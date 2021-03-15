@@ -1,7 +1,23 @@
 import Link from 'next/link'
+import {useEffect, useState} from 'react'
 import Layout from '../shared/components/layout'
+import {useNextValidationTime, useTotalValidatedCount} from '../public/api'
 
 export default function Home() {
+  const [validatedCount, setValidatedCount] = useState(null)
+  const [validationTime, setValidationTime] = useState(null)
+
+  useEffect(async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const count = await useTotalValidatedCount()
+    setValidatedCount(count)
+  })
+  useEffect(async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const time = await useNextValidationTime()
+    setValidationTime(time)
+  }, [])
+
   return (
     <Layout
       title="IDENA: Proof-of-Person blockchain"
@@ -97,7 +113,7 @@ export default function Home() {
                   <div className="row">
                     <div className="col-sm-4 lead_info__nodes clickable">
                       <div className="_value" id="ValidatedNodes">
-                        -
+                        {validatedCount === null ? '-' : validatedCount}
                       </div>
                       <p className="nodes _hint">Validated nodes</p>
                     </div>
@@ -133,7 +149,9 @@ export default function Home() {
                         <span
                           style={{fontSize: 'small'}}
                           className="NextValidationDateTime"
-                        ></span>
+                        >
+                          {validationTime === null ? '' : validationTime}
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -160,7 +178,7 @@ export default function Home() {
               </p>
               <p>
                 To start mining Idena, you need to{' '}
-                <Link href="/faq">
+                <Link href="/faq#faq-start-1">
                   <a>prove you're a unique human</a>
                 </Link>
                 . It does not require the disclosure of any personal data (no
