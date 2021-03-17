@@ -42,6 +42,23 @@ export async function useNextValidationTime() {
     : new Date(nextValidationTime).toLocaleString()
 }
 
-// export async function useTotalValidatedCount() {
-//   const {epoch} = loadEpochsData().result
-// }
+export async function useLatestGithubReleaseDownload() {
+  const releaseClient = await fetch(
+    'https://api.github.com/repos/idena-network/idena-desktop/releases/latest'
+  )
+  const versionClient = releaseClient.tag_name;
+
+  const response = {}
+  response.versionClient = versionClient.substr(1, versionClient.length - 1)
+  response.assetsClient = releaseClient.assets
+
+  const releaseNode = await fetch(
+    'https://api.github.com/repos/idena-network/idena-go/releases/latest'
+  )
+
+  const versionNode = releaseNode.tag_name;
+  response.versionClient = versionNode.substr(1, versionNode.length - 1)
+  response.assetsClient = releaseClient.assets
+
+  return response
+}
