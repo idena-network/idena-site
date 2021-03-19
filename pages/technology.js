@@ -66,7 +66,7 @@ export default function Technology() {
               </p>
               <p>
                 To{' '}
-                <Link href="/faq">
+                <Link href="/faq#faq-start-1">
                   <a>join the network</a>
                 </Link>
                 , a new person must get an invitation from a validated

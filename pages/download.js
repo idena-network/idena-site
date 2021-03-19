@@ -1,7 +1,107 @@
 import Link from 'next/link'
+import {useEffect, useState} from 'react'
 import Layout from '../shared/components/layout'
+import {useLatestGithubReleaseDownload} from '../public/api'
+import {useHash} from '../shared/utils'
+
+function GetFileSize(s) {
+  return `${Math.round((s / 1024 / 1024) * 100) / 100}\xA0Mb`
+}
+
+function GetFileDate(dt) {
+  return new Date(dt).toISOString().slice(0, 10)
+}
+
+function getAssetData(clientVersion, clientAsset, nodeVersion, nodeAsset) {
+  const result = {}
+
+  result.client = {
+    link: clientAsset.browser_download_url,
+    description: `Size:\xA0${GetFileSize(
+      clientAsset.size
+    )} Published:\xA0${GetFileDate(
+      clientAsset.created_at
+    )} Version:\xA0${clientVersion}`,
+  }
+  result.node = {
+    description: `Size:\xA0${GetFileSize(
+      nodeAsset.size
+    )} Published:\xA0${GetFileDate(
+      nodeAsset.created_at
+    )} Version:\xA0${nodeVersion}`,
+    linkRow: (
+      <tr>
+        <td>
+          <Link href={nodeAsset.browser_download_url}>
+            <a>{nodeAsset.name}</a>
+          </Link>
+        </td>
+        <td>{GetFileSize(nodeAsset.size)}</td>
+        <td>{nodeVersion}</td>
+        <td>{GetFileDate(nodeAsset.created_at)}</td>
+      </tr>
+    ),
+  }
+
+  return result
+}
 
 export default function Download() {
+  const [osWindows, setOsWindows] = useState(null)
+  const [osDarwin, setOsDarwin] = useState(null)
+  const [osLinux, setOsLinux] = useState(null)
+  const {hash} = useHash()
+
+  useEffect(async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const releseData = await useLatestGithubReleaseDownload()
+    const rawAssets = {} // Как-то плохо это выглядит #typization
+
+    releseData.clientAssets.forEach(asset => {
+      if (asset.name.search(/.exe$/) !== -1) {
+        rawAssets.clientWindows = asset
+      } else if (asset.name.search(/.dmg$/) !== -1) {
+        rawAssets.clientDarwin = asset
+      } else if (asset.name.search(/.deb$/) !== -1) {
+        rawAssets.clientLinux = asset
+      }
+    })
+    releseData.nodeAssets.forEach(asset => {
+      if (asset.name.search(/^idena-node-win-.*.exe$/) !== -1) {
+        rawAssets.nodeWindows = asset
+      } else if (asset.name.search(/^idena-node-mac-.*/) !== -1) {
+        rawAssets.nodeDarwin = asset
+      } else if (asset.name.search(/^idena-node-linux-.*/) !== -1) {
+        rawAssets.nodeLinux = asset
+      }
+    })
+
+    setOsWindows(
+      getAssetData(
+        releseData.clientVersion,
+        rawAssets.clientWindows,
+        releseData.nodeVersion,
+        rawAssets.nodeWindows
+      )
+    )
+    setOsDarwin(
+      getAssetData(
+        releseData.clientVersion,
+        rawAssets.clientDarwin,
+        releseData.nodeVersion,
+        rawAssets.nodeDarwin
+      )
+    )
+    setOsLinux(
+      getAssetData(
+        releseData.clientVersion,
+        rawAssets.clientLinux,
+        releseData.nodeVersion,
+        rawAssets.nodeLinux
+      )
+    )
+  }, [])
+
   return (
     <Layout
       title="Download Idena Node"
@@ -40,7 +140,7 @@ export default function Download() {
               <p>
                 You can also connect to your remote Idena node if you run it
                 separately or on VPS (see the{' '}
-                <Link href="/guide">
+                <Link href="/guide#guide-remote-2">
                   <a>guide</a>
                 </Link>
                 ).
@@ -55,15 +155,14 @@ export default function Download() {
                         <span>macOS</span>
                       </div>
                       <div className="block__action">
-                        <a
-                          href="#"
-                          className="btn btn-secondary btn-sm client_darwin_latest"
-                        >
-                          Download
-                        </a>
+                        <Link href={osDarwin ? osDarwin.client.link : '#'}>
+                          <a className="btn btn-secondary btn-sm client_darwin_latest">
+                            Download
+                          </a>
+                        </Link>
                       </div>
                       <div className="block__hint client_darwin_latest_size">
-                        Loading...
+                        {osDarwin ? osDarwin.client.description : 'Loading...'}
                       </div>
                     </div>
                   </div>
@@ -75,15 +174,16 @@ export default function Download() {
                         <span>Windows</span>
                       </div>
                       <div className="block__action">
-                        <a
-                          href="#"
-                          className="btn btn-secondary btn-sm client_windows_latest"
-                        >
-                          Download
-                        </a>
+                        <Link href={osWindows ? osWindows.client.link : '#'}>
+                          <a className="btn btn-secondary btn-sm client_windows_latest">
+                            Download
+                          </a>
+                        </Link>
                       </div>
                       <div className="block__hint client_windows_latest_size">
-                        Loading...
+                        {osWindows
+                          ? osWindows.client.description
+                          : 'Loading...'}
                       </div>
                     </div>
                   </div>
@@ -95,15 +195,14 @@ export default function Download() {
                         <span>Linux</span>
                       </div>
                       <div className="block__action">
-                        <a
-                          href="#"
-                          className="btn btn-secondary btn-sm client_linux_latest"
-                        >
-                          Download
-                        </a>
+                        <Link href={osLinux ? osLinux.client.link : '#'}>
+                          <a className="btn btn-secondary btn-sm client_linux_latest">
+                            Download
+                          </a>
+                        </Link>
                       </div>
                       <div className="block__hint client_linux_latest_size">
-                        Loading...
+                        {osLinux ? osLinux.client.description : 'Loading...'}
                       </div>
                     </div>
                   </div>
@@ -121,7 +220,7 @@ export default function Download() {
                 .
                 <br />
                 You can also build the Idena app from source (see the{' '}
-                <Link href="/guide">
+                <Link href="/guide#guide-install-5">
                   <a>guide</a>
                 </Link>
                 ).
@@ -135,7 +234,7 @@ export default function Download() {
               <p>
                 Download Idena node if you want to run it separately or on your
                 remote VPS (please check the{' '}
-                <Link href="/guide">
+                <Link href="/guide#guide-remote-1">
                   <a>guide</a>
                 </Link>
                 ).
@@ -197,6 +296,7 @@ export default function Download() {
                         <th>Version</th>
                         <th>Published</th>
                       </tr>
+                      {osWindows && osWindows.node.linkRow}
                     </table>
                   </div>
                 </div>
@@ -214,6 +314,7 @@ export default function Download() {
                         <th>Version</th>
                         <th>Published</th>
                       </tr>
+                      {osLinux && osLinux.node.linkRow}
                     </table>
                   </div>
                 </div>
@@ -231,6 +332,7 @@ export default function Download() {
                         <th>Version</th>
                         <th>Published</th>
                       </tr>
+                      {osDarwin && osDarwin.node.linkRow}
                     </table>
                   </div>
                 </div>

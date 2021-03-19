@@ -330,9 +330,9 @@ export default function Guide() {
                       <p>
                         Create the following config file at the same folder
                         where the node is located (download example:{' '}
-                        <a href="./examples/guide-remote-1/config.json">
-                          config.json
-                        </a>
+                        <Link href="/examples/guide-remote-1/config.json">
+                          <a>config.json</a>
+                        </Link>
                         ):
                       </p>
 
