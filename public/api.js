@@ -43,22 +43,23 @@ export async function useNextValidationTime() {
 }
 
 export async function useLatestGithubReleaseDownload() {
-  const releaseClient = await fetch(
+  const clientResponse = await fetch(
     'https://api.github.com/repos/idena-network/idena-desktop/releases/latest'
   )
-  const versionClient = releaseClient.tag_name;
+  const clientJson = await clientResponse.json()
+  const clientVersion = clientJson.tag_name
 
-  const response = {}
-  response.versionClient = versionClient.substr(1, versionClient.length - 1)
-  response.assetsClient = releaseClient.assets
-
-  const releaseNode = await fetch(
+  const nodeResponse = await fetch(
     'https://api.github.com/repos/idena-network/idena-go/releases/latest'
   )
+  const nodeJson = await nodeResponse.json()
+  const nodeVersion = nodeJson.tag_name
 
-  const versionNode = releaseNode.tag_name;
-  response.versionClient = versionNode.substr(1, versionNode.length - 1)
-  response.assetsClient = releaseClient.assets
+  const response = {}
+  response.clientVersion = clientVersion.substr(1, clientVersion.length - 1)
+  response.clientAssets = clientJson.assets
+  response.nodeVersion = nodeVersion.substr(1, nodeVersion.length - 1)
+  response.nodeAssets = nodeJson.assets
 
   return response
 }

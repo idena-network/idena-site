@@ -9,6 +9,7 @@ import {
 import Layout from '../shared/components/layout'
 
 import {useHash} from '../shared/utils'
+import {useLatestGithubReleaseDownload} from '../public/api'
 
 function CustomToggle({children, eventKey}) {
   const {setHashForce} = useHash()
@@ -30,10 +31,17 @@ function CustomToggle({children, eventKey}) {
 }
 
 export default function Guide() {
+  const [release, setRelease] = useState(null)
   const [activeInstall, setActiveInstall] = useState()
   const [activeRemote, setActiveRemote] = useState()
   const [activeIssues, setActiveIssues] = useState()
   const {hash} = useHash()
+
+  useEffect(async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const releseData = await useLatestGithubReleaseDownload()
+    setRelease(releseData)
+  }, [])
 
   useEffect(() => {
     setActiveInstall(hash)
@@ -88,7 +96,9 @@ export default function Guide() {
                           Download the latest version of the Idena node:{' '}
                           <a className="node_darwin_latest">
                             idena-node-mac-
-                            <span className="node_version">x.xx.x</span>
+                            <span className="node_version">
+                              {release ? release.nodeVersion : 'x.xx.x'}
+                            </span>
                           </a>
                         </li>
                         <li>
@@ -106,14 +116,18 @@ export default function Guide() {
                         <p>
                           <code>
                             chmod +x idena-node-mac-
-                            <span className="node_version">x.xx.x</span>
+                            <span className="node_version">
+                              {release ? release.nodeVersion : 'x.xx.x'}
+                            </span>
                           </code>
                         </p>
                         <li>Run the node:</li>
                         <p>
                           <code>
                             ./idena-node-mac-
-                            <span className="node_version">x.xx.x</span>
+                            <span className="node_version">
+                              {release ? release.nodeVersion : 'x.xx.x'}
+                            </span>
                           </code>
                         </p>
                       </ul>
@@ -193,8 +207,10 @@ export default function Guide() {
                         <p>
                           Make sure to backup the <code>nodekey</code> file
                           securely since the current node version{' '}
-                          <span className="node_version">x.xx.x</span> does not
-                          support private key encryption.
+                          <span className="node_version">
+                            {release ? release.nodeVersion : 'x.xx.x'}
+                          </span>{' '}
+                          does not support private key encryption.
                         </p>
                       </ul>
                     </div>
@@ -329,7 +345,9 @@ export default function Guide() {
                       </p>
                       <code>
                         idena-node-linux-
-                        <span className="node_version">x.xx.x</span>{' '}
+                        <span className="node_version">
+                          {release ? release.nodeVersion : 'x.xx.x'}
+                        </span>{' '}
                         --config=config.json
                       </code>
 
@@ -423,7 +441,9 @@ export default function Guide() {
                         <p>
                           <code>
                             idena-node-linux-
-                            <span className="node_version">x.xx.x</span>{' '}
+                            <span className="node_version">
+                              {release ? release.nodeVersion : 'x.xx.x'}
+                            </span>{' '}
                             --apikey=MY_API_KEY
                           </code>
                         </p>
@@ -457,8 +477,10 @@ export default function Guide() {
                       <p>
                         <code>
                           idena-node-win-
-                          <span className="node_version">0.12.0</span>.exe
-                          --profile=lowpower
+                          <span className="node_version">
+                            {release ? release.nodeVersion : 'x.xx.x'}
+                          </span>
+                          .exe --profile=lowpower
                         </code>
                       </p>
 
@@ -468,7 +490,9 @@ export default function Guide() {
                       <p>
                         <code>
                           ./idena-node-mac-
-                          <span className="node_version">0.12.0</span>{' '}
+                          <span className="node_version">
+                            {release ? release.nodeVersion : 'x.xx.x'}
+                          </span>{' '}
                           --profile=lowpower
                         </code>
                       </p>
