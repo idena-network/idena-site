@@ -48,11 +48,9 @@ function getAssetData(clientVersion, clientAsset, nodeVersion, nodeAsset) {
 }
 
 export default function Download() {
-  const [activeOs, setActiveOs] = useState()
   const [osWindows, setOsWindows] = useState(null)
   const [osDarwin, setOsDarwin] = useState(null)
   const [osLinux, setOsLinux] = useState(null)
-  const {hash} = useHash()
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -103,10 +101,6 @@ export default function Download() {
       )
     )
   }, [])
-
-  useEffect(() => {
-    setActiveOs(hash)
-  }, [hash])
 
   return (
     <Layout
@@ -247,8 +241,6 @@ export default function Download() {
               </p>
 
               <Tabs
-                activeKey={activeOs}
-                onSelect={e => setActiveOs(e)}
                 defaultActiveKey="#node_darwin"
                 transition={false}
                 id="tab_node"

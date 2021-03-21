@@ -1,16 +1,7 @@
-import {Col, Nav, Row, Tab, Tabs} from 'react-bootstrap'
-import {useEffect, useState} from 'react'
+import {Nav, Tab} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
-import {useHash} from '../shared/utils'
 
 export default function Donate() {
-  const [activeWallet, setActiveWallet] = useState()
-  const {hash} = useHash()
-
-  useEffect(() => {
-    setActiveWallet(hash)
-  }, [hash])
-
   return (
     <Layout
       title="Donate to Idena"
@@ -33,12 +24,7 @@ export default function Donate() {
               </p>
 
               <div className="donate_container">
-                <Tab.Container
-                  activeKey={activeWallet}
-                  onSelect={e => setActiveWallet(e)}
-                  defaultActiveKey="#btc-content"
-                  id="tab_wallet"
-                >
+                <Tab.Container defaultActiveKey="#btc-content" id="tab_wallet">
                   <Tab.Content>
                     <Tab.Pane eventKey="#btc-content">
                       <h4 className="h4">Bitcoin</h4>
