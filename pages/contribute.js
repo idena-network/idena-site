@@ -1,6 +1,45 @@
+import {useContext, useEffect, useState} from 'react'
+import {
+  Accordion,
+  AccordionContext,
+  Card,
+  useAccordionToggle,
+} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
 
+import {useHash} from '../shared/utils'
+
+function CustomToggle({children, eventKey}) {
+  const {setHashForce} = useHash()
+  const currentEventKey = useContext(AccordionContext)
+  const onAccordionClick = useAccordionToggle(eventKey, () => {
+    setHashForce(eventKey)
+  })
+  const isCurrentEventKey = currentEventKey === eventKey
+
+  return (
+    <a
+      style={{cursor: 'pointer'}}
+      aria-expanded={isCurrentEventKey}
+      onClick={onAccordionClick}
+    >
+      {children}
+    </a>
+  )
+}
+
 export default function Contribute() {
+  const [activeFirst, setActiveFirst] = useState()
+  const [activeSecond, setActiveSecond] = useState()
+  const [activeThird, setActiveThird] = useState()
+  const {hash} = useHash()
+
+  useEffect(() => {
+    setActiveFirst(hash)
+    setActiveSecond(hash)
+    setActiveThird(hash)
+  }, [hash])
+
   return (
     <Layout
       title="How to contribute to Idena"
@@ -82,25 +121,17 @@ export default function Contribute() {
                 </li>
               </ul>
 
-              <div className="faq accordion" id="accordion-contribute-1">
-                <div className="card">
-                  <div className="card-header" id="contribute-1-1">
-                    <a
-                      className="collapsed"
-                      data-toggle="collapse"
-                      href="#collapse-contribute-1-1"
-                      aria-expanded="false"
-                      aria-controls="heading-contribute-1-1"
-                    >
+              <Accordion
+                activeKey={activeFirst}
+                onSelect={e => setActiveFirst(e)}
+              >
+                <Card id="contribute-1-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#contribute-1-1">
                       How to proceed
-                    </a>
-                  </div>
-                  <div
-                    id="collapse-contribute-1-1"
-                    className="collapse"
-                    aria-labelledby="contribute-1-1"
-                    data-parent="#accordion-contribute-1"
-                  >
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#contribute-1-1">
                     <div className="card-body">
                       <p>
                         1. Start a community on any platform that is popular in
@@ -123,9 +154,9 @@ export default function Contribute() {
                         invitations.
                       </p>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
 
               <h2>2. Spread the word</h2>
 
@@ -142,25 +173,17 @@ export default function Contribute() {
                 ping Idena community admins or @AndrewIdena telegram account.
               </p>
 
-              <div className="faq accordion" id="accordion-contribute-2">
-                <div className="card">
-                  <div className="card-header" id="contribute-2-1">
-                    <a
-                      className="collapsed"
-                      data-toggle="collapse"
-                      href="#collapse-contribute-2-1"
-                      aria-expanded="false"
-                      aria-controls="heading-contribute-2-1"
-                    >
+              <Accordion
+                activeKey={activeSecond}
+                onSelect={e => setActiveSecond(e)}
+              >
+                <Card id="contribute-2-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#contribute-2-1">
                       Media relations (pitch a journalist)
-                    </a>
-                  </div>
-                  <div
-                    id="collapse-contribute-2-1"
-                    className="collapse"
-                    aria-labelledby="contribute-2-1"
-                    data-parent="#accordion-contribute-2"
-                  >
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#contribute-2-1">
                     <div className="card-body">
                       <p>
                         There are a lot of international and national mass media
@@ -291,270 +314,247 @@ export default function Contribute() {
                         out.
                       </p>
                     </div>
-                  </div>
+                  </Accordion.Collapse>
+                </Card>
 
-                  <div className="card">
-                    <div className="card-header" id="contribute-2-2">
-                      <a
-                        className="collapsed"
-                        data-toggle="collapse"
-                        href="#collapse-contribute-2-2"
-                        aria-expanded="false"
-                        aria-controls="heading-contribute-2-2"
-                      >
-                        Blogger relatons (pitch a blogger)
-                      </a>
-                    </div>
-                    <div
-                      id="collapse-contribute-2-2"
-                      className="collapse"
-                      aria-labelledby="contribute-2-2"
-                      data-parent="#accordion-contribute-2"
-                    >
-                      <div className="card-body">
-                        <p>
-                          Bloggers today are sometimes more powerful than media.
-                          They are modern mass media with huge audiences and
-                          dedicated subscribers. We need your help with finding
-                          bloggers and influencers with high quality content in
-                          the areas of crypto, tech, finance, human rights on
-                          YouTube, Twitter, Medium or any other platform. Pitch
-                          Idena to them and get them interested in covering
-                          Idena.{' '}
-                        </p>
+                <Card id="contribute-2-2">
+                  <Card.Header>
+                    <CustomToggle eventKey="#contribute-2-2">
+                      Blogger relatons (pitch a blogger)
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#contribute-2-2">
+                    <div className="card-body">
+                      <p>
+                        Bloggers today are sometimes more powerful than media.
+                        They are modern mass media with huge audiences and
+                        dedicated subscribers. We need your help with finding
+                        bloggers and influencers with high quality content in
+                        the areas of crypto, tech, finance, human rights on
+                        YouTube, Twitter, Medium or any other platform. Pitch
+                        Idena to them and get them interested in covering Idena.{' '}
+                      </p>
 
-                        <div className="tab-content block">
-                          <div className="tab-pane show active" role="tabpanel">
-                            <div className="table-responsive">
-                              <table className="table">
-                                <tr>
-                                  <th>Activity</th>
-                                  <th>Audience</th>
-                                  <th>
-                                    Reward (*)
-                                    <br />
-                                    paid in iDNA
-                                  </th>
-                                </tr>
+                      <div className="tab-content block">
+                        <div className="tab-pane show active" role="tabpanel">
+                          <div className="table-responsive">
+                            <table className="table">
+                              <tr>
+                                <th>Activity</th>
+                                <th>Audience</th>
+                                <th>
+                                  Reward (*)
+                                  <br />
+                                  paid in iDNA
+                                </th>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 1 blog piece (article, podcast
-                                    episode...)
-                                  </td>
-                                  <td>200K+</td>
-                                  <td>$2,000</td>
-                                </tr>
-                                <tr>
-                                  <td>Tier 1 quality mention</td>
-                                  <td>200K+</td>
-                                  <td>$1,000</td>
-                                </tr>
+                              <tr>
+                                <td>
+                                  Tier 1 blog piece (article, podcast
+                                  episode...)
+                                </td>
+                                <td>200K+</td>
+                                <td>$2,000</td>
+                              </tr>
+                              <tr>
+                                <td>Tier 1 quality mention</td>
+                                <td>200K+</td>
+                                <td>$1,000</td>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 2 blog piece (article, podcast
-                                    episode...)
-                                  </td>
-                                  <td>70K+</td>
-                                  <td>$900</td>
-                                </tr>
-                                <tr>
-                                  <td>Tier 2 quality mention</td>
-                                  <td>70K+</td>
-                                  <td>$450</td>
-                                </tr>
+                              <tr>
+                                <td>
+                                  Tier 2 blog piece (article, podcast
+                                  episode...)
+                                </td>
+                                <td>70K+</td>
+                                <td>$900</td>
+                              </tr>
+                              <tr>
+                                <td>Tier 2 quality mention</td>
+                                <td>70K+</td>
+                                <td>$450</td>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 3 blog piece (article, podcast
-                                    episode...)
-                                  </td>
-                                  <td>30K+</td>
-                                  <td>$300</td>
-                                </tr>
-                                <tr>
-                                  <td>Tier 3 quality mention</td>
-                                  <td>30K+</td>
-                                  <td>$150</td>
-                                </tr>
+                              <tr>
+                                <td>
+                                  Tier 3 blog piece (article, podcast
+                                  episode...)
+                                </td>
+                                <td>30K+</td>
+                                <td>$300</td>
+                              </tr>
+                              <tr>
+                                <td>Tier 3 quality mention</td>
+                                <td>30K+</td>
+                                <td>$150</td>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 4 blog piece (article, podcast
-                                    episode...)
-                                  </td>
-                                  <td>5K+</td>
-                                  <td>$100</td>
-                                </tr>
-                              </table>
-                            </div>
+                              <tr>
+                                <td>
+                                  Tier 4 blog piece (article, podcast
+                                  episode...)
+                                </td>
+                                <td>5K+</td>
+                                <td>$100</td>
+                              </tr>
+                            </table>
                           </div>
                         </div>
-
-                        <h4>How to proceed</h4>
-                        <p>
-                          1. Spot a reputable blogger (crypto, tech, finance,
-                          human rights) that might be interested in learning and
-                          telling their audience about Idena.{' '}
-                        </p>
-                        <p>
-                          2. Contact them and educate them about Idena: why you
-                          consider the project unique and valuable, what makes
-                          you support it. Learn more about the blogger you are
-                          going to pitch and be creative: They receive hundreds
-                          of messages every day, your pitch should stand out. Be
-                          polite and respectful. Please note: We will not pay
-                          bloggers for publications. They should get interested
-                          in covering Idena because they see value for their
-                          audience in it.{' '}
-                        </p>
-                        <p>
-                          3. When you receive a reply, provide additional
-                          information. Feel free to reach out to the Idena
-                          community or the Idena team if you need more data or
-                          explanations that you cannot find on the Idena website
-                          or in the Idena blog.{' '}
-                        </p>
-                        <p>
-                          4. This may be the right time to email proof of your
-                          communications at info@idena.io. Please don't do it
-                          until you get a positive reply.{' '}
-                        </p>
-                        <p>
-                          5. When a publication is out (the result may be a full
-                          media piece about Idena or a quality mention - not
-                          just the name of the project, but also the project's
-                          description), email the link to it and your Idena
-                          wallet address at info@idena.io and get a reward.{' '}
-                        </p>
-                        <p>
-                          6. A publication may often be a result of a joint
-                          effort. If more than one community member claims that
-                          their independent communication with a blogger
-                          resulted in a publication, the reward is paid to three
-                          community members with the most substantial and
-                          quality communication with the publication's author
-                          out of those who emailed us their proof before the
-                          publication is out.
-                        </p>
                       </div>
+
+                      <h4>How to proceed</h4>
+                      <p>
+                        1. Spot a reputable blogger (crypto, tech, finance,
+                        human rights) that might be interested in learning and
+                        telling their audience about Idena.{' '}
+                      </p>
+                      <p>
+                        2. Contact them and educate them about Idena: why you
+                        consider the project unique and valuable, what makes you
+                        support it. Learn more about the blogger you are going
+                        to pitch and be creative: They receive hundreds of
+                        messages every day, your pitch should stand out. Be
+                        polite and respectful. Please note: We will not pay
+                        bloggers for publications. They should get interested in
+                        covering Idena because they see value for their audience
+                        in it.{' '}
+                      </p>
+                      <p>
+                        3. When you receive a reply, provide additional
+                        information. Feel free to reach out to the Idena
+                        community or the Idena team if you need more data or
+                        explanations that you cannot find on the Idena website
+                        or in the Idena blog.{' '}
+                      </p>
+                      <p>
+                        4. This may be the right time to email proof of your
+                        communications at info@idena.io. Please don't do it
+                        until you get a positive reply.{' '}
+                      </p>
+                      <p>
+                        5. When a publication is out (the result may be a full
+                        media piece about Idena or a quality mention - not just
+                        the name of the project, but also the project's
+                        description), email the link to it and your Idena wallet
+                        address at info@idena.io and get a reward.{' '}
+                      </p>
+                      <p>
+                        6. A publication may often be a result of a joint
+                        effort. If more than one community member claims that
+                        their independent communication with a blogger resulted
+                        in a publication, the reward is paid to three community
+                        members with the most substantial and quality
+                        communication with the publication's author out of those
+                        who emailed us their proof before the publication is
+                        out.
+                      </p>
                     </div>
-                  </div>
+                  </Accordion.Collapse>
+                </Card>
 
-                  <div className="card">
-                    <div className="card-header" id="contribute-2-3">
-                      <a
-                        className="collapsed"
-                        data-toggle="collapse"
-                        href="#collapse-contribute-2-3"
-                        aria-expanded="false"
-                        aria-controls="heading-contribute-2-3"
-                      >
-                        Events (giving talks about Idena)
-                      </a>
-                    </div>
-                    <div
-                      id="collapse-contribute-2-3"
-                      className="collapse"
-                      aria-labelledby="contribute-2-3"
-                      data-parent="#accordion-contribute-2"
-                    >
-                      <div className="card-body">
-                        <p>
-                          The Idena community is very diverse and distributed
-                          all over the world. It's very likely that there is a
-                          knowledgeable and passionate Idena community member in
-                          locations where major international and national tech,
-                          crypto, finance and business conferences take place.
-                          There is also a lot happening online these days. Apply
-                          for the event participation and give a talk.{' '}
-                        </p>
+                <Card id="contribute-2-3">
+                  <Card.Header>
+                    <CustomToggle eventKey="#contribute-2-3">
+                      Events (giving talks about Idena)
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#contribute-2-3">
+                    <div className="card-body">
+                      <p>
+                        The Idena community is very diverse and distributed all
+                        over the world. It's very likely that there is a
+                        knowledgeable and passionate Idena community member in
+                        locations where major international and national tech,
+                        crypto, finance and business conferences take place.
+                        There is also a lot happening online these days. Apply
+                        for the event participation and give a talk.{' '}
+                      </p>
 
-                        <div className="tab-content block">
-                          <div className="tab-pane show active" role="tabpanel">
-                            <div className="table-responsive">
-                              <table className="table">
-                                <tr>
-                                  <th>Activity</th>
-                                  <th>Audience</th>
-                                  <th>
-                                    Reward (*)
-                                    <br />
-                                    paid in iDNA
-                                  </th>
-                                </tr>
+                      <div className="tab-content block">
+                        <div className="tab-pane show active" role="tabpanel">
+                          <div className="table-responsive">
+                            <table className="table">
+                              <tr>
+                                <th>Activity</th>
+                                <th>Audience</th>
+                                <th>
+                                  Reward (*)
+                                  <br />
+                                  paid in iDNA
+                                </th>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 1 event participation
-                                    <p className="participation-hint">
-                                      International tech, crypto, finance or
-                                      business event
-                                    </p>
-                                  </td>
-                                  <td>7K+</td>
-                                  <td>$3,000</td>
-                                </tr>
+                              <tr>
+                                <td>
+                                  Tier 1 event participation
+                                  <p className="participation-hint">
+                                    International tech, crypto, finance or
+                                    business event
+                                  </p>
+                                </td>
+                                <td>7K+</td>
+                                <td>$3,000</td>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 2 event participation
-                                    <p className="participation-hint">
-                                      International or national tech, crypto,
-                                      finance or business event
-                                    </p>
-                                  </td>
-                                  <td>3.5K+</td>
-                                  <td>$1,000</td>
-                                </tr>
+                              <tr>
+                                <td>
+                                  Tier 2 event participation
+                                  <p className="participation-hint">
+                                    International or national tech, crypto,
+                                    finance or business event
+                                  </p>
+                                </td>
+                                <td>3.5K+</td>
+                                <td>$1,000</td>
+                              </tr>
 
-                                <tr>
-                                  <td>
-                                    Tier 3 event participation
-                                    <p className="participation-hint">
-                                      International or national tech, crypto,
-                                      finance or business event
-                                    </p>
-                                  </td>
-                                  <td>250+</td>
-                                  <td>$150</td>
-                                </tr>
-                              </table>
-                            </div>
+                              <tr>
+                                <td>
+                                  Tier 3 event participation
+                                  <p className="participation-hint">
+                                    International or national tech, crypto,
+                                    finance or business event
+                                  </p>
+                                </td>
+                                <td>250+</td>
+                                <td>$150</td>
+                              </tr>
+                            </table>
                           </div>
                         </div>
-
-                        <h4>How to proceed</h4>
-                        <p>
-                          1. Spot an event that might be suitable for telling
-                          about Idena.{' '}
-                        </p>
-                        <p>
-                          2. Contact the organizers and suggest a topic that
-                          could be of interest to their audience and allow
-                          telling about Idena. Be polite and respectful.{' '}
-                        </p>
-                        <p>
-                          3. Prepare a presentation. Feel free to reach out to
-                          the Idena community or the Idena team if you need more
-                          data or explanations that you cannot find on the Idena
-                          website or in the Idena blog.{' '}
-                        </p>
-                        <p>
-                          4. Give a presentation and get a video or photo proof
-                          of your participation and the audience size.
-                        </p>
-                        <p>
-                          5. Email a link to the event's webpage, a video or a
-                          photo proof and your Idena wallet address at
-                          info@idena.io and get a reward.
-                        </p>
                       </div>
+
+                      <h4>How to proceed</h4>
+                      <p>
+                        1. Spot an event that might be suitable for telling
+                        about Idena.{' '}
+                      </p>
+                      <p>
+                        2. Contact the organizers and suggest a topic that could
+                        be of interest to their audience and allow telling about
+                        Idena. Be polite and respectful.{' '}
+                      </p>
+                      <p>
+                        3. Prepare a presentation. Feel free to reach out to the
+                        Idena community or the Idena team if you need more data
+                        or explanations that you cannot find on the Idena
+                        website or in the Idena blog.{' '}
+                      </p>
+                      <p>
+                        4. Give a presentation and get a video or photo proof of
+                        your participation and the audience size.
+                      </p>
+                      <p>
+                        5. Email a link to the event's webpage, a video or a
+                        photo proof and your Idena wallet address at
+                        info@idena.io and get a reward.
+                      </p>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
 
               <h2>3. Build on top</h2>
 
@@ -574,25 +574,17 @@ export default function Contribute() {
                 the bug bounty program to hunt down its vulnerabilities.
               </p>
 
-              <div className="faq accordion" id="accordion-contribute-3">
-                <div className="card">
-                  <div className="card-header" id="contribute-3-1">
-                    <a
-                      className="collapsed"
-                      data-toggle="collapse"
-                      href="#collapse-contribute-3-1"
-                      aria-expanded="false"
-                      aria-controls="heading-contribute-3-1"
-                    >
+              <Accordion
+                activeKey={activeThird}
+                onSelect={e => setActiveThird(e)}
+              >
+                <Card id="contribute-3-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#contribute-3-1">
                       How to proceed
-                    </a>
-                  </div>
-                  <div
-                    id="collapse-contribute-3-1"
-                    className="collapse"
-                    aria-labelledby="contribute-3-1"
-                    data-parent="#accordion-contribute-3"
-                  >
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#contribute-3-1">
                     <div className="card-body">
                       <p>
                         If you believe that you have found a security
@@ -641,9 +633,9 @@ export default function Contribute() {
                       <p>- Attacking consensus mechanism</p>
                       <p>- Stealing coins</p>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
 
               <br />
               <br />
