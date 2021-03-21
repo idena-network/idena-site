@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
+import {Tab, Tabs} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
 import {useLatestGithubReleaseDownload} from '../public/api'
 import {useHash} from '../shared/utils'
@@ -47,6 +48,7 @@ function getAssetData(clientVersion, clientAsset, nodeVersion, nodeAsset) {
 }
 
 export default function Download() {
+  const [activeOs, setActiveOs] = useState()
   const [osWindows, setOsWindows] = useState(null)
   const [osDarwin, setOsDarwin] = useState(null)
   const [osLinux, setOsLinux] = useState(null)
@@ -101,6 +103,10 @@ export default function Download() {
       )
     )
   }, [])
+
+  useEffect(() => {
+    setActiveOs(hash)
+  }, [hash])
 
   return (
     <Layout
@@ -240,103 +246,59 @@ export default function Download() {
                 ).
               </p>
 
-              <ul className="nav nav-tabs" id="tab_node" role="tablist">
-                <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    id="node_darwin_tab"
-                    data-toggle="tab"
-                    href="#node_darwin"
-                    role="tab"
-                    aria-controls="node_darwin"
-                    aria-selected="true"
-                  >
-                    macOS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    id="node_windows_tab"
-                    data-toggle="tab"
-                    href="#node_windows"
-                    role="tab"
-                    aria-controls="node_windows"
-                    aria-selected="false"
-                  >
-                    Windows
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    id="node_linux_tab"
-                    data-toggle="tab"
-                    href="#node_linux"
-                    role="tab"
-                    aria-controls="node_linux"
-                    aria-selected="false"
-                  >
-                    Linux
-                  </a>
-                </li>
-              </ul>
-              <div className="tab-content block" id="tab_node_content">
-                <div
-                  className="tab-pane"
-                  id="node_windows"
-                  role="tabpanel"
-                  aria-labelledby="client_windows_tab"
-                >
-                  <div className="table-responsive">
-                    <table className="table" id="node_windows_table">
-                      <tr>
-                        <th>Build</th>
-                        <th>Size</th>
-                        <th>Version</th>
-                        <th>Published</th>
-                      </tr>
-                      {osWindows && osWindows.node.linkRow}
-                    </table>
+              <Tabs
+                activeKey={activeOs}
+                onSelect={e => setActiveOs(e)}
+                defaultActiveKey="#node_darwin"
+                transition={false}
+                id="tab_node"
+              >
+                <Tab eventKey="#node_darwin" title="macOS">
+                  <div className="tab-content block" id="tab_node_content">
+                    <div className="table-responsive">
+                      <table className="table" id="node_darwin_table">
+                        <tr>
+                          <th>Build</th>
+                          <th>Size</th>
+                          <th>Version</th>
+                          <th>Published</th>
+                        </tr>
+                        {osDarwin && osDarwin.node.linkRow}
+                      </table>
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="tab-pane"
-                  id="node_linux"
-                  role="tabpanel"
-                  aria-labelledby="node_linux_tab"
-                >
-                  <div className="table-responsive">
-                    <table className="table" id="node_linux_table">
-                      <tr>
-                        <th>Build</th>
-                        <th>Size</th>
-                        <th>Version</th>
-                        <th>Published</th>
-                      </tr>
-                      {osLinux && osLinux.node.linkRow}
-                    </table>
+                </Tab>
+                <Tab eventKey="#node_windows" title="Windows">
+                  <div className="tab-content block" id="tab_node_content">
+                    <div className="table-responsive">
+                      <table className="table" id="node_windows_table">
+                        <tr>
+                          <th>Build</th>
+                          <th>Size</th>
+                          <th>Version</th>
+                          <th>Published</th>
+                        </tr>
+                        {osWindows && osWindows.node.linkRow}
+                      </table>
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="tab-pane show active"
-                  id="node_darwin"
-                  role="tabpanel"
-                  aria-labelledby="node_darwin_tab"
-                >
-                  <div className="table-responsive">
-                    <table className="table" id="node_darwin_table">
-                      <tr>
-                        <th>Build</th>
-                        <th>Size</th>
-                        <th>Version</th>
-                        <th>Published</th>
-                      </tr>
-                      {osDarwin && osDarwin.node.linkRow}
-                    </table>
+                </Tab>
+                <Tab eventKey="#node_linux" title="Linux">
+                  <div className="tab-content block" id="tab_node_content">
+                    <div className="table-responsive">
+                      <table className="table" id="node_linux_table">
+                        <tr>
+                          <th>Build</th>
+                          <th>Size</th>
+                          <th>Version</th>
+                          <th>Published</th>
+                        </tr>
+                        {osLinux && osLinux.node.linkRow}
+                      </table>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Tab>
+              </Tabs>
 
               <p>
                 All builds of the Idena node are available on{' '}
