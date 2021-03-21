@@ -53,6 +53,7 @@ export default function Layout({children, title = '', description = ''}) {
                     </a>
                   </Link>
                 </li>
+
                 <LiActive className="nav-item header_nav__item">
                   <Link href="/technology">
                     <a
@@ -82,17 +83,6 @@ export default function Layout({children, title = '', description = ''}) {
                       data-target="menu_flip-challenge"
                     >
                       Flip challenge
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/invitation">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_invitation"
-                    >
-                      My Idena
                     </a>
                   </Link>
                 </LiActive>
@@ -165,15 +155,11 @@ export default function Layout({children, title = '', description = ''}) {
 
                 <li className="header_nav__indicator"></li>
 
-                <li className="nav-item header_nav__item">
-                  <a
-                    className="nav-link header_nav__link explorelink"
-                    title="Idena blockchain explorer"
-                    descriptioncontent="Navidate Idena blockchain data."
-                  >
-                    Explore
-                  </a>
-                </li>
+                <LiActive className="nav-item header_nav__item">
+                  <Link href="https://scan.idena.io/">
+                    <a className="nav-link header_nav__link">Explore</a>
+                  </Link>
+                </LiActive>
               </ul>
             </div>
           </div>
