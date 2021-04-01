@@ -517,7 +517,7 @@ export default function Faq() {
                         There are different statuses of participants in Idena:
                         <div className="fig">
                           <img
-                            src="images/Idena-Identity-Status-Flow-1.png?1"
+                            src="/static/images/Idena-Identity-Status-Flow-1.png?1"
                             alt=""
                           />
                           <p>
@@ -556,7 +556,7 @@ export default function Faq() {
                           killed
                           <div className="fig">
                             <img
-                              src="images/Idena-Identity-Status-Flow-2.png"
+                              src="/static/images/Idena-Identity-Status-Flow-2.png"
                               alt=""
                             />
                             <p>Fig: Identity status flow (Suspended, Zombie)</p>

@@ -115,10 +115,10 @@ export default function Contribute() {
                   </a>{' '}
                   non-official forum
                 </li>
-                <li>
-                  <a href="https://t.me/idenauz">Telegram</a> Uzbek-speaking
-                  group
-                </li>
+                {/* <li> */}
+                {/*  <a href="https://t.me/idenauz">Telegram</a> Uzbek-speaking */}
+                {/*  group */}
+                {/* </li> */}
               </ul>
 
               <Accordion

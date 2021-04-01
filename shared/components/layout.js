@@ -35,7 +35,7 @@ export default function Layout({children, title = '', description = ''}) {
                 data-target="menu_main"
               >
                 <img
-                  src="/static/images/Idena_logo.svg"
+                  src="/static/images/idena_black.svg"
                   alt="logo"
                   width="38px"
                 />
@@ -54,49 +54,38 @@ export default function Layout({children, title = '', description = ''}) {
                   </Link>
                 </li>
 
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/technology">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_technology"
-                    >
-                      How Idena works
-                    </a>
-                  </Link>
-                </LiActive>
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/technology"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_technology" */}
+                {/*    > */}
+                {/*      How Idena works */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
 
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/manifesto">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_manifesto"
-                    >
-                      Manifesto
-                    </a>
-                  </Link>
-                </LiActive>
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/manifesto"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_manifesto" */}
+                {/*    > */}
+                {/*      Manifesto */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
 
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/flip-challenge">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_flip-challenge"
-                    >
-                      Flip challenge
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/faq">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_faq"
-                    >
-                      FAQ
-                    </a>
-                  </Link>
-                </LiActive>
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/flip-challenge"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_flip-challenge" */}
+                {/*    > */}
+                {/*      Flip challenge */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
 
                 <LiActive className="nav-item header_nav__item mobile_only">
                   <Link href="/guide">
@@ -116,6 +105,17 @@ export default function Layout({children, title = '', description = ''}) {
                       data-target="menu_download"
                     >
                       Download
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <Link href="/faq">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_faq"
+                    >
+                      FAQ
                     </a>
                   </Link>
                 </LiActive>
@@ -153,12 +153,50 @@ export default function Layout({children, title = '', description = ''}) {
                   </Link>
                 </LiActive>
 
-                <li className="header_nav__indicator"></li>
+                {/* <li className="header_nav__indicator"></li> */}
 
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="https://scan.idena.io/">
-                    <a className="nav-link header_nav__link">Explore</a>
-                  </Link>
+                  <a
+                    href="https://docs.idena.io/docs/wp/summary/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    Whitepaper
+                  </a>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <a
+                    href="https://docs.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    Docs
+                  </a>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <a
+                    href="https://bridge.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    BSC bridge
+                  </a>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <a
+                    href="https://scan.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    Explorer
+                  </a>
                 </LiActive>
               </ul>
             </div>
