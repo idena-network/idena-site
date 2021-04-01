@@ -15,6 +15,11 @@ function getTimeRemaining(endtime) {
 
 export function initializeClock(id, endtime) {
   const clock = document.getElementById(id)
+
+  if (clock === null) {
+    return null
+  }
+
   const daysSpan = clock.querySelector('.days')
   const hoursSpan = clock.querySelector('.hours')
   const minutesSpan = clock.querySelector('.minutes')

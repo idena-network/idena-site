@@ -9,6 +9,7 @@ import {
 import Layout from '../shared/components/layout'
 
 import {useHash} from '../shared/utils'
+import {useNextValidationTime} from '../public/api'
 
 function CustomToggle({children, eventKey}) {
   const {setHashForce} = useHash()
@@ -30,6 +31,7 @@ function CustomToggle({children, eventKey}) {
 }
 
 export default function Faq() {
+  const [validationTime, setValidationTime] = useState(null)
   const [activePop, setActivePop] = useState()
   const [activeStart, setActiveStart] = useState()
   const [activeValidation, setActiveValidation] = useState()
@@ -39,6 +41,12 @@ export default function Faq() {
   const [activeEconomy, setActiveEconomy] = useState()
   const [activeAttacks, setActiveAttacks] = useState()
   const {hash} = useHash()
+
+  useEffect(async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const time = await useNextValidationTime()
+    setValidationTime(time)
+  }, [])
 
   useEffect(() => {
     setActivePop(hash)
@@ -180,8 +188,10 @@ export default function Faq() {
                         </li>
                         <li>
                           Check the next validation time:{' '}
-                          <span className="NextValidationDateTime">..</span>.
-                          Your node must be synchronized before the session
+                          <span className="NextValidationDateTime">
+                            {validationTime === null ? '..' : validationTime}
+                          </span>
+                          . Your node must be synchronized before the session
                           starts.
                         </li>
                         <li>
@@ -1241,7 +1251,7 @@ export default function Faq() {
                 <Card id="faq-distribution-1">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-distribution-1">
-                      How are flips distributed during a validation session?v
+                      How are flips distributed during a validation session?
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#faq-distribution-1">
@@ -1600,8 +1610,10 @@ export default function Faq() {
               </Accordion>
 
               <h3>Attacks</h3>
-              <Accordion activeKey={activeAttacks} onSelect={e => setActiveAttacks(e)}>
-
+              <Accordion
+                activeKey={activeAttacks}
+                onSelect={e => setActiveAttacks(e)}
+              >
                 <Card id="faq-attacks-1">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-attacks-1">
@@ -1621,8 +1633,8 @@ export default function Faq() {
                       <p>
                         Let's look at Bitcoin proof-of-work. Consider{' '}
                         <a
-                            href="https://arxiv.org/abs/1811.08263"
-                            rel="nofollow"
+                          href="https://arxiv.org/abs/1811.08263"
+                          rel="nofollow"
                         >
                           selfish mining
                         </a>{' '}
@@ -1766,25 +1778,7 @@ export default function Faq() {
                       </p>
 
                       <p>
-                        We consider AI as an important part of the Idena project
-                        and announced a{' '}
-                        <a href="/?view=flip_challenge">
-                          contest for AI researchers and practitioners
-                        </a>{' '}
-                        with a $55,000 reward cascade to develop an open AI
-                        instrument. The AI instrument developed as the result of
-                        the contest will be integrated into the Idena app for
-                        flip patterns detection.
-                      </p>
-
-                      <p>
-                        In addition the AI threat is mitigated by flips
-                        encryption. Each flip is available only for those
-                        participants who solve it during the validation session.
-                        There are around 10-15 persons who see it. The flips
-                        that have been used for validation are encrypted: Only 2
-                        out of 4 images of a flip are publicly available to make
-                        it impossible to easily collect huge datasets.
+                        The threat is mitigated by flips encryption. Each flip is available only for those participants who solve it during the validation session. There are around 10-15 persons who see it. The flips that have been used for validation are encrypted: Only 2 out of 4 images of a flip are publicly available to make it impossible to easily collect huge datasets.
                       </p>
                     </div>
                   </Accordion.Collapse>

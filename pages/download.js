@@ -20,9 +20,9 @@ function getAssetData(clientVersion, clientAsset, nodeVersion, nodeAsset) {
     link: clientAsset.browser_download_url,
     description: `Size:\xA0${GetFileSize(
       clientAsset.size
-    )} Published:\xA0${GetFileDate(
+    )} \nPublished:\xA0${GetFileDate(
       clientAsset.created_at
-    )} Version:\xA0${clientVersion}`,
+    )} \nVersion:\xA0${clientVersion}`,
   }
   result.node = {
     description: `Size:\xA0${GetFileSize(

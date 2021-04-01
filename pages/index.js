@@ -31,7 +31,11 @@ export default function Home() {
               title="IDENA: Proof-of-Person blockchain"
               descriptioncontent="Join the mining of the first human-centric cryptocurrency"
             >
-              <img src="/static/images/logo_idena.svg" alt="" width="135px" />
+              <img
+                src="/static/images/idena-logo-round.svg"
+                alt=""
+                width="135px"
+              />
             </div>
 
             <h1 className="title">Proof-Of-Person Blockchain</h1>

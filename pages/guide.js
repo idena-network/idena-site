@@ -40,6 +40,16 @@ export default function Guide() {
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const releseData = await useLatestGithubReleaseDownload()
+    releseData.clientAssets.forEach(asset => {
+      if (asset.name.search(/.dmg$/) !== -1) {
+        releseData.darwinClientLink = asset.browser_download_url
+      }
+    })
+    releseData.nodeAssets.forEach(asset => {
+      if (asset.name.search(/^idena-node-mac-.*/) !== -1) {
+        releseData.darwinNodeLink = asset.browser_download_url
+      }
+    })
     setRelease(releseData)
   }, [])
 
@@ -94,7 +104,7 @@ export default function Guide() {
                         </li>
                         <li>
                           Download the latest version of the Idena node:{' '}
-                          <a className="node_darwin_latest">
+                          <a href={release ? release.darwinNodeLink : ''} className="node_darwin_latest">
                             idena-node-mac-
                             <span className="node_version">
                               {release ? release.nodeVersion : 'x.xx.x'}
@@ -146,7 +156,7 @@ export default function Guide() {
                       <ul>
                         <li>
                           Download the latest{' '}
-                          <a className="client_darwin_latest">Idena Client</a>{' '}
+                          <a href={release ? release.darwinClientLink : ''} className="client_darwin_latest">Idena Client</a>{' '}
                           and install it
                         </li>
                         <li>Open Idena as a normal app</li>
