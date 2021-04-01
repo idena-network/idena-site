@@ -46,9 +46,10 @@
       color: $gray-dark;
 
       // статичная подсветка навигации хэдера
-      :not(.menu-opened) {
-        background-color: white;
-        border-radius: 20px;
+      background-color: white;
+      border-radius: 20px;
+      @media (max-width: 767px) {
+        background-color: inherit;
       }
     }
   }

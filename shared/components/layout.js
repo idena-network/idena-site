@@ -27,7 +27,7 @@ export default function Layout({children, title = '', description = ''}) {
     <div className={menuOpened ? `menu-opened` : ``}>
       <Header title={title} description={description} />
       <header className="header">
-        <div className={`container ${menuOpened ? `menu-opened` : ``}`}>
+        <div className="container">
           <div className="row align-items-center justify-content-center align-items-center">
             <Link href="/">
               <a

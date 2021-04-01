@@ -11,7 +11,7 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const count = await useTotalValidatedCount()
     setValidatedCount(count)
-  })
+  }, [])
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const time = await useNextValidationTime()
@@ -79,35 +79,35 @@ export default function Home() {
                   <div className="row justify-content-center">
                     <div className="col-auto">
                       <div className="row justify-content-center">
-                        <a href="/download" className="btn btn-link">
-                          <i className="icon icon--download"></i>
-                          <span>Download Idena</span>
-                        </a>
+                        <Link href="/download">
+                          <a className="btn btn-link">
+                            <i className="icon icon--download"></i>
+                            <span>Download Idena</span>
+                          </a>
+                        </Link>
                       </div>
                     </div>
 
                     <div className="col-auto">
                       <div className="row justify-content-center">
-                        <a
-                          style={{marginLeft: 15}}
-                          href="/webclient"
-                          className="btn btn-link"
-                        >
-                          <i className="icon icon--web"></i>
-                          <span>
-                            Join Idena in web
-                            <span
-                              style={{
-                                fontSize: 'small',
-                                marginLeft: 3,
-                                marginTop: -11,
-                                color: 'limegreen',
-                              }}
-                            >
-                              beta
-                            </span>{' '}
-                          </span>
-                        </a>
+                        <Link href="/webclient">
+                          <a style={{marginLeft: 15}} className="btn btn-link">
+                            <i className="icon icon--web"></i>
+                            <span>
+                              Join Idena in web
+                              <span
+                                style={{
+                                  fontSize: 'small',
+                                  marginLeft: 3,
+                                  marginTop: -11,
+                                  color: 'limegreen',
+                                }}
+                              >
+                                beta
+                              </span>{' '}
+                            </span>
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
