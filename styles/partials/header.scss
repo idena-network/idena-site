@@ -44,9 +44,12 @@
 
     .header_nav__link {
       color: $gray-dark;
+
       // статичная подсветка навигации хэдера
-      background-color: white;
-      border-radius: 20px;
+      :not(.menu-opened) {
+        background-color: white;
+        border-radius: 20px;
+      }
     }
   }
 }

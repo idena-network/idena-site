@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router'
 import Link from 'next/link'
-import {Children} from 'react'
+import {Children, useState} from 'react'
 import Header from './header'
 
 const LiActive = ({className, children, ...props}) => {
@@ -21,12 +21,13 @@ const LiActive = ({className, children, ...props}) => {
 
 export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
+  const [menuOpened, setMenuOpened] = useState(false)
 
   return (
-    <>
+    <div className={menuOpened ? `menu-opened` : ``}>
       <Header title={title} description={description} />
       <header className="header">
-        <div className="container">
+        <div className={`container ${menuOpened ? `menu-opened` : ``}`}>
           <div className="row align-items-center justify-content-center align-items-center">
             <Link href="/">
               <a
@@ -87,17 +88,6 @@ export default function Layout({children, title = '', description = ''}) {
                 {/*  </Link> */}
                 {/* </LiActive> */}
 
-                <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/guide">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_guide"
-                    >
-                      Installation guide
-                    </a>
-                  </Link>
-                </LiActive>
-
                 <LiActive className="nav-item header_nav__item">
                   <Link href="/download">
                     <a
@@ -116,6 +106,17 @@ export default function Layout({children, title = '', description = ''}) {
                       data-target="menu_faq"
                     >
                       FAQ
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/guide">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_guide"
+                    >
+                      Installation guide
                     </a>
                   </Link>
                 </LiActive>
@@ -203,7 +204,10 @@ export default function Layout({children, title = '', description = ''}) {
           </div>
         </div>
       </header>
-      <button className="btn btn-sm btn-icon btn_menu d-md-none">
+      <button
+        className="btn btn-sm btn-icon btn_menu d-md-none"
+        onClick={() => setMenuOpened(!menuOpened)}
+      >
         <i></i>
         <i></i>
         <i></i>
@@ -371,6 +375,6 @@ export default function Layout({children, title = '', description = ''}) {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
