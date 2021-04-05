@@ -115,7 +115,12 @@ export default function Home() {
 
                 <div className="section_lead__info lead_info">
                   <div className="row">
-                    <div className="col-sm-4 lead_info__nodes clickable">
+                    <div
+                      className="col-sm-4 lead_info__nodes clickable"
+                      onClick={() =>
+                        window.open('https://scan.idena.io', '_blank')
+                      }
+                    >
                       <div className="_value" id="ValidatedNodes">
                         {validatedCount === null ? '-' : validatedCount}
                       </div>
