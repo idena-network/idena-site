@@ -30,13 +30,13 @@
   overflow: hidden;
 
   .header_nav__link {
-    color: $gray;
+    color: $gray-dark;
     cursor: pointer;
     position: relative;
 
-    &:hover {
-      color: $gray-dark;
-    }
+    //&:hover {
+    //  color: $gray-dark;
+    //}
   }
 
   &.active {
@@ -44,6 +44,13 @@
 
     .header_nav__link {
       color: $gray-dark;
+
+      // статичная подсветка навигации хэдера
+      background-color: white;
+      border-radius: 20px;
+      @media (max-width: 767px) {
+        background-color: inherit;
+      }
     }
   }
 }

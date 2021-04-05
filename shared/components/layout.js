@@ -1,7 +1,7 @@
-import Header from './header'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
-import {Children} from 'react'
+import {Children, useState} from 'react'
+import Header from './header'
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
@@ -21,151 +21,195 @@ const LiActive = ({className, children, ...props}) => {
 
 export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
+  const [menuOpened, setMenuOpened] = useState(false)
 
   return (
-    <>
+    <div className={menuOpened ? `menu-opened` : ``}>
       <Header title={title} description={description} />
       <header className="header">
         <div className="container">
           <div className="row align-items-center justify-content-center align-items-center">
             <Link href="/">
               <a
-                className={`navbar-brand nav-link d-none d-md-block ${router.pathname !== '/' && 'show'}`}
+                className={`navbar-brand nav-link d-none d-md-block ${router.pathname !==
+                  '/' && 'show'}`}
                 data-target="menu_main"
               >
-                <img src="/static/images/Idena_logo.svg" alt="logo" width="38px" />
+                <img
+                  src="/static/images/idena_black.svg"
+                  alt="logo"
+                  width="38px"
+                />
               </a>
             </Link>
             <div className="col-md-12 text-center">
               <ul className="header_nav nav justify-content-center">
                 <li className="nav-item header_nav__item mobile_only">
                   <Link href="/">
-                    <a className="nav-link header_nav__link" data-target="menu_main">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_main"
+                    >
                       Home
                     </a>
                   </Link>
                 </li>
+
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/technology"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_technology" */}
+                {/*    > */}
+                {/*      How Idena works */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
+
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/manifesto"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_manifesto" */}
+                {/*    > */}
+                {/*      Manifesto */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
+
+                {/* <LiActive className="nav-item header_nav__item"> */}
+                {/*  <Link href="/flip-challenge"> */}
+                {/*    <a */}
+                {/*      className="nav-link header_nav__link" */}
+                {/*      data-target="menu_flip-challenge" */}
+                {/*    > */}
+                {/*      Flip challenge */}
+                {/*    </a> */}
+                {/*  </Link> */}
+                {/* </LiActive> */}
+
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="/technology">
-                    <a className="nav-link header_nav__link" data-target="menu_technology">
-                      How Idena works
+                  <Link href="/download">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_download"
+                    >
+                      Download
                     </a>
                   </Link>
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="/manifesto">
-                    <a className="nav-link header_nav__link" data-target="menu_manifesto">
-                      Manifesto
+                  <Link href="/faq">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_faq"
+                    >
+                      FAQ
                     </a>
                   </Link>
                 </LiActive>
 
-                <li className="nav-item header_nav__item">
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/guide">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_guide"
+                    >
+                      Installation guide
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/webclient">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_webclient"
+                    >
+                      Web client
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <Link href="/contribute">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_contribute"
+                    >
+                      Contribute
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/donate">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_donate"
+                    >
+                      Donate to Idena
+                    </a>
+                  </Link>
+                </LiActive>
+
+                {/* <li className="header_nav__indicator"></li> */}
+
+                <LiActive className="nav-item header_nav__item">
                   <a
+                    href="https://docs.idena.io/docs/wp/summary/"
+                    rel="noreferrer"
+                    target="_blank"
                     className="nav-link header_nav__link"
-                    data-target="menu_flip_challenge"
-                    title="Idena Flip Challenge: AI-resistant CAPTCHA."
-                    descriptioncontent="Flip is AI-hard CAPTCHA created by a human. Common sense is required to identify a meaningful story told in pictures"
                   >
-                    Flip challenge
+                    Whitepaper
                   </a>
-                </li>
+                </LiActive>
 
-                <li className="nav-item header_nav__item mobile_only">
+                <LiActive className="nav-item header_nav__item">
                   <a
+                    href="https://docs.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
                     className="nav-link header_nav__link"
-                    data-target="menu_invitation"
-                    title="How to join Idena Network"
-                    descriptioncontent="Invitations can be only sent out by validated nodes. Idena core team is granted to issue a limited number of invitations per month to support the network growth."
                   >
-                    My Idena
+                    Docs
                   </a>
-                </li>
+                </LiActive>
 
-                <li className="nav-item header_nav__item">
+                <LiActive className="nav-item header_nav__item">
                   <a
+                    href="https://bridge.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
                     className="nav-link header_nav__link"
-                    data-target="menu_faq"
-                    title="IDENA FAQ"
-                    descriptioncontent="We are here to help you. Browse through the most frequently asked questions. Can�t find an answer? Email us at info@idena.io"
                   >
-                    FAQ
+                    BSC bridge
                   </a>
-                </li>
+                </LiActive>
 
-                <li className="nav-item header_nav__item mobile_only">
+                <LiActive className="nav-item header_nav__item">
                   <a
+                    href="https://scan.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
                     className="nav-link header_nav__link"
-                    data-target="menu_guide"
-                    title="IDENA Installation and troubleshooting guide"
-                    descriptioncontent="We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions. "
                   >
-                    Installation guide
+                    Explorer
                   </a>
-                </li>
-
-                <li className="nav-item header_nav__item">
-                  <a
-                    className="nav-link header_nav__link"
-                    data-target="menu_download"
-                    title="Download Idena Node"
-                    descriptioncontent="Download stable and develop builds of Idena Node and Idena Client."
-                  >
-                    Download
-                  </a>
-                </li>
-
-                <li className="nav-item header_nav__item mobile_only">
-                  <a
-                    className="nav-link header_nav__link"
-                    data-target="menu_webclient"
-                    title="Idena web client"
-                    descriptioncontent="Join mining Idena with your browser."
-                  >
-                    Web client
-                  </a>
-                </li>
-
-                <li className="nav-item header_nav__item">
-                  <a
-                    className="nav-link header_nav__link"
-                    data-target="menu_contribute"
-                    title="How to contribute to Idena"
-                    descriptioncontent="Idena is an open source project and the Idena community is its key driving force."
-                  >
-                    Contribute
-                  </a>
-                </li>
-
-                <li className="nav-item header_nav__item mobile_only">
-                  <a
-                    className="nav-link header_nav__link"
-                    data-target="menu_donate"
-                    title="Donate to Idena"
-                    descriptioncontent="Support Idena by making a donation"
-                  >
-                    Donate to Idena
-                  </a>
-                </li>
-
-                <li className="header_nav__indicator"></li>
-
-                <li className="nav-item header_nav__item">
-                  <a
-                    className="nav-link header_nav__link explorelink"
-                    title="Idena blockchain explorer"
-                    descriptioncontent="Navidate Idena blockchain data."
-                  >
-                    Explore
-                  </a>
-                </li>
+                </LiActive>
               </ul>
             </div>
           </div>
         </div>
       </header>
-      <button className="btn btn-sm btn-icon btn_menu d-md-none">
+      <button
+        className={`btn btn-sm btn-icon btn_menu d-md-none ${
+          menuOpened ? `active` : ``
+        }`}
+        onClick={() => setMenuOpened(!menuOpened)}
+      >
         <i></i>
         <i></i>
         <i></i>
@@ -175,71 +219,153 @@ export default function Layout({children, title = '', description = ''}) {
         <div className="container">
           <h5 className="d-md-none nav_next">Next up</h5>
           <ul className="nav d-md-none">
-            <li className="header_nav__item active">
-              <a className="nav-link header_nav__link" data-target="menu_download">
-                Download
+            <LiActive className="header_nav__item">
+              <Link href="/download">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_download"
+                >
+                  Download
+                </a>
+              </Link>
+            </LiActive>
+
+            <LiActive className="header_nav__item">
+              <Link href="/">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_main"
+                >
+                  Home
+                </a>
+              </Link>
+            </LiActive>
+
+            <li className="nav-item header_nav__item">
+              <Link href="/faq#faq-start-1">
+                <a className="nav-link header_nav__link where_to_start">
+                  How to start mining Idena
+                </a>
+              </Link>
+            </li>
+
+            {/* <li className="nav-item header_nav__item"> */}
+            {/*  <a */}
+            {/*    className="nav-link header_nav__link" */}
+            {/*    data-target="menu_technology" */}
+            {/*  > */}
+            {/*    How Idena works */}
+            {/*  </a> */}
+            {/* </li> */}
+            {/* <li className="nav-item header_nav__item"> */}
+            {/*  <a */}
+            {/*    className="nav-link header_nav__link" */}
+            {/*    data-target="menu_manifesto" */}
+            {/*  > */}
+            {/*    Manifesto */}
+            {/*  </a> */}
+            {/* </li> */}
+            {/* <li className="nav-item header_nav__item"> */}
+            {/*  <a */}
+            {/*    className="nav-link header_nav__link" */}
+            {/*    data-target="menu_flip-challenge" */}
+            {/*  > */}
+            {/*    Flip challenge */}
+            {/*  </a> */}
+            {/* </li> */}
+            {/* <li className="nav-item header_nav__item"> */}
+            {/*  <a */}
+            {/*    className="nav-link header_nav__link" */}
+            {/*    data-target="menu_invitation" */}
+            {/*  > */}
+            {/*    My Idena */}
+            {/*  </a> */}
+            {/* </li> */}
+
+            <LiActive className="nav-item header_nav__item">
+              <Link href="/faq">
+                <a className="nav-link header_nav__link" data-target="menu_faq">
+                  FAQ
+                </a>
+              </Link>
+            </LiActive>
+
+            <li className="nav-item header_nav__item">
+              <a
+                href="https://docs.idena.io/docs/wp/summary/"
+                rel="noreferrer"
+                target="_blank"
+                className="nav-link header_nav__link"
+              >
+                Whitepaper
               </a>
             </li>
 
-            <li className="header_nav__item active">
-              <a className="nav-link header_nav__link" data-target="menu_main">
-                Home
+            <li className="nav-item header_nav__item">
+              <a
+                href="https://docs.idena.io/"
+                rel="noreferrer"
+                target="_blank"
+                className="nav-link header_nav__link"
+              >
+                Documentation
+              </a>
+            </li>
+
+            <LiActive className="nav-item header_nav__item">
+              <Link href="/contribute">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_contribute"
+                >
+                  How to contribute
+                </a>
+              </Link>
+            </LiActive>
+
+            <li className="nav-item header_nav__item">
+              <a
+                href="https://scan.idena.io/"
+                rel="noreferrer"
+                target="_blank"
+                className="nav-link header_nav__link"
+              >
+                Blockchain explorer
               </a>
             </li>
 
             <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link where_to_start">How to start mining Idena</a>
-            </li>
-
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_technology">
-                How Idena works
-              </a>
-            </li>
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_manifesto">
-                Manifesto
-              </a>
-            </li>
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_flip_challenge">
-                Flip challenge
-              </a>
-            </li>
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_invitation">
-                My Idena
-              </a>
-            </li>
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_faq">
-                FAQ
+              <a
+                href="https://idena-apps.org/"
+                rel="noreferrer"
+                target="_blank"
+                className="nav-link header_nav__link"
+              >
+                Apps & Resources
               </a>
             </li>
 
             <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_contribute">
-                How to contribute
+              <a
+                href="https://medium.com/idena/"
+                rel="noreferrer"
+                target="_blank"
+                className="nav-link header_nav__link"
+              >
+                Blog
               </a>
             </li>
 
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link" data-target="menu_donate">
-                Donate to Idena
-              </a>
-            </li>
-
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link explorelink">Explore</a>
-            </li>
-
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link appslink">Apps & Resources</a>
-            </li>
-
-            <li className="nav-item header_nav__item">
-              <a className="nav-link header_nav__link bloglink">Blog</a>
-            </li>
+            <LiActive className="nav-item header_nav__item">
+              <Link href="/donate">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_donate"
+                >
+                  Donate to Idena
+                </a>
+              </Link>
+            </LiActive>
           </ul>
 
           <div className="row justify-content-center text-center">
@@ -253,23 +379,50 @@ export default function Layout({children, title = '', description = ''}) {
                 >
                   <i className="icon icon--medium"></i>
                 </a>
-                <a href="https://twitter.com/IdenaNetwork" rel="nofollow" target="_blank" className="social_list__item">
+                <a
+                  href="https://twitter.com/IdenaNetwork"
+                  rel="nofollow"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--twitter"></i>
                 </a>
-                <a href="https://t.me/IdenaAnnouncements" rel="nofollow" target="_blank" className="social_list__item">
+                <a
+                  href="https://t.me/IdenaAnnouncements"
+                  rel="nofollow"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--telegram"></i>
                 </a>
-                <a href="https://github.com/idena-network" rel="nofollow" target="_blank" className="social_list__item">
+                <a
+                  href="https://github.com/idena-network"
+                  rel="nofollow"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--github"></i>
                 </a>
-                <a href="https://www.reddit.com/r/Idena/" target="_blank" className="social_list__item">
+                <a
+                  href="https://www.reddit.com/r/Idena/"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--reddit_icn"></i>
                 </a>
 
-                <a href="https://discord.gg/8BusRj7" target="_blank" className="social_list__item">
+                <a
+                  href="https://discord.gg/8BusRj7"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--discord_icn"></i>
                 </a>
-                <a href="mailto:info@idena.io" target="_blank" className="social_list__item">
+                <a
+                  href="mailto:info@idena.io"
+                  target="_blank"
+                  className="social_list__item"
+                >
                   <i className="icon icon--mail-fill"></i>
                 </a>
               </div>
@@ -281,6 +434,6 @@ export default function Layout({children, title = '', description = ''}) {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }

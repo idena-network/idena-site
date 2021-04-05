@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Layout from '../shared/components/layout'
 
 export default function Technology() {
@@ -7,14 +8,14 @@ export default function Technology() {
       description="Idena blockchain allows for proof of humanity and uniqueness for an identity. We call it Proof-of-Person. Every node is linked to one single anonymous person."
     >
       <section
-        class="section section_content menu_section_content menu_technology"
+        className="section section_content menu_section_content menu_technology"
         id="technology"
       >
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-7 col-lg-6">
-              <div class="section_header">
-                <h3 class="h1">How Idena works</h3>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-7 col-lg-6">
+              <div className="section_header">
+                <h3 className="h1">How Idena works</h3>
               </div>
               <h4>Proof of person</h4>
               <p>
@@ -30,10 +31,12 @@ export default function Technology() {
                 Idena employs regular checkpoint rituals — synchronous
                 validation sessions — to certify a participants’ humanness for
                 the consequent epoch. The validation requires solving of{' '}
-                <a href="/flip-challenge"> “flips-puzzles”</a> easy for a human,
-                difficult for a bot.
+                <Link href="/flip-challenge">
+                  <a> “flips-puzzles”</a>
+                </Link>{' '}
+                easy for a human, difficult for a bot.
               </p>
-              <div class="fig">
+              <div className="fig">
                 <img src="/static/images/idena-validation-flow.png?1" alt="" />
                 <p>Fig 1. Idena validation flow for a single epoch</p>
               </div>
@@ -62,8 +65,12 @@ export default function Technology() {
                 flips.
               </p>
               <p>
-                To <a href="/invitation">join the network</a>, a new person must
-                get an invitation from a validated participant.
+                To{' '}
+                <Link href="/faq#faq-start-1">
+                  <a>join the network</a>
+                </Link>
+                , a new person must get an invitation from a validated
+                participant.
               </p>
 
               <h4>Idena blockchain</h4>
@@ -136,6 +143,107 @@ export default function Technology() {
                 upgrade proposals (hard forks); global fund proposals, and
                 allocations.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section section_content menu_section_content menu_technology"
+        id="usecases"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-7 col-lg-6">
+              <h3>Use cases</h3>
+              <p>
+                There are various use cases that can be facilitated by the Idena
+                network.
+              </p>
+
+              <h4>Fair voting in online communities</h4>
+              <p>
+                Governance is one of the most important killer apps of
+                blockchains. DAOs effectively recreate cross-border
+                organizational structures at miniscule administrative costs and
+                near-zero compliance burden. However, governance mechanisms in
+                permissionless communities can only be based on the stake of
+                tokens; hence, they are inherently plutocratic. Large
+                stakeholders can collude to dominate the outcome of voting,
+                discouraging others from participation. A unique cryptoidentity
+                (one account per person) can be used to distribute voting
+                credits to the individual members of the community to ensure
+                fairness. Modern voting technologies such as Quadratic Voting
+                can be implemented to engage the crowd to participate in the
+                collective decision-making process.
+              </p>
+
+              <h4>Oracles</h4>
+              <p>
+                For most use cases, smart contracts and DAOs need to be fed with
+                factual information from the outside world. This requires
+                oracles to supply offchain data to the blockchain. The Idena
+                network is essentially a ready-made network of oracles. There
+                will be mechanisms that enable every validated Idena user to
+                have an equal chance of being selected as an oracle. Randomly
+                chosen participants will receive information requests published
+                by smart contracts. The selected oracles will provide the data
+                and will stake coins to guarantee its accuracy. When the
+                consensus on the information is reached, the oracles will be
+                rewarded or penalized depending on the quality of the
+                information they provided.
+              </p>
+
+              <h4>Direct marketing and value airdrops</h4>
+              <p>
+                Current business models of most Internet services imply the
+                monetization of personal information collected about the user's
+                behavior, interests, social connections, in many cases without
+                the user's consent. The new business model could be based on the
+                consensual self-monetization of personal information and
+                proactive intentional disclosure initiated by the user. Based on
+                such intentional information-sharing, advertisers could provide
+                the best deals and pay the user directly to view and utilize
+                them. Internet services and apps could distribute utility
+                tokens, rewards, tokenized coupons, and discounts. This model
+                would be possible only when advertisers and businesses are
+                protected from Sybil attacks.
+              </p>
+
+              <h4>Serverless messenger and in-chat payments</h4>
+              <p>
+                The network of independent nodes can securely store a queue of
+                undelivered P2P-encrypted messages. Spam attacks are prevented
+                by assigning a minor friction in the form of a transaction fee
+                and a decentralized storage rent fee. The native cryptocurrency
+                of the Idena network can be used to transact value between users
+                as a special type of message inside the P2P chat. Trustless
+                decentralized two-way bridges are to be developed to tokenize
+                and transact major cryptocurrencies (BTC, ETH) as tokens on the
+                Idena blockchain.
+              </p>
+
+              <h4>Free speech publishing</h4>
+              <p>
+                The Idena network can be used as a decentralized storage for
+                publications and whistleblowing information to build
+                censorship-free publishing platforms, which are protected from
+                bots manipulating content discovery.
+              </p>
+
+              <h4>Global universal basic income (UBI)</h4>
+              <p>
+                A full node of the Idena blockchain could be light enough to run
+                on an average laptop. Participation in the network is rewarded
+                with minting and can be considered as a form of the universal
+                basic income sufficient to cover network services (for example,
+                sending messages) as well as the bill for the Internet service
+                and electricity consumed. At a certain stage the Idena network
+                can be attractive for international organizations to distribute
+                unconditional rewards to network participants.
+              </p>
+
+              {/* <h4>Attestation of human uniqueness for SSI</h4> */}
+              {/* <p>The anonymous unique personhood provider can be integrated with other self-sovereign identity systems to verify claims of uniqueness.</p> */}
             </div>
           </div>
         </div>
