@@ -372,7 +372,7 @@ export default function Layout({children, title = '', description = ''}) {
             <div className="col-md-7 col-lg-6">
               <div className="social_list">
                 <a
-                  href="https://medium.com/@idena.network"
+                  href="https://medium.com/idena"
                   rel="nofollow"
                   target="_blank"
                   className="social_list__item"
