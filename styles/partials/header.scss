@@ -410,26 +410,12 @@
   display: block;
 }
 
-//.tooltip {
-//  .arrow {
-//    position: absolute;
-//    display: block;
-//    width: 0.8rem;
-//    height: 0.4rem;
-//
-//    :before {
-//      content: "";
-//      border-color: transparent;
-//      border-style: solid;
-//    }
-//  }
-//}
-
 .toolTipArrow:before {
   border-bottom-color: #53565c !important;
 }
 
 .toolTipPopper {
+  margin-top: -1.3rem;
   opacity: 1 !important;
   padding: 0.4rem 0;
 }
@@ -450,7 +436,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 12px;
-  margin: 6px 6px 12px 6px;
+  margin: 0.4rem 0.4rem 0.8rem 0.4rem;
   height: 5.5rem;
 
   @media (#{$max_phones--big}) {
@@ -514,7 +500,7 @@
       }
 
       display: block;
-      padding: 14px 24px 16px;
+      padding: 0.9rem 1.5rem 0.9rem;
       border-radius: 12px;
       @media (#{$max_phones--big}) {
         background-color: #ffffff;
