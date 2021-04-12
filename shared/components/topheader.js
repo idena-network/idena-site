@@ -176,7 +176,8 @@ export default function TopHeader() {
                   : '-'
               }
               tooltip="Last validation rewards paid per user"
-              href={`/epoch/${epoch + 1}/rewards`}
+              href={`https://scan.idena.io/epoch/${epoch + 1}/rewards`}
+              blank
             />
             <Card
               name="Rewards paid"
@@ -184,7 +185,8 @@ export default function TopHeader() {
                 Math.round(epochData.totalRewardsPaid * marketData.price)
               )}
               tooltip="Total rewards paid for last validation"
-              href={`/epoch/${epoch + 1}/rewards`}
+              href={`https://scan.idena.io/epoch/${epoch + 1}/rewards`}
+              blank
             />
             <Card
               name="Market cap"
