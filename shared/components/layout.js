@@ -2,6 +2,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {Children, useState} from 'react'
 import Header from './header'
+import TopHeader from "./topheader";
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
@@ -26,6 +27,7 @@ export default function Layout({children, title = '', description = ''}) {
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
       <Header title={title} description={description} />
+      <TopHeader />
       <header className="header">
         <div className="container">
           <div className="row align-items-center justify-content-center align-items-center">

@@ -406,3 +406,128 @@
   text-align: center;
 }
 
+.show {
+  display: block;
+}
+
+.toolTipArrow:before {
+  border-bottom-color: #53565c !important;
+}
+
+.toolTipPopper {
+  margin-top: -1.3rem;
+  opacity: 1 !important;
+  padding: 0.4rem 0;
+}
+
+.toolTipInnerPopper {
+  background-color: #53565c !important;
+  border-radius: 8px !important;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.topheader {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  margin: 0.4rem;
+  height: 5.5rem;
+
+  @media (#{$max_phones--big}) {
+    border-radius: 0px;
+    margin: 12px;
+    height: 77px;
+  }
+
+  .topheader-div {
+    position: absolute;
+    background-color: #ffffff; // #f5f6f7;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -30px;
+    overflow-x: hide;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (#{$max_phones--big}) {
+      overflow-x: scroll;
+      background-color: #f5f6f7;
+      animation: scroll 2s ease-out 1s;
+      animation-fill-mode: forwards;
+      @keyframes scroll {
+        100% {
+          left: -20px;
+        }
+      }
+    }
+
+    @media all and (min-width: 0px) and (max-width: 500px) {
+    }
+  }
+
+  .item {
+    min-width: 150px;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+    display: table-cell;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #96999e;
+
+    @media (#{$max_phones--big}) {
+      padding: 0.5rem 0.3rem;
+    }
+
+    .content {
+      position: relative;
+      cursor: default;
+
+      &:hover,
+      &:active {
+        color: #578fff;
+        background-color: #f5f6f7;
+      }
+
+      display: block;
+      padding: 0.9rem 1.5rem 0.9rem;
+      border-radius: 12px;
+      @media (#{$max_phones--big}) {
+        background-color: #ffffff;
+        line-height: 22px;
+
+        &:hover,
+        &:active {
+          //background-color: #f5f6f7;
+        }
+      }
+      a {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: inline;
+      }
+
+      .topheader-value {
+        color: #53565c;
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+    }
+  }
+  .container {
+    max-width: 1112px;
+  }
+}

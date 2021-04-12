@@ -9,6 +9,7 @@
   "dependencies": {
     "@kunukn/react-collapse": "^2.2.9",
     "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.3",
     "next": "10.0.5",
     "nextjs-fonts": "^0.22.0",
@@ -17,6 +18,7 @@
     "react-bootstrap": "^1.5.1",
     "react-dom": "17.0.1",
     "react-helmet": "^6.1.0",
+    "reactstrap": "^8.4.1",
     "sass-rem": "^2.0.1",
     "react-ga": "^3.3.0"
   },

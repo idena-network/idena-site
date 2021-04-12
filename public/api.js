@@ -1,4 +1,29 @@
+import axios from 'axios'
 import {initializeClock} from './countdown'
+
+const BASE_API_URL = 'https://api.idena.org/api'
+
+const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3'
+
+function apiCoingecko() {
+  return axios.create({
+    baseURL: COINGECKO_API_URL,
+  })
+}
+
+function apiClient() {
+  return axios.create({
+    baseURL: BASE_API_URL,
+  })
+}
+
+async function getResponse(request) {
+  const {data} = await request
+  const {result, continuationToken, error} = data
+  if (error) throw error
+  if (continuationToken) result.continuationToken = continuationToken
+  return result
+}
 
 export async function useTotalValidatedCount() {
   const response = await fetch('https://api.idena.io/api/epoch/last')
@@ -62,4 +87,47 @@ export async function useLatestGithubReleaseDownload() {
   response.nodeAssets = nodeJson.assets
 
   return response
+}
+
+export async function getOnlineIdentitiesCount() {
+  return getResponse(apiClient().get('onlineidentities/count'))
+}
+
+export async function getCoingeckoData() {
+  const params = {
+    ids: 'idena',
+    vs_currencies: 'usd',
+    include_market_cap: true,
+    include_24hr_vol: true,
+    include_24hr_change: true,
+    include_last_updated_at: true,
+  }
+
+  const request = apiCoingecko().get('/simple/price', {params})
+  const {data} = await request
+  return data
+}
+
+export async function getOnlineMinersCount() {
+  return getResponse(apiClient().get('onlineminers/count'))
+}
+
+export async function getEpochRewardsSummary(epoch) {
+  return getResponse(apiClient().get(`epoch/${epoch}/rewardsSummary`))
+}
+
+export async function getLastEpoch() {
+  return getResponse(apiClient().get('epoch/last'))
+}
+
+export async function getEpoch(epoch) {
+  return getResponse(apiClient().get(`epoch/${epoch}`))
+}
+
+export async function getEpochIdentitiesSummary(epoch) {
+  return getResponse(apiClient().get(`epoch/${epoch}/identityStatesSummary`))
+}
+
+export async function getEpochRewardBounds(epoch) {
+  return getResponse(apiClient().get(`epoch/${epoch}/rewardBounds`))
 }
