@@ -22,7 +22,9 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const nextValidation = await useNextValidationTime()
     setValidationTime(nextValidation.localeTime)
-    setValidationCalendarLink(getGoogleCalendarLink(nextValidation.jsonDateString))
+    setValidationCalendarLink(
+      getGoogleCalendarLink(nextValidation.jsonDateString)
+    )
   }, [])
 
   return (
@@ -170,22 +172,23 @@ export default function Home() {
                         </span>
                       </p>
 
-                      {validationCalendarLink && (
-                        <a
-                          className="_calendar"
-                          href={validationCalendarLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Add to calendar
-                          <img
-                            src="/static/images/icon-plus.svg"
-                            alt=""
-                            width="20px"
-                            style={{marginLeft: '10px'}}
-                          />
-                        </a>
-                      )}
+                      {validationTime !== null &&
+                        validationTime !== 'RUNNING NOW' && (
+                          <a
+                            className="_calendar"
+                            href={validationCalendarLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Add to calendar
+                            <img
+                              src="/static/images/icon-plus.svg"
+                              alt=""
+                              width="20px"
+                              style={{marginLeft: '10px'}}
+                            />
+                          </a>
+                        )}
                     </div>
                   </div>
                 </div>
