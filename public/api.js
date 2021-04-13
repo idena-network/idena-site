@@ -66,9 +66,13 @@ export async function useNextValidationTime() {
   const diff = Math.ceil(nextValidationTime.getTime() - nowDate.getTime())
   initializeClock('counter', nextValidationTime)
 
-  return diff < 0
-    ? 'RUNNING NOW'
-    : new Date(nextValidationTime).toLocaleString()
+  const result = {}
+  result.localeTime =
+    diff < 0 ? 'RUNNING NOW' : new Date(nextValidationTime).toLocaleString()
+  result.utcDate = jsonEpoch.result.validationTime
+    .replaceAll('-', '')
+    .substring(0, 8)
+  return result
 }
 
 export async function useLatestGithubReleaseDownload() {
@@ -136,10 +140,6 @@ export async function getEpochRewardBounds(epoch) {
   return getResponse(apiClient().get(`epoch/${epoch}/rewardBounds`))
 }
 
-export function getGoogleCalendarLink(validationDateTime) {
-  const validationDate = new Date(validationDateTime)
-    .toJSON()
-    .replaceAll('-', '')
-    .substring(0, 8)
+export function getGoogleCalendarLink(validationDate) {
   return `${GOOGLE_CALENDAR_URL}dates=${validationDate}T133000Z/${validationDate}T140000Z${GOOGLE_CALENDAR_DETAILS}`
 }

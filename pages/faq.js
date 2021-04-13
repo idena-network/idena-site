@@ -44,8 +44,8 @@ export default function Faq() {
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const time = await useNextValidationTime()
-    setValidationTime(time)
+    const nextValidation = await useNextValidationTime()
+    setValidationTime(nextValidation.localeTime)
   }, [])
 
   useEffect(() => {
