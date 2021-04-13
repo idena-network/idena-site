@@ -22,7 +22,7 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const nextValidation = await useNextValidationTime()
     setValidationTime(nextValidation.localeTime)
-    setValidationCalendarLink(getGoogleCalendarLink(nextValidation.utcDate))
+    setValidationCalendarLink(getGoogleCalendarLink(nextValidation.jsonDateString))
   }, [])
 
   return (
