@@ -1,11 +1,17 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import Layout from '../shared/components/layout'
-import {useNextValidationTime, useTotalValidatedCount} from '../public/api'
+import {
+  useNextValidationTime,
+  useTotalValidatedCount,
+  getGoogleCalendarLink,
+} from '../public/api'
 
 export default function Home() {
   const [validatedCount, setValidatedCount] = useState(null)
   const [validationTime, setValidationTime] = useState(null)
+  const [validationCalendarLink, setValidationCalendarLink] = useState(null)
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -16,6 +22,7 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const time = await useNextValidationTime()
     setValidationTime(time)
+    setValidationCalendarLink(getGoogleCalendarLink(time))
   }, [])
 
   return (
@@ -162,6 +169,21 @@ export default function Home() {
                           {validationTime === null ? '' : validationTime}
                         </span>
                       </p>
+
+                      <a
+                        className="_calendar"
+                        href={validationCalendarLink}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Add to calendar
+                        <img
+                          src="/static/images/icon-plus.svg"
+                          alt=""
+                          width="20px"
+                          style={{marginLeft: '10px'}}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
