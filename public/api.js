@@ -2,8 +2,12 @@ import axios from 'axios'
 import {initializeClock} from './countdown'
 
 const BASE_API_URL = 'https://api.idena.org/api'
-
 const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3'
+
+const GOOGLE_CALENDAR_URL =
+  'https://calendar.google.com/calendar/u/0/r/eventedit?'
+const GOOGLE_CALENDAR_DETAILS =
+  '&details=Plan+your+time+in+advance+to+take+part+in+the+validation+ceremony!+Before+the+ceremony,+read+our+explainer+of+how+to+get+validated:+https://medium.com/idena/how-to-pass-a-validation-session-in-idena-1724a0203e81&text=Idena+Validation+Ceremony'
 
 function apiCoingecko() {
   return axios.create({
@@ -62,9 +66,11 @@ export async function useNextValidationTime() {
   const diff = Math.ceil(nextValidationTime.getTime() - nowDate.getTime())
   initializeClock('counter', nextValidationTime)
 
-  return diff < 0
-    ? 'RUNNING NOW'
-    : new Date(nextValidationTime).toLocaleString()
+  const result = {}
+  result.localeTime =
+    diff < 0 ? 'RUNNING NOW' : new Date(nextValidationTime).toLocaleString()
+  result.jsonDateString = jsonEpoch.result.validationTime
+  return result
 }
 
 export async function useLatestGithubReleaseDownload() {
@@ -130,4 +136,9 @@ export async function getEpochIdentitiesSummary(epoch) {
 
 export async function getEpochRewardBounds(epoch) {
   return getResponse(apiClient().get(`epoch/${epoch}/rewardBounds`))
+}
+
+export function getGoogleCalendarLink(jsonDate) {
+  const validationDate = jsonDate.replaceAll('-', '').substring(0, 8)
+  return `${GOOGLE_CALENDAR_URL}dates=${validationDate}T133000Z/${validationDate}T140000Z${GOOGLE_CALENDAR_DETAILS}`
 }
