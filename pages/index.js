@@ -99,7 +99,7 @@ export default function Home() {
 
                     <div className="col-auto">
                       <div className="row justify-content-center">
-                        <Link href="/webclient">
+                        <Link href="https://app.idena.io">
                           <a style={{marginLeft: 15}} className="btn btn-link">
                             <i className="icon icon--web"></i>
                             <span>
@@ -207,25 +207,25 @@ export default function Home() {
               <h3>What is Idena</h3>
 
               <p>
-                Idena is the first proof-of-person blockchain where every node
-                is linked to a cryptoidentity - one single person with equal
-                voting power. Idena is one of the most decentralized
-                blockchains.
+                Idena is the first proof-of-person blockchain based on
+                democratic principles. Every node is linked to a cryptoidentity
+                &ndash; one single person with equal voting power and mining
+                income. It is one of the most decentralized blockchains with
+                thousands of unique miners joining the network.
               </p>
+
               <p>
-                To start mining Idena, you need to{' '}
-                <Link href="/faq#faq-start-1">
-                  <a>prove you're a unique human</a>
-                </Link>
-                . It does not require the disclosure of any personal data (no
+                To start mining Idena, you need to prove you are a unique human.
+                It does not require the disclosure of any personal data (no
                 KYC). You have to appear online when the validation ceremony
                 starts and solve a series of flip-tests (CAPTCHAs).
               </p>
 
               <p>
-                The Idena protocol solves the blockchain oracle problem: Its
-                independent mining nodes can act as oracles across various
-                blockchains. Idena accounts are compatible with Ethereum.
+                Join the{' '}
+                <Link href="/faq#faq-start-1">
+                  <a>democratic crypto network of equal rights &rsaquo;</a>
+                </Link>
               </p>
             </div>
           </div>
