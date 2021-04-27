@@ -2,6 +2,7 @@ import ReactGA from 'react-ga'
 import '../styles/index.scss'
 import {useEffect} from 'react'
 import {useRouter} from 'next/router'
+import {appWithTranslation} from 'next-i18next'
 
 const newReplace = {
   download: 'download',
@@ -41,4 +42,4 @@ function MyApp({Component, pageProps}) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

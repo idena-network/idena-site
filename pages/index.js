@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Layout from '../shared/components/layout'
 import {
   useNextValidationTime,
@@ -12,6 +14,8 @@ export default function Home() {
   const [validatedCount, setValidatedCount] = useState(null)
   const [validationTime, setValidationTime] = useState(null)
   const [validationCalendarLink, setValidationCalendarLink] = useState(null)
+
+  const {t} = useTranslation()
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -29,8 +33,8 @@ export default function Home() {
 
   return (
     <Layout
-      title="IDENA: Proof-of-Person blockchain"
-      description="Join the mining of the first human-centric cryptocurrency"
+      title={t('indexHeaderTitle')}
+      description={t('indexHeaderDescription')}
     >
       <section className="section section_lead" id="lead">
         <div className="section_lead__header text-center">
@@ -47,7 +51,7 @@ export default function Home() {
               />
             </div>
 
-            <h1 className="title">Proof-Of-Person Blockchain</h1>
+            <h1 className="title">{t('indexTitle')}</h1>
             <div className="subtitle">
               Join the mining&nbsp;of the first
               human-centric&nbsp;cryptocurrency
@@ -234,3 +238,9 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale)),
+  },
+})

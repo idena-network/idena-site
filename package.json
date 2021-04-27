@@ -20,7 +20,8 @@
     "react-helmet": "^6.1.0",
     "reactstrap": "^8.4.1",
     "sass-rem": "^2.0.1",
-    "react-ga": "^3.3.0"
+    "react-ga": "^3.3.0",
+    "next-i18next": "^8.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
