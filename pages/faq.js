@@ -1201,20 +1201,22 @@ export default function Faq() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#faq-creation-rule-1">
                     <div className="card-body">
-                      <p>These are the following rules for flip creation:</p>
-                      <p>- a flip should be relevant to both keywords;</p>
-                      <p>
-                        - a flip should not contain any inappropriate content;
-                      </p>
-                      <p>
-                        - a flip should not content any text that is necessary
-                        to understand to solve this flip;
-                      </p>
-                      <p>
-                        - a flip should not contain any numbers or letters or
-                        other labels on top of the images indicating their
-                        order.
-                      </p>
+                      <p>Please follow the rules when creating flips:</p>
+                      <ul>
+                        <li>flips should be relevant to both keywords</li>
+                        <li>
+                          flips should not contain any inappropriate content
+                        </li>
+                        <li>
+                          flips should not content any text that is necessary to
+                          understand to solve this flip
+                        </li>
+                        <li>
+                          flips should not contain any numbers or letters or
+                          other labels on top of the images indicating their
+                          order
+                        </li>
+                      </ul>
                       <p>
                         If you don’t follow these rules when creating a flip, it
                         can be reported at the qualification session. Please
