@@ -159,10 +159,11 @@ export default function Faq() {
                   <Accordion.Collapse eventKey="#faq-network-1">
                     <div className="card-body">
                       <p>
-                        To use Idena for sending coins, you just need to
-                        download the app. To create a cryptoidentity, you should
-                        receive an invitation code from a validated participant
-                        of the network and use the code to apply for validation.
+                        To use Idena only for sending coins, you just need to
+                        download the app. To create a cryptoidentity and start
+                        mining coins, you should receive an invitation code from
+                        a validated participant of the network and use the code
+                        to apply for validation.
                       </p>
                     </div>
                   </Accordion.Collapse>
@@ -823,20 +824,23 @@ export default function Faq() {
                   <Accordion.Collapse eventKey="#faq-validation-10">
                     <div className="card-body">
                       <p>It is possible in the one of following cases:</p>
-
-                      <p>
-                        - if one of your flips is reported by the majority of
-                        qualification committee (please see What if one of my
-                        flips is reported)
-                      </p>
-                      <p>or</p>
-
-                      <p>
-                        - if all of your flips have status No consensus which
-                        means that the network could not reached consensus about
-                        the right answer for these flips.
-                      </p>
-
+                      <ul>
+                        <li>
+                          If one of your flips is reported by the majority of
+                          qualification committee (please see{' '}
+                          <a href="#faq-challenge-11">
+                            What if one of my flips is reported
+                          </a>
+                          )
+                        </li>
+                        <br />
+                        <p>or</p>
+                        <li>
+                          If all of your flips have status No consensus which
+                          means that the network could not reached consensus
+                          about the right answer for these flips.
+                        </li>
+                      </ul>
                       <p>
                         Please notice that flips are the key element of Idena
                         network security. That is why the protocol imposes
@@ -1152,14 +1156,16 @@ export default function Faq() {
                       <p>
                         Flips are the key element of Idena network security. The
                         protocol imposes severe penalties on users that create
-                        flips in breach of the rules. If one of the flips is
-                        reported during the validation, the user that created
-                        this flip will not get any rewards for the validation. A
-                        flip cannot get status Reported by accident. This status
-                        is given if more than 50% of qualification committee
-                        have reported this flip during the long session. Every
-                        member of qualification committee can report only 1/3 of
-                        flips that are shown to them.
+                        flips in breach of the{' '}
+                        <a href="#faq-creation-rule-1">rules</a>. If one of the
+                        flips is reported during the validation, the user that
+                        created this flip will not get any rewards for the
+                        validation. A flip cannot get status Reported by
+                        accident. This status is given if more than 50% of
+                        qualification committee have reported this flip during
+                        the long session. Every member of qualification
+                        committee can report only 1/3 of flips that are shown to
+                        them.
                       </p>
                     </div>
                   </Accordion.Collapse>
