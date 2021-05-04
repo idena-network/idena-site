@@ -33,7 +33,6 @@ function CustomToggle({children, eventKey}) {
 export default function Faq() {
   const [validationTime, setValidationTime] = useState(null)
   const [activePop, setActivePop] = useState()
-  const [activeStart, setActiveStart] = useState()
   const [activeValidation, setActiveValidation] = useState()
   const [activeNetwork, setActiveNetwork] = useState()
   const [activeChallenge, setActiveChallenge] = useState()
@@ -42,15 +41,17 @@ export default function Faq() {
   const [activeAttacks, setActiveAttacks] = useState()
   const {hash} = useHash()
 
-  useEffect(async () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const nextValidation = await useNextValidationTime()
-    setValidationTime(nextValidation.localeTime)
+  useEffect(() => {
+    const fetchData = async () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const nextValidation = await useNextValidationTime()
+      setValidationTime(nextValidation.localeTime)
+    }
+    fetchData()
   }, [])
 
   useEffect(() => {
     setActivePop(hash)
-    setActiveStart(hash)
     setActiveValidation(hash)
     setActiveNetwork(hash)
     setActiveChallenge(hash)
@@ -146,13 +147,72 @@ export default function Faq() {
 
               <h3>Where to start</h3>
               <Accordion
-                activeKey={activeStart}
-                onSelect={e => setActiveStart(e)}
+                activeKey={activeNetwork}
+                onSelect={e => setActiveNetwork(e)}
               >
+                <Card id="faq-network-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-network-1">
+                      How do I join the network?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-network-1">
+                    <div className="card-body">
+                      <p>
+                        To use Idena only for sending coins, you just need to
+                        download the app. To create a cryptoidentity and start
+                        mining coins, you should receive an invitation code from
+                        a validated participant of the network and use the code
+                        to apply for validation.
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-network-2">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-network-2">
+                      How can I get an invitation?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-network-2">
+                    <div className="card-body">
+                      <p>
+                        New invitations can only be sent out by validated
+                        members. Join the official{' '}
+                        <a href="https://t.me/IdenaNetworkPublic">
+                          Idena Telegram chat
+                        </a>{' '}
+                        and follow instructions in the pinned message to get an
+                        invitation from validated members or the Idena team.
+                        Invitations should be granted for free. Do not pay money
+                        for an invitation because the person who sells an
+                        invitation can terminate the invitation and issue a new
+                        one.
+                      </p>
+                      <p>
+                        Please notice that validated members have limited number
+                        of invites (1 or 2 invites). The person who invites you
+                        gets invitation rewards for 3 subsequent validations
+                        passed by you. If you are not going to participate in
+                        the upcoming validation, please notify the person who
+                        invited you so he/she could have a chance to find
+                        another invitee and get an invitation reward.
+                      </p>
+                      <p>
+                        Be aware that person who invites you can terminate your
+                        cryptoidentity until you get Verified status. In this
+                        case he/she can take 1/6 of your stake if you are not
+                        going to participate in the upcoming validation.
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
                 <Card id="faq-start-1">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-start-1">
-                      How do I start mining Idena?
+                      How do I start using Idena?
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#faq-start-1">
@@ -220,6 +280,97 @@ export default function Faq() {
                           Schedule your next validation.
                         </li>
                       </ul>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-network-3">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-network-3">
+                      Why do you need an invitation to join the Idena network?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-network-3">
+                    <div className="card-body">
+                      <p>
+                        The pace of network growth is restricted to minimize the
+                        probability of a Sybil attack.
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-network-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-network-4">
+                      Does the Idena protocol prevent users from buying or
+                      selling invitations?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-network-4">
+                    <div className="card-body">
+                      <p>
+                        The Idena protocol introduces incentives to prevent
+                        participants from buying and selling invitations. The
+                        person who sells an invitation can kill the invited
+                        participant and get the staked/locked coins during the
+                        next several epochs before their status is "Verified".
+                        The seller can double-spend the invitation by selling it
+                        multiple times. Invitations should be granted for free
+                        to trusted people only (relatives, friends, and so on).
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-network-5">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-network-5">
+                      What is the invitations distribution?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-network-5">
+                    <div className="card-body">
+                      <p>
+                        The targeted number of invitations in the network is
+                        calculated as 50% of the network size after each
+                        validation (Idena foundation invitations remaining
+                        extra).
+                      </p>
+                      <p>Invitations are distributed as follows:</p>
+
+                      <ul>
+                        <li>
+                          {' '}
+                          Identities with the Human status get one invitation
+                          starting with the highest Total score.
+                        </li>
+                        <li>
+                          {' '}
+                          If there are non-distributed invitations left,
+                          identities with the Human or Verified status get one
+                          invitation starting from the highest total score.
+                        </li>
+                        <li>
+                          {' '}
+                          After the distribution, the minimal Total score of
+                          those entitled to receive invitations is known.
+                        </li>
+                        <li>
+                          {' '}
+                          All identities with this minimal Total score receive
+                          invitations. If needed, additional invitations are
+                          issued by the Idena protocol to cover the demand.{' '}
+                        </li>
+                      </ul>
+
+                      <p>
+                        The core Idena team is granted to issue a limited number
+                        of invitations per epoch to support the network growth.
+                        The number of available invitations for the foundation
+                        address is limited to{' '}
+                        <code>min(500, max(50, 1/3*NetworkSize))</code>
+                      </p>
                     </div>
                   </Accordion.Collapse>
                 </Card>
@@ -662,154 +813,39 @@ export default function Faq() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-              </Accordion>
 
-              <h3>Network growth</h3>
-              <Accordion
-                activeKey={activeNetwork}
-                onSelect={e => setActiveNetwork(e)}
-              >
-                <Card id="faq-network-1">
+                <Card id="faq-validation-10">
                   <Card.Header>
-                    <CustomToggle eventKey="#faq-network-1">
-                      How do I join the network?
+                    <CustomToggle eventKey="#faq-validation-10">
+                      I have passed the validation but I haven’t received any
+                      rewards. Why?
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#faq-network-1">
+                  <Accordion.Collapse eventKey="#faq-validation-10">
                     <div className="card-body">
-                      <p>
-                        To use Idena for sending messages and funds, you just
-                        need to download the app. To create a cryptoidentity,
-                        you should receive an invitation code from a validated
-                        participant of the network and use the code to apply for
-                        validation.
-                      </p>
-                    </div>
-                  </Accordion.Collapse>
-                </Card>
-
-                <Card id="faq-network-2">
-                  <Card.Header>
-                    <CustomToggle eventKey="#faq-network-2">
-                      How can I get an invitation?
-                    </CustomToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="#faq-network-2">
-                    <div className="card-body">
-                      <p>
-                        New invitations can only be sent out by validated nodes.
-                        The number of new invitations per node is limited and
-                        decreases as the network grows, while the total amount
-                        of generated invitations gets larger.
-                      </p>
-                      <p>
-                        If you are invited by a person you don't know you take a
-                        risk of losing your Idena account: The person who
-                        invites you can terminate your identity during the next
-                        several epochs before your status is "Verified".
-                        Invitations should be granted for free by trusted people
-                        only.
-                      </p>
-                      <p>
-                        The core Idena team is also granted to issue a limited
-                        number of invitations per epoch to support the network
-                        growth. Join the official{' '}
-                        <a href="https://t.me/IdenaNetworkPublic">
-                          Idena Telegram chat
-                        </a>{' '}
-                        and follow instructions in the pinned message to get an
-                        invitation from the team.
-                      </p>
-                    </div>
-                  </Accordion.Collapse>
-                </Card>
-
-                <Card id="faq-network-3">
-                  <Card.Header>
-                    <CustomToggle eventKey="#faq-network-3">
-                      Why do you need an invitation to join the Idena network?
-                    </CustomToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="#faq-network-3">
-                    <div className="card-body">
-                      <p>
-                        The pace of network growth is restricted to minimize the
-                        probability of a Sybil attack.
-                      </p>
-                    </div>
-                  </Accordion.Collapse>
-                </Card>
-
-                <Card id="faq-network-4">
-                  <Card.Header>
-                    <CustomToggle eventKey="#faq-network-4">
-                      Does the Idena protocol prevent users from buying or
-                      selling invitations?
-                    </CustomToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="#faq-network-4">
-                    <div className="card-body">
-                      <p>
-                        The Idena protocol introduces incentives to prevent
-                        participants from buying and selling invitations. The
-                        person who sells an invitation can kill the invited
-                        participant and get the staked/locked coins during the
-                        next several epochs before their status is "Verified".
-                        The seller can double-spend the invitation by selling it
-                        multiple times. Invitations should be granted for free
-                        to trusted people only (relatives, friends, and so on).
-                      </p>
-                    </div>
-                  </Accordion.Collapse>
-                </Card>
-
-                <Card id="faq-network-5">
-                  <Card.Header>
-                    <CustomToggle eventKey="#faq-network-5">
-                      What is the invitations distribution?
-                    </CustomToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="#faq-network-5">
-                    <div className="card-body">
-                      <p>
-                        The targeted number of invitations in the network is
-                        calculated as 50% of the network size after each
-                        validation (Idena foundation invitations remaining
-                        extra).
-                      </p>
-                      <p>Invitations are distributed as follows:</p>
-
+                      <p>It is possible in the one of following cases:</p>
                       <ul>
                         <li>
-                          {' '}
-                          Identities with the Human status get one invitation
-                          starting with the highest Total score.
+                          If one of your flips is reported by the majority of
+                          qualification committee (please see{' '}
+                          <a href="#faq-challenge-11">
+                            What if one of my flips is reported
+                          </a>
+                          )
                         </li>
+                        <br />
+                        <p>or</p>
                         <li>
-                          {' '}
-                          If there are non-distributed invitations left,
-                          identities with the Human or Verified status get one
-                          invitation starting from the highest total score.
-                        </li>
-                        <li>
-                          {' '}
-                          After the distribution, the minimal Total score of
-                          those entitled to receive invitations is known.
-                        </li>
-                        <li>
-                          {' '}
-                          All identities with this minimal Total score receive
-                          invitations. If needed, additional invitations are
-                          issued by the Idena protocol to cover the demand.{' '}
+                          If all of your flips have status No consensus which
+                          means that the network could not reached consensus
+                          about the right answer for these flips.
                         </li>
                       </ul>
-
                       <p>
-                        The core Idena team is granted to issue a limited number
-                        of invitations per epoch to support the network growth.
-                        The number of available invitations for the foundation
-                        address is limited to{' '}
-                        <code>min(500, max(50, 1/3*NetworkSize))</code>
+                        Please notice that flips are the key element of Idena
+                        network security. That is why the protocol imposes
+                        severe penalties on users that create flips in breach of
+                        the rules.
                       </p>
                     </div>
                   </Accordion.Collapse>
@@ -1108,6 +1144,32 @@ export default function Faq() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
+
+                <Card id="faq-challenge-11">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-challenge-11">
+                      What if one of my flips is reported?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-challenge-11">
+                    <div className="card-body">
+                      <p>
+                        Flips are the key element of Idena network security. The
+                        protocol imposes severe penalties on users that create
+                        flips in breach of the{' '}
+                        <a href="#faq-creation-rule-1">rules</a>. If one of the
+                        flips is reported during the validation, the user that
+                        created this flip will not get any rewards for the
+                        validation. A flip cannot get status Reported by
+                        accident. This status is given if more than 50% of
+                        qualification committee have reported this flip during
+                        the long session. Every member of qualification
+                        committee can report only 1/3 of flips that are shown to
+                        them.
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
 
               <h3>Flip creation</h3>
@@ -1132,6 +1194,44 @@ export default function Faq() {
                         create an alternative – a meaningless sequence of the
                         images that you have chosen by shuffling – and submit
                         the pair of sequences to the network.
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-creation-rule-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-creation-rule-1">
+                      What are the rules to create flips?
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-creation-rule-1">
+                    <div className="card-body">
+                      <p>Please follow the rules when creating flips:</p>
+                      <ul>
+                        <li>flips should be relevant to both keywords</li>
+                        <li>
+                          flips should not contain any inappropriate content
+                        </li>
+                        <li>
+                          flips should not content any text that is necessary to
+                          understand to solve this flip
+                        </li>
+                        <li>
+                          flips should not contain any numbers or letters or
+                          other labels on top of the images indicating their
+                          order
+                        </li>
+                      </ul>
+                      <p>
+                        If you don’t follow these rules when creating a flip, it
+                        can be reported at the qualification session. Please
+                        keep in mind that in this case you will not be paid for
+                        validation (see{' '}
+                        <a href="#faq-challenge-11">
+                          What if one of my flips is reported
+                        </a>
+                        ).
                       </p>
                     </div>
                   </Accordion.Collapse>
@@ -1778,7 +1878,13 @@ export default function Faq() {
                       </p>
 
                       <p>
-                        The threat is mitigated by flips encryption. Each flip is available only for those participants who solve it during the validation session. There are around 10-15 persons who see it. The flips that have been used for validation are encrypted: Only 2 out of 4 images of a flip are publicly available to make it impossible to easily collect huge datasets.
+                        The threat is mitigated by flips encryption. Each flip
+                        is available only for those participants who solve it
+                        during the validation session. There are around 10-15
+                        persons who see it. The flips that have been used for
+                        validation are encrypted: Only 2 out of 4 images of a
+                        flip are publicly available to make it impossible to
+                        easily collect huge datasets.
                       </p>
                     </div>
                   </Accordion.Collapse>
