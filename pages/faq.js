@@ -1691,7 +1691,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         1% of all issued coins is accumulated at{' '}
-                        <a href="https://scan.idena.io/address?address=0x0000000000000000000000000000000000000000">
+                        <a href="https://scan.idena.io/address/0x0000000000000000000000000000000000000000">
                           the zero wallet address
                         </a>
                         . We believe that a governance for the zero wallet fund
