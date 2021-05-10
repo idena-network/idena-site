@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import {Tab, Tabs} from 'react-bootstrap'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import {Trans, useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
 import {useLatestGithubReleaseDownload} from '../public/api'
 import {useHash} from '../shared/utils'
@@ -13,23 +15,23 @@ function GetFileDate(dt) {
   return new Date(dt).toISOString().slice(0, 10)
 }
 
-function getAssetData(clientVersion, clientAsset, nodeVersion, nodeAsset) {
+function getAssetData({t}, clientVersion, clientAsset, nodeVersion, nodeAsset) {
   const result = {}
 
   result.client = {
     link: clientAsset.browser_download_url,
-    description: `Size:\xA0${GetFileSize(
-      clientAsset.size
-    )} \nPublished:\xA0${GetFileDate(
-      clientAsset.created_at
-    )} \nVersion:\xA0${clientVersion}`,
+    description: `${t('Size')}:\xA0${GetFileSize(clientAsset.size)} \n${t(
+      'Published'
+    )}:\xA0${GetFileDate(clientAsset.created_at)} \n${t(
+      'Version'
+    )}:\xA0${clientVersion}`,
   }
   result.node = {
-    description: `Size:\xA0${GetFileSize(
-      nodeAsset.size
-    )} Published:\xA0${GetFileDate(
-      nodeAsset.created_at
-    )} Version:\xA0${nodeVersion}`,
+    description: `${t('Size')}:\xA0${GetFileSize(nodeAsset.size)} ${t(
+      'Published'
+    )}:\xA0${GetFileDate(nodeAsset.created_at)} ${t(
+      'Version'
+    )}:\xA0${nodeVersion}`,
     linkRow: (
       <tr>
         <td>
@@ -52,10 +54,12 @@ export default function Download() {
   const [osDarwin, setOsDarwin] = useState(null)
   const [osLinux, setOsLinux] = useState(null)
 
+  const {t} = useTranslation('translation')
+
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const releseData = await useLatestGithubReleaseDownload()
-    const rawAssets = {} // Как-то плохо это выглядит #typization
+    const rawAssets = {}
 
     releseData.clientAssets.forEach(asset => {
       if (asset.name.search(/.exe$/) !== -1) {
@@ -78,6 +82,7 @@ export default function Download() {
 
     setOsWindows(
       getAssetData(
+        {t},
         releseData.clientVersion,
         rawAssets.clientWindows,
         releseData.nodeVersion,
@@ -86,6 +91,7 @@ export default function Download() {
     )
     setOsDarwin(
       getAssetData(
+        {t},
         releseData.clientVersion,
         rawAssets.clientDarwin,
         releseData.nodeVersion,
@@ -94,18 +100,21 @@ export default function Download() {
     )
     setOsLinux(
       getAssetData(
+        {t},
         releseData.clientVersion,
         rawAssets.clientLinux,
         releseData.nodeVersion,
         rawAssets.nodeLinux
       )
     )
-  }, [])
+  }, [t])
 
   return (
     <Layout
-      title="Download Idena Node"
-      description="Download stable and develop builds of Idena Node and Idena Client."
+      title={t('Download Idena Node')}
+      description={t(
+        'Download stable and develop builds of Idena Node and Idena Client.'
+      )}
     >
       <section
         className="section section_content menu_section_content menu_download"
@@ -117,33 +126,38 @@ export default function Download() {
               <div className="section_header">
                 <h3 className="h1">Download</h3>
                 <p className="hint text-center">
-                  You can download the latest 64-bit develop builds of the Idena
-                  app and node for the supported platforms below.
+                  <Trans i18nKey="nodeBuildGuideLink" t={t}>
+                    You can download the latest 64-bit develop builds of the
+                    Idena app and node for the supported platforms below.
+                    <br />
+                    See{' '}
+                    <Link href="/guide">
+                      <a>Installation and troubleshooting guide</a>
+                    </Link>{' '}
+                    if you're experiencing issues with installation and running
+                    the Idena node.
+                  </Trans>
                   <br />
-                  See{' '}
-                  <Link href="/guide">
-                    <a>Installation and troubleshooting guide</a>
-                  </Link>{' '}
-                  if you're experiencing issues with installation and running
-                  the Idena node.
-                  <br />
-                  DISCLAIMER: You run this software at your own risk(*)
+                  {t('DISCLAIMER: You run this software at your own risk(*)')}
                 </p>
               </div>
 
-              <h3>Idena app (client with a built-in node)</h3>
+              <h3>{t('Idena app (client with a built-in node)')}</h3>
 
               <p>
-                Download the Idena app to run it on your desktop. The Idena node
-                will be downloaded automatically with the first start.
+                {t(
+                  'Download the Idena app to run it on your desktop. The Idena node will be downloaded automatically with the first start.'
+                )}
               </p>
               <p>
-                You can also connect to your remote Idena node if you run it
-                separately or on VPS (see the{' '}
-                <Link href="/guide#guide-remote-2">
-                  <a>guide</a>
-                </Link>
-                ).
+                <Trans i18nKey="remoreNodeGuideLink" t={t}>
+                  You can also connect to your remote Idena node if you run it
+                  separately or on VPS (see the{' '}
+                  <Link href="/guide#guide-remote-2">
+                    <a>guide</a>
+                  </Link>
+                  ).
+                </Trans>
               </p>
 
               <div className="block_list">
@@ -157,12 +171,14 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osDarwin ? osDarwin.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_darwin_latest">
-                            Download
+                            {t('Download')}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_darwin_latest_size">
-                        {osDarwin ? osDarwin.client.description : 'Loading...'}
+                        {osDarwin
+                          ? osDarwin.client.description
+                          : t('Loading...')}
                       </div>
                     </div>
                   </div>
@@ -176,14 +192,14 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osWindows ? osWindows.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_windows_latest">
-                            Download
+                            {t('Download')}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_windows_latest_size">
                         {osWindows
                           ? osWindows.client.description
-                          : 'Loading...'}
+                          : t('Loading...')}
                       </div>
                     </div>
                   </div>
@@ -197,12 +213,12 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osLinux ? osLinux.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_linux_latest">
-                            Download
+                            {t('Download')}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_linux_latest_size">
-                        {osLinux ? osLinux.client.description : 'Loading...'}
+                        {osLinux ? osLinux.client.description : t('Loading...')}
                       </div>
                     </div>
                   </div>
@@ -210,7 +226,7 @@ export default function Download() {
               </div>
 
               <p>
-                All builds of the Idena client are available on{' '}
+                {t('All builds of the Idena client are available on')}{' '}
                 <a
                   href="https://github.com/idena-network/idena-desktop/releases"
                   rel="nofollow"
@@ -219,25 +235,29 @@ export default function Download() {
                 </a>
                 .
                 <br />
-                You can also build the Idena app from source (see the{' '}
-                <Link href="/guide#guide-install-5">
-                  <a>guide</a>
-                </Link>
-                ).
+                <Trans i18nKey="buildFromSourceGuideLink" t={t}>
+                  You can also build the Idena app from source (see the{' '}
+                  <Link href="/guide#guide-install-5">
+                    <a>guide</a>
+                  </Link>
+                  ).
+                </Trans>
               </p>
 
               <br />
               <br />
 
-              <h3>Idena node builds</h3>
+              <h3>{t('Idena node builds')}</h3>
 
               <p>
-                Download Idena node if you want to run it separately or on your
-                remote VPS (please check the{' '}
-                <Link href="/guide#guide-remote-1">
-                  <a>guide</a>
-                </Link>
-                ).
+                <Trans i18nKey="remoteNodeGuideLink">
+                  Download Idena node if you want to run it separately or on
+                  your remote VPS (please check the{' '}
+                  <Link href="/guide#guide-remote-1">
+                    <a>guide</a>
+                  </Link>
+                  ).
+                </Trans>
               </p>
 
               <Tabs
@@ -250,10 +270,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_darwin_table">
                         <tr>
-                          <th>Build</th>
-                          <th>Size</th>
-                          <th>Version</th>
-                          <th>Published</th>
+                          <th>{t('Build')}</th>
+                          <th>{t('Size')}</th>
+                          <th>{t('Version')}</th>
+                          <th>{t('Published')}</th>
                         </tr>
                         {osDarwin && osDarwin.node.linkRow}
                       </table>
@@ -265,10 +285,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_windows_table">
                         <tr>
-                          <th>Build</th>
-                          <th>Size</th>
-                          <th>Version</th>
-                          <th>Published</th>
+                          <th>{t('Build')}</th>
+                          <th>{t('Size')}</th>
+                          <th>{t('Version')}</th>
+                          <th>{t('Published')}</th>
                         </tr>
                         {osWindows && osWindows.node.linkRow}
                       </table>
@@ -280,10 +300,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_linux_table">
                         <tr>
-                          <th>Build</th>
-                          <th>Size</th>
-                          <th>Version</th>
-                          <th>Published</th>
+                          <th>{t('Build')}</th>
+                          <th>{t('Size')}</th>
+                          <th>{t('Version')}</th>
+                          <th>{t('Published')}</th>
                         </tr>
                         {osLinux && osLinux.node.linkRow}
                       </table>
@@ -293,37 +313,30 @@ export default function Download() {
               </Tabs>
 
               <p>
-                All builds of the Idena node are available on{' '}
-                <a
-                  href="https://github.com/idena-network/idena-go/releases"
-                  rel="nofollow"
-                >
-                  Github
-                </a>
-                .
-                <br />
-                You can also build the Idena node from{' '}
-                <a href="https://github.com/idena-network" rel="nofollow">
-                  source
-                </a>
-                .
+                <Trans i18nKey="allBuildsGithubLink" t={t}>
+                  All builds of the Idena node are available on{' '}
+                  <a
+                    href="https://github.com/idena-network/idena-go/releases"
+                    rel="nofollow"
+                  >
+                    Github
+                  </a>
+                  .
+                  <br />
+                  You can also build the Idena node from{' '}
+                  <a href="https://github.com/idena-network" rel="nofollow">
+                    source
+                  </a>
+                  .
+                </Trans>
               </p>
               <br />
               <br />
 
               <p className="disclaimer-hint">
-                * DISCLAIMER: Idena makes no representations or warranties of
-                any kind concerning the safety, suitability, lack of viruses or
-                inaccuracies of this software. There are inherent dangers in the
-                use of any software, and you are solely responsible for
-                determining whether Idena is compatible with your equipment and
-                other software installed on your equipment. Furthermore, users
-                commit themselves to a legally appropriate use of Idena
-                according to the respective national as well as international
-                law. You are also solely responsible for the protection of your
-                equipment and backup of your data, and the provider will not be
-                liable for any damages or loss of iDNA you may suffer in
-                connection with using, modifying, or distributing this software.
+                {t(
+                  '* DISCLAIMER: Idena makes no representations or warranties of any kind concerning the safety, suitability, lack of viruses or inaccuracies of this software. There are inherent dangers in the use of any software, and you are solely responsible for determining whether Idena is compatible with your equipment and other software installed on your equipment. Furthermore, users commit themselves to a legally appropriate use of Idena according to the respective national as well as international law. You are also solely responsible for the protection of your equipment and backup of your data, and the provider will not be liable for any damages or loss of iDNA you may suffer in connection with using, modifying, or distributing this software.'
+                )}
               </p>
             </div>
           </div>
@@ -331,4 +344,13 @@ export default function Download() {
       </section>
     </Layout>
   )
+}
+
+export const getStaticProps = async ({locale}) => {
+  console.log(locale)
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  }
 }

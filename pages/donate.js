@@ -1,7 +1,11 @@
 import {Nav, Tab} from 'react-bootstrap'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import {useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
 
 export default function Donate() {
+  const {t} = useTranslation('translation')
+
   return (
     <Layout
       title="Donate to Idena"
@@ -15,12 +19,13 @@ export default function Donate() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1">Donate to Idena</h3>
+                <h3 className="h1">{t('Donate to Idena')}</h3>
               </div>
 
               <p>
-                Support the Idena network with your donation. All the funds will
-                be used for Idena development and promotion.
+                {t(
+                  'Support the Idena network with your donation. All the funds will be used for Idena development and promotion.'
+                )}
               </p>
 
               <div className="donate_container">
@@ -53,4 +58,13 @@ export default function Donate() {
       </section>
     </Layout>
   )
+}
+
+export const getStaticProps = async ({locale}) => {
+  console.log(locale)
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  }
 }
