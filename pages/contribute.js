@@ -78,7 +78,7 @@ export default function Contribute() {
               <h4>{t('Non-official Idena community channels')}</h4>
               <ul>
                 <li>
-                  <a href="https://forum.idena.website/">{t('Idena Forum')}</a>{' '}
+                  <a href="https://discuss.idena.website/">{t('Idena Forum')}</a>{' '}
                   {t('Posts allowed for Idena validated participants')}
                 </li>
                 <li>
