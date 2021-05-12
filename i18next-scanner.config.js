@@ -1,4 +1,4 @@
-const AVAILABLE_LANGS = ['en']
+const AVAILABLE_LANGS = ['en, de']
 
 module.exports = {
   input: ['pages/*.{js,jsx}', '!**/node_modules/**', '!**/dist/**'],
