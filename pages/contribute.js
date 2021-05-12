@@ -36,7 +36,7 @@ export default function Contribute() {
   const [activeThird, setActiveThird] = useState()
   const {hash} = useHash()
 
-  const {t} = useTranslation('contribute')
+  const {t} = useTranslation('common')
 
   useEffect(() => {
     setActiveFirst(hash)
@@ -649,10 +649,9 @@ export default function Contribute() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['contribute'])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

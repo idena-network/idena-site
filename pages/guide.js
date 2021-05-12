@@ -12,6 +12,7 @@ import Layout from '../shared/components/layout'
 
 import {useHash} from '../shared/utils'
 import {useLatestGithubReleaseDownload} from '../public/api'
+import {LinkText} from '../shared/utils/utils'
 
 function CustomToggle({children, eventKey}) {
   const {setHashForce} = useHash()
@@ -39,7 +40,7 @@ export default function Guide() {
   const [activeIssues, setActiveIssues] = useState()
   const {hash} = useHash()
 
-  const {t} = useTranslation('translation')
+  const {t} = useTranslation('common')
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -380,9 +381,9 @@ export default function Guide() {
                         <Trans i18nKey="createConfigFile" t={t}>
                           Create the following config file at the same folder
                           where the node is located (download example:{' '}
-                          <Link href="/examples/guide-remote-1/config.json">
+                          <LinkText href="/examples/guide-remote-1/config.json">
                             <a>config.json</a>
-                          </Link>
+                          </LinkText>
                           ):
                         </Trans>
                       </p>
@@ -660,10 +661,9 @@ export default function Guide() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['translation'])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

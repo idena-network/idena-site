@@ -5,7 +5,7 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {Trans, useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
 import {useLatestGithubReleaseDownload} from '../public/api'
-import {useHash} from '../shared/utils'
+import {LinkText} from '../shared/utils/utils'
 
 function GetFileSize(s) {
   return `${Math.round((s / 1024 / 1024) * 100) / 100}\xA0Mb`
@@ -54,7 +54,7 @@ export default function Download() {
   const [osDarwin, setOsDarwin] = useState(null)
   const [osLinux, setOsLinux] = useState(null)
 
-  const {t} = useTranslation('translation')
+  const {t} = useTranslation('common')
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -131,9 +131,9 @@ export default function Download() {
                     Idena app and node for the supported platforms below.
                     <br />
                     See{' '}
-                    <Link href="/guide">
+                    <LinkText href="/guide">
                       <a>Installation and troubleshooting guide</a>
-                    </Link>{' '}
+                    </LinkText>{' '}
                     if you're experiencing issues with installation and running
                     the Idena node.
                   </Trans>
@@ -153,9 +153,9 @@ export default function Download() {
                 <Trans i18nKey="remoreNodeGuideLink" t={t}>
                   You can also connect to your remote Idena node if you run it
                   separately or on VPS (see the{' '}
-                  <Link href="/guide#guide-remote-2">
+                  <LinkText href="/guide#guide-remote-2">
                     <a>guide</a>
-                  </Link>
+                  </LinkText>
                   ).
                 </Trans>
               </p>
@@ -237,9 +237,9 @@ export default function Download() {
                 <br />
                 <Trans i18nKey="buildFromSourceGuideLink" t={t}>
                   You can also build the Idena app from source (see the{' '}
-                  <Link href="/guide#guide-install-5">
+                  <LinkText href="/guide#guide-install-5">
                     <a>guide</a>
-                  </Link>
+                  </LinkText>
                   ).
                 </Trans>
               </p>
@@ -253,9 +253,9 @@ export default function Download() {
                 <Trans i18nKey="remoteNodeGuideLink">
                   Download Idena node if you want to run it separately or on
                   your remote VPS (please check the{' '}
-                  <Link href="/guide#guide-remote-1">
+                  <LinkText href="/guide#guide-remote-1">
                     <a>guide</a>
-                  </Link>
+                  </LinkText>
                   ).
                 </Trans>
               </p>
@@ -347,10 +347,9 @@ export default function Download() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['translation'])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

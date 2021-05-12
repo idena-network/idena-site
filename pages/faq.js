@@ -13,6 +13,7 @@ import Layout from '../shared/components/layout'
 
 import {useHash} from '../shared/utils'
 import {useNextValidationTime} from '../public/api'
+import {LinkText} from "../shared/utils/utils";
 
 function CustomToggle({children, eventKey}) {
   const {setHashForce} = useHash()
@@ -44,7 +45,7 @@ export default function Faq() {
   const [activeAttacks, setActiveAttacks] = useState()
   const {hash} = useHash()
 
-  const {t} = useTranslation('translation')
+  const {t} = useTranslation('common')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -84,9 +85,9 @@ export default function Faq() {
                 <p className="hint text-center">
                   <Trans i18nKey="faqGuideLink" t={t}>
                     Browse through the most frequently asked questions. See{' '}
-                    <Link href="/guide">
+                    <LinkText href="/guide">
                       <a>Installation and troubleshooting guide</a>
-                    </Link>{' '}
+                    </LinkText>{' '}
                     if you're experiencing issues with installation and running
                     the Idena Node. Can’t find an answer? Email us at{' '}
                     <a href="mailto:info@idena.io">info@idena.io</a>.
@@ -1945,10 +1946,9 @@ export default function Faq() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['translation'])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

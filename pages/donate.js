@@ -4,7 +4,7 @@ import {useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
 
 export default function Donate() {
-  const {t} = useTranslation('translation')
+  const {t} = useTranslation('common')
 
   return (
     <Layout
@@ -61,10 +61,9 @@ export default function Donate() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['translation'])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

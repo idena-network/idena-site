@@ -9,6 +9,7 @@ import {
   useTotalValidatedCount,
   getGoogleCalendarLink,
 } from '../public/api'
+import {LinkText} from '../shared/utils/utils'
 
 export default function Home() {
   const [validatedCount, setValidatedCount] = useState(null)
@@ -260,9 +261,9 @@ export default function Home() {
               <p>
                 <Trans i18nKey="joinTheDemocratisCrypto" t={t} ns="index">
                   Join the{' '}
-                  <Link href="/faq#faq-start-1">
+                  <LinkText href="/faq#faq-start-1">
                     <a>democratic crypto network of equal rights &rsaquo;</a>
-                  </Link>
+                  </LinkText>
                 </Trans>
               </p>
             </div>
@@ -274,10 +275,9 @@ export default function Home() {
 }
 
 export const getStaticProps = async ({locale}) => {
-  console.log(locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['translation'])),
+      ...(await serverSideTranslations(locale, ['index'])),
     },
   }
 }
