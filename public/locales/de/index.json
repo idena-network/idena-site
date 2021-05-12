@@ -1,1 +1,16 @@
-{}
+{
+    "IDENA: Proof-of-Person blockchain": "IDENA: Proof-of-Person-Blockchain",
+    "Proof-Of-Person Blockchain": "Proof-Of-Person-Blockchain",
+    "Everyone has an equal right to mine coins": "Jeder hat das gleiche Recht auf Mine Münzen",
+    "Everyone has an equal right to vote": "Jeder hat das gleiche Wahlrecht",
+    "Everyone has an equal right to communicate privately": "Jeder hat das gleiche Recht privat zu kommunizieren",
+    "Download Idena": "Herunterladen Idena",
+    "Validated nodes": "Validierte Knoten",
+    "Next validation:": "Nächste Validierung:",
+    "Add to calendar": "Zum Kalender hinzufügen",
+    "To start mining Idena, you need to prove you are a unique human. It does not require the disclosure of any personal data (no KYC). You have to appear online when the validation ceremony starts and solve a series of flip-tests (CAPTCHAs).": "Um Idena abzubauen, müssen Sie beweisen, dass Sie ein einzigartiger Mensch sind. Die Offenlegung personenbezogener Daten (kein KYC) ist nicht erforderlich. Sie müssen online erscheinen, wenn die Validierungszeremonie beginnt, und eine Reihe von Flip-Tests (CAPTCHAs) lösen.",
+    "joinIdenaWeb": "Registriert Idena in Web<1>beta</1>",
+    "Join the mining of the first human-centric cryptocurrency": "Nehmen Sie am Mining der ersten menschenzentrierten Kryptowährung teil",
+    "Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity &ndash; one single person with equal voting power and mining income. It is one of the most decentralized blockchains with thousands of unique miners joining the network.": "Idena ist die erste Blockchain zum Nachweis von Personen, die auf demokratischen Prinzipien basiert. Jeder Knoten ist mit einer Kryptoidentität &ndash; eine einzelne Person mit gleicher Stimmberechtigung und gleichem Bergbaueinkommen. Es ist eine der dezentralsten Blockchains mit Tausenden einzigartiger Bergleute, die sich dem Netzwerk anschließen.",
+    "Join the mining&nbsp;of the first human-centric&nbsp;cryptocurrency": "Nehmen Sie am&nbsp;Mining der ersten&nbsp;menschenzentrierten&nbsp;Kryptowährung teil"
+}
