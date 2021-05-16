@@ -4,7 +4,7 @@ import {useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
 
 export default function Donate() {
-  const {t} = useTranslation('common')
+  const {t} = useTranslation('donate')
 
   return (
     <Layout
@@ -19,12 +19,13 @@ export default function Donate() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1">{t('Donate to Idena')}</h3>
+                <h3 className="h1">{t('Donate to Idena', {ns: 'donate'})}</h3>
               </div>
 
               <p>
                 {t(
-                  'Support the Idena network with your donation. All the funds will be used for Idena development and promotion.'
+                  'Support the Idena network with your donation. All the funds will be used for Idena development and promotion.',
+                  {ns: 'donate'}
                 )}
               </p>
 
@@ -60,10 +61,8 @@ export default function Donate() {
   )
 }
 
-export const getStaticProps = async ({locale}) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['donate'])),
+  },
+})

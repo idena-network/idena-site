@@ -15,7 +15,7 @@ module.exports = {
     defaultValue(_lng, _ns, key, options) {
       return options.defaultValue || key
     },
-    ns: ['error', 'index', 'faq'],
+    ns: ['index', 'contribute', 'donate', 'download', 'faq', 'flip-challenge', 'guide'],
     resource: {
       loadPath: 'locales/{{lng}}/{{ns}}.json',
       savePath: 'locales/{{lng}}/{{ns}}.json',
