@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import {useContext, useEffect, useState} from 'react'
 import {
   Accordion,
@@ -40,7 +39,7 @@ export default function Guide() {
   const [activeIssues, setActiveIssues] = useState()
   const {hash} = useHash()
 
-  const {t} = useTranslation('common')
+  const {t} = useTranslation('guide')
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -66,9 +65,10 @@ export default function Guide() {
 
   return (
     <Layout
-      title={t('IDENA Installation and troubleshooting guide')}
+      title={t('IDENA Installation and troubleshooting guide', {ns: 'guide'})}
       description={t(
-        'We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions.'
+        'We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions.',
+        {ns: 'guide'}
       )}
     >
       <section
@@ -80,10 +80,10 @@ export default function Guide() {
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
                 <h3 className="h1">
-                  {t('Installation and troubleshooting guide')}
+                  {t('Installation and troubleshooting guide', {ns: 'guide'})}
                 </h3>
                 <p className="hint text-center">
-                  <Trans i18nKey="idenaSiteHint" t={t}>
+                  <Trans i18nKey="idenaSiteHint" t={t} ns="guide">
                     You can find step by step Idena installation guide at{' '}
                     <a href="https://idena.site/" rel="nofollow">
                       idena.site
@@ -95,7 +95,7 @@ export default function Guide() {
                 </p>
               </div>
 
-              <h3>{t('Idena installation')}</h3>
+              <h3>{t('Idena installation', {ns: 'guide'})}</h3>
               <Accordion
                 activeKey={activeInstall}
                 onSelect={e => setActiveInstall(e)}
@@ -103,7 +103,9 @@ export default function Guide() {
                 <Card id="guide-install-1">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-install-1">
-                      {t('How to install the Idena node on macOS?')}
+                      {t('How to install the Idena node on macOS?', {
+                        ns: 'guide',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-install-1">
@@ -111,11 +113,15 @@ export default function Guide() {
                       <ul>
                         <li>
                           {t(
-                            'Create an Idena folder on your desktop where the node will run'
+                            'Create an Idena folder on your desktop where the node will run',
+                            {ns: 'guide'}
                           )}
                         </li>
                         <li>
-                          {t('Download the latest version of the Idena node:')}{' '}
+                          {t('Download the latest version of the Idena node:', {
+                            ns: 'guide',
+                            nsSeparator: '!',
+                          })}{' '}
                           <a
                             href={release ? release.darwinNodeLink : ''}
                             className="node_darwin_latest"
@@ -128,19 +134,24 @@ export default function Guide() {
                         </li>
                         <li>
                           {t(
-                            'Move the downloaded file into the newly created Idena folder'
+                            'Move the downloaded file into the newly created Idena folder',
+                            {ns: 'guide'}
                           )}
                         </li>
-                        <li>{t('Open the terminal')}</li>
+                        <li>{t('Open the terminal', {ns: 'guide'})}</li>
                         <li>
-                          {t('Switch to the Idena folder by typing cd:')}{' '}
+                          {t('Switch to the Idena folder by typing cd:', {
+                            ns: 'guide',
+                            nsSeparator: '!',
+                          })}{' '}
                         </li>
                         <p>
                           <code>cd ~/Desktop/Idena</code>
                         </p>
                         <li>
                           {t(
-                            'Make the file executable by typing chmod +x command:'
+                            'Make the file executable by typing chmod +x command:',
+                            {ns: 'guide', nsSeparator: '!'}
                           )}
                         </li>
                         <p>
@@ -151,7 +162,9 @@ export default function Guide() {
                             </span>
                           </code>
                         </p>
-                        <li>{t('Run the node:')}</li>
+                        <li>
+                          {t('Run the node:', {ns: 'guide', nsSeparator: '!'})}
+                        </li>
                         <p>
                           <code>
                             ./idena-node-mac-
@@ -168,14 +181,16 @@ export default function Guide() {
                 <Card id="guide-install-2">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-install-2">
-                      {t('How to install the Idena client on macOS?')}
+                      {t('How to install the Idena client on macOS?', {
+                        ns: 'guide',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-install-2">
                     <div className="card-body">
                       <ul>
                         <li>
-                          <Trans i18nKey="dowloadMacLink" t={t}>
+                          <Trans i18nKey="dowloadMacLink" t={t} ns="guide">
                             Download the latest{' '}
                             <a
                               href={release ? release.darwinClientLink : ''}
@@ -186,9 +201,11 @@ export default function Guide() {
                             and install it
                           </Trans>
                         </li>
-                        <li>{t('Open Idena as a normal app')}</li>
                         <li>
-                          <Trans i18nKey="macUserGuuideLink" t={t}>
+                          {t('Open Idena as a normal app', {ns: 'guide'})}
+                        </li>
+                        <li>
+                          <Trans i18nKey="macUserGuuideLink" t={t} ns="guide">
                             If macOS complains about an unidentified developer
                             please follow the{' '}
                             <a href="https://support.apple.com/kb/ph25088?locale=en_US">
@@ -204,7 +221,7 @@ export default function Guide() {
                 <Card id="guide-install-3">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-install-3">
-                      {t('How to backup the private key?')}
+                      {t('How to backup the private key?', {ns: 'guide'})}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-install-3">
@@ -212,11 +229,12 @@ export default function Guide() {
                       <ul>
                         <p>
                           {t(
-                            'The private key is generated automatically once the node is launched for the first time. You can find the private key in the directory where the node is located:'
+                            'The private key is generated automatically once the node is launched for the first time. You can find the private key in the directory where the node is located:',
+                            {ns: 'guide', nsSeparator: '!'}
                           )}
                         </p>
 
-                        <b>MacOS ({t('built-in node')})</b>
+                        <b>MacOS ({t('built-in node', {ns: 'guide'})})</b>
                         <p>
                           <code>
                             cd ~/Library/Application\
@@ -226,28 +244,36 @@ export default function Guide() {
                           </code>
                         </p>
 
-                        <b>Windows ({t('built-in node')})</b>
+                        <b>Windows ({t('built-in node', {ns: 'guide'})})</b>
                         <p>
                           <code>
                             %appdata%/Idena/node/datadir/keystore/nodekey
                           </code>
                         </p>
 
-                        <b>Linux ({t('built-in node')})</b>
+                        <b>Linux ({t('built-in node', {ns: 'guide'})})</b>
                         <p>
                           <code>~/.config/Idena/node/datadir/keystore</code>
                         </p>
 
-                        <b>{t('Remote node')}</b>
+                        <b>{t('Remote node', {ns: 'guide'})}</b>
                         <p>
                           <code>./datadir/keystore/nodekey</code>
                         </p>
                         <p>
-                          <Trans i18nKey="backupNodekeyFileHint" t={t}>
+                          <Trans
+                            i18nKey="backupNodekeyFileHint"
+                            t={t}
+                            ns="guide"
+                          >
                             Make sure to backup the <code>nodekey</code> file
                             securely since the current node version{' '}
                             <span className="node_version">
-                              {release ? release.nodeVersion : 'x.xx.x'}
+                              {{
+                                release: release
+                                  ? release.nodeVersion
+                                  : 'x.xx.x',
+                              }}
                             </span>{' '}
                             does not support private key encryption.
                           </Trans>
@@ -261,7 +287,8 @@ export default function Guide() {
                   <Card.Header>
                     <CustomToggle eventKey="#guide-install-4">
                       {t(
-                        'How to move my identity address to another computer?'
+                        'How to move my identity address to another computer?',
+                        {ns: 'guide'}
                       )}
                     </CustomToggle>
                   </Card.Header>
@@ -269,14 +296,15 @@ export default function Guide() {
                     <div className="card-body">
                       <p>
                         {t(
-                          `In order to run the node with your existing address on another computer, make a copy of your node's private key. You can find the private key file in the directory where the node is located:`
+                          `In order to run the node with your existing address on another computer, make a copy of your node's private key. You can find the private key file in the directory where the node is located:`,
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <p>
                         <code>./datadir/keystore/nodekey</code>
                       </p>
                       <p>
-                        <Trans i18nKey="copyNodekeyFile" t={t}>
+                        <Trans i18nKey="copyNodekeyFile" t={t} ns="guide">
                           Copy the <code>nodekey</code> file to the new location
                           and restart the node
                         </Trans>
@@ -288,7 +316,9 @@ export default function Guide() {
                 <Card id="guide-install-5">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-install-5">
-                      {t('How to build the Idena client from source?')}
+                      {t('How to build the Idena client from source?', {
+                        ns: 'guide',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-install-5">
@@ -296,16 +326,27 @@ export default function Guide() {
                       <ul>
                         <li>Install npm</li>
                         <li>
-                          <Trans i18nKey="idenaClientGuthubLink">
+                          <Trans
+                            i18nKey="idenaClientGuthubLink"
+                            t={t}
+                            ns="guide"
+                          >
                             Get the Idena client source code from the{' '}
                             <a href="https://github.com/idena-network/idena-desktop">
                               github repository
                             </a>
                           </Trans>
                         </li>
-                        <li>{t('Install the dependencies:')}</li>
+                        <li>
+                          {t('Install the dependencies:', {
+                            ns: 'guide',
+                            nsSeparator: '!',
+                          })}
+                        </li>
                         <code>npm install</code>
-                        <li>{t('Run the app:')}</li>
+                        <li>
+                          {t('Run the app:', {ns: 'guide', nsSeparator: '!'})}
+                        </li>
                         <code>npm run start</code>
                       </ul>
                     </div>
@@ -313,7 +354,9 @@ export default function Guide() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Running the Idena node on a remote server')}</h3>
+              <h3>
+                {t('Running the Idena node on a remote server', {ns: 'guide'})}
+              </h3>
               <Accordion
                 activeKey={activeRemote}
                 onSelect={e => setActiveRemote(e)}
@@ -322,7 +365,8 @@ export default function Guide() {
                   <Card.Header>
                     <CustomToggle eventKey="#guide-remote-0">
                       {t(
-                        'What are the minimum requirements for VPS to run the Idena node?'
+                        'What are the minimum requirements for VPS to run the Idena node?',
+                        {ns: 'guide'}
                       )}
                     </CustomToggle>
                   </Card.Header>
@@ -330,7 +374,8 @@ export default function Guide() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'You can use the following minimum VPS configuration for running the Idena node:'
+                          'You can use the following minimum VPS configuration for running the Idena node:',
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <ul>
@@ -347,17 +392,20 @@ export default function Guide() {
                 <Card id="guide-remote-1">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-remote-1">
-                      {t('How to run the Idena node on VPS?')}
+                      {t('How to run the Idena node on VPS?', {ns: 'guide'})}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-remote-1">
                     <div className="card-body">
                       <p>
-                        <b>{t('1. Check your VPS ports settings')}</b>
+                        <b>
+                          {t('1. Check your VPS ports settings', {ns: 'guide'})}
+                        </b>
                       </p>
                       <p>
                         {t(
-                          'Open the following port to allow discovering of your node by other peers:'
+                          'Open the following port to allow discovering of your node by other peers:',
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <ul>
@@ -366,7 +414,7 @@ export default function Guide() {
                         </li>
                       </ul>
                       <p>
-                        <Trans i18nKey="defaultNodePort" t={t}>
+                        <Trans i18nKey="defaultNodePort" t={t} ns="guide">
                           The Idena node RPC is running at <code>9009</code>{' '}
                           port by default. Please make sure that{' '}
                           <code>9009</code> port is closed. If you want to
@@ -375,10 +423,14 @@ export default function Guide() {
                       </p>
 
                       <p>
-                        <b>{t('2. Disable private IP addresses scanning')}</b>
+                        <b>
+                          {t('2. Disable private IP addresses scanning', {
+                            ns: 'guide',
+                          })}
+                        </b>
                       </p>
                       <p>
-                        <Trans i18nKey="createConfigFile" t={t}>
+                        <Trans i18nKey="createConfigFile" t={t} ns="guide">
                           Create the following config file at the same folder
                           where the node is located (download example:{' '}
                           <LinkText href="/examples/guide-remote-1/config.json">
@@ -393,7 +445,7 @@ export default function Guide() {
                       <br />
                       <br />
                       <p>
-                        <Trans i18nKey="runConfigParameter" t={t}>
+                        <Trans i18nKey="runConfigParameter" t={t} ns="guide">
                           Run the node with the <code>--config</code> parameter:
                         </Trans>
                       </p>
@@ -408,10 +460,14 @@ export default function Guide() {
                       <br />
                       <br />
                       <p>
-                        <b>{t('3. More details')}</b>
+                        <b>{t('3. More details', {ns: 'guide'})}</b>
                       </p>
                       <p>
-                        <Trans i18nKey="communityMembetTutorial" t={t}>
+                        <Trans
+                          i18nKey="communityMembetTutorial"
+                          t={t}
+                          ns="guide"
+                        >
                           Read tutorial provided by Idena community member{' '}
                           <code>@realRioda</code> on the{' '}
                           <a href="https://idena.site/faq_tutorials.php">
@@ -427,7 +483,8 @@ export default function Guide() {
                   <Card.Header>
                     <CustomToggle eventKey="#guide-remote-2">
                       {t(
-                        'How to connect to my Idena node running on a remote server from my local computer?'
+                        'How to connect to my Idena node running on a remote server from my local computer?',
+                        {ns: 'guide'}
                       )}
                     </CustomToggle>
                   </Card.Header>
@@ -435,27 +492,41 @@ export default function Guide() {
                     <div className="card-body">
                       <p>
                         <b>
-                          {t('1. Establish tunnel connection (using PuTTy)')}
+                          {t('1. Establish tunnel connection (using PuTTy)', {
+                            ns: 'guide',
+                          })}
                         </b>
                       </p>
 
                       <ul>
-                        <li>{t('Install PuTTY on your local computer')}</li>
+                        <li>
+                          {t('Install PuTTY on your local computer', {
+                            ns: 'guide',
+                          })}
+                        </li>
                         <li>
                           {t(
-                            'Connect to your server with PuTTY using the following tunnel configuration:'
+                            'Connect to your server with PuTTY using the following tunnel configuration:',
+                            {ns: 'guide', nsSeparator: '!'}
                           )}
                         </li>
                         <div className="fig">
                           <img src="/static/images/tunnel.jpg" alt="" />
-                          <p>{t('PuTTY tunnel connection configuration')}</p>
+                          <p>
+                            {t('PuTTY tunnel connection configuration', {
+                              ns: 'guide',
+                            })}
+                          </p>
                         </div>
 
                         <p>
-                          <b>{t('Using ssh')}</b>
+                          <b>{t('Using ssh', {ns: 'guide'})}</b>
                         </p>
                         <p>
-                          {t('You can also setup tunnel connection using ssh:')}
+                          {t(
+                            'You can also setup tunnel connection using ssh:',
+                            {ns: 'guide', nsSeparator: '!'}
+                          )}
                         </p>
                         <p>
                           <code>ssh -L 9999:localhost:9009 YOUR_VPS_IP</code>
@@ -464,14 +535,20 @@ export default function Guide() {
 
                       <p>
                         <b>
-                          {t('2. Specify Idena node connection parameters')}
+                          {t('2. Specify Idena node connection parameters', {
+                            ns: 'guide',
+                          })}
                         </b>
                       </p>
 
                       <ul>
-                        <li>{t('Open Settings page in the Idena app')}</li>
                         <li>
-                          <Trans i18nKey="connectToRemoteNode" t={t}>
+                          {t('Open Settings page in the Idena app', {
+                            ns: 'guide',
+                          })}
+                        </li>
+                        <li>
+                          <Trans i18nKey="connectToRemoteNode" t={t} ns="guide">
                             Activate <code>'Connect to remote node'</code>{' '}
                             toggle
                           </Trans>
@@ -482,12 +559,17 @@ export default function Guide() {
                             src="/static/images/myapikey.png"
                             alt="Idena remote node connection settings"
                           />
-                          <p>{t('Idena remote node connection settings')}</p>
+                          <p>
+                            {t('Idena remote node connection settings', {
+                              ns: 'guide',
+                            })}
+                          </p>
                         </div>
 
                         <li>
                           {t(
-                            'Specify remote node connection address as follows:'
+                            'Specify remote node connection address as follows:',
+                            {ns: 'guide', nsSeparator: '!'}
                           )}
                         </li>
                         <br />
@@ -497,7 +579,8 @@ export default function Guide() {
 
                         <li>
                           {t(
-                            'Specify node api-key parameter for the secure connection.'
+                            'Specify node api-key parameter for the secure connection.',
+                            {ns: 'guide'}
                           )}
                         </li>
                         <p>Api-key can be found in the following flie:</p>
@@ -505,7 +588,11 @@ export default function Guide() {
                           <code>./datadir/api.key</code>
                         </p>
                         <p>
-                          <Trans i18nKey="runUsingCustomApiKey" t={t}>
+                          <Trans
+                            i18nKey="runUsingCustomApiKey"
+                            t={t}
+                            ns="guide"
+                          >
                             You can also run the node with a custom api-key
                             using <code>apikey</code> parameter:
                           </Trans>
@@ -525,7 +612,7 @@ export default function Guide() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Troubleshooting')}</h3>
+              <h3>{t('Troubleshooting', {ns: 'guide'})}</h3>
               <Accordion
                 activeKey={activeIssues}
                 onSelect={e => setActiveIssues(e)}
@@ -534,14 +621,15 @@ export default function Guide() {
                   <Card.Header>
                     <CustomToggle eventKey="#guide-issues-1">
                       {t(
-                        `I'm having a bad Internet connection. How to reduce the upload traffic produced by the node?`
+                        `I'm having a bad Internet connection. How to reduce the upload traffic produced by the node?`,
+                        {ns: 'guide'}
                       )}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-issues-1">
                     <div className="card-body">
                       <p>
-                        <Trans i18nKey="runNodeWithLowpower" t={t}>
+                        <Trans i18nKey="runNodeWithLowpower" t={t} ns="guide">
                           Run the node with the <code>lowpower</code> profile
                           parameter specified:
                         </Trans>
@@ -578,12 +666,14 @@ export default function Guide() {
                 <Card id="guide-issues-3">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-issues-3">
-                      {t('Where can I find the Idena node log file?')}
+                      {t('Where can I find the Idena node log file?', {
+                        ns: 'guide',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-issues-3">
                     <div className="card-body">
-                      <b>{t('MacOS (built-in node)')}</b>
+                      <b>MacOS ({t('built-in node', {ns: 'guide'})})</b>
                       <p>
                         <code>
                           cd&nbsp;~/Library/Application\&nbsp;Support/Idena/node/datadir/logs/
@@ -592,20 +682,21 @@ export default function Guide() {
                         </code>
                       </p>
 
-                      <b>{t('Windows (built-in node)')}</b>
+                      <b>Windows ({t('built-in node', {ns: 'guide'})})</b>
                       <p>
                         <code>%appdata%/Idena/node/datadir/logs/</code>
                       </p>
 
-                      <b>Linux (built-in node)</b>
+                      <b>Linux ({t('built-in node', {ns: 'guide'})})</b>
                       <p>
                         <code>~/.config/Idena/node/datadir/logs/</code>
                       </p>
 
-                      <b>{t('Remote node')}</b>
+                      <b>{t('Remote node', {ns: 'guide'})}</b>
                       <p>
                         {t(
-                          'The log file can be found in the same directory where the Idena node is located:'
+                          'The log file can be found in the same directory where the Idena node is located:',
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <p>
@@ -618,7 +709,9 @@ export default function Guide() {
                 <Card id="guide-issues-4">
                   <Card.Header>
                     <CustomToggle eventKey="#guide-issues-4">
-                      {t('Where can I find the Idena client log file?')}
+                      {t('Where can I find the Idena client log file?', {
+                        ns: 'guide',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#guide-issues-4">
@@ -628,7 +721,8 @@ export default function Guide() {
                       </p>
                       <p>
                         {t(
-                          'In order to find the Idena client log files, open the following directory in the Windows file explorer:'
+                          'In order to find the Idena client log files, open the following directory in the Windows file explorer:',
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <p>
@@ -640,7 +734,8 @@ export default function Guide() {
                       </p>
                       <p>
                         {t(
-                          'In order to find the Idena client log files, type the following in the terminal:'
+                          'In order to find the Idena client log files, type the following in the terminal:',
+                          {ns: 'guide', nsSeparator: '!'}
                         )}
                       </p>
                       <p>
@@ -660,10 +755,8 @@ export default function Guide() {
   )
 }
 
-export const getStaticProps = async ({locale}) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['guide'])),
+  },
+})

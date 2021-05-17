@@ -20,18 +20,18 @@ function getAssetData({t}, clientVersion, clientAsset, nodeVersion, nodeAsset) {
 
   result.client = {
     link: clientAsset.browser_download_url,
-    description: `${t('Size')}:\xA0${GetFileSize(clientAsset.size)} \n${t(
-      'Published'
-    )}:\xA0${GetFileDate(clientAsset.created_at)} \n${t(
-      'Version'
-    )}:\xA0${clientVersion}`,
+    description: `${t('Size', {ns: 'download'})}:\xA0${GetFileSize(
+      clientAsset.size
+    )} \n${t('Published', {ns: 'download'})}:\xA0${GetFileDate(
+      clientAsset.created_at
+    )} \n${t('Version', {ns: 'download'})}:\xA0${clientVersion}`,
   }
   result.node = {
-    description: `${t('Size')}:\xA0${GetFileSize(nodeAsset.size)} ${t(
-      'Published'
-    )}:\xA0${GetFileDate(nodeAsset.created_at)} ${t(
-      'Version'
-    )}:\xA0${nodeVersion}`,
+    description: `${t('Size', {ns: 'download'})}:\xA0${GetFileSize(
+      nodeAsset.size
+    )} ${t('Published', {ns: 'download'})}:\xA0${GetFileDate(
+      nodeAsset.created_at
+    )} ${t('Version', {ns: 'download'})}:\xA0${nodeVersion}`,
     linkRow: (
       <tr>
         <td>
@@ -54,7 +54,7 @@ export default function Download() {
   const [osDarwin, setOsDarwin] = useState(null)
   const [osLinux, setOsLinux] = useState(null)
 
-  const {t} = useTranslation('common')
+  const {t} = useTranslation('download')
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -111,9 +111,10 @@ export default function Download() {
 
   return (
     <Layout
-      title={t('Download Idena Node')}
+      title={t('Download Idena Node', {ns: 'download'})}
       description={t(
-        'Download stable and develop builds of Idena Node and Idena Client.'
+        'Download stable and develop builds of Idena Node and Idena Client.',
+        {ns: 'download'}
       )}
     >
       <section
@@ -126,7 +127,7 @@ export default function Download() {
               <div className="section_header">
                 <h3 className="h1">Download</h3>
                 <p className="hint text-center">
-                  <Trans i18nKey="nodeBuildGuideLink" t={t}>
+                  <Trans i18nKey="nodeBuildGuideLink" t={t} ns="download">
                     You can download the latest 64-bit develop builds of the
                     Idena app and node for the supported platforms below.
                     <br />
@@ -138,19 +139,24 @@ export default function Download() {
                     the Idena node.
                   </Trans>
                   <br />
-                  {t('DISCLAIMER: You run this software at your own risk(*)')}
+                  {t('DISCLAIMER: You run this software at your own risk(*)', {
+                    ns: 'download',
+                  })}
                 </p>
               </div>
 
-              <h3>{t('Idena app (client with a built-in node)')}</h3>
+              <h3>
+                {t('Idena app (client with a built-in node)', {ns: 'download'})}
+              </h3>
 
               <p>
                 {t(
-                  'Download the Idena app to run it on your desktop. The Idena node will be downloaded automatically with the first start.'
+                  'Download the Idena app to run it on your desktop. The Idena node will be downloaded automatically with the first start.',
+                  {ns: 'download'}
                 )}
               </p>
               <p>
-                <Trans i18nKey="remoreNodeGuideLink" t={t}>
+                <Trans i18nKey="remoreNodeGuideLink" t={t} ns="download">
                   You can also connect to your remote Idena node if you run it
                   separately or on VPS (see the{' '}
                   <LinkText href="/guide#guide-remote-2">
@@ -171,14 +177,14 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osDarwin ? osDarwin.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_darwin_latest">
-                            {t('Download')}
+                            {t('Download', {ns: 'download'})}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_darwin_latest_size">
                         {osDarwin
                           ? osDarwin.client.description
-                          : t('Loading...')}
+                          : t('Loading...', {ns: 'download'})}
                       </div>
                     </div>
                   </div>
@@ -192,14 +198,14 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osWindows ? osWindows.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_windows_latest">
-                            {t('Download')}
+                            {t('Download', {ns: 'download'})}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_windows_latest_size">
                         {osWindows
                           ? osWindows.client.description
-                          : t('Loading...')}
+                          : t('Loading...', {ns: 'download'})}
                       </div>
                     </div>
                   </div>
@@ -213,12 +219,14 @@ export default function Download() {
                       <div className="block__action">
                         <Link href={osLinux ? osLinux.client.link : '#'}>
                           <a className="btn btn-secondary btn-sm client_linux_latest">
-                            {t('Download')}
+                            {t('Download', {ns: 'download'})}
                           </a>
                         </Link>
                       </div>
                       <div className="block__hint client_linux_latest_size">
-                        {osLinux ? osLinux.client.description : t('Loading...')}
+                        {osLinux
+                          ? osLinux.client.description
+                          : t('Loading...', {ns: 'download'})}
                       </div>
                     </div>
                   </div>
@@ -226,7 +234,9 @@ export default function Download() {
               </div>
 
               <p>
-                {t('All builds of the Idena client are available on')}{' '}
+                {t('All builds of the Idena client are available on', {
+                  ns: 'download',
+                })}{' '}
                 <a
                   href="https://github.com/idena-network/idena-desktop/releases"
                   rel="nofollow"
@@ -235,7 +245,7 @@ export default function Download() {
                 </a>
                 .
                 <br />
-                <Trans i18nKey="buildFromSourceGuideLink" t={t}>
+                <Trans i18nKey="buildFromSourceGuideLink" t={t} ns="download">
                   You can also build the Idena app from source (see the{' '}
                   <LinkText href="/guide#guide-install-5">
                     <a>guide</a>
@@ -247,10 +257,10 @@ export default function Download() {
               <br />
               <br />
 
-              <h3>{t('Idena node builds')}</h3>
+              <h3>{t('Idena node builds', {ns: 'download'})}</h3>
 
               <p>
-                <Trans i18nKey="remoteNodeGuideLink">
+                <Trans i18nKey="remoteNodeGuideLink" t={t} ns="download">
                   Download Idena node if you want to run it separately or on
                   your remote VPS (please check the{' '}
                   <LinkText href="/guide#guide-remote-1">
@@ -270,10 +280,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_darwin_table">
                         <tr>
-                          <th>{t('Build')}</th>
-                          <th>{t('Size')}</th>
-                          <th>{t('Version')}</th>
-                          <th>{t('Published')}</th>
+                          <th>{t('Build', {ns: 'download'})}</th>
+                          <th>{t('Size', {ns: 'download'})}</th>
+                          <th>{t('Version', {ns: 'download'})}</th>
+                          <th>{t('Published', {ns: 'download'})}</th>
                         </tr>
                         {osDarwin && osDarwin.node.linkRow}
                       </table>
@@ -285,10 +295,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_windows_table">
                         <tr>
-                          <th>{t('Build')}</th>
-                          <th>{t('Size')}</th>
-                          <th>{t('Version')}</th>
-                          <th>{t('Published')}</th>
+                          <th>{t('Build', {ns: 'download'})}</th>
+                          <th>{t('Size', {ns: 'download'})}</th>
+                          <th>{t('Version', {ns: 'download'})}</th>
+                          <th>{t('Published', {ns: 'download'})}</th>
                         </tr>
                         {osWindows && osWindows.node.linkRow}
                       </table>
@@ -300,10 +310,10 @@ export default function Download() {
                     <div className="table-responsive">
                       <table className="table" id="node_linux_table">
                         <tr>
-                          <th>{t('Build')}</th>
-                          <th>{t('Size')}</th>
-                          <th>{t('Version')}</th>
-                          <th>{t('Published')}</th>
+                          <th>{t('Build', {ns: 'download'})}</th>
+                          <th>{t('Size', {ns: 'download'})}</th>
+                          <th>{t('Version', {ns: 'download'})}</th>
+                          <th>{t('Published', {ns: 'download'})}</th>
                         </tr>
                         {osLinux && osLinux.node.linkRow}
                       </table>
@@ -313,7 +323,7 @@ export default function Download() {
               </Tabs>
 
               <p>
-                <Trans i18nKey="allBuildsGithubLink" t={t}>
+                <Trans i18nKey="allBuildsGithubLink" t={t} ns="download">
                   All builds of the Idena node are available on{' '}
                   <a
                     href="https://github.com/idena-network/idena-go/releases"
@@ -335,7 +345,8 @@ export default function Download() {
 
               <p className="disclaimer-hint">
                 {t(
-                  '* DISCLAIMER: Idena makes no representations or warranties of any kind concerning the safety, suitability, lack of viruses or inaccuracies of this software. There are inherent dangers in the use of any software, and you are solely responsible for determining whether Idena is compatible with your equipment and other software installed on your equipment. Furthermore, users commit themselves to a legally appropriate use of Idena according to the respective national as well as international law. You are also solely responsible for the protection of your equipment and backup of your data, and the provider will not be liable for any damages or loss of iDNA you may suffer in connection with using, modifying, or distributing this software.'
+                  '* DISCLAIMER: Idena makes no representations or warranties of any kind concerning the safety, suitability, lack of viruses or inaccuracies of this software. There are inherent dangers in the use of any software, and you are solely responsible for determining whether Idena is compatible with your equipment and other software installed on your equipment. Furthermore, users commit themselves to a legally appropriate use of Idena according to the respective national as well as international law. You are also solely responsible for the protection of your equipment and backup of your data, and the provider will not be liable for any damages or loss of iDNA you may suffer in connection with using, modifying, or distributing this software.',
+                  {ns: 'download'}
                 )}
               </p>
             </div>
@@ -346,10 +357,8 @@ export default function Download() {
   )
 }
 
-export const getStaticProps = async ({locale}) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['download'])),
+  },
+})

@@ -203,7 +203,7 @@ export default function Home() {
                           {validationTime !== null &&
                           validationTime !== 'RUNNING NOW'
                             ? validationTime
-                            : t('RUNNING NOW')}
+                            : t('RUNNING NOW', {ns: 'index'})}
                           {''}
                         </span>
                       </p>
