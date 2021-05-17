@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import {useEffect, useState} from 'react'
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {useTranslation} from 'next-i18next'
 import TooltipText from './tooltip'
 import {usdFmt, precise1, precise2} from '../utils/utils'
@@ -151,7 +150,10 @@ export default function TopHeader() {
               name={t('iDNA price')}
               value={usdFmt(precise2(marketData.price))}
               change={marketData.priceChange}
-              tooltip={t('Idena price | 24h price change https://coingecko.com')}
+              tooltip={t(
+                'Idena price | 24h price change https://coingecko.com',
+                {nsSeparator: '!'}
+              )}
               href="https://www.coingecko.com/en/search_redirect?id=idena&type=coin"
               blank
             />
@@ -165,9 +167,10 @@ export default function TopHeader() {
                 )
               )}
               tooltip={t(
-                `Epoch mining rewards per user (${{
+                'Epoch mining rewards per user ({{epochDuration}} days)',
+                {
                   epochDuration: epochData.epochDuration,
-                }} days)`
+                }
               )}
             />
             <Card
@@ -264,9 +267,3 @@ function Card({
     </TooltipText>
   )
 }
-
-export const getStaticProps = async ({locale}) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-})

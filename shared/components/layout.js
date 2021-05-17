@@ -1,10 +1,9 @@
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {Children, useState} from 'react'
+import {useTranslation} from 'next-i18next'
 import Header from './header'
-import TopHeader from "./topheader";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
+import TopHeader from './topheader'
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
@@ -442,10 +441,3 @@ export default function Layout({children, title = '', description = ''}) {
     </div>
   )
 }
-
-export const getStaticProps = async ({locale}) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-})
-

@@ -7,8 +7,10 @@ export default function FlipChallenge() {
 
   return (
     <Layout
-      title="Idena Flip Challenge: AI-resistant CAPTCHA."
-      description="Flip is AI-hard CAPTCHA created by a human. Common sense is required to identify a meaningful story told in pictures"
+      title={t('Idena Flip Challenge: AI-resistant CAPTCHA.', {
+        ns: 'flip-challenge',
+      })}
+      description={t('Flip is AI-hard CAPTCHA created by a human. Common sense is required to identify a meaningful story told in pictures', {ns: 'flip-challenge'})}
     >
       <section
         className="section section_content menu_section_content menu_flip-challenge"
@@ -285,6 +287,6 @@ export default function FlipChallenge() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['flip-challenge'])),
+    ...(await serverSideTranslations(locale, ['flip-challenge', 'common'])),
   },
 })

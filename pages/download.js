@@ -359,6 +359,6 @@ export default function Download() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['download'])),
+    ...(await serverSideTranslations(locale, ['download', 'common'])),
   },
 })
