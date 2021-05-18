@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import {useEffect, useState} from 'react'
+import {useTranslation} from 'next-i18next'
 import TooltipText from './tooltip'
 import {usdFmt, precise1, precise2} from '../utils/utils'
 
@@ -24,6 +25,8 @@ export default function TopHeader() {
     priceChange: 0,
     marketCap: 0,
   })
+  const {t} = useTranslation('common')
+
   useEffect(() => {
     async function getData() {
       const [{idena}] = await Promise.all([getCoingeckoData()])
@@ -144,26 +147,34 @@ export default function TopHeader() {
         <div className="topheader-div">
           <div className="container">
             <Card
-              name="iDNA price"
+              name={t('iDNA price')}
               value={usdFmt(precise2(marketData.price))}
               change={marketData.priceChange}
-              tooltip="Idena price | 24h price change https://coingecko.com"
+              tooltip={t(
+                'Idena price | 24h price change https://coingecko.com',
+                {nsSeparator: '!'}
+              )}
               href="https://www.coingecko.com/en/search_redirect?id=idena&type=coin"
               blank
             />
 
             <Card
-              name="Epoch mining"
+              name={t('Epoch mining')}
               value={usdFmt(
                 precise1(
                   (marketData.price * 25920 * epochData.epochDuration) /
                     nodesData.onlineCount
                 )
               )}
-              tooltip={`Epoch mining rewards per user (${epochData.epochDuration} days)`}
+              tooltip={t(
+                'Epoch mining rewards per user ({{epochDuration}} days)',
+                {
+                  epochDuration: epochData.epochDuration,
+                }
+              )}
             />
             <Card
-              name="Validation rewards"
+              name={t('Validation rewards')}
               value={
                 rewardsData.minRewardPaid &&
                 rewardsData.maxRewardPaid &&
@@ -175,28 +186,28 @@ export default function TopHeader() {
                     )}`
                   : '-'
               }
-              tooltip="Last validation rewards paid per user"
+              tooltip={t('Last validation rewards paid per user')}
               href={`https://scan.idena.io/epoch/${epoch + 1}/rewards`}
               blank
             />
             <Card
-              name="Rewards paid"
+              name={t('Rewards paid')}
               value={usdFmt(
                 Math.round(epochData.totalRewardsPaid * marketData.price)
               )}
-              tooltip="Total rewards paid for last validation"
+              tooltip={t('Total rewards paid for last validation')}
               href={`https://scan.idena.io/epoch/${epoch + 1}/rewards`}
               blank
             />
             <Card
-              name="Market cap"
+              name={t('Market cap')}
               value={usdFmt(Math.round(marketData.marketCap))}
               tooltip="https://coingecko.com"
               href="https://www.coingecko.com/en/search_redirect?id=idena&type=coin"
               blank
             />
             <Card
-              name="Network size"
+              name={t('Network size')}
               value={nodesData.nodesCount}
               change={
                 nodesData.nodesCount && epochData.prevNodesCount
@@ -205,7 +216,7 @@ export default function TopHeader() {
                     100
                   : undefined
               }
-              tooltip="Total nodes | Change since last validation"
+              tooltip={t('Total nodes | Change since last validation')}
             />
           </div>
         </div>

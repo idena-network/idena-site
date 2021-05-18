@@ -2190,6 +2190,6 @@ export default function Faq() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['faq'])),
+    ...(await serverSideTranslations(locale, ['faq', 'common'])),
   },
 })

@@ -757,6 +757,6 @@ export default function Guide() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['guide'])),
+    ...(await serverSideTranslations(locale, ['guide', 'common'])),
   },
 })

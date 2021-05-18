@@ -277,7 +277,7 @@ export default function Home() {
 export const getStaticProps = async ({locale}) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['index'])),
+      ...(await serverSideTranslations(locale, ['index', 'common'])),
     },
   }
 }

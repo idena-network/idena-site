@@ -766,6 +766,6 @@ export default function Contribute() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['contribute'])),
+    ...(await serverSideTranslations(locale, ['contribute', 'common'])),
   },
 })

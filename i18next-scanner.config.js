@@ -1,7 +1,12 @@
 const AVAILABLE_LANGS = ['en, de']
 
 module.exports = {
-  input: ['pages/*.{js,jsx}', '!**/node_modules/**', '!**/dist/**'],
+  input: [
+    'pages/*.{js,jsx}',
+    'shared/components/*.{js,jsx}',
+    '!**/node_modules/**',
+    '!**/dist/**',
+  ],
   output: './',
   options: {
     debug: true,

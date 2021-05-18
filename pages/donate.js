@@ -8,8 +8,8 @@ export default function Donate() {
 
   return (
     <Layout
-      title="Donate to Idena"
-      description="Support Idena by making a donation"
+      title={t('Donate to Idena', {ns: 'donate'})}
+      description={t('Support Idena by making a donation', {ns: 'donate'})}
     >
       <section
         className="section section_content menu_section_content menu_donate"
@@ -63,6 +63,6 @@ export default function Donate() {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['donate'])),
+    ...(await serverSideTranslations(locale, ['donate', 'common'])),
   },
 })
