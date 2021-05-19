@@ -67,15 +67,11 @@ export default function Home() {
             <h1 className="title">
               {t('Proof-Of-Person Blockchain', {ns: 'index'})}
             </h1>
-            <div
-              className="subtitle"
-              dangerouslySetInnerHTML={{
-                __html: t(
-                  'Join the mining&nbsp;of the first human-centric&nbsp;cryptocurrency',
-                  {ns: 'index'}
-                ),
-              }}
-            />
+            <div className="subtitle">
+              {t('Join the mining of the first human-centric cryptocurrency', {
+                ns: 'index',
+              })}
+            </div>
 
             <div
               id="text_carousel"
@@ -178,19 +174,19 @@ export default function Home() {
                       >
                         <div className="col-auto">
                           <span className="days">-</span>
-                          <span className="_smalltext">{t('d', {ns: 'index'})}</span>
+                          <span className="_smalltext">d</span>
                         </div>
                         <div className="col-auto">
                           <span className="hours">-</span>
-                          <span className="_smalltext">{t('h', {ns: 'index'})}</span>
+                          <span className="_smalltext">h</span>
                         </div>
                         <div className="col-auto">
                           <span className="minutes">-</span>
-                          <span className="_smalltext">{t('m', {ns: 'index'})}</span>
+                          <span className="_smalltext">m</span>
                         </div>
                         <div className="col-auto">
                           <span className="seconds">-</span>
-                          <span className="_smalltext">{t('s', {ns: 'index'})}</span>
+                          <span className="_smalltext">s</span>
                         </div>
                       </div>
 
@@ -242,14 +238,12 @@ export default function Home() {
             <div className="col-md-7 col-lg-6">
               <h3>What is Idena</h3>
 
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: t(
-                    'Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity &ndash; one single person with equal voting power and mining income. It is one of the most decentralized blockchains with thousands of unique miners joining the network.',
-                    {ns: 'index'}
-                  ),
-                }}
-              />
+              <p>
+                {t(
+                  'Idena is the first proof-of-person blockchain based on democratic principles',
+                  {ns: 'index'}
+                )}
+              </p>
 
               <p>
                 {t(
@@ -274,10 +268,8 @@ export default function Home() {
   )
 }
 
-export const getStaticProps = async ({locale}) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['index', 'common'])),
-    },
-  }
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['index', 'common'])),
+  },
+})
