@@ -31,7 +31,7 @@ export default function Header({title, description}) {
         <meta name="twitter:creator" content="@IdenaNetwork" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://idena.io/images/Content_Image.png" />
+        <meta name="twitter:image" content="https://idena.io/static/images/cover.png" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139651161-1"></script>
       </Head>
