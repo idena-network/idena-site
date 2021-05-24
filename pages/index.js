@@ -6,12 +6,32 @@ import {
   useNextValidationTime,
   useTotalValidatedCount,
   getGoogleCalendarLink,
+  getCoingeckoData,
 } from '../public/api'
+import {precise1, precise2, usdFmt} from '../shared/utils/utils'
+import {Card} from '../shared/components/topheader'
 
 export default function Home() {
   const [validatedCount, setValidatedCount] = useState(null)
   const [validationTime, setValidationTime] = useState(null)
   const [validationCalendarLink, setValidationCalendarLink] = useState(null)
+  const [marketData, setMarketData] = useState({
+    price: 0,
+    priceChange: 0,
+    marketCap: 0,
+  })
+
+  useEffect(() => {
+    async function getData() {
+      const [{idena}] = await Promise.all([getCoingeckoData()])
+      setMarketData({
+        price: idena && idena.usd,
+        priceChange: idena && idena.usd_24h_change,
+        marketCap: idena && idena.usd_market_cap,
+      })
+    }
+    getData()
+  }, [])
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -227,6 +247,159 @@ export default function Home() {
                   <a>democratic crypto network of equal rights &rsaquo;</a>
                 </Link>
               </p>
+
+              <div className="index-price-info">
+                <div className="row">
+                  <div className="col-sm-6 lead_info__nodes">
+                    <div className="item">
+                      <div className="content">
+                        <div className="value">
+                          <span style={{paddingRight: '4px'}}>
+                            {usdFmt(precise2(marketData.price))}
+                          </span>
+                          {marketData.priceChange && (
+                            <span className="change">
+                              {' '}
+                              <span
+                                style={{
+                                  color: `${
+                                    marketData.priceChange > 0
+                                      ? '#27d980'
+                                      : '#ff6666'
+                                  }`,
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    verticalAlign: 'middle',
+                                    fontSize: '8px',
+                                  }}
+                                >
+                                  {`${marketData.priceChange > 0 ? '▲' : '▼'}`}
+                                </span>
+                                {`${Math.abs(
+                                  Math.round(marketData.priceChange * 10) / 10
+                                )}%`}
+                              </span>
+                            </span>
+                          )}
+                        </div>
+                        <div className="description">
+                          <span>
+                            Price powered by{' '}
+                            <a
+                              href="https://www.coingecko.com/en/search_redirect?id=idena&type=coin"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Coingecko
+                            </a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-6 lead_info__counter">
+                    <div className="_value row justify-content-center">
+                      <div className="item">
+                        <div className="content">
+                          <div className="value">
+                            <span>
+                              {usdFmt(Math.round(marketData.marketCap))}
+                            </span>
+                          </div>
+                          <div className="description">
+                            <span>Market cap</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="linkbar">
+                <div className="linkbar-div">
+                  <div className="container">
+                    <div className="item">
+                      <div className="content">
+                        <img
+                          src="/static/images/logo_qtrade.svg"
+                          alt="qTrade"
+                          width="40"
+                        />
+                        <div className="linkbar-value">
+                          <span>qTrade</span>
+                        </div>
+                        <a
+                          href="https://qtrade.io/market/IDNA_BTC"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {' '}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="item">
+                      <div className="content">
+                        <img
+                          src="/static/images/logo_pancakeswap.svg"
+                          alt="Pancakeswap"
+                          width="40"
+                        />
+                        <div className="linkbar-value">
+                          <span>Pancakeswap</span>
+                        </div>
+                        <a
+                          href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {' '}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="item">
+                      <div className="content">
+                        <img
+                          src="/static/images/logo_hotbit.svg"
+                          alt="Hotbit"
+                          width="40"
+                        />
+                        <div className="linkbar-value">
+                          <span>Hotbit</span>
+                        </div>
+                        <a
+                          href="https://www.hotbit.io/exchange?symbol=IDNA_BTC"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {' '}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="item">
+                      <div className="content">
+                        <img
+                          src="/static/images/logo_vitex.svg"
+                          alt="ViteX"
+                          width="40"
+                        />
+                        <div className="linkbar-value">
+                          <span>ViteX</span>
+                        </div>
+                        <a
+                          href="https://x.vite.net/trade?symbol=IDNA-000_BTC-000"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {' '}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
