@@ -254,9 +254,12 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <div className="value">
-                          <span>{usdFmt(precise2(marketData.price))}</span>
+                          <span style={{paddingRight: '4px'}}>
+                            {usdFmt(precise2(marketData.price))}
+                          </span>
                           {marketData.priceChange && (
-                            <span className="change">{' '}
+                            <span className="change">
+                              {' '}
                               <span
                                 style={{
                                   color: `${
@@ -340,15 +343,15 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_hotbit.svg"
-                          alt="Hotbit"
+                          src="/static/images/logo_pancakeswap.svg"
+                          alt="Pancakeswap"
                           width="40"
                         />
                         <div className="linkbar-value">
-                          <span>Hotbit</span>
+                          <span>Pancakeswap</span>
                         </div>
                         <a
-                          href="https://www.hotbit.io/exchange?symbol=IDNA_BTC"
+                          href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -359,15 +362,15 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_pancakeswap.svg"
-                          alt="Pancakeswap"
+                          src="/static/images/logo_hotbit.svg"
+                          alt="Hotbit"
                           width="40"
                         />
                         <div className="linkbar-value">
-                          <span>Pancakeswap</span>
+                          <span>Hotbit</span>
                         </div>
                         <a
-                          href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
+                          href="https://www.hotbit.io/exchange?symbol=IDNA_BTC"
                           target="_blank"
                           rel="noreferrer"
                         >

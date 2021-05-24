@@ -460,9 +460,11 @@
       position: relative;
       cursor: default;
       text-align: center;
+      filter: grayscale(100%);
 
       &:hover,
       &:active {
+        filter: none;
         color: #578fff;
         background-color: #f5f6f7;
       }
