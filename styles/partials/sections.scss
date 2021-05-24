@@ -258,7 +258,7 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    &__nodes {
+    &__counter {
       border-left: 0;
       border-top: 1px solid #E8EAED;
     }
@@ -498,7 +498,6 @@
   background-color: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
-  height: 8.75rem;
   margin-top: 4rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -520,5 +519,10 @@
     line-height: 1rem;
     padding-top: 1rem;
     color: #96999e;
+  }
+
+  @media (#{$max_phones}) {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
