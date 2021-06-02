@@ -1,9 +1,13 @@
+/* eslint-disable react/jsx-no-target-blank */
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {Children, useState} from 'react'
 import {useTranslation} from 'next-i18next'
 import Header from './header'
 import TopHeader from './topheader'
+import {Combobox} from './combobox'
+import {AVAILABLE_LANGS, isoLangs} from '../utils/i18n'
+import {useHash} from "../utils";
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
@@ -25,6 +29,7 @@ export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
   const [menuOpened, setMenuOpened] = useState(false)
   const {t} = useTranslation('common')
+  const {i18n} = useTranslation()
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
@@ -433,6 +438,22 @@ export default function Layout({children, title = '', description = ''}) {
               <div className="copy"></div>
               <div className="donate">
                 <a href="/donate">{t('Support Idena by making a donation')}</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="row justify-content-center text-center">
+            <div className="col-md-7 col-lg-6">
+              <div className="language">
+                <Combobox
+                  title={isoLangs[i18n.language].nativeName}
+                  itemsList={AVAILABLE_LANGS.map(lng => ({
+                    key: lng,
+                    title: isoLangs[lng].nativeName,
+                    href: `/${lng}${router.pathname}`,
+                  }))}
+                  itemsTitle="Choose a language"
+                />
               </div>
             </div>
           </div>
