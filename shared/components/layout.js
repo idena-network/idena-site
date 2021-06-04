@@ -11,7 +11,6 @@ import {useHash} from "../utils";
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
-
   const child = Children.only(children)
 
   if (router.pathname === child.props.href) {
@@ -30,6 +29,7 @@ export default function Layout({children, title = '', description = ''}) {
   const [menuOpened, setMenuOpened] = useState(false)
   const {t} = useTranslation('common')
   const {i18n} = useTranslation()
+  const currentLanguage = isoLangs[i18n.language]
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
@@ -446,7 +446,7 @@ export default function Layout({children, title = '', description = ''}) {
             <div className="col-md-7 col-lg-6">
               <div className="language">
                 <Combobox
-                  title={isoLangs[i18n.language].nativeName}
+                  title={currentLanguage.nativeName}
                   itemsList={AVAILABLE_LANGS.map(lng => ({
                     key: lng,
                     title: isoLangs[lng].nativeName,
