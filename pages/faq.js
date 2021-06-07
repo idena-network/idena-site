@@ -8,19 +8,10 @@ import {useNextValidationTime} from '../public/api'
 import {CustomToggle} from '../shared/components/toggle'
 
 export default function Faq() {
-  const [validationTime, setValidationTime] = useState(null)
+  const {localeTime: validationTime} = useNextValidationTime()
 
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
-
-  useEffect(() => {
-    const fetchData = async () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const nextValidation = await useNextValidationTime()
-      setValidationTime(nextValidation.localeTime)
-    }
-    fetchData()
-  }, [])
 
   useEffect(() => {
     setActiveHash(hash)
