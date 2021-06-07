@@ -1,41 +1,17 @@
 import Link from 'next/link'
-import {useContext, useEffect, useState} from 'react'
-import {
-  Accordion,
-  AccordionContext,
-  Card,
-  useAccordionToggle,
-} from 'react-bootstrap'
+import {useEffect, useState} from 'react'
+import {Accordion, Card} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
 
-import {useHash} from '../shared/utils'
+import {useHash} from '../shared/useHash'
 import {useLatestGithubReleaseDownload} from '../public/api'
-
-function CustomToggle({children, eventKey}) {
-  const {setHashForce} = useHash()
-  const currentEventKey = useContext(AccordionContext)
-  const onAccordionClick = useAccordionToggle(eventKey, () => {
-    setHashForce(eventKey)
-  })
-  const isCurrentEventKey = currentEventKey === eventKey
-
-  return (
-    <a
-      style={{cursor: 'pointer'}}
-      aria-expanded={isCurrentEventKey}
-      onClick={onAccordionClick}
-    >
-      {children}
-    </a>
-  )
-}
+import {CustomToggle} from '../shared/components/toggle'
 
 export default function Guide() {
   const [release, setRelease] = useState(null)
-  const [activeInstall, setActiveInstall] = useState()
-  const [activeRemote, setActiveRemote] = useState()
-  const [activeIssues, setActiveIssues] = useState()
-  const {hash} = useHash()
+
+  const [activeHash, setActiveHash] = useState()
+  const [hash] = useHash()
 
   useEffect(async () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -54,9 +30,7 @@ export default function Guide() {
   }, [])
 
   useEffect(() => {
-    setActiveInstall(hash)
-    setActiveRemote(hash)
-    setActiveIssues(hash)
+    setActiveHash(hash)
   }, [hash])
 
   return (
@@ -86,8 +60,8 @@ export default function Guide() {
 
               <h3>Idena installation</h3>
               <Accordion
-                activeKey={activeInstall}
-                onSelect={e => setActiveInstall(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-install-1">
                   <Card.Header>
@@ -104,7 +78,10 @@ export default function Guide() {
                         </li>
                         <li>
                           Download the latest version of the Idena node:{' '}
-                          <a href={release ? release.darwinNodeLink : ''} className="node_darwin_latest">
+                          <a
+                            href={release ? release.darwinNodeLink : ''}
+                            className="node_darwin_latest"
+                          >
                             idena-node-mac-
                             <span className="node_version">
                               {release ? release.nodeVersion : 'x.xx.x'}
@@ -156,7 +133,12 @@ export default function Guide() {
                       <ul>
                         <li>
                           Download the latest{' '}
-                          <a href={release ? release.darwinClientLink : ''} className="client_darwin_latest">Idena Client</a>{' '}
+                          <a
+                            href={release ? release.darwinClientLink : ''}
+                            className="client_darwin_latest"
+                          >
+                            Idena Client
+                          </a>{' '}
                           and install it
                         </li>
                         <li>Open Idena as a normal app</li>
@@ -280,8 +262,8 @@ export default function Guide() {
 
               <h3>Running the Idena node on a remote server</h3>
               <Accordion
-                activeKey={activeRemote}
-                onSelect={e => setActiveRemote(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-remote-0">
                   <Card.Header>
@@ -465,8 +447,8 @@ export default function Guide() {
 
               <h3>Troubleshooting</h3>
               <Accordion
-                activeKey={activeIssues}
-                onSelect={e => setActiveIssues(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-issues-1">
                   <Card.Header>

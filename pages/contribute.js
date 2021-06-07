@@ -1,43 +1,16 @@
-import {useContext, useEffect, useState} from 'react'
-import {
-  Accordion,
-  AccordionContext,
-  Card,
-  useAccordionToggle,
-} from 'react-bootstrap'
+import {useEffect, useState} from 'react'
+import {Accordion, Card} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
+import {CustomToggle} from '../shared/components/toggle'
 
-import {useHash} from '../shared/utils'
-
-function CustomToggle({children, eventKey}) {
-  const {setHashForce} = useHash()
-  const currentEventKey = useContext(AccordionContext)
-  const onAccordionClick = useAccordionToggle(eventKey, () => {
-    setHashForce(eventKey)
-  })
-  const isCurrentEventKey = currentEventKey === eventKey
-
-  return (
-    <a
-      style={{cursor: 'pointer'}}
-      aria-expanded={isCurrentEventKey}
-      onClick={onAccordionClick}
-    >
-      {children}
-    </a>
-  )
-}
+import {useHash} from '../shared/useHash'
 
 export default function Contribute() {
-  const [activeFirst, setActiveFirst] = useState()
-  const [activeSecond, setActiveSecond] = useState()
-  const [activeThird, setActiveThird] = useState()
-  const {hash} = useHash()
+  const [activeHash, setActiveHash] = useState()
+  const [hash] = useHash()
 
   useEffect(() => {
-    setActiveFirst(hash)
-    setActiveSecond(hash)
-    setActiveThird(hash)
+    setActiveHash(hash)
   }, [hash])
 
   return (
@@ -122,8 +95,8 @@ export default function Contribute() {
               </ul>
 
               <Accordion
-                activeKey={activeFirst}
-                onSelect={e => setActiveFirst(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="contribute-1-1">
                   <Card.Header>
@@ -174,8 +147,8 @@ export default function Contribute() {
               </p>
 
               <Accordion
-                activeKey={activeSecond}
-                onSelect={e => setActiveSecond(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="contribute-2-1">
                   <Card.Header>
@@ -575,8 +548,8 @@ export default function Contribute() {
               </p>
 
               <Accordion
-                activeKey={activeThird}
-                onSelect={e => setActiveThird(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="contribute-3-1">
                   <Card.Header>
