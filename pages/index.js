@@ -8,13 +8,9 @@ import {
   getGoogleCalendarLink,
   getCoingeckoData,
 } from '../public/api'
-import {precise1, precise2, usdFmt} from '../shared/utils/utils'
-import {Card} from '../shared/components/topheader'
+import {precise2, usdFmt} from '../shared/utils/utils'
 
 export default function Home() {
-  const [validatedCount, setValidatedCount] = useState(null)
-  const [validationTime, setValidationTime] = useState(null)
-  const [validationCalendarLink, setValidationCalendarLink] = useState(null)
   const [marketData, setMarketData] = useState({
     price: 0,
     priceChange: 0,
@@ -33,19 +29,10 @@ export default function Home() {
     getData()
   }, [])
 
-  useEffect(async () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const count = await useTotalValidatedCount()
-    setValidatedCount(count)
-  }, [])
-  useEffect(async () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const nextValidation = await useNextValidationTime()
-    setValidationTime(nextValidation.localeTime)
-    setValidationCalendarLink(
-      getGoogleCalendarLink(nextValidation.jsonDateString)
-    )
-  }, [])
+  const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
+  const validatedCount = useTotalValidatedCount()
+
+  const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
   return (
     <Layout

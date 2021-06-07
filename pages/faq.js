@@ -1,63 +1,20 @@
 import Link from 'next/link'
-import {useContext, useEffect, useState} from 'react'
-import {
-  Accordion,
-  AccordionContext,
-  Card,
-  useAccordionToggle,
-} from 'react-bootstrap'
+import {useEffect, useState} from 'react'
+import {Accordion, Card} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
 
-import {useHash} from '../shared/utils'
+import {useHash} from '../shared/useHash'
 import {useNextValidationTime} from '../public/api'
-
-function CustomToggle({children, eventKey}) {
-  const {setHashForce} = useHash()
-  const currentEventKey = useContext(AccordionContext)
-  const onAccordionClick = useAccordionToggle(eventKey, () => {
-    setHashForce(eventKey)
-  })
-  const isCurrentEventKey = currentEventKey === eventKey
-
-  return (
-    <a
-      style={{cursor: 'pointer'}}
-      aria-expanded={isCurrentEventKey}
-      onClick={onAccordionClick}
-    >
-      {children}
-    </a>
-  )
-}
+import {CustomToggle} from '../shared/components/toggle'
 
 export default function Faq() {
-  const [validationTime, setValidationTime] = useState(null)
-  const [activePop, setActivePop] = useState()
-  const [activeValidation, setActiveValidation] = useState()
-  const [activeNetwork, setActiveNetwork] = useState()
-  const [activeChallenge, setActiveChallenge] = useState()
-  const [activeCreation, setActiveCreation] = useState()
-  const [activeEconomy, setActiveEconomy] = useState()
-  const [activeAttacks, setActiveAttacks] = useState()
-  const {hash} = useHash()
+  const {localeTime: validationTime} = useNextValidationTime()
+
+  const [activeHash, setActiveHash] = useState()
+  const [hash] = useHash()
 
   useEffect(() => {
-    const fetchData = async () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const nextValidation = await useNextValidationTime()
-      setValidationTime(nextValidation.localeTime)
-    }
-    fetchData()
-  }, [])
-
-  useEffect(() => {
-    setActivePop(hash)
-    setActiveValidation(hash)
-    setActiveNetwork(hash)
-    setActiveChallenge(hash)
-    setActiveCreation(hash)
-    setActiveEconomy(hash)
-    setActiveAttacks(hash)
+    setActiveHash(hash)
   }, [hash])
 
   return (
@@ -87,7 +44,10 @@ export default function Faq() {
               </div>
 
               <h3>Proof of person</h3>
-              <Accordion activeKey={activePop} onSelect={e => setActivePop(e)}>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
                 <Card id="faq-pop-1">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-pop-1">
@@ -147,8 +107,8 @@ export default function Faq() {
 
               <h3>Where to start</h3>
               <Accordion
-                activeKey={activeNetwork}
-                onSelect={e => setActiveNetwork(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-network-1">
                   <Card.Header>
@@ -435,8 +395,8 @@ export default function Faq() {
 
               <h3>Validation session</h3>
               <Accordion
-                activeKey={activeValidation}
-                onSelect={e => setActiveValidation(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-validation-1">
                   <Card.Header>
@@ -854,8 +814,8 @@ export default function Faq() {
 
               <h3>Flip challenge</h3>
               <Accordion
-                activeKey={activeChallenge}
-                onSelect={e => setActiveChallenge(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-challenge-1">
                   <Card.Header>
@@ -1174,8 +1134,8 @@ export default function Faq() {
 
               <h3>Flip creation</h3>
               <Accordion
-                activeKey={activeCreation}
-                onSelect={e => setActiveCreation(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-creation-1">
                   <Card.Header>
@@ -1367,8 +1327,8 @@ export default function Faq() {
 
               <h3>Economy</h3>
               <Accordion
-                activeKey={activeEconomy}
-                onSelect={e => setActiveEconomy(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-economy-2">
                   <Card.Header>
@@ -1711,8 +1671,8 @@ export default function Faq() {
 
               <h3>Attacks</h3>
               <Accordion
-                activeKey={activeAttacks}
-                onSelect={e => setActiveAttacks(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="faq-attacks-1">
                   <Card.Header>

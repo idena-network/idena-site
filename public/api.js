@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {useEffect, useState} from 'react'
 import {initializeClock} from './countdown'
 
 const BASE_API_URL = 'https://api.idena.org/api'
@@ -29,48 +30,76 @@ async function getResponse(request) {
   return result
 }
 
-export async function useTotalValidatedCount() {
-  const response = await fetch('https://api.idena.io/api/epoch/last')
-  const jsonEpoch = await response.json()
-  const epochNumber = jsonEpoch.result.epoch
+export function useTotalValidatedCount() {
+  const [count, setCount] = useState(null)
 
-  const identityData = await fetch(
-    `https://api.idena.io/api/Epoch/${epochNumber}/IdentityStatesInterimSummary`
-  )
-  const jsonIdentity = await identityData.json()
-  if (jsonIdentity.result == null) {
-    return
-  }
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch('https://api.idena.io/api/epoch/last')
+        const jsonEpoch = await response.json()
+        const epochNumber = jsonEpoch.result.epoch
 
-  let valid = 0
-  for (let i = 0; i < jsonIdentity.result.length; i++) {
-    const state = jsonIdentity.result[i].value
-    valid +=
-      state === 'Newbie' || state === 'Verified' || state === 'Human'
-        ? jsonIdentity.result[i].count
-        : 0
-  }
+        const identityData = await fetch(
+          `https://api.idena.io/api/Epoch/${epochNumber}/IdentityStatesInterimSummary`
+        )
+        const jsonIdentity = await identityData.json()
+        if (jsonIdentity.result == null) {
+          return
+        }
 
-  return valid
+        setCount(
+          jsonIdentity.result.reduce(
+            (accum, {value: state, count: cnt}) =>
+              accum +
+              (['Newbie', 'Verified', 'Human'].includes(state) ? cnt : 0),
+            0
+          )
+        )
+      } catch (e) {
+        console.error('cannot fetch API')
+      }
+    }
+
+    getData()
+  }, [])
+
+  return count
 }
 
-export async function useNextValidationTime() {
-  const response = await fetch('https://api.idena.io/api/epoch/last')
-  const jsonEpoch = await response.json()
-  if (jsonEpoch.result == null) {
-    return
-  }
+export function useNextValidationTime() {
+  const [state, setState] = useState({localeTime: null, jsonDateString: null})
 
-  const nextValidationTime = new Date(jsonEpoch.result.validationTime)
-  const nowDate = new Date()
-  const diff = Math.ceil(nextValidationTime.getTime() - nowDate.getTime())
-  initializeClock('counter', nextValidationTime)
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch('https://api.idena.io/api/epoch/last')
+        const jsonEpoch = await response.json()
+        if (jsonEpoch.result == null) {
+          return
+        }
 
-  const result = {}
-  result.localeTime =
-    diff < 0 ? 'RUNNING NOW' : new Date(nextValidationTime).toLocaleString()
-  result.jsonDateString = jsonEpoch.result.validationTime
-  return result
+        const nextValidationTime = new Date(jsonEpoch.result.validationTime)
+        const nowDate = new Date()
+        const diff = Math.ceil(nextValidationTime.getTime() - nowDate.getTime())
+        initializeClock('counter', nextValidationTime)
+
+        setState({
+          localeTime:
+            diff < 0
+              ? 'RUNNING NOW'
+              : new Date(nextValidationTime).toLocaleString(),
+          jsonDateString: jsonEpoch.result.validationTime,
+        })
+      } catch (e) {
+        console.error('cannot fetch API')
+      }
+    }
+
+    getData()
+  }, [])
+
+  return state
 }
 
 export async function useLatestGithubReleaseDownload() {
@@ -139,6 +168,7 @@ export async function getEpochRewardBounds(epoch) {
 }
 
 export function getGoogleCalendarLink(jsonDate) {
+  if (!jsonDate) return null
   const validationDate = jsonDate.replaceAll('-', '').substring(0, 8)
   return `${GOOGLE_CALENDAR_URL}dates=${validationDate}T133000Z/${validationDate}T140000Z${GOOGLE_CALENDAR_DETAILS}`
 }
