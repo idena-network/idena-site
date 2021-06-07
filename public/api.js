@@ -62,7 +62,7 @@ export function useTotalValidatedCount() {
     }
 
     getData()
-  }, [count])
+  }, [])
 
   return count
 }
