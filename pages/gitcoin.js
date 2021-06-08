@@ -418,11 +418,7 @@ export default function Gitcoin() {
                           for better experience.
                         </li>
                         <li>
-                          Sign in to your Idena Web app 15 minutes before the
-                          next validation session starts. Check you have Wait
-                          for validation status. Make sure you have reliable and
-                          fast internet connection. We advise to use a laptop
-                          for better experience. Wait for the validation session
+                          Wait for the validation session to begin. Follow the
                           to begin. Follow the instructions, solve flips and
                           enjoy the process!
                         </li>
