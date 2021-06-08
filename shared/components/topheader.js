@@ -14,7 +14,7 @@ import {
   getEpoch,
   getEpochIdentitiesSummary,
   getEpochRewardBounds,
-} from '../../public/api'
+} from '../api'
 
 const COUNT_IDNA_PER_MONTH = 6 * 3 * 60 * 24 * 30
 

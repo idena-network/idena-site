@@ -1,17 +1,80 @@
-import Link from 'next/link'
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import {Accordion, Card, Tab, Tabs} from 'react-bootstrap'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import validator from 'validator'
+import axios from 'axios'
 import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
-import {getGoogleCalendarLink, useNextValidationTime} from '../public/api'
+import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
+
+const EmailSavingState = {
+  None: 0,
+  Success: 1,
+  InvalidEmail: 2,
+  Error: 3,
+}
+
+// eslint-disable-next-line react/prop-types
+function Alert({state}) {
+  return (
+    <div
+      style={{
+        display: state === EmailSavingState.None ? 'none' : 'block',
+        backgroundColor:
+          state === EmailSavingState.Success ? '#27d980' : '#ff6666',
+        padding: '18px 24px',
+        color: 'white',
+        fontSize: '1rem',
+        marginTop: '1rem',
+        borderRadius: '8px',
+      }}
+    >
+      {state === EmailSavingState.Success && (
+        <span>Email submitted. We will contact you soon.</span>
+      )}
+      {state === EmailSavingState.InvalidEmail && (
+        <span>Wrong email address. Please try another one.</span>
+      )}
+      {state === EmailSavingState.Error && (
+        <span>An error occured. Pleasetry again later.</span>
+      )}
+    </div>
+  )
+}
 
 export default function Gitcoin() {
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
 
+  const [email, setEmail] = useState()
+  const [emailActionState, setEmailActionState] = useState(
+    EmailSavingState.None
+  )
+
+  useEffect(() => {
+    setActiveHash(hash)
+  }, [hash])
+
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
+
+  const getCode = async () => {
+    try {
+      if (!validator.isEmail(email)) {
+        setEmailActionState(EmailSavingState.InvalidEmail)
+        return
+      }
+
+      await axios.post('/api/saveEmail', {email})
+
+      setEmailActionState(EmailSavingState.Success)
+    } catch (e) {
+      setEmailActionState(EmailSavingState.Error)
+      console.error('cannot send request')
+    }
+  }
 
   return (
     <Layout
@@ -170,13 +233,32 @@ export default function Gitcoin() {
                           >
                             <div className="row">
                               <div className="col-sm-7 section_tight__info">
-                                <input type="text" placeholder="Your email" />
+                                <input
+                                  type="text"
+                                  placeholder="Your email"
+                                  value={email}
+                                  onChange={e => setEmail(e.target.value)}
+                                />
                               </div>
-                              <div className="col-sm-5 section_tight__info separated">
-                                <a>Get an invitation code</a>
+                              <div
+                                className="col-sm-4 section_tight__info separated"
+                                style={{marginLeft: '2rem'}}
+                              >
+                                <a
+                                  style={{
+                                    color: '#578fff',
+                                    lineHeight: '2rem',
+                                    fontWeight: 500,
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={() => getCode()}
+                                >
+                                  Get an invitation code
+                                </a>
                               </div>
                             </div>
                           </div>
+                          <Alert state={emailActionState} />
                         </Tab>
                       </Tabs>
                     </div>

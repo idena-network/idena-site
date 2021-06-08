@@ -1,5 +1,6 @@
 .hidden {
-  display: none !important; }
+  display: none !important;
+}
 
 .shrinked {
   height: 0 !important;
@@ -33,7 +34,7 @@
   }
 
   .carousel-item {
-    background-color: #F5F6F7;
+    background-color: #f5f6f7;
   }
 
   &__header {
@@ -152,7 +153,7 @@
   .btn {
     padding: rem(6px 14px);
     height: rem(36px);
-    border-left: 1px solid #E8EAED;
+    border-left: 1px solid #e8eaed;
   }
 
   .form-group {
@@ -176,7 +177,7 @@
     }
 
     .btn {
-      border-top: 1px solid #E8EAED;
+      border-top: 1px solid #e8eaed;
       border-left: 0;
       padding: 14px 20px;
       height: auto;
@@ -192,16 +193,15 @@
   margin-top: rem(55px);
   margin-bottom: rem(55px);
   text-align: center;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
 
   &__nodes {
-
     &:hover,
     &:active,
     &:focus {
       ._hint,
       ._value {
-        color: #578FFF !important;
+        color: #578fff !important;
       }
     }
   }
@@ -214,10 +214,8 @@
   }
 
   &__counter {
-    border-left: 1px solid #E8EAED;
+    border-left: 1px solid #e8eaed;
   }
-
-
 
   ._calendar {
     font-weight: 500;
@@ -226,7 +224,7 @@
     cursor: pointer;
     text-decoration: none;
     margin: 0.786rem 0.625rem 0 0;
-    color: #578FFF;
+    color: #578fff;
   }
 
   ._hint {
@@ -261,7 +259,7 @@
 
     &__counter {
       border-left: 0;
-      border-top: 1px solid #E8EAED;
+      border-top: 1px solid #e8eaed;
     }
   }
 }
@@ -278,7 +276,7 @@
   border-radius: 6px;
   padding: 12px 20px 12px 24px;
   text-align: center;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   font-size: rem(16px);
 
   &__info {
@@ -287,7 +285,7 @@
   }
 
   .separated {
-    border-left: 1px solid #E8EAED;
+    border-left: 1px solid #e8eaed;
   }
 
   input {
@@ -295,6 +293,11 @@
     width: 100%;
     padding-left: 1rem;
     border: 0;
+
+    &::placeholder {
+      color: #96999e;
+      font-size: rem(16px);
+    }
   }
 }
 
@@ -367,7 +370,7 @@
     margin-bottom: 0;
 
     a {
-      color: #578FFF;
+      color: #578fff;
       font-weight: 500;
     }
 
@@ -383,8 +386,8 @@
 
     td {
       padding: rem(15px) rem(14px) rem(15px) 0;
-      border-top: 1px solid #E8EAED;
-      border-bottom: 1px solid #E8EAED;
+      border-top: 1px solid #e8eaed;
+      border-bottom: 1px solid #e8eaed;
       vertical-align: middle;
 
       &:first-child {
@@ -417,7 +420,7 @@
     float: left;
     margin-right: rem(25px);
   }
-  
+
   &__content {
     overflow: hidden;
   }
@@ -528,7 +531,7 @@
   margin-top: 4rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
 
   .value {
     color: #53565c;

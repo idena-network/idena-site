@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
-import {initializeClock} from './countdown'
+import {initializeClock} from '../public/countdown'
 
 const BASE_API_URL = 'https://api.idena.org/api'
 const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3'

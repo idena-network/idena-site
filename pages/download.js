@@ -2,7 +2,7 @@ import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import {Tab, Tabs} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
-import {useLatestGithubReleaseDownload} from '../public/api'
+import {useLatestGithubReleaseDownload} from '../shared/api'
 
 function GetFileSize(s) {
   return `${Math.round((s / 1024 / 1024) * 100) / 100}\xA0Mb`
