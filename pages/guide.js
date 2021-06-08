@@ -4,7 +4,7 @@ import {Accordion, Card} from 'react-bootstrap'
 import Layout from '../shared/components/layout'
 
 import {useHash} from '../shared/useHash'
-import {useLatestGithubReleaseDownload} from '../public/api'
+import {useLatestGithubReleaseDownload} from '../shared/api'
 import {CustomToggle} from '../shared/components/toggle'
 
 export default function Guide() {

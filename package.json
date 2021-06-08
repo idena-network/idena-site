@@ -11,16 +11,18 @@
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.3",
+    "faunadb": "^4.3.0",
     "next": "10.0.5",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^5.0.0",
     "react": "17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-dom": "17.0.1",
+    "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
     "reactstrap": "^8.4.1",
     "sass-rem": "^2.0.1",
-    "react-ga": "^3.3.0"
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
