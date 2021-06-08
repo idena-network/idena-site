@@ -153,7 +153,7 @@ export default function Gitcoin() {
                             <a
                               rel="noreferrer"
                               target="_blank"
-                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010"
+                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010%0D%23IdenaTrustBonus"
                               className="btn btn-secondary btn-sm client_darwin_latest"
                             >
                               <img
@@ -290,7 +290,7 @@ export default function Gitcoin() {
                           activate it with your invitation code:
                         </li>
                         <img
-                          src="/static/images/wc_act_inv_02.gif"
+                          src="/static/images/web-client-activate.gif"
                           alt="instructions"
                           width="600"
                           style={{borderRadius: '0.5rem', margin: '1.5rem 0'}}
@@ -462,15 +462,28 @@ export default function Gitcoin() {
                         </li>
                         <li>Find Idena and click Connect</li>
                         <img
-                          src="/static/images/gitcoin-banner.png"
+                          src="/static/images/gitcoin-banner-1.png"
                           width="600"
                           alt="Verify with Idena"
                           style={{
-                            padding: '0.875rem 0',
-                            marginLeft: '-1.25rem',
+                            // padding: '0.875rem 0',
+                            borderRadius: '0.5rem',
+                            margin: '1.5rem 0 1.5rem -1.25rem',
                           }}
                         />
                         <li>Authorise Gitcoin to access your Idena account</li>
+                        <li>
+                          Congratulations! Your Idena account is now verified
+                        </li>
+                        <img
+                          src="/static/images/account_is_verified.png"
+                          alt="Your account is verified"
+                          width="600"
+                          style={{
+                            borderRadius: '0.5rem',
+                            margin: '1.5rem 0 1.5rem -1.25rem',
+                          }}
+                        />
                       </ul>
                     </div>
                   </Accordion.Collapse>
