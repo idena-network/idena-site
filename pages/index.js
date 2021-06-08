@@ -7,7 +7,7 @@ import {
   useTotalValidatedCount,
   getGoogleCalendarLink,
   getCoingeckoData,
-} from '../public/api'
+} from '../shared/api'
 import {precise2, usdFmt} from '../shared/utils/utils'
 
 export default function Home() {
