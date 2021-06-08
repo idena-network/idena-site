@@ -294,6 +294,7 @@
     color: #96999e;
     width: 100%;
     padding-left: 1rem;
+    border: 0;
   }
 }
 
@@ -568,4 +569,10 @@ button {
   background-color: #578fff;
   font-size: 14px;
   color: #ffffff;
+}
+
+.video-responsive {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
 }

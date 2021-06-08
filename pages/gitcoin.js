@@ -91,12 +91,12 @@ export default function Gitcoin() {
                             </div>
                             <a className="btn btn-secondary btn-sm client_darwin_latest">
                               <img
-                                src="/static/images/logo_twitter.png"
+                                src="/static/images/twitter-icn.svg"
                                 alt="tweet"
-                                width="16"
+                                width="24"
                                 style={{
                                   color: '#d8d8d8',
-                                  marginRight: '0.5rem',
+                                  margin: '-0.375rem 0.5rem -0.25rem 0',
                                 }}
                               />
                               Tweet
@@ -105,12 +105,19 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_github" title="Github">
                           <p style={{marginTop: '2rem'}}>
-                            Leave a request in the Idena Invitation Codes
+                            Leave a request in the{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://github.com/idena-network/idena-docs/discussions/17"
+                            >
+                              Idena Invitation Codes
+                            </a>{' '}
                             discussion on Github from your account and we will
                             send an invitation to your email. Please make sure
                             your email address is set to public in your{' '}
                             <a
-                              href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-on-github"
+                              href="https://github.com/settings/emails"
                               rel="noreferrer"
                               target="_blank"
                             >
@@ -121,15 +128,29 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_discord" title="Discord">
                           <p style={{marginTop: '2rem'}}>
-                            Join Idena Community Discord and request an invite
-                            from the community in <i>#invite-requests</i>{' '}
-                            channel.
+                            Join{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://discord.gg/8BusRj7"
+                            >
+                              Idena Community Discord
+                            </a>{' '}
+                            and request an invite from the community in{' '}
+                            <i>#invite-requests</i> channel.
                           </p>
                         </Tab>
                         <Tab eventKey="#social_telegram" title="Telegram">
                           <p style={{marginTop: '2rem'}}>
-                            Join the official Idena Telegram group and request
-                            an invite from the community.
+                            Join the official{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaNetworkPublic"
+                            >
+                              Idena Telegram group
+                            </a>{' '}
+                            and request an invite from the community.
                           </p>
                         </Tab>
                         <Tab eventKey="#social_email" title="Email">
@@ -146,7 +167,7 @@ export default function Gitcoin() {
                           >
                             <div className="row">
                               <div className="col-sm-7 section_tight__info">
-                                <input type="text" placeholder="Your email"/>
+                                <input type="text" placeholder="Your email" />
                               </div>
                               <div className="col-sm-5 section_tight__info separated">
                                 <a>Get an invitation code</a>
@@ -168,12 +189,27 @@ export default function Gitcoin() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-2">
                     <div className="card-body">
-                      <ul>
-                        <li>Open Idena Web App</li>
+                      <ul style={{paddingLeft: '16px'}}>
+                        <li>
+                          Open{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://app.idena.io/"
+                          >
+                            Idena Web App
+                          </a>
+                        </li>
                         <li>
                           Follow the instructions to create your account and
                           activate it with your invitation code:
                         </li>
+                        <img
+                          src="/static/images/wc_act_inv_02.gif"
+                          alt="instructions"
+                          width="600"
+                          style={{borderRadius: '0.5rem', margin: '1.5rem 0'}}
+                        />
                       </ul>
                     </div>
                   </Accordion.Collapse>
@@ -183,25 +219,27 @@ export default function Gitcoin() {
                     <CustomToggle eventKey="#gitcoin-1-3">
                       <span>Step 3</span>
                       <br />
-                      Create and activate your Idena account
+                      Prepare yourself for the validation session
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-3">
                     <div className="card-body">
-                      <ul>
+                      <ul style={{paddingLeft: '16px'}}>
                         <li>
-                          <Link href="/faq#faq-validation-1">
-                            <a>
-                              Learn what a validation is and how to pass it
-                              successfully
-                            </a>
-                          </Link>
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://medium.com/idena/how-to-pass-a-validation-session-in-idena-1724a0203e81"
+                          >
+                            Learn what a validation is and how to pass it
+                            successfully
+                          </a>
                         </li>
                         <li>
                           <a
-                            href="https://flips.idena.io/?pass=idena.io"
                             rel="noreferrer"
                             target="_blank"
+                            href="https://flips.idena.io/?pass=idena.io"
                           >
                             Train to solve flips
                           </a>
@@ -286,7 +324,7 @@ export default function Gitcoin() {
                           </div>
                         </div>
                       </div>
-                      <ul>
+                      <ul style={{paddingLeft: '16px'}}>
                         <li>
                           Sign in to your Idena Web app 15 minutes before the
                           next validation session starts. Check you have Wait
@@ -294,6 +332,29 @@ export default function Gitcoin() {
                           fast internet connection. We advise to use a laptop
                           for better experience.
                         </li>
+                        <li>
+                          Sign in to your Idena Web app 15 minutes before the
+                          next validation session starts. Check you have Wait
+                          for validation status. Make sure you have reliable and
+                          fast internet connection. We advise to use a laptop
+                          for better experience. Wait for the validation session
+                          to begin. Follow the instructions, solve flips and
+                          enjoy the process!
+                        </li>
+                        <div className="video-responsive">
+                          <iframe
+                            width="600"
+                            height="388"
+                            style={{
+                              marginBottom: '-10px',
+                            }}
+                            src="https://www.youtube.com/embed/Bb5tE9Y7M4c"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title="53rd Idena Validation Ceremony 8/29/2020 (LIVE)"
+                          />
+                        </div>
                         <li>
                           Wait for the validation session to begin. Follow the
                           instructions, solve flips and enjoy the process!
@@ -312,11 +373,20 @@ export default function Gitcoin() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-5">
                     <div className="card-body">
-                      <ul>
+                      <ul style={{paddingLeft: '16px'}}>
                         <li>
                           Go to the Trust Bonus tab of your Gitcoin profile
                         </li>
                         <li>Find Idena and click Connect</li>
+                        <img
+                          src="/static/images/gitcoin-banner.png"
+                          width="600"
+                          alt="Verify with Idena"
+                          style={{
+                            padding: '0.875rem 0',
+                            marginLeft: '-1.25rem',
+                          }}
+                        />
                         <li>Authorise Gitcoin to access your Idena account</li>
                       </ul>
                     </div>
