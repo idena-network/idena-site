@@ -13,10 +13,12 @@ export default function Gitcoin() {
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
+  // const win = window.open('https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010', "_blank")
+
   return (
     <Layout
-      title="Donate to Idena"
-      description="Support Idena by making a donation"
+      title="Verify your Gitcoin"
+      description="How to verify your Gitcoin account with Idena"
     >
       <section
         className="section section_content menu_section_content menu_gitcoin"
@@ -79,6 +81,26 @@ export default function Gitcoin() {
                             Send a tweet with a hashtag #IdenaTrustBonus from
                             your account and we will send you an invitation code
                             in pm. The tweet should say:
+                            <div className="dedicated_info">
+                              I want to join @IdenaNetwork to get +25% Grants
+                              Match Bonus in @gitcoin Grants Round 10
+                              <br />
+                              <span style={{color: '#578fff'}}>
+                                #IdenaTrustBonus
+                              </span>
+                            </div>
+                            <a className="btn btn-secondary btn-sm client_darwin_latest">
+                              <img
+                                src="/static/images/logo_twitter.png"
+                                alt="tweet"
+                                width="16"
+                                style={{
+                                  color: '#d8d8d8',
+                                  marginRight: '0.5rem',
+                                }}
+                              />
+                              Tweet
+                            </a>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_github" title="Github">
@@ -87,7 +109,14 @@ export default function Gitcoin() {
                             discussion on Github from your account and we will
                             send an invitation to your email. Please make sure
                             your email address is set to public in your{' '}
-                            <a>Github Account Email settings</a>.
+                            <a
+                              href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-on-github"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              Github Account Email settings
+                            </a>
+                            .
                           </p>
                         </Tab>
                         <Tab eventKey="#social_discord" title="Discord">
@@ -111,6 +140,19 @@ export default function Gitcoin() {
                             Please consider other channels and use this option
                             only as the last resort.
                           </p>
+                          <div
+                            className="section_tight"
+                            style={{margin: '0px'}}
+                          >
+                            <div className="row">
+                              <div className="col-sm-7 section_tight__info">
+                                <input type="text" placeholder="Your email"/>
+                              </div>
+                              <div className="col-sm-5 section_tight__info separated">
+                                <a>Get an invitation code</a>
+                              </div>
+                            </div>
+                          </div>
                         </Tab>
                       </Tabs>
                     </div>
@@ -185,7 +227,7 @@ export default function Gitcoin() {
                         <div className="row">
                           <div className="col-sm-8 lead_info__item">
                             <div
-                              id="TimerPanel"
+                              id="counter"
                               className="_value row justify-content-center"
                             >
                               <div className="col-auto">
