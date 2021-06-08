@@ -13,8 +13,6 @@ export default function Gitcoin() {
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
-  // const win = window.open('https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010', "_blank")
-
   return (
     <Layout
       title="Verify your Gitcoin"
@@ -89,7 +87,12 @@ export default function Gitcoin() {
                                 #IdenaTrustBonus
                               </span>
                             </div>
-                            <a className="btn btn-secondary btn-sm client_darwin_latest">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010"
+                              className="btn btn-secondary btn-sm client_darwin_latest"
+                            >
                               <img
                                 src="/static/images/twitter-icn.svg"
                                 alt="tweet"
