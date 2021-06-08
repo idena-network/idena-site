@@ -437,8 +437,10 @@ export default function Gitcoin() {
                           />
                         </div>
                         <li>
-                          Wait for the validation session to begin. Follow the
-                          instructions, solve flips and enjoy the process!
+                          Wait for the validation results. If you have
+                          successfully solved the flips, you will get a{' '}
+                          <i>Newbie</i> status. Congratulations, you are now a
+                          validated cryptoidentity!
                         </li>
                       </ul>
                     </div>
