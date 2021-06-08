@@ -71,6 +71,12 @@
       padding-left: rem(50px);
       margin-left: rem(-50px);
 
+      span {
+        font-size: 1.188rem;
+        font-weight: normal;
+        color: #96999e;
+      };
+
       &:after,
       &:before {
         content: '';
