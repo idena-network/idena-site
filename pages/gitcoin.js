@@ -141,7 +141,7 @@ export default function Gitcoin() {
                           <p style={{marginTop: '2rem'}}>
                             Send a tweet with a hashtag #IdenaTrustBonus from
                             your account and we will send you an invitation code
-                            in pm. The tweet should say:
+                            via Direct Message. The tweet should say:
                             <div className="dedicated_info">
                               I want to join @IdenaNetwork to get +25% Grants
                               Match Bonus in @gitcoin Grants Round 10
@@ -274,7 +274,7 @@ export default function Gitcoin() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-2">
                     <div className="card-body">
-                      <ul style={{paddingLeft: '16px'}}>
+                      <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           Open{' '}
                           <a
@@ -293,7 +293,10 @@ export default function Gitcoin() {
                           src="/static/images/web-client-activate.gif"
                           alt="instructions"
                           width="600"
-                          style={{borderRadius: '0.5rem', margin: '1.5rem 0'}}
+                          style={{
+                            borderRadius: '0.5rem',
+                            margin: '1.5rem 0 1.5rem -1.25rem',
+                          }}
                         />
                       </ul>
                     </div>
@@ -309,15 +312,15 @@ export default function Gitcoin() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-3">
                     <div className="card-body">
-                      <ul style={{paddingLeft: '16px'}}>
+                      <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           <a
                             rel="noreferrer"
                             target="_blank"
                             href="https://medium.com/idena/how-to-pass-a-validation-session-in-idena-1724a0203e81"
                           >
-                            Learn what a validation is and how to pass it
-                            successfully
+                            Learn what a validation session is and how to pass
+                            it successfully
                           </a>
                         </li>
                         <li>
@@ -409,18 +412,24 @@ export default function Gitcoin() {
                           </div>
                         </div>
                       </div>
-                      <ul style={{paddingLeft: '16px'}}>
+                      <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
-                          Sign in to your Idena Web app 15 minutes before the
-                          next validation session starts. Check you have Wait
-                          for validation status. Make sure you have reliable and
-                          fast internet connection. We advise to use a laptop
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="app.idena.io"
+                          >
+                            Sign in
+                          </a>{' '}
+                          to your Idena Web app 15 minutes before the next
+                          validation session starts. Check you have Wait for
+                          validation status. Make sure you have reliable and
+                          fast internet connection. We advise to use a laptop/PC
                           for better experience.
                         </li>
                         <li>
                           Wait for the validation session to begin. Follow the
-                          to begin. Follow the instructions, solve flips and
-                          enjoy the process!
+                          instructions, solve flips and enjoy the process!
                         </li>
                         <div className="video-responsive">
                           <iframe
@@ -456,13 +465,13 @@ export default function Gitcoin() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-5">
                     <div className="card-body">
-                      <ul style={{paddingLeft: '16px'}}>
+                      <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           Go to the Trust Bonus tab of your Gitcoin profile
                         </li>
                         <li>Find Idena and click Connect</li>
                         <img
-                          src="/static/images/gitcoin-banner-1.png"
+                          src="/static/images/gitcoin-banner.png"
                           width="600"
                           alt="Verify with Idena"
                           style={{
@@ -476,7 +485,7 @@ export default function Gitcoin() {
                           Congratulations! Your Idena account is now verified
                         </li>
                         <img
-                          src="/static/images/account_is_verified.png"
+                          src="/static/images/gitcoin-banner-2.png"
                           alt="Your account is verified"
                           width="600"
                           style={{
