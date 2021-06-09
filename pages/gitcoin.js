@@ -122,7 +122,7 @@ export default function Gitcoin() {
                   <Accordion.Collapse eventKey="#gitcoin-1-1">
                     <div className="card-body">
                       <p>
-                        To prevent invite drain and welcome more new users, we
+                        The number of invitations is limited. To prevent invite drain and welcome more new users, we
                         need to confirm you are a unique human. Invitations will
                         be distributed on a competitive basis: the most
                         trustworthy accounts will get invitations first.
@@ -417,7 +417,7 @@ export default function Gitcoin() {
                           <a
                             rel="noreferrer"
                             target="_blank"
-                            href="app.idena.io"
+                            href="https://app.idena.io/"
                           >
                             Sign in
                           </a>{' '}
