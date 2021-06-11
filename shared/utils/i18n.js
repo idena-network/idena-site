@@ -3,7 +3,26 @@ import i18n from 'i18next'
 
 export const AVAILABLE_LANGS = [
   'en',
+  'id',
+  'fr',
   'de',
+  'es',
+  'ru',
+  'zh',
+  'ko',
+  'hr',
+  'hi',
+  'uk',
+  'sr',
+  'ro',
+  'it',
+  'pt',
+  'pl',
+  'sl',
+  'tr',
+  'bg',
+  'sv',
+  'ja',
 ]
 
 export const isoLangs = {

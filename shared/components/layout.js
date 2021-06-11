@@ -7,7 +7,6 @@ import Header from './header'
 import TopHeader from './topheader'
 import {Combobox} from './combobox'
 import {AVAILABLE_LANGS, isoLangs} from '../utils/i18n'
-import {useHash} from "../utils";
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()

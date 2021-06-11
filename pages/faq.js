@@ -8,6 +8,7 @@ import Layout from '../shared/components/layout'
 import {useHash} from '../shared/useHash'
 import {useNextValidationTime} from '../shared/api'
 import {CustomToggle} from '../shared/components/toggle'
+import {LinkText} from '../shared/utils/utils'
 
 export default function Faq() {
   const {localeTime: validationTime} = useNextValidationTime()
