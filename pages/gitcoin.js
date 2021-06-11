@@ -467,7 +467,15 @@ export default function Gitcoin() {
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
-                          Go to the Trust Bonus tab of your Gitcoin profile
+                          Go to the{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://gitcoin.co/login/github/?next=/profile/trust"
+                          >
+                            Trust Bonus tab
+                          </a>{' '}
+                          of your Gitcoin profile
                         </li>
                         <li>Find Idena and click Connect</li>
                         <img
