@@ -1,43 +1,18 @@
-import {useContext, useEffect, useState} from 'react'
-import {
-  Accordion,
-  AccordionContext,
-  Card,
-  useAccordionToggle,
-} from 'react-bootstrap'
+import {useEffect, useState} from 'react'
+import {Accordion, Card} from 'react-bootstrap'
 import {Trans, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Layout from '../shared/components/layout'
 
-import {useHash} from '../shared/utils'
-import {useLatestGithubReleaseDownload} from '../public/api'
-import {LinkText} from '../shared/utils/utils'
-
-function CustomToggle({children, eventKey}) {
-  const {setHashForce} = useHash()
-  const currentEventKey = useContext(AccordionContext)
-  const onAccordionClick = useAccordionToggle(eventKey, () => {
-    setHashForce(eventKey)
-  })
-  const isCurrentEventKey = currentEventKey === eventKey
-
-  return (
-    <a
-      style={{cursor: 'pointer'}}
-      aria-expanded={isCurrentEventKey}
-      onClick={onAccordionClick}
-    >
-      {children}
-    </a>
-  )
-}
+import {useHash} from '../shared/useHash'
+import {useLatestGithubReleaseDownload} from '../shared/api'
+import {CustomToggle} from '../shared/components/toggle'
 
 export default function Guide() {
   const [release, setRelease] = useState(null)
-  const [activeInstall, setActiveInstall] = useState()
-  const [activeRemote, setActiveRemote] = useState()
-  const [activeIssues, setActiveIssues] = useState()
-  const {hash} = useHash()
+
+  const [activeHash, setActiveHash] = useState()
+  const [hash] = useHash()
 
   const {t} = useTranslation('guide')
 
@@ -58,9 +33,7 @@ export default function Guide() {
   }, [])
 
   useEffect(() => {
-    setActiveInstall(hash)
-    setActiveRemote(hash)
-    setActiveIssues(hash)
+    setActiveHash(hash)
   }, [hash])
 
   return (
@@ -97,8 +70,8 @@ export default function Guide() {
 
               <h3>{t('Idena installation', {ns: 'guide'})}</h3>
               <Accordion
-                activeKey={activeInstall}
-                onSelect={e => setActiveInstall(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-install-1">
                   <Card.Header>
@@ -358,8 +331,8 @@ export default function Guide() {
                 {t('Running the Idena node on a remote server', {ns: 'guide'})}
               </h3>
               <Accordion
-                activeKey={activeRemote}
-                onSelect={e => setActiveRemote(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-remote-0">
                   <Card.Header>
@@ -614,8 +587,8 @@ export default function Guide() {
 
               <h3>{t('Troubleshooting', {ns: 'guide'})}</h3>
               <Accordion
-                activeKey={activeIssues}
-                onSelect={e => setActiveIssues(e)}
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
               >
                 <Card id="guide-issues-1">
                   <Card.Header>

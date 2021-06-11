@@ -4,7 +4,7 @@ import {Tab, Tabs} from 'react-bootstrap'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {Trans, useTranslation} from 'next-i18next'
 import Layout from '../shared/components/layout'
-import {useLatestGithubReleaseDownload} from '../public/api'
+import {useLatestGithubReleaseDownload} from '../shared/api'
 import {LinkText} from '../shared/utils/utils'
 
 function GetFileSize(s) {
