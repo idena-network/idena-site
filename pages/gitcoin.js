@@ -122,10 +122,11 @@ export default function Gitcoin() {
                   <Accordion.Collapse eventKey="#gitcoin-1-1">
                     <div className="card-body">
                       <p>
-                        The number of invitations is limited. To prevent invite drain and welcome more new users, we
-                        need to confirm you are a unique human. Invitations will
-                        be distributed on a competitive basis: the most
-                        trustworthy accounts will get invitations first.
+                        The number of invitations is limited. To prevent invite
+                        drain and welcome more new users, we need to confirm you
+                        are a unique human. Invitations will be distributed on a
+                        competitive basis: the most trustworthy accounts will
+                        get invitations first.
                       </p>
                       <p>
                         Please choose the platform where you are most active and
@@ -466,41 +467,55 @@ export default function Gitcoin() {
                   <Accordion.Collapse eventKey="#gitcoin-1-5">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
-                        <li>
-                          Go to the{' '}
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://gitcoin.co/login/github/?next=/profile/trust"
-                          >
-                            Trust Bonus tab
+                        <p>
+                          Idena web auth for Gitcoin is waiting for an{' '}
+                          <a href="https://github.com/gitcoinco/web/pull/9026">
+                            update
                           </a>{' '}
-                          of your Gitcoin profile
-                        </li>
-                        <li>Find Idena and click Connect</li>
-                        <img
-                          src="/static/images/gitcoin-banner.png"
-                          width="600"
-                          alt="Verify with Idena"
-                          style={{
-                            // padding: '0.875rem 0',
-                            borderRadius: '0.5rem',
-                            margin: '1.5rem 0 1.5rem -1.25rem',
-                          }}
-                        />
-                        <li>Authorise Gitcoin to access your Idena account</li>
-                        <li>
-                          Congratulations! Your Idena account is now verified
-                        </li>
-                        <img
-                          src="/static/images/gitcoin-banner-2.png"
-                          alt="Your account is verified"
-                          width="600"
-                          style={{
-                            borderRadius: '0.5rem',
-                            margin: '1.5rem 0 1.5rem -1.25rem',
-                          }}
-                        />
+                          on Gitcoin side. To link your Gitcoin profile to
+                          Idena, please return here after the validation
+                          ceremony.
+                        </p>
+
+                        <div style={{opacity: 0.4}}>
+                          <li>
+                            Go to the{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://gitcoin.co/login/github/?next=/profile/trust"
+                            >
+                              Trust Bonus tab
+                            </a>{' '}
+                            of your Gitcoin profile
+                          </li>
+                          <li>Find Idena and click Connect</li>
+                          <img
+                            src="/static/images/gitcoin-banner.png"
+                            width="600"
+                            alt="Verify with Idena"
+                            style={{
+                              // padding: '0.875rem 0',
+                              borderRadius: '0.5rem',
+                              margin: '1.5rem 0 1.5rem -1.25rem',
+                            }}
+                          />
+                          <li>
+                            Authorise Gitcoin to access your Idena account
+                          </li>
+                          <li>
+                            Congratulations! Your Idena account is now verified
+                          </li>
+                          <img
+                            src="/static/images/gitcoin-banner-2.png"
+                            alt="Your account is verified"
+                            width="600"
+                            style={{
+                              borderRadius: '0.5rem',
+                              margin: '1.5rem 0 1.5rem -1.25rem',
+                            }}
+                          />
+                        </div>
                       </ul>
                     </div>
                   </Accordion.Collapse>
