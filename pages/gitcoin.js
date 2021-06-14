@@ -514,9 +514,28 @@ export default function Gitcoin() {
                   <Accordion.Collapse eventKey="#gitcoin-1-5">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
-                        <li>
-                          {t(
-                            'Go to the Trust Bonus tab of your Gitcoin profile',
+                        <p>
+                          Idena web auth for Gitcoin is waiting for an{' '}
+                          <a href="https://github.com/gitcoinco/web/pull/9026">
+                            update
+                          </a>{' '}
+                          on Gitcoin side. To link your Gitcoin profile to
+                          Idena, please return here after the validation
+                          ceremony.
+                        </p>
+
+                        <div style={{opacity: 0.4}}>
+                          <li>
+                            {t(
+                            'Go to the{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://gitcoin.co/login/github/?next=/profile/trust"
+                            >
+                              Trust Bonus tab
+                            </a>{' '}
+                            of your Gitcoin profile',
                             {ns: 'gitcoin'}
                           )}
                         </li>
@@ -534,7 +553,8 @@ export default function Gitcoin() {
                           }}
                         />
                         <li>
-                          {t('Authorise Gitcoin to access your Idena account', {
+                          {t('Authorise Gitcoin to access your Idena account
+                          ', {
                             ns: 'gitcoin',
                           })}
                         </li>
@@ -543,16 +563,17 @@ export default function Gitcoin() {
                             'Congratulations! Your Idena account is now verified',
                             {ns: 'gitcoin'}
                           )}
-                        </li>
-                        <img
-                          src="/static/images/gitcoin-banner-2.png"
-                          alt="Your account is verified"
-                          width="600"
-                          style={{
-                            borderRadius: '0.5rem',
-                            margin: '1.5rem 0 1.5rem -1.25rem',
-                          }}
-                        />
+                          </li>
+                          <img
+                            src="/static/images/gitcoin-banner-2.png"
+                            alt="Your account is verified"
+                            width="600"
+                            style={{
+                              borderRadius: '0.5rem',
+                              margin: '1.5rem 0 1.5rem -1.25rem',
+                            }}
+                          />
+                        </div>
                       </ul>
                     </div>
                   </Accordion.Collapse>
