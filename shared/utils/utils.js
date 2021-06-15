@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function precise1(x) {
   return Math.round(x * 10) / 10
 }
@@ -124,7 +126,7 @@ export function iconToSrc(icon) {
     icon
       .substring(2)
       .match(/.{1,2}/g)
-      .map((byte) => parseInt(byte, 16))
+      .map(byte => parseInt(byte, 16))
   )
   return URL.createObjectURL(new Blob([buffArray], {type: 'image/jpeg'}))
 }
@@ -132,3 +134,10 @@ export function iconToSrc(icon) {
 export function isIdentityPassed(state) {
   return state === 'Newbie' || state === 'Verified' || state === 'Human'
 }
+
+// eslint-disable-next-line react/prop-types
+export const LinkText = ({href, children, ...props}) => (
+  <Link href={href || ''}>
+    <a>{children}</a>
+  </Link>
+)

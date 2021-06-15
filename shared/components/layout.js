@@ -1,12 +1,15 @@
+/* eslint-disable react/jsx-no-target-blank */
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {Children, useState} from 'react'
+import {useTranslation} from 'next-i18next'
 import Header from './header'
 import TopHeader from './topheader'
+import {Combobox} from './combobox'
+import {AVAILABLE_LANGS, isoLangs} from '../utils/i18n'
 
 const LiActive = ({className, children, ...props}) => {
   const router = useRouter()
-
   const child = Children.only(children)
 
   if (router.pathname === child.props.href) {
@@ -23,6 +26,9 @@ const LiActive = ({className, children, ...props}) => {
 export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
   const [menuOpened, setMenuOpened] = useState(false)
+  const {t} = useTranslation('common')
+  const {i18n} = useTranslation()
+  const currentLanguage = isoLangs[i18n.language]
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
@@ -52,7 +58,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_main"
                     >
-                      Home
+                      {t('Home')}
                     </a>
                   </Link>
                 </li>
@@ -96,7 +102,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_download"
                     >
-                      Download
+                      {t('Download')}
                     </a>
                   </Link>
                 </LiActive>
@@ -107,7 +113,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_faq"
                     >
-                      FAQ
+                      {t('FAQ')}
                     </a>
                   </Link>
                 </LiActive>
@@ -118,7 +124,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_guide"
                     >
-                      Installation guide
+                      {t('Installation guide')}
                     </a>
                   </Link>
                 </LiActive>
@@ -129,7 +135,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_webclient"
                     >
-                      Web client
+                      {t('Web client')}
                     </a>
                   </Link>
                 </LiActive>
@@ -140,7 +146,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_contribute"
                     >
-                      Contribute
+                      {t('Contribute')}
                     </a>
                   </Link>
                 </LiActive>
@@ -151,7 +157,7 @@ export default function Layout({children, title = '', description = ''}) {
                       className="nav-link header_nav__link"
                       data-target="menu_donate"
                     >
-                      Donate to Idena
+                      {t('Donate to Idena')}
                     </a>
                   </Link>
                 </LiActive>
@@ -165,7 +171,7 @@ export default function Layout({children, title = '', description = ''}) {
                     target="_blank"
                     className="nav-link header_nav__link"
                   >
-                    Whitepaper
+                    {t('Whitepaper')}
                   </a>
                 </LiActive>
 
@@ -176,7 +182,7 @@ export default function Layout({children, title = '', description = ''}) {
                     target="_blank"
                     className="nav-link header_nav__link"
                   >
-                    Docs
+                    {t('Docs')}
                   </a>
                 </LiActive>
 
@@ -187,7 +193,7 @@ export default function Layout({children, title = '', description = ''}) {
                     target="_blank"
                     className="nav-link header_nav__link"
                   >
-                    BSC bridge
+                    {t('BSC bridge')}
                   </a>
                 </LiActive>
 
@@ -198,7 +204,7 @@ export default function Layout({children, title = '', description = ''}) {
                     target="_blank"
                     className="nav-link header_nav__link"
                   >
-                    Explorer
+                    {t('Explorer')}
                   </a>
                 </LiActive>
               </ul>
@@ -227,7 +233,7 @@ export default function Layout({children, title = '', description = ''}) {
                   className="nav-link header_nav__link"
                   data-target="menu_download"
                 >
-                  Download
+                  {t('Download')}
                 </a>
               </Link>
             </LiActive>
@@ -238,7 +244,7 @@ export default function Layout({children, title = '', description = ''}) {
                   className="nav-link header_nav__link"
                   data-target="menu_main"
                 >
-                  Home
+                  {t('Home')}
                 </a>
               </Link>
             </LiActive>
@@ -246,7 +252,7 @@ export default function Layout({children, title = '', description = ''}) {
             <li className="nav-item header_nav__item">
               <Link href="/faq#faq-start-1">
                 <a className="nav-link header_nav__link where_to_start">
-                  How to start mining Idena
+                  {t('How to start mining Idena')}
                 </a>
               </Link>
             </li>
@@ -287,7 +293,7 @@ export default function Layout({children, title = '', description = ''}) {
             <LiActive className="nav-item header_nav__item">
               <Link href="/faq">
                 <a className="nav-link header_nav__link" data-target="menu_faq">
-                  FAQ
+                  {t('FAQ')}
                 </a>
               </Link>
             </LiActive>
@@ -299,7 +305,7 @@ export default function Layout({children, title = '', description = ''}) {
                 target="_blank"
                 className="nav-link header_nav__link"
               >
-                Whitepaper
+                {t('Whitepaper')}
               </a>
             </li>
 
@@ -310,7 +316,7 @@ export default function Layout({children, title = '', description = ''}) {
                 target="_blank"
                 className="nav-link header_nav__link"
               >
-                Documentation
+                {t('Documentation')}
               </a>
             </li>
 
@@ -320,7 +326,7 @@ export default function Layout({children, title = '', description = ''}) {
                   className="nav-link header_nav__link"
                   data-target="menu_contribute"
                 >
-                  How to contribute
+                  {t('How to contribute')}
                 </a>
               </Link>
             </LiActive>
@@ -332,7 +338,7 @@ export default function Layout({children, title = '', description = ''}) {
                 target="_blank"
                 className="nav-link header_nav__link"
               >
-                Blockchain explorer
+                {t('Blockchain explorer')}
               </a>
             </li>
 
@@ -343,7 +349,7 @@ export default function Layout({children, title = '', description = ''}) {
                 target="_blank"
                 className="nav-link header_nav__link"
               >
-                Apps & Resources
+                {t('Apps & Resources')}
               </a>
             </li>
 
@@ -354,7 +360,7 @@ export default function Layout({children, title = '', description = ''}) {
                 target="_blank"
                 className="nav-link header_nav__link"
               >
-                Blog
+                {t('Blog')}
               </a>
             </li>
 
@@ -364,7 +370,7 @@ export default function Layout({children, title = '', description = ''}) {
                   className="nav-link header_nav__link"
                   data-target="menu_donate"
                 >
-                  Donate to Idena
+                  {t('Donate to Idena')}
                 </a>
               </Link>
             </LiActive>
@@ -430,7 +436,23 @@ export default function Layout({children, title = '', description = ''}) {
               </div>
               <div className="copy"></div>
               <div className="donate">
-                <a href="/donate">Support Idena by making a donation</a>
+                <a href="/donate">{t('Support Idena by making a donation')}</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="row justify-content-center text-center">
+            <div className="col-md-7 col-lg-6">
+              <div className="language">
+                <Combobox
+                  title={currentLanguage.nativeName}
+                  itemsList={AVAILABLE_LANGS.map(lng => ({
+                    key: lng,
+                    title: isoLangs[lng].nativeName,
+                    href: `/${lng}${router.pathname}`,
+                  }))}
+                  itemsTitle="Choose a language"
+                />
               </div>
             </div>
           </div>

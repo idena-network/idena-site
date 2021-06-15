@@ -4,6 +4,8 @@ import {Accordion, Card, Tab, Tabs} from 'react-bootstrap'
 import {useEffect, useState} from 'react'
 import validator from 'validator'
 import axios from 'axios'
+import {Trans, useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
@@ -45,9 +47,10 @@ function Alert({state}) {
 }
 
 export default function Gitcoin() {
+  const {t} = useTranslation('gitcoin')
+
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
-
   const [email, setEmail] = useState()
   const [emailActionState, setEmailActionState] = useState(
     EmailSavingState.None
@@ -78,7 +81,7 @@ export default function Gitcoin() {
 
   return (
     <Layout
-      title="Verify your Gitcoin"
+      title={t('Verify your Gitcoin', {ns: 'gitcoin'})}
       description="How to verify your Gitcoin account with Idena"
     >
       <section
@@ -90,20 +93,21 @@ export default function Gitcoin() {
             <div className="col-md-7 col-lg-6">
               <div className="">
                 <h3 className="h1">
-                  How to verify your Gitcoin account with Idena
+                  {t('How to verify your Gitcoin account with Idena', {
+                    ns: 'gitcoin',
+                  })}
                 </h3>
                 <p className="text-center" style={{color: '#96999E'}}>
-                  Idena is the first proof-of-person blockchain based on
-                  democratic principles. Every node is linked to a
-                  cryptoidentity — a unique person with equal voting power and
-                  mining income.
+                  {t(
+                    'Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity — a unique person with equal voting power and mining income.',
+                    {ns: 'gitcoin'}
+                  )}
                 </p>
                 <p>
-                  Your validated cryptoidentity ensures you are a unique human
-                  without revealing any personal data. It allows you to have
-                  more voting power when the voting can be subject to a sybil
-                  attack. Gitcoin accounts verified with Idena get +25% grants
-                  match bonus in Gitcoin funding.
+                  {t(
+                    'Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +25% grants match bonus in Gitcoin funding.',
+                    {ns: 'gitcoin'}
+                  )}
                 </p>
               </div>
 
@@ -114,23 +118,24 @@ export default function Gitcoin() {
                 <Card id="gitcoin-1-1">
                   <Card.Header>
                     <CustomToggle eventKey="#gitcoin-1-1">
-                      <span>Step 1</span>
+                      <span>{t('Step 1', {ns: 'gitcoin'})}</span>
                       <br />
-                      Get an invitation code
+                      {t('Get an invitation code', {ns: 'gitcoin'})}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-1">
                     <div className="card-body">
                       <p>
-                        The number of invitations is limited. To prevent invite
-                        drain and welcome more new users, we need to confirm you
-                        are a unique human. Invitations will be distributed on a
-                        competitive basis: the most trustworthy accounts will
-                        get invitations first.
+                        {t(
+                          'The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.',
+                          {ns: 'gitcoin', nsSeparator: '!'}
+                        )}
                       </p>
                       <p>
-                        Please choose the platform where you are most active and
-                        have longest account history:
+                        {t(
+                          'Please choose the platform where you are most active and have longest account history:',
+                          {ns: 'gitcoin', nsSeparator: '!'}
+                        )}
                       </p>
 
                       <Tabs
@@ -140,9 +145,10 @@ export default function Gitcoin() {
                       >
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
-                            Send a tweet with a hashtag #IdenaTrustBonus from
-                            your account and we will send you an invitation code
-                            via Direct Message. The tweet should say:
+                            {t(
+                              'Send a tweet with a hashtag #IdenaTrustBonus from your account and we will send you an invitation code via Direct Message. The tweet should say:',
+                              {ns: 'gitcoin', nsSeparator: '!'}
+                            )}
                             <div className="dedicated_info">
                               I want to join @IdenaNetwork to get +25% Grants
                               Match Bonus in @gitcoin Grants Round 10
@@ -172,61 +178,78 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_github" title="Github">
                           <p style={{marginTop: '2rem'}}>
-                            Leave a request in the{' '}
-                            <a
-                              rel="noreferrer"
-                              target="_blank"
-                              href="https://github.com/idena-network/idena-docs/discussions/17"
+                            <Trans
+                              i18nKey="githubDiscussionLink"
+                              t={t}
+                              ns="gitcoin"
                             >
-                              Idena Invitation Codes
-                            </a>{' '}
-                            discussion on Github from your account and we will
-                            send an invitation to your email. Please make sure
-                            your email address is set to public in your{' '}
-                            <a
-                              href="https://github.com/settings/emails"
-                              rel="noreferrer"
-                              target="_blank"
-                            >
-                              Github Account Email settings
-                            </a>
-                            .
+                              Leave a request in the{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://github.com/idena-network/idena-docs/discussions/17"
+                              >
+                                Idena Invitation Codes
+                              </a>{' '}
+                              discussion on Github from your account and we will
+                              send an invitation to your email. Please make sure
+                              your email address is set to public in your{' '}
+                              <a
+                                href="https://github.com/settings/emails"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                Github Account Email settings
+                              </a>
+                              .
+                            </Trans>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_discord" title="Discord">
                           <p style={{marginTop: '2rem'}}>
-                            Join{' '}
-                            <a
-                              rel="noreferrer"
-                              target="_blank"
-                              href="https://discord.gg/8BusRj7"
+                            <Trans
+                              i18nKey="idenaCommunityDiscordLink"
+                              t={t}
+                              ns="gitcoin"
                             >
-                              Idena Community Discord
-                            </a>{' '}
-                            and request an invite from the community in{' '}
-                            <i>#invite-requests</i> channel.
+                              Join{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://discord.gg/8BusRj7"
+                              >
+                                Idena Community Discord
+                              </a>{' '}
+                              and request an invite from the community in{' '}
+                              <i>#invite-requests</i> channel.
+                            </Trans>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_telegram" title="Telegram">
                           <p style={{marginTop: '2rem'}}>
-                            Join the official{' '}
-                            <a
-                              rel="noreferrer"
-                              target="_blank"
-                              href="https://t.me/IdenaNetworkPublic"
+                            <Trans
+                              i18nKey="idenaTelegramGroupLink"
+                              t={t}
+                              ns="gitcoin"
                             >
-                              Idena Telegram group
-                            </a>{' '}
-                            and request an invite from the community.
+                              Join the official{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://t.me/IdenaNetworkPublic"
+                              >
+                                Idena Telegram group
+                              </a>{' '}
+                              and request an invite from the community.
+                            </Trans>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_email" title="Email">
                           <p style={{marginTop: '2rem'}}>
-                            Email verification is the least reliable way to
-                            confirm you are a unique human. That means that you
-                            will be the last in the queue to get an invitation.
-                            Please consider other channels and use this option
-                            only as the last resort.
+                            {t(
+                              'Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.',
+                              {ns: 'gitcoin'}
+                            )}
                           </p>
                           <div
                             className="section_tight"
@@ -254,7 +277,7 @@ export default function Gitcoin() {
                                   }}
                                   onClick={() => getCode()}
                                 >
-                                  Get an invitation code
+                                  {t('Get an invitation code', {ns: 'gitcoin'})}
                                 </a>
                               </div>
                             </div>
@@ -268,27 +291,33 @@ export default function Gitcoin() {
                 <Card id="gitcoin-1-2">
                   <Card.Header>
                     <CustomToggle eventKey="#gitcoin-1-2">
-                      <span>Step 2</span>
+                      <span>{t('Step 2', {ns: 'gitcoin'})}</span>
                       <br />
-                      Create and activate your Idena account
+                      {t('Create and activate your Idena account', {
+                        ns: 'gitcoin',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-2">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
-                          Open{' '}
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://app.idena.io/"
-                          >
-                            Idena Web App
-                          </a>
+                          <Trans i18nKey="idenaWebAppLink" t={t} ns="gitcoin">
+                            Open{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://app.idena.io/"
+                            >
+                              Idena Web App
+                            </a>
+                          </Trans>
                         </li>
                         <li>
-                          Follow the instructions to create your account and
-                          activate it with your invitation code:
+                          {t(
+                            'Follow the instructions to create your account and activate it with your invitation code:',
+                            {ns: 'gitcoin', nsSeparator: '!'}
+                          )}
                         </li>
                         <img
                           src="/static/images/web-client-activate.gif"
@@ -306,9 +335,11 @@ export default function Gitcoin() {
                 <Card id="gitcoin-1-3">
                   <Card.Header>
                     <CustomToggle eventKey="#gitcoin-1-3">
-                      <span>Step 3</span>
+                      <span>{t('Step 3', {ns: 'gitcoin'})}</span>
                       <br />
-                      Prepare yourself for the validation session
+                      {t('Prepare yourself for the validation session', {
+                        ns: 'gitcoin',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-3">
@@ -320,8 +351,10 @@ export default function Gitcoin() {
                             target="_blank"
                             href="https://medium.com/idena/how-to-pass-a-validation-session-in-idena-1724a0203e81"
                           >
-                            Learn what a validation session is and how to pass
-                            it successfully
+                            {t(
+                              'Learn what a validation session is and how to pass it successfully',
+                              {ns: 'gitcoin'}
+                            )}
                           </a>
                         </li>
                         <li>
@@ -330,7 +363,7 @@ export default function Gitcoin() {
                             target="_blank"
                             href="https://flips.idena.io/?pass=idena.io"
                           >
-                            Train to solve flips
+                            {t('Train to solve flips', {ns: 'gitcoin'})}
                           </a>
                         </li>
                       </ul>
@@ -340,9 +373,12 @@ export default function Gitcoin() {
                 <Card id="gitcoin-1-4">
                   <Card.Header>
                     <CustomToggle eventKey="#gitcoin-1-4">
-                      <span>Step 4</span>
+                      <span>{t('Step 4', {ns: 'gitcoin'})}</span>
                       <br />
-                      Join the validation ceremony to validate your account
+                      {t(
+                        'Join the validation ceremony to validate your account',
+                        {ns: 'gitcoin'}
+                      )}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-4">
@@ -376,7 +412,10 @@ export default function Gitcoin() {
                             </div>
 
                             <p className="time _hint">
-                              Next validation:{' '}
+                              {t('Next validation:', {
+                                ns: 'gitcoin',
+                                nsSeparator: '!',
+                              })}{' '}
                               <span
                                 style={{fontSize: 'small'}}
                                 className="NextValidationDateTime"
@@ -406,7 +445,7 @@ export default function Gitcoin() {
                                     rel="noreferrer"
                                     style={{margin: '0'}}
                                   >
-                                    Add to calendar
+                                    {t('Add to calendar', {ns: 'gitcoin'})}
                                   </a>
                                 </div>
                               )}
@@ -415,22 +454,26 @@ export default function Gitcoin() {
                       </div>
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://app.idena.io/"
-                          >
-                            Sign in
-                          </a>{' '}
-                          to your Idena Web app 15 minutes before the next
-                          validation session starts. Check you have Wait for
-                          validation status. Make sure you have reliable and
-                          fast internet connection. We advise to use a laptop/PC
-                          for better experience.
+                          <Trans i18nKey="idenaWebAppSignIn" t={t} ns="gitcoin">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://app.idena.io/"
+                            >
+                              Sign in
+                            </a>{' '}
+                            to your Idena Web app 15 minutes before the next
+                            validation session starts. Check you have Wait for
+                            validation status. Make sure you have reliable and
+                            fast internet connection. We advise to use a
+                            laptop/PC for better experience.
+                          </Trans>
                         </li>
                         <li>
-                          Wait for the validation session to begin. Follow the
-                          instructions, solve flips and enjoy the process!
+                          {t(
+                            'Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!',
+                            {ns: 'gitcoin'}
+                          )}
                         </li>
                         <div className="video-responsive">
                           <iframe
@@ -447,10 +490,12 @@ export default function Gitcoin() {
                           />
                         </div>
                         <li>
-                          Wait for the validation results. If you have
-                          successfully solved the flips, you will get a{' '}
-                          <i>Newbie</i> status. Congratulations, you are now a
-                          validated cryptoidentity!
+                          <Trans i18nKey="validationResults" t={t} ns="gitcoin">
+                            Wait for the validation results. If you have
+                            successfully solved the flips, you will get a{' '}
+                            <i>Newbie</i> status. Congratulations, you are now a
+                            validated cryptoidentity!
+                          </Trans>
                         </li>
                       </ul>
                     </div>
@@ -459,37 +504,53 @@ export default function Gitcoin() {
                 <Card id="gitcoin-1-5">
                   <Card.Header>
                     <CustomToggle eventKey="#gitcoin-1-5">
-                      <span>Step 5</span>
+                      <span>{t('Step 5', {ns: 'gitcoin'})}</span>
                       <br />
-                      Connect your Idena account to your Gitcoin profile
+                      {t('Connect your Idena account to your Gitcoin profile', {
+                        ns: 'gitcoin',
+                      })}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#gitcoin-1-5">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <p>
-                          Idena web auth for Gitcoin is waiting for an{' '}
-                          <a href="https://github.com/gitcoinco/web/pull/9026">
-                            update
-                          </a>{' '}
-                          on Gitcoin side. To link your Gitcoin profile to
-                          Idena, please return here after the validation
-                          ceremony.
+                          <Trans
+                            i18nKey="gitcoinUpdateWaitingNotice"
+                            t={t}
+                            ns="gitcoin"
+                          >
+                            Idena web auth for Gitcoin is waiting for an{' '}
+                            <a href="https://github.com/gitcoinco/web/pull/9026">
+                              update
+                            </a>{' '}
+                            on Gitcoin side. To link your Gitcoin profile to
+                            Idena, please return here after the validation
+                            ceremony.
+                          </Trans>
                         </p>
 
                         <div style={{opacity: 0.4}}>
                           <li>
-                            Go to the{' '}
-                            <a
-                              rel="noreferrer"
-                              target="_blank"
-                              href="https://gitcoin.co/login/github/?next=/profile/trust"
+                            <Trans
+                              i18nKey="gitcoinTrustBonusLink"
+                              t={t}
+                              ns="gitcoin"
                             >
-                              Trust Bonus tab
-                            </a>{' '}
-                            of your Gitcoin profile
+                              Go to the{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://gitcoin.co/login/github/?next=/profile/trust"
+                              >
+                                Trust Bonus tab
+                              </a>{' '}
+                              of your Gitcoin profile
+                            </Trans>
                           </li>
-                          <li>Find Idena and click Connect</li>
+                          <li>
+                            {t('Find Idena and click Connect', {ns: 'gitcoin'})}
+                          </li>
                           <img
                             src="/static/images/gitcoin-banner.png"
                             width="600"
@@ -501,10 +562,18 @@ export default function Gitcoin() {
                             }}
                           />
                           <li>
-                            Authorise Gitcoin to access your Idena account
+                            {t(
+                              'Authorise Gitcoin to access your Idena account',
+                              {
+                                ns: 'gitcoin',
+                              }
+                            )}
                           </li>
                           <li>
-                            Congratulations! Your Idena account is now verified
+                            {t(
+                              'Congratulations! Your Idena account is now verified',
+                              {ns: 'gitcoin'}
+                            )}
                           </li>
                           <img
                             src="/static/images/gitcoin-banner-2.png"
@@ -528,3 +597,9 @@ export default function Gitcoin() {
     </Layout>
   )
 }
+
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['gitcoin', 'common'])),
+  },
+})

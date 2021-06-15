@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
+import {Trans, useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Layout from '../shared/components/layout'
 import {
   useNextValidationTime,
@@ -8,7 +10,7 @@ import {
   getGoogleCalendarLink,
   getCoingeckoData,
 } from '../shared/api'
-import {precise2, usdFmt} from '../shared/utils/utils'
+import {precise2, usdFmt, LinkText} from '../shared/utils/utils'
 
 export default function Home() {
   const [marketData, setMarketData] = useState({
@@ -16,6 +18,8 @@ export default function Home() {
     priceChange: 0,
     marketCap: 0,
   })
+
+  const {t} = useTranslation('index')
 
   useEffect(() => {
     async function getData() {
@@ -36,16 +40,28 @@ export default function Home() {
 
   return (
     <Layout
-      title="IDENA: Proof-of-Person blockchain"
-      description="Join the mining of the first human-centric cryptocurrency"
+      title={t('IDENA: Proof-of-Person blockchain', {
+        ns: 'index',
+        nsSeparator: '!',
+      })}
+      description={t(
+        'Join the mining of the first human-centric cryptocurrency',
+        {ns: 'index'}
+      )}
     >
       <section className="section section_lead" id="lead">
         <div className="section_lead__header text-center">
           <div className="container" data-target="menu_main">
             <div
               className="logo nav-link"
-              title="IDENA: Proof-of-Person blockchain"
-              descriptioncontent="Join the mining of the first human-centric cryptocurrency"
+              title={t('IDENA: Proof-of-Person blockchain', {
+                ns: 'index',
+                nsSeparator: '!',
+              })}
+              descriptioncontent={t(
+                'Join the mining of the first human-centric cryptocurrency',
+                {ns: 'index'}
+              )}
             >
               <img
                 src="/static/images/idena-logo-round.svg"
@@ -54,10 +70,13 @@ export default function Home() {
               />
             </div>
 
-            <h1 className="title">Proof-Of-Person Blockchain</h1>
+            <h1 className="title">
+              {t('Proof-Of-Person Blockchain', {ns: 'index'})}
+            </h1>
             <div className="subtitle">
-              Join the mining&nbsp;of the first
-              human-centric&nbsp;cryptocurrency
+              {t('Join the mining of the first human-centric cryptocurrency', {
+                ns: 'index',
+              })}
             </div>
 
             <div
@@ -69,17 +88,21 @@ export default function Home() {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <div className="subtitle">
-                    Everyone has an equal right to mine coins
+                    {t('Everyone has an equal right to mine coins', {
+                      ns: 'index',
+                    })}
                   </div>
                 </div>
                 <div className="carousel-item">
                   <div className="subtitle">
-                    Everyone has an equal right to vote
+                    {t('Everyone has an equal right to vote', {ns: 'index'})}
                   </div>
                 </div>
                 <div className="carousel-item">
                   <div className="subtitle">
-                    Everyone has an equal right to communicate privately
+                    {t('Everyone has an equal right to communicate privately', {
+                      ns: 'index',
+                    })}
                   </div>
                 </div>
               </div>
@@ -98,7 +121,7 @@ export default function Home() {
                         <Link href="/download">
                           <a className="btn btn-link">
                             <i className="icon icon--download"></i>
-                            <span>Download Idena</span>
+                            <span>{t('Download Idena', {ns: 'index'})}</span>
                           </a>
                         </Link>
                       </div>
@@ -110,17 +133,19 @@ export default function Home() {
                           <a style={{marginLeft: 15}} className="btn btn-link">
                             <i className="icon icon--web"></i>
                             <span>
-                              Join Idena in web
-                              <span
-                                style={{
-                                  fontSize: 'small',
-                                  marginLeft: 3,
-                                  marginTop: -11,
-                                  color: 'limegreen',
-                                }}
-                              >
-                                beta
-                              </span>{' '}
+                              <Trans i18nKey="joinIdenaWeb" t={t} ns="index">
+                                Join Idena in web
+                                <span
+                                  style={{
+                                    fontSize: 'small',
+                                    marginLeft: 3,
+                                    marginTop: -11,
+                                    color: 'limegreen',
+                                  }}
+                                >
+                                  beta
+                                </span>
+                              </Trans>{' '}
                             </span>
                           </a>
                         </Link>
@@ -140,7 +165,9 @@ export default function Home() {
                       <div className="_value" id="ValidatedNodes">
                         {validatedCount === null ? '-' : validatedCount}
                       </div>
-                      <p className="nodes _hint">Validated nodes</p>
+                      <p className="nodes _hint">
+                        {t('Validated nodes', {ns: 'index'})}
+                      </p>
                     </div>
 
                     <div
@@ -170,12 +197,16 @@ export default function Home() {
                       </div>
 
                       <p className="time _hint">
-                        Next validation:{' '}
+                        {t('Next validation:', {ns: 'index', nsSeparator: '!'})}{' '}
                         <span
                           style={{fontSize: 'small'}}
                           className="NextValidationDateTime"
                         >
-                          {validationTime === null ? '' : validationTime}
+                          {validationTime !== null &&
+                          validationTime !== 'RUNNING NOW'
+                            ? validationTime
+                            : t('RUNNING NOW', {ns: 'index'})}
+                          {''}
                         </span>
                       </p>
 
@@ -187,7 +218,7 @@ export default function Home() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            Add to calendar
+                            {t('Add to calendar', {ns: 'index'})}
                             <img
                               src="/static/images/icon-plus.svg"
                               alt=""
@@ -214,25 +245,26 @@ export default function Home() {
               <h3>What is Idena</h3>
 
               <p>
-                Idena is the first proof-of-person blockchain based on
-                democratic principles. Every node is linked to a cryptoidentity
-                &ndash; one single person with equal voting power and mining
-                income. It is one of the most decentralized blockchains with
-                thousands of unique miners joining the network.
+                {t(
+                  'Idena is the first proof-of-person blockchain based on democratic principles',
+                  {ns: 'index'}
+                )}
               </p>
 
               <p>
-                To start mining Idena, you need to prove you are a unique human.
-                It does not require the disclosure of any personal data (no
-                KYC). You have to appear online when the validation ceremony
-                starts and solve a series of flip-tests (CAPTCHAs).
+                {t(
+                  'To start mining Idena, you need to prove you are a unique human. It does not require the disclosure of any personal data (no KYC). You have to appear online when the validation ceremony starts and solve a series of flip-tests (CAPTCHAs).',
+                  {ns: 'index'}
+                )}
               </p>
 
               <p>
-                Join the{' '}
-                <Link href="/faq#faq-start-1">
-                  <a>democratic crypto network of equal rights &rsaquo;</a>
-                </Link>
+                <Trans i18nKey="joinTheDemocratisCrypto" t={t} ns="index">
+                  Join the{' '}
+                  <LinkText href="/faq#faq-start-1">
+                    <a>democratic crypto network of equal rights &rsaquo;</a>
+                  </LinkText>
+                </Trans>
               </p>
 
               <div className="index-price-info">
@@ -394,3 +426,9 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['index', 'common'])),
+  },
+})
