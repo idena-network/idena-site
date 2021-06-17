@@ -133,7 +133,7 @@ export default function Gitcoin() {
                       </p>
                       <p>
                         {t(
-                          'Please choose the platform where you are most active and have longest account history:',
+                          'Please choose the platform where you have the most active account:',
                           {ns: 'gitcoin', nsSeparator: '!'}
                         )}
                       </p>
