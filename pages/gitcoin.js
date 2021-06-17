@@ -139,10 +139,29 @@ export default function Gitcoin() {
                       </p>
 
                       <Tabs
-                        defaultActiveKey="#social_discord"
+                        defaultActiveKey="#social_telegram"
                         transition={false}
                         id="tab_social"
                       >
+                        <Tab eventKey="#social_telegram" title="Telegram">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="idenaTelegramGroupLink"
+                              t={t}
+                              ns="gitcoin"
+                            >
+                              Join the official{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://t.me/IdenaNetworkPublic"
+                              >
+                                Idena Telegram group
+                              </a>{' '}
+                              and request an invite from the community.
+                            </Trans>
+                          </p>
+                        </Tab>
                         <Tab eventKey="#social_discord" title="Discord">
                           <p style={{marginTop: '2rem'}}>
                             <Trans
@@ -163,26 +182,6 @@ export default function Gitcoin() {
                             </Trans>
                           </p>
                         </Tab>
-                        <Tab eventKey="#social_telegram" title="Telegram">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="idenaTelegramGroupLink"
-                              t={t}
-                              ns="gitcoin"
-                            >
-                              Join the official{' '}
-                              <a
-                                rel="noreferrer"
-                                target="_blank"
-                                href="https://t.me/IdenaNetworkPublic"
-                              >
-                                Idena Telegram group
-                              </a>{' '}
-                              and request an invite from the community.
-                            </Trans>
-                          </p>
-                        </Tab>
-
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
                             Send a tweet with a hashtag #IdenaTrustBonus from
@@ -481,11 +480,14 @@ export default function Gitcoin() {
                             >
                               Sign in
                             </a>{' '}
-                            to your Idena Web app 15 minutes before the next
-                            validation session starts. Check you have Wait for
-                            validation status. Make sure you have reliable and
-                            fast internet connection. We advise to use a
-                            laptop/PC for better experience.
+                            to your Idena Web app{' '}
+                            <b>
+                              15 minutes before the next validation session
+                              starts
+                            </b>
+                            . Check you have Wait for validation status. Make
+                            sure you have reliable and fast internet connection.
+                            We advise to use a laptop/PC for better experience.
                           </Trans>
                         </li>
                         <li>

@@ -27,10 +27,10 @@
   "idenaCommunityDiscordLink": "Join <2>Idena Community Discord</2> and request an invite from the community in <6>#invite-requests</6> channel.",
   "idenaTelegramGroupLink": "Join the official <2>Idena Telegram group</2> and request an invite from the community.",
   "idenaWebAppLink": "Open <2>Idena Web App</2>",
-  "idenaWebAppSignIn": "<0>Sign in</0> to your Idena Web app 15 minutes before the next validation session starts. Check you have Wait for validation status. Make sure you have reliable and fast internet connection. We advise to use a laptop/PC for better experience.",
+  "idenaWebAppSignIn": "<0>Sign in</0> to your Idena Web app <4>15 minutes before the next validation session starts</4>. Check you have Wait for validation status. Make sure you have reliable and fast internet connection. We advise to use a laptop/PC for better experience.",
   "validationResults": "Wait for the validation results. If you have successfully solved the flips, you will get a <2>Newbie</2> status. Congratulations, you are now a validated cryptoidentity!",
   "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.": "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.",
-  "Please choose the platform where you are most active and have longest account history:": "Please choose the platform where you are most active and have longest account history:",
+  "Please choose the platform where you are most active:": "Please choose the platform where you are most active:",
   "Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony! The tweet should say:": "Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony! The tweet should say:",
   "Follow the instructions to create your account and activate it with your invitation code:": "Follow the instructions to create your account and activate it with your invitation code:"
 }
