@@ -2,7 +2,7 @@
   "Verify your Gitcoin": "Verify your Gitcoin",
   "How to verify your Gitcoin account with Idena": "How to verify your Gitcoin account with Idena",
   "Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity — a unique person with equal voting power and mining income.": "Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity — a unique person with equal voting power and mining income.",
-  "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +25% grants match bonus in Gitcoin funding.": "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +25% grants match bonus in Gitcoin funding.",
+  "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.": "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.",
   "Step 1": "Step 1",
   "Get an invitation code": "Get an invitation code",
   "Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.": "Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.",
@@ -23,7 +23,7 @@
   "Find Idena and click Connect": "Find Idena and click Connect",
   "Authorise Gitcoin to access your Idena account": "Authorise Gitcoin to access your Idena account",
   "Congratulations! Your Idena account is now verified": "Congratulations! Your Idena account is now verified",
-  "githubDiscussionLink": "Leave a request in the <2>Idena Invitation Codes</2> discussion on Github from your account and we will send an invitation to your email. Please make sure your email address is set to public in your <6>Github Account Email settings</6>.",
+  "githubDiscussionLink": "Leave a request in the <2>Idena Invitation Codes</2> discussion on Github from your account. Most active accounts get invites to join the next Validation Ceremony! Please make sure your email address is set to public in your <6>Github Account Email settings</6>.",
   "idenaCommunityDiscordLink": "Join <2>Idena Community Discord</2> and request an invite from the community in <6>#invite-requests</6> channel.",
   "idenaTelegramGroupLink": "Join the official <2>Idena Telegram group</2> and request an invite from the community.",
   "idenaWebAppLink": "Open <2>Idena Web App</2>",
@@ -31,6 +31,6 @@
   "validationResults": "Wait for the validation results. If you have successfully solved the flips, you will get a <2>Newbie</2> status. Congratulations, you are now a validated cryptoidentity!",
   "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.": "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.",
   "Please choose the platform where you are most active and have longest account history:": "Please choose the platform where you are most active and have longest account history:",
-  "Send a tweet with a hashtag #IdenaTrustBonus from your account and we will send you an invitation code via Direct Message. The tweet should say:": "Send a tweet with a hashtag #IdenaTrustBonus from your account and we will send you an invitation code via Direct Message. The tweet should say:",
+  "Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony! The tweet should say:": "Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony! The tweet should say:",
   "Follow the instructions to create your account and activate it with your invitation code:": "Follow the instructions to create your account and activate it with your invitation code:"
 }
