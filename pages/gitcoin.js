@@ -188,7 +188,7 @@ export default function Gitcoin() {
                             your account. Most active accounts get invites to
                             join the next Validation Ceremony!
                             {t(
-                              'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony! The tweet should say:',
+                              'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony. The tweet should say:',
                               {ns: 'gitcoin', nsSeparator: '!'}
                             )}
                             <div className="dedicated_info">
