@@ -184,9 +184,6 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
-                            Send a tweet with a hashtag #IdenaTrustBonus from
-                            your account. Most active accounts get invites to
-                            join the next Validation Ceremony!
                             {t(
                               'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony. The tweet should say:',
                               {ns: 'gitcoin', nsSeparator: '!'}
