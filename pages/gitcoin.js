@@ -193,7 +193,7 @@ export default function Gitcoin() {
                               {ns: 'gitcoin', nsSeparator: '!'}
                             )}
                             <div className="dedicated_info">
-                              I want to join @IdenaNetwork to get 50% Trsut
+                              I want to join @IdenaNetwork to get +50% Trust
                               Bonus on @gitcoin
                               <br />
                               <span style={{color: '#578fff'}}>
