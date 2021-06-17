@@ -105,7 +105,7 @@ export default function Gitcoin() {
                 </p>
                 <p>
                   {t(
-                    'Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +25% grants match bonus in Gitcoin funding.',
+                    'Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.',
                     {ns: 'gitcoin'}
                   )}
                 </p>
@@ -133,25 +133,64 @@ export default function Gitcoin() {
                       </p>
                       <p>
                         {t(
-                          'Please choose the platform where you are most active and have longest account history:',
+                          'Please choose the platform where you have the most active account:',
                           {ns: 'gitcoin', nsSeparator: '!'}
                         )}
                       </p>
 
                       <Tabs
-                        defaultActiveKey="#social_twitter"
+                        defaultActiveKey="#social_telegram"
                         transition={false}
                         id="tab_social"
                       >
+                        <Tab eventKey="#social_telegram" title="Telegram">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="idenaTelegramGroupLink"
+                              t={t}
+                              ns="gitcoin"
+                            >
+                              Join the official{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://t.me/IdenaNetworkPublic"
+                              >
+                                Idena Telegram group
+                              </a>{' '}
+                              and request an invite from the community.
+                            </Trans>
+                          </p>
+                        </Tab>
+                        <Tab eventKey="#social_discord" title="Discord">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="idenaCommunityDiscordLink"
+                              t={t}
+                              ns="gitcoin"
+                            >
+                              Join{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://discord.gg/8BusRj7"
+                              >
+                                Idena Community Discord
+                              </a>{' '}
+                              and request an invite from the community in{' '}
+                              <i>#invite-requests</i> channel.
+                            </Trans>
+                          </p>
+                        </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
                             {t(
-                              'Send a tweet with a hashtag #IdenaTrustBonus from your account and we will send you an invitation code via Direct Message. The tweet should say:',
+                              'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony. The tweet should say:',
                               {ns: 'gitcoin', nsSeparator: '!'}
                             )}
                             <div className="dedicated_info">
-                              I want to join @IdenaNetwork to get +25% Grants
-                              Match Bonus in @gitcoin Grants Round 10
+                              I want to join @IdenaNetwork to get +50% Trust
+                              Bonus on @gitcoin
                               <br />
                               <span style={{color: '#578fff'}}>
                                 #IdenaTrustBonus
@@ -160,7 +199,7 @@ export default function Gitcoin() {
                             <a
                               rel="noreferrer"
                               target="_blank"
-                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B25%25%20Grants%20Match%20Bonus%20in%20%40gitcoin%20Grants%20Round%2010%0D%23IdenaTrustBonus"
+                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
                               className="btn btn-secondary btn-sm client_darwin_latest"
                             >
                               <img
@@ -191,9 +230,10 @@ export default function Gitcoin() {
                               >
                                 Idena Invitation Codes
                               </a>{' '}
-                              discussion on Github from your account and we will
-                              send an invitation to your email. Please make sure
-                              your email address is set to public in your{' '}
+                              discussion on Github from your account. Most
+                              active accounts get invites to join the next
+                              Validation Ceremony! Please make sure your email
+                              address is set to public in your{' '}
                               <a
                                 href="https://github.com/settings/emails"
                                 rel="noreferrer"
@@ -202,45 +242,6 @@ export default function Gitcoin() {
                                 Github Account Email settings
                               </a>
                               .
-                            </Trans>
-                          </p>
-                        </Tab>
-                        <Tab eventKey="#social_discord" title="Discord">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="idenaCommunityDiscordLink"
-                              t={t}
-                              ns="gitcoin"
-                            >
-                              Join{' '}
-                              <a
-                                rel="noreferrer"
-                                target="_blank"
-                                href="https://discord.gg/8BusRj7"
-                              >
-                                Idena Community Discord
-                              </a>{' '}
-                              and request an invite from the community in{' '}
-                              <i>#invite-requests</i> channel.
-                            </Trans>
-                          </p>
-                        </Tab>
-                        <Tab eventKey="#social_telegram" title="Telegram">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="idenaTelegramGroupLink"
-                              t={t}
-                              ns="gitcoin"
-                            >
-                              Join the official{' '}
-                              <a
-                                rel="noreferrer"
-                                target="_blank"
-                                href="https://t.me/IdenaNetworkPublic"
-                              >
-                                Idena Telegram group
-                              </a>{' '}
-                              and request an invite from the community.
                             </Trans>
                           </p>
                         </Tab>
@@ -366,6 +367,20 @@ export default function Gitcoin() {
                             {t('Train to solve flips', {ns: 'gitcoin'})}
                           </a>
                         </li>
+                        <div className="video-responsive">
+                          <iframe
+                            width="600"
+                            height="388"
+                            style={{
+                              marginBottom: '-10px',
+                            }}
+                            src="https://www.youtube.com/embed/Bb5tE9Y7M4c"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title="53rd Idena Validation Ceremony 8/29/2020 (LIVE)"
+                          />
+                        </div>
                       </ul>
                     </div>
                   </Accordion.Collapse>
@@ -462,11 +477,14 @@ export default function Gitcoin() {
                             >
                               Sign in
                             </a>{' '}
-                            to your Idena Web app 15 minutes before the next
-                            validation session starts. Check you have Wait for
-                            validation status. Make sure you have reliable and
-                            fast internet connection. We advise to use a
-                            laptop/PC for better experience.
+                            to your Idena Web app{' '}
+                            <b>
+                              15 minutes before the next validation session
+                              starts
+                            </b>
+                            . Check you have Wait for validation status. Make
+                            sure you have reliable and fast internet connection.
+                            We advise to use a laptop/PC for better experience.
                           </Trans>
                         </li>
                         <li>
@@ -475,20 +493,6 @@ export default function Gitcoin() {
                             {ns: 'gitcoin'}
                           )}
                         </li>
-                        <div className="video-responsive">
-                          <iframe
-                            width="600"
-                            height="388"
-                            style={{
-                              marginBottom: '-10px',
-                            }}
-                            src="https://www.youtube.com/embed/Bb5tE9Y7M4c"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="53rd Idena Validation Ceremony 8/29/2020 (LIVE)"
-                          />
-                        </div>
                         <li>
                           <Trans i18nKey="validationResults" t={t} ns="gitcoin">
                             Wait for the validation results. If you have
