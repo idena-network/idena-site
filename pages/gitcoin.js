@@ -215,36 +215,6 @@ export default function Gitcoin() {
                             </a>
                           </p>
                         </Tab>
-                        <Tab eventKey="#social_github" title="Github">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="githubDiscussionLink"
-                              t={t}
-                              ns="gitcoin"
-                            >
-                              Leave a request in the{' '}
-                              <a
-                                rel="noreferrer"
-                                target="_blank"
-                                href="https://github.com/idena-network/idena-docs/discussions/17"
-                              >
-                                Idena Invitation Codes
-                              </a>{' '}
-                              discussion on Github from your account. Most
-                              active accounts get invites to join the next
-                              Validation Ceremony! Please make sure your email
-                              address is set to public in your{' '}
-                              <a
-                                href="https://github.com/settings/emails"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                Github Account Email settings
-                              </a>
-                              .
-                            </Trans>
-                          </p>
-                        </Tab>
                         <Tab eventKey="#social_email" title="Email">
                           <p style={{marginTop: '2rem'}}>
                             {t(
