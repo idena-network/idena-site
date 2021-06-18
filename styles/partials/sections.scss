@@ -595,6 +595,7 @@ button {
   }
 
   .dropdown-menu {
+    overflow-y: scroll;
     max-height: 496px;
     padding: 0;
     border-radius: 6px;
