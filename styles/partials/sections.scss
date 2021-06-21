@@ -595,12 +595,14 @@ button {
   }
 
   .dropdown-menu {
+    overflow-y: scroll;
     max-height: 496px;
     padding: 0;
     border-radius: 6px;
     box-shadow: 0 2px 4px 0 rgba(83, 86, 92, 0.06);
     background-color: #ffffff;
-    overflow-y: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
     margin-bottom: 8px !important;
     border: none;
 
@@ -627,5 +629,9 @@ button {
         background-color: #ffffff;
       }
     }
+  }
+
+  .dropdown-menu::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
   }
 }
