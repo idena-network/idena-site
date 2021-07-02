@@ -232,7 +232,7 @@ export default function Home() {
                 <div className="row justify-content-center">
                   <div className="col-auto">
                     <div className="row justify-content-center">
-                      <Link href="/join-idena">
+                      <Link href="/join-idena?v1">
                         <a className="btn btn-cta">
                           <img
                             src="/static/images/idena_black.svg"
@@ -753,7 +753,7 @@ export default function Home() {
             <div className="row justify-content-center">
               <div className="col-auto">
                 <div className="row justify-content-center">
-                  <Link href="/join-idena">
+                  <Link href="/join-idena?v2">
                     <a className="btn btn-cta">
                       <img
                         src="/static/images/idena_black.svg"
