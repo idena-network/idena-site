@@ -1,6 +1,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import {Accordion, Card, Tab, Tabs} from 'react-bootstrap'
+import {
+  Accordion,
+  Card,
+  FormControl,
+  InputGroup,
+  Tab,
+  Tabs,
+} from 'react-bootstrap'
 import {useEffect, useState} from 'react'
 import validator from 'validator'
 import axios from 'axios'
@@ -10,6 +17,7 @@ import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
+// import Twitter from "twitter";
 
 const EmailSavingState = {
   None: 0,
@@ -51,6 +59,7 @@ export default function Gitcoin() {
 
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
+  const [twitterName, setTwitterName] = useState()
   const [email, setEmail] = useState()
   const [emailActionState, setEmailActionState] = useState(
     EmailSavingState.None
@@ -77,6 +86,14 @@ export default function Gitcoin() {
       setEmailActionState(EmailSavingState.Error)
       console.error('cannot send request')
     }
+  }
+
+  const getKeyByTwitter = async name => {
+    const tweetData = await axios.get('/api/getGitcoinTweetProof', {
+      params: {screen_name: 'idenaNetwork'},
+      // params: {screen_name: name},
+    })
+    console.log(tweetData)
   }
 
   return (
@@ -200,7 +217,7 @@ export default function Gitcoin() {
                               rel="noreferrer"
                               target="_blank"
                               href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
-                              className="btn btn-secondary btn-sm client_darwin_latest"
+                              className="btn btn-secondary btn-sm"
                             >
                               <img
                                 src="/static/images/twitter-icn.svg"
@@ -213,6 +230,51 @@ export default function Gitcoin() {
                               />
                               Tweet
                             </a>
+                            <a
+                              onClick={() => getKeyByTwitter(twitterName)}
+                              className="btn btn-light btn-sm m-l-s"
+                            >
+                              Get an invitation code
+                            </a>
+                            <div
+                              className="section_tight m-t-m"
+                              style={{margin: '0px'}}
+                            >
+                              <div className="row">
+                                <div className="col-sm-7 section_tight__input">
+                                  <InputGroup className="section_input">
+                                    <InputGroup.Prepend>
+                                      <InputGroup.Text id="twitterAtSign">
+                                        @
+                                      </InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                    <FormControl
+                                      placeholder="Username"
+                                      aria-label="Username"
+                                      aria-describedby="twitterAtSign"
+                                    />
+                                  </InputGroup>
+                                </div>
+                                <div
+                                  className="col-sm-4 section_tight__info separated"
+                                  style={{marginLeft: '2rem'}}
+                                >
+                                  <a
+                                    style={{
+                                      color: '#578fff',
+                                      lineHeight: '2rem',
+                                      fontWeight: 500,
+                                      cursor: 'pointer',
+                                    }}
+                                    onClick={() => getCode()}
+                                  >
+                                    {t('Get an invitation code', {
+                                      ns: 'gitcoin',
+                                    })}
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_email" title="Email">
