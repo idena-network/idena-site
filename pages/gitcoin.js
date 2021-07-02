@@ -17,6 +17,7 @@ import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
+// import Twitter from "twitter";
 
 const EmailSavingState = {
   None: 0,

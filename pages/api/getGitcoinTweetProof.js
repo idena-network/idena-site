@@ -37,7 +37,6 @@ export default async (req, res) => {
           q: `from:${req.query.screen_name} @IdenaNetwork @gitcoin #IdenaTrustBonus -is:retweet`,
         },
         async function(error, tweets, tweetsResponse) {
-          console.log(tweets.statuses)
           if (!error && tweets.statuses.length > 0) {
             if (
               Date.parse(previousEpochJson.result.validationTime) >
