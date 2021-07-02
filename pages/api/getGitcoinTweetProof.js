@@ -1,4 +1,6 @@
 import Twitter from 'twitter'
+import {query as q} from 'faunadb'
+import {serverClient} from '../../shared/utils/faunadb'
 
 export default async (req, res) => {
   const ONE_MONTH = 1000 * 60 * 60 * 24 * 30
@@ -78,4 +80,34 @@ export default async (req, res) => {
   })
 }
 
-async function getCode(name, epoch) {}
+async function getCode(name, epoch) {
+  try {
+    const {
+      data: {invite},
+    } = await serverClient.query(
+      q.If(
+        q.Exists(q.Match(q.Index('search_by_name_epoch'), name, epoch)),
+        q.Abort('Invite is already given'),
+        q.Let(
+          {
+            freeInvite: q.Match(q.Index('search_free_invite'), epoch, true),
+          },
+          q.If(
+            q.IsEmpty(q.Var('freeInvite')),
+            q.Abort('No invited left'),
+            q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
+              data: {name},
+            })
+          )
+        )
+      )
+    )
+    return invite
+  } catch (e) {
+    const errors = e.errors()
+    if (errors.length) {
+      throw new Error(errors[0].description)
+    }
+    throw new Error('Something went wrong')
+  }
+}
