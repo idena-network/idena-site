@@ -71,41 +71,12 @@ export default function Home() {
             </div>
 
             <h1 className="title">
-              {t('Proof-Of-Person Blockchain', {ns: 'index'})}
+              {t('Human-centric Blockchain', {ns: 'index'})}
             </h1>
             <div className="subtitle">
-              {t('Join the mining of the first human-centric cryptocurrency', {
+              {t('Join the democratic borderless world', {
                 ns: 'index',
               })}
-            </div>
-
-            <div
-              id="text_carousel"
-              className="carousel slide carousel-fade"
-              data-ride="carousel"
-              style={{display: 'none'}}
-            >
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="subtitle">
-                    {t('Everyone has an equal right to mine coins', {
-                      ns: 'index',
-                    })}
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="subtitle">
-                    {t('Everyone has an equal right to vote', {ns: 'index'})}
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="subtitle">
-                    {t('Everyone has an equal right to communicate privately', {
-                      ns: 'index',
-                    })}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -118,10 +89,10 @@ export default function Home() {
                   <div className="row justify-content-center">
                     <div className="col-auto">
                       <div className="row justify-content-center">
-                        <Link href="/download">
-                          <a className="btn btn-link">
-                            <i className="icon icon--download"></i>
-                            <span>{t('Download Idena', {ns: 'index'})}</span>
+                        <Link href="https://app.idena.io">
+                          <a style={{marginLeft: 15}} className="btn btn-link">
+                            <i className="icon icon--web"></i>
+                            <span>{t('Idena Web App', {ns: 'index'})}</span>
                           </a>
                         </Link>
                       </div>
@@ -129,24 +100,10 @@ export default function Home() {
 
                     <div className="col-auto">
                       <div className="row justify-content-center">
-                        <Link href="https://app.idena.io">
-                          <a style={{marginLeft: 15}} className="btn btn-link">
-                            <i className="icon icon--web"></i>
-                            <span>
-                              <Trans i18nKey="joinIdenaWeb" t={t} ns="index">
-                                Join Idena in web
-                                <span
-                                  style={{
-                                    fontSize: 'small',
-                                    marginLeft: 3,
-                                    marginTop: -11,
-                                    color: 'limegreen',
-                                  }}
-                                >
-                                  beta
-                                </span>
-                              </Trans>{' '}
-                            </span>
+                        <Link href="/download">
+                          <a className="btn btn-link">
+                            <i className="icon icon--download"></i>
+                            <span>{t('Idena Desktop App', {ns: 'index'})}</span>
                           </a>
                         </Link>
                       </div>
@@ -242,30 +199,45 @@ export default function Home() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
-              <h3>What is Idena</h3>
-
+              <h1>{t('What is Idena', {ns: 'index'})}</h1>
               <p>
-                {t(
-                  'Idena is the first proof-of-person blockchain based on democratic principles',
-                  {ns: 'index'}
-                )}
-              </p>
-
-              <p>
-                {t(
-                  'To start mining Idena, you need to prove you are a unique human. It does not require the disclosure of any personal data (no KYC). You have to appear online when the validation ceremony starts and solve a series of flip-tests (CAPTCHAs).',
-                  {ns: 'index'}
-                )}
-              </p>
-
-              <p>
-                <Trans i18nKey="joinTheDemocratisCrypto" t={t} ns="index">
-                  Join the{' '}
-                  <LinkText href="/faq#faq-start-1">
-                    <a>democratic crypto network of equal rights &rsaquo;</a>
-                  </LinkText>
+                <Trans i18nKey="whatIsIdenaNotes" t={t} ns="index">
+                  Idena is the first Proof-of-Person blockchain based on
+                  democratic principles. Every mining node is linked to a
+                  cryptoidentity – one single person with equal voting power and
+                  mining income.
                 </Trans>
               </p>
+
+              <p>
+                <Trans i18nKey="whatIsIdenaToStartMining" t={t} ns="index">
+                  Every unique human can become an Idena validator no matter who
+                  they are and where they live. To start mining Idena, you need
+                  to prove you are a unique human. It does not require the
+                  disclosure of any personal data (no KYC). You need to appear
+                  online when the validation ceremony starts and solve a series
+                  of flip-tests (CAPTCHAs).
+                </Trans>
+              </p>
+
+              <div className="lead_links">
+                <div className="row justify-content-center">
+                  <div className="col-auto">
+                    <div className="row justify-content-center">
+                      <Link href="/join-idena?v1">
+                        <a className="btn btn-cta">
+                          <img
+                            src="/static/images/idena_black.svg"
+                            alt="tweet"
+                            width="38px"
+                          />
+                          {t('Join Idena Network', {ns: 'index'})}
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="index-price-info">
                 <div className="row">
@@ -370,7 +342,7 @@ export default function Home() {
                           <span>Pancakeswap</span>
                         </div>
                         <a
-                          href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
+                          href="https://pancakeswap.info/token/0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -417,6 +389,372 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section section_content menu_section_content menu_main"
+        id="Why Idena"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-9 col-lg-9">
+              <div className="section_header">
+                <h2 className="h1">{t('Why Idena', {ns: 'index'})}</h2>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-idena.svg"
+                      alt="Evolution of the Internet"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>
+                    {t('Evolution of the Internet', {
+                      ns: 'index',
+                      nsSeparator: '#',
+                    })}
+                  </h4>
+                  <p>
+                    <Trans i18nKey="why-idena-cryptoidentity" t={t} ns="index">
+                      Idena is the next step in the evolution of decentralized
+                      systems on the Internet. First, Bitcoin brought
+                      peer-to-peer cryptocurrency payments. Then Ethereum
+                      developed a virtual machine for running decentralized
+                      apps. Idena has introduced cryptoidentity enabling people
+                      to build democratic governance on the Internet.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-cryptoidentity.svg"
+                      alt="Cryptoidentity"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Cryptoidentity', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="why-idena-sybil-resistance"
+                      t={t}
+                      ns="index"
+                    >
+                      Cryptoidentity is your digitally verified avatar. It's
+                      semi-unique which means you can easily validate one
+                      account, but it's much harder to get two and impossible to
+                      get many accounts. It can not be bought and sold, its
+                      value grows with age, it can not be taken over. Anonymous
+                      and Sybil-resistant identity is a missing part for Web
+                      3.0.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-authority.svg"
+                      alt="No authorities"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('No authorities', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans i18nKey="why-idena-no-authorities" t={t} ns="index">
+                      Cryptoidentity is mutually verified by users with no
+                      central authority in the peer-to-peer network. It is
+                      anonymous, self-managed, and valid globally.
+                      Cryptoidentity has no central issuer, so it can not be
+                      banned, restricted or censored.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-rights.svg"
+                      alt="Equal human rights"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Equal human rights', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans i18nKey="why-idena-no-authorities" t={t} ns="index">
+                      All cryptoidentities in Idena have equal rights: to
+                      validate other identities, to vote, to verify
+                      transactions. Self-sovereign, decentralized and anonymous
+                      cryptoidentity prevents human rights abuse by the
+                      powerful, and supports the rights of the individual to be
+                      oneself and to freely associate.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="section_header">
+                <h2 className="h1">{t('Use cases', {ns: 'index'})}</h2>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-voting.svg"
+                      alt="Democratic governance"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Democratic governance', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="use-cases-democratic-governance"
+                      t={t}
+                      ns="index"
+                    >
+                      One person - one vote is a fundamental principle for
+                      democracy. Cryptoidentity brings this concept to the
+                      blockchain. Advanced voting mechanisms like quadratic
+                      voting could improve distributed governance for everyone.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-freedom.svg"
+                      alt="Freedom of speech"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Freedom of speech', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="use-cases-freedom-of-speech"
+                      t={t}
+                      ns="index"
+                    >
+                      Every voice has a right to be heard. Idena allows
+                      spreading information seamlessly, and makes content
+                      censorship-resistant.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-coins.svg"
+                      alt="Universal basic income"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Universal basic income', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="use-cases-freedom-of-speech"
+                      t={t}
+                      ns="index"
+                    >
+                      Mining Idena coins is accessible for everyone who owns an
+                      average laptop with an Internet connection. All Idena
+                      participants are empowered to maintain the network and
+                      earn equal mining rewards. These rewards can be considered
+                      as a form of universal basic income.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-ads.svg"
+                      alt="Attention economy"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Attention economy', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="use-cases-attention-economy"
+                      t={t}
+                      ns="index"
+                    >
+                      Onchain advertising allows to create an ecosystem with
+                      attention economy where advertisers pay iDNA to Idena
+                      Oracles to review their ads and then burn the coins to
+                      compete for the network attention, supporting sustainable
+                      economy of the Idena network.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="section_header">
+                <h2 className="h1">{t('Technology', {ns: 'index'})}</h2>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-rocket.svg"
+                      alt="Sharding Cryptoidentity Scalability"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>
+                    {t('Sharding + Cryptoidentity = Scalability', {
+                      ns: 'index',
+                    })}
+                  </h4>
+                  <p>
+                    <Trans
+                      i18nKey="technology-scalability-decentralization-security"
+                      t={t}
+                      ns="index"
+                    >
+                      Scalable blockchain performing thousands of transactions
+                      per second can be built without compromising its safety
+                      and decentralization. Sharding combined with
+                      cryptoidentity is the solution to the blockchain trilemma:
+                      network throughput increases with the number of validated
+                      users forming more and more new shards.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-contracts.svg"
+                      alt="Smart contracts"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Smart contracts for everyone', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="technology-smart-contracts"
+                      t={t}
+                      ns="index"
+                    >
+                      Blockchain transactions can be expensive. But Idena allows
+                      anyone to mine cryptocurrency and to spend it when using
+                      smart contracts.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-time.svg"
+                      alt="Instant finality"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Instant finality', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="technology-instant-finality"
+                      t={t}
+                      ns="index"
+                    >
+                      Idena implements a Proof-of-Person Sybil control mechanism
+                      and committee-based BFT consensus with fast finality.
+                      Every block mined by Idena validators is final with almost
+                      100% probability, which means that blockchain forks are
+                      almost not possible. You need to wait just 2 blocks to
+                      make sure your transaction will be never reverted.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row justify-content-center">
+                <div className="col-md-12 col-lg-4">
+                  <div className="item-image">
+                    <img
+                      src="/static/images/main-eco.svg"
+                      alt="Eco friendly mining"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-12 col-lg-8">
+                  <h4>{t('Eco friendly mining', {ns: 'index'})}</h4>
+                  <p>
+                    <Trans
+                      i18nKey="why-idena-eco-friendly-mining"
+                      t={t}
+                      ns="index"
+                    >
+                      Idena blockchain is driven by eco-friendly Proof-of-Person
+                      consensus. To verify transactions, Idena miner needs to
+                      have a valid cryptoidentity and keep their node online.
+                      Mining income does not depend on your hardware. It doesn’t
+                      require to use up high volumes of electricity, GPUs or
+                      mining rigs.
+                    </Trans>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <div className="lead_links">
+            <div className="row justify-content-center">
+              <div className="col-auto">
+                <div className="row justify-content-center">
+                  <Link href="/join-idena?v2">
+                    <a className="btn btn-cta">
+                      <img
+                        src="/static/images/idena_black.svg"
+                        alt="tweet"
+                        width="38px"
+                      />
+                      {t('Join Idena Network', {ns: 'index'})}
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

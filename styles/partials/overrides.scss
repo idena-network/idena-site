@@ -20,11 +20,10 @@
 }
 
 .table {
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
 }
 
 .tab-content {
-
   &.block {
     border-radius: 12px;
     padding-top: rem(30px);
@@ -39,7 +38,6 @@
     color: $gray !important;
   }
 
-
   @media (#{$max_phones--big}) {
     &.block {
       margin-bottom: 60px;
@@ -47,16 +45,15 @@
 
     .btn.btn-link {
       margin-bottom: rem(-25px);
-      font-size: rem(18px); 
+      font-size: rem(18px);
       padding: 16px 20px 18px;
     }
   }
-
 }
 
 .nav-tabs {
   border: 0;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   margin-left: rem(-16px);
   padding: rem(7px);
 
@@ -70,7 +67,7 @@
 
     &.active {
       font-weight: 600;
-      color: #53565C !important;
+      color: #53565c !important;
     }
   }
 
@@ -140,8 +137,9 @@
     box-shadow: none;
     outline: none;
   }
-  
-  &:disabled, &.disabled {
+
+  &:disabled,
+  &.disabled {
     color: $gray !important;
     cursor: pointer !important;
     pointer-events: none !important;
@@ -154,19 +152,18 @@
   }
 }
 
-
 .btn.btn-link {
   padding: rem(4px 6px);
-  background-color:  transparent !important;
+  background-color: transparent !important;
   text-decoration: none !important;
-  color: #578FFF !important;
+  color: #578fff !important;
   font-size: rem(16px);
   line-height: rem(18px);
   font-weight: 500;
 
   &:hover {
-    background-color:  transparent !important;
-    color: darken(#578FFF, 3%) !important;
+    background-color: transparent !important;
+    color: darken(#578fff, 3%) !important;
   }
 
   span {
@@ -184,34 +181,57 @@
     }
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     color: $gray !important;
     cursor: pointer !important;
     pointer-events: none !important;
   }
 
-
   @media (#{$max_phones--big}) {
-      margin-bottom: rem(-25px);
-      font-size: rem(18px); 
-      padding: 16px 20px 18px;
+    margin-bottom: rem(-25px);
+    font-size: rem(18px);
+    padding: 16px 20px 18px;
   }
-
-
 }
 
 .btn.btn-secondary {
-  background-color: #578FFF;
+  background-color: #578fff;
   border-radius: 6px;
   color: $white;
   font-weight: 500;
 
   &:hover {
-    background-color: darken(#578FFF, 3%) !important;;
+    background-color: darken(#578fff, 3%) !important;
   }
 
   &:focus,
-  &:active{
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn.btn-cta {
+  background-color: #ffffff;
+  border-radius: 6px;
+  color: rgb(83, 86, 92);
+  font-size: rem(18px);
+  font-weight: 500;
+
+  img {
+    color: rgb(83, 86, 92);
+    margin: -0.7rem 1rem -0.7rem -0.1rem;
+    opacity: 0.8;
+  }
+
+  &:hover {
+    color: rgba(83, 86, 92, 0.9) !important;
+    opacity: 0.8;
+  }
+
+  &:focus,
+  &:active {
     outline: none !important;
     box-shadow: none !important;
   }
@@ -223,15 +243,12 @@
   line-height: rem(18px);
 }
 
-
-
 .iframevideo {
-
-  width: 100%; 
+  width: 100%;
   display: inline-block;
   position: relative;
   .dummy {
-     margin-top: 56%;
+    margin-top: 56%;
   }
 
   iframe {
@@ -246,10 +263,8 @@
   }
 }
 
-
-
 .fade {
-  transition: opacity .15s linear;
+  transition: opacity 0.15s linear;
 
   &:not(.show) {
     opacity: 0;
@@ -266,13 +281,13 @@
   position: relative;
   height: 0;
   overflow: hidden;
-  transition: height .35s ease;
+  transition: height 0.35s ease;
 }
 
 .carousel-item {
   .subtitle {
     opacity: 0;
-    transition: .4s ease .1s;
+    transition: 0.4s ease 0.1s;
   }
 
   &.active {
@@ -282,7 +297,6 @@
   }
 }
 
-
 .clickable {
-  cursor:pointer
+  cursor: pointer;
 }

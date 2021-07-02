@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 196">
+  <g id="Layer_4" data-name="Layer 4">
+    <g>
+      <g>
+        <line x1="82.303" y1="172.735" x2="82.303" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="89.843" y1="172.735" x2="89.843" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="97.382" y1="172.735" x2="97.382" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="104.921" y1="172.735" x2="104.921" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="112.461" y1="172.735" x2="112.461" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="120" y1="172.735" x2="120" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="127.539" y1="172.735" x2="127.539" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="135.079" y1="172.735" x2="135.079" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="142.618" y1="172.735" x2="142.618" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="150.157" y1="172.735" x2="150.157" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="157.697" y1="172.735" x2="157.697" y2="175.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      </g>
+      <g>
+        <path d="M166.3,175.785H73.7l2.834-5.743a4.311,4.311,0,0,1,3.866-2.4H159.6a4.311,4.311,0,0,1,3.866,2.4Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <path d="M133.857,160.191H106.143a15.629,15.629,0,0,0-5.612,1.043l-16.624,6.4h72.186l-16.624-6.4A15.629,15.629,0,0,0,133.857,160.191Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <path d="M133.47,160.191H106.53l3.891-4.287a4.915,4.915,0,0,1,3.638-1.61h11.882a4.915,4.915,0,0,1,3.638,1.61Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      </g>
+    </g>
+    <line x1="120" y1="34.252" x2="120" y2="49.83" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    <line x1="120" y1="75.456" x2="120" y2="154.241" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    <polygon points="120 21.549 112.727 40.78 120 39.809 127.273 40.78 120 21.549" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    <circle cx="120" cy="62.965" r="6.912" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    <circle cx="120" cy="62.965" r="2.129" style="fill: #52565c"/>
+    <g>
+      <path d="M131.775,58.792a12.484,12.484,0,0,0-23.55,0" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <path d="M108.225,67.12a12.484,12.484,0,0,0,23.55,0" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    </g>
+    <polyline points="111.905 72.62 114.309 80.453 114.309 134.523 120 143.016 125.691 134.523 125.691 80.453 128.095 72.62" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    <g>
+      <g>
+        <g>
+          <circle cx="70.336" cy="83.418" r="3.432" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <g>
+            <line x1="59.228" y1="134.992" x2="47.875" y2="134.992" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+            <line x1="63.968" y1="140.437" x2="52.616" y2="140.437" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          </g>
+          <g>
+            <line x1="80.538" y1="134.992" x2="91.891" y2="134.992" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+            <line x1="75.798" y1="140.437" x2="87.151" y2="140.437" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          </g>
+          <path d="M44.723,128.769a26.931,26.931,0,0,0,51.226,0Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <path d="M41.964,122H98.708a0,0,0,0,1,0,0v4.316a2.451,2.451,0,0,1-2.451,2.451H44.415a2.451,2.451,0,0,1-2.451-2.451V122A0,0,0,0,1,41.964,122Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <polyline points="94.336 122.002 70.336 86.85 46.335 122.002" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="70.336" y1="86.85" x2="70.336" y2="121.586" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <line x1="61.673" y1="62.965" x2="55.963" y2="62.965" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <polyline points="110.351 54.869 102.517 57.274 70.166 57.274 61.673 62.965 70.166 68.656 102.517 68.656 110.351 71.06" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="70.336" y1="57.274" x2="70.336" y2="79.987" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="102.517" y1="62.965" x2="70.331" y2="62.965" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      </g>
+      <g>
+        <g>
+          <circle cx="169.664" cy="83.418" r="3.432" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <g>
+            <line x1="180.772" y1="134.992" x2="192.125" y2="134.992" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+            <line x1="176.032" y1="140.437" x2="187.384" y2="140.437" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          </g>
+          <g>
+            <line x1="159.462" y1="134.992" x2="148.109" y2="134.992" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+            <line x1="164.202" y1="140.437" x2="152.849" y2="140.437" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          </g>
+          <path d="M195.277,128.769a26.931,26.931,0,0,1-51.226,0Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <path d="M143.743,122h51.842a2.451,2.451,0,0,1,2.451,2.451v4.316a0,0,0,0,1,0,0H141.292a0,0,0,0,1,0,0v-4.316A2.451,2.451,0,0,1,143.743,122Z" transform="translate(339.328 250.771) rotate(-180)" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <polyline points="145.664 122.002 169.664 86.85 193.665 122.002" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="169.664" y1="86.85" x2="169.664" y2="121.586" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <line x1="178.327" y1="62.965" x2="184.037" y2="62.965" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <polyline points="129.649 54.869 137.483 57.274 169.834 57.274 178.327 62.965 169.834 68.656 137.483 68.656 129.649 71.06" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="169.664" y1="57.274" x2="169.664" y2="79.987" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="137.483" y1="62.965" x2="169.669" y2="62.965" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      </g>
+    </g>
+    <g>
+      <line x1="35.51" y1="44.784" x2="35.51" y2="90.172" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <polygon points="29.422 40.373 30.828 44.57 30.828 91.271 35.51 99.271 40.191 91.271 40.191 44.57 41.597 40.373 29.422 40.373" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <path d="M23.693,36.032H47.326a0,0,0,0,1,0,0v1.5a2.7,2.7,0,0,1-2.7,2.7H26.389a2.7,2.7,0,0,1-2.7-2.7v-1.5A0,0,0,0,1,23.693,36.032Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <path d="M35.51,20.846h0a2.16,2.16,0,0,1,2.16,2.16V36.032a0,0,0,0,1,0,0H33.35a0,0,0,0,1,0,0V23.006a2.16,2.16,0,0,1,2.16-2.16Z" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    </g>
+    <g>
+      <g>
+        <g>
+          <line x1="60.671" y1="39.436" x2="56.767" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="60.671" y1="35.531" x2="56.767" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <g>
+          <line x1="80.282" y1="39.436" x2="76.377" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="80.282" y1="35.531" x2="76.377" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <g>
+          <line x1="99.892" y1="39.436" x2="95.988" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="99.892" y1="35.531" x2="95.988" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <line x1="144.012" y1="39.436" x2="140.108" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="144.012" y1="35.531" x2="140.108" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <g>
+          <line x1="163.623" y1="39.436" x2="159.718" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="163.623" y1="35.531" x2="159.718" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+        <g>
+          <line x1="183.233" y1="39.436" x2="179.329" y2="35.531" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <line x1="183.233" y1="35.531" x2="179.329" y2="39.436" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <g>
+        <circle cx="198.953" cy="27.318" r="3.203" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <path d="M202.156,95.574V27.318a3.2,3.2,0,0,0-3.2-3.2h15.016a3.2,3.2,0,0,1,3.2,3.2V91.7" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <g>
+          <path d="M205.359,92.371h15.016a3.2,3.2,0,0,1,0,6.406H205.359" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+          <circle cx="205.359" cy="95.574" r="3.203" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        </g>
+      </g>
+      <g>
+        <line x1="212.326" y1="32.573" x2="206.829" y2="32.573" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="36.983" x2="211.736" y2="36.983" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="41.392" x2="206.829" y2="41.392" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="45.801" x2="211.736" y2="45.801" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="50.21" x2="206.829" y2="50.21" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="54.619" x2="206.829" y2="54.619" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="59.029" x2="211.736" y2="59.029" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="208.374" y1="36.983" x2="206.829" y2="36.983" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="208.374" y1="45.801" x2="206.829" y2="45.801" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="208.374" y1="59.029" x2="206.829" y2="59.029" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="72.17" x2="211.736" y2="72.17" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="76.58" x2="206.829" y2="76.58" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="80.989" x2="206.829" y2="80.989" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="212.326" y1="85.398" x2="211.736" y2="85.398" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="208.374" y1="72.17" x2="206.829" y2="72.17" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+        <line x1="208.374" y1="85.398" x2="206.829" y2="85.398" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      </g>
+    </g>
+    <g>
+      <line x1="51.17" y1="187.144" x2="188.83" y2="187.144" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <line x1="36.216" y1="181.464" x2="203.784" y2="181.464" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+      <line x1="19.279" y1="175.785" x2="220.721" y2="175.785" style="fill: none;stroke: #52565c;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.5px"/>
+    </g>
+  </g>
+</svg>

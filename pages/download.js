@@ -113,7 +113,7 @@ export default function Download() {
     <Layout
       title={t('Download Idena Node', {ns: 'download'})}
       description={t(
-        'Download stable and develop builds of Idena Node and Idena Client.',
+        'Download stable and develop builds of Idena Node and Desktop Idena App.',
         {ns: 'download'}
       )}
     >
@@ -129,7 +129,8 @@ export default function Download() {
                 <p className="hint text-center">
                   <Trans i18nKey="nodeBuildGuideLink" t={t} ns="download">
                     You can download the latest 64-bit develop builds of the
-                    Idena app and node for the supported platforms below.
+                    Desktop Idena App and node for the supported platforms
+                    below.
                     <br />
                     See{' '}
                     <LinkText href="/guide">
@@ -146,12 +147,14 @@ export default function Download() {
               </div>
 
               <h3>
-                {t('Idena app (client with a built-in node)', {ns: 'download'})}
+                {t('Desktop Idena App (built-in node is included)', {
+                  ns: 'download',
+                })}
               </h3>
 
               <p>
                 {t(
-                  'Download the Idena app to run it on your desktop. The Idena node will be downloaded automatically with the first start.',
+                  'Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.',
                   {ns: 'download'}
                 )}
               </p>
@@ -234,7 +237,7 @@ export default function Download() {
               </div>
 
               <p>
-                {t('All builds of the Idena client are available on', {
+                {t('All builds of the Desktop Idena App are available on', {
                   ns: 'download',
                 })}{' '}
                 <a
@@ -246,7 +249,7 @@ export default function Download() {
                 .
                 <br />
                 <Trans i18nKey="buildFromSourceGuideLink" t={t} ns="download">
-                  You can also build the Idena app from source (see the{' '}
+                  You can also build the Desktop Idena app from source (see the{' '}
                   <LinkText href="/guide#guide-install-5">
                     <a>guide</a>
                   </LinkText>
@@ -257,7 +260,7 @@ export default function Download() {
               <br />
               <br />
 
-              <h3>{t('Idena node builds', {ns: 'download'})}</h3>
+              <h3>{t('Idena Node builds', {ns: 'download'})}</h3>
 
               <p>
                 <Trans i18nKey="remoteNodeGuideLink" t={t} ns="download">

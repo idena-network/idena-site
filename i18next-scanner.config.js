@@ -22,7 +22,6 @@ const AVAILABLE_LANGS = [
   'ja',
 ]
 
-
 module.exports = {
   input: [
     'pages/*.{js,jsx}',
@@ -52,6 +51,7 @@ module.exports = {
       'flip-challenge',
       'guide',
       'gitcoin',
+      'join-idena',
     ],
     resource: {
       loadPath: 'locales/{{lng}}/{{ns}}.json',
