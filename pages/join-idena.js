@@ -68,7 +68,7 @@ export default function JoinIdena() {
                     <div className="card-body">
                       <p>
                         <Trans
-                          i18nKey="Idena network participation is invite-based"
+                          i18nKey="getInvitationNotes"
                           t={t}
                           ns="join-idena"
                         >

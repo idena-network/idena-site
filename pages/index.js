@@ -201,11 +201,7 @@ export default function Home() {
             <div className="col-md-7 col-lg-6">
               <h1>{t('What is Idena', {ns: 'index'})}</h1>
               <p>
-                <Trans
-                  i18nKey="Idena is the first Proof-of-Person blockchain"
-                  t={t}
-                  ns="index"
-                >
+                <Trans i18nKey="whatIsIdenaNotes" t={t} ns="index">
                   Idena is the first Proof-of-Person blockchain based on
                   democratic principles. Every mining node is linked to a
                   cryptoidentity – one single person with equal voting power and
@@ -214,11 +210,7 @@ export default function Home() {
               </p>
 
               <p>
-                <Trans
-                  i18nKey="Every unique human can become an Idena validator"
-                  t={t}
-                  ns="index"
-                >
+                <Trans i18nKey="whatIsIdenaToStartMining" t={t} ns="index">
                   Every unique human can become an Idena validator no matter who
                   they are and where they live. To start mining Idena, you need
                   to prove you are a unique human. It does not require the
