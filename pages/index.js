@@ -225,13 +225,27 @@ export default function Home() {
                   disclosure of any personal data (no KYC). You need to appear
                   online when the validation ceremony starts and solve a series
                   of flip-tests (CAPTCHAs).
-                </Trans>{' '}
-                <Trans i18nKey="joinTheDemocratisCrypto1" t={t} ns="index">
-                  <LinkText href="/join-idena">
-                    <a>How to join Idena &rsaquo;</a>
-                  </LinkText>
                 </Trans>
               </p>
+
+              <div className="lead_links">
+                <div className="row justify-content-center">
+                  <div className="col-auto">
+                    <div className="row justify-content-center">
+                      <Link href="/join-idena">
+                        <a className="btn btn-cta">
+                          <img
+                            src="/static/images/idena_black.svg"
+                            alt="tweet"
+                            width="38px"
+                          />
+                          {t('Join Idena Network', {ns: 'index'})}
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="index-price-info">
                 <div className="row">
@@ -506,28 +520,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="row justify-content-center">
-                <div className="col-md-12 col-lg-4">
-                  <div className="item-image">
-                    <img
-                      src="/static/images/main-granny.svg"
-                      alt="Grannies can mine too"
-                    />
-                  </div>
-                </div>
-                <div className="col-md-12 col-lg-8">
-                  <h4>{t('Grannies can mine too', {ns: 'index'})}</h4>
-                  <p>
-                    <Trans i18nKey="why-idena-no-authorities" t={t} ns="index">
-                      Idena opens the world of crypto, crossborder money
-                      transfer, and dApps even for non tech-savvy users. No need
-                      to transfer fiat money to own crypto, you can just start
-                      mining. Even your granny can mine!
-                    </Trans>
-                  </p>
-                </div>
-              </div>
-
               <div className="section_header">
                 <h2 className="h1">{t('Use cases', {ns: 'index'})}</h2>
               </div>
@@ -747,10 +739,30 @@ export default function Home() {
                       consensus. To verify transactions, Idena miner needs to
                       have a valid cryptoidentity and keep their node online.
                       Mining income does not depend on your hardware. It doesn’t
-                      require to use up high volumes of electricity, GPUs,
-                      mining rigs, etc.
+                      require to use up high volumes of electricity, GPUs or
+                      mining rigs.
                     </Trans>
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <div className="lead_links">
+            <div className="row justify-content-center">
+              <div className="col-auto">
+                <div className="row justify-content-center">
+                  <Link href="/join-idena">
+                    <a className="btn btn-cta">
+                      <img
+                        src="/static/images/idena_black.svg"
+                        alt="tweet"
+                        width="38px"
+                      />
+                      {t('Join Idena Network', {ns: 'index'})}
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
