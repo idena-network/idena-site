@@ -217,6 +217,17 @@
   }
 }
 
+.btn.btn-light {
+  background-color: #e8eaed;
+  border-radius: 6px;
+  color: #96999e;
+  font-weight: 500;
+
+  &:hover {
+    color: #578FFF;
+  }
+}
+
 .btn-sm {
   padding: rem(11px 16px);
   font-size: rem(14px);
@@ -285,4 +296,11 @@
 
 .clickable {
   cursor:pointer
+}
+
+.m-l-s {
+  margin-left: 0.5rem;
+}
+.m-t-m {
+  margin-top: 1rem !important;
 }
