@@ -580,7 +580,7 @@ export default function Home() {
                   <h4>{t('Universal basic income', {ns: 'index'})}</h4>
                   <p>
                     <Trans
-                      i18nKey="use-cases-freedom-of-speech"
+                      i18nKey="use-cases-universal-basic-income"
                       t={t}
                       ns="index"
                     >
