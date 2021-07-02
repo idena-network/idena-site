@@ -716,11 +716,11 @@ export default function Home() {
                       ns="index"
                     >
                       Idena implements a Proof-of-Person Sybil control mechanism
-                      and committee-based BFT consensus with fast finaility.
-                      Every block mined by Idena miners is final with almost
+                      and committee-based BFT consensus with fast finality.
+                      Every block mined by Idena validators is final with almost
                       100% probability, which means that blockchain forks are
                       almost not possible. You need to wait just 2 blocks to
-                      make sure that your transaction will be never reverted.
+                      make sure your transaction will be never reverted.
                     </Trans>
                   </p>
                 </div>
@@ -731,12 +731,12 @@ export default function Home() {
                   <div className="item-image">
                     <img
                       src="/static/images/main-eco.svg"
-                      alt="Eco friendly minig"
+                      alt="Eco friendly mining"
                     />
                   </div>
                 </div>
                 <div className="col-md-12 col-lg-8">
-                  <h4>{t('Eco friendly minig', {ns: 'index'})}</h4>
+                  <h4>{t('Eco friendly mining', {ns: 'index'})}</h4>
                   <p>
                     <Trans
                       i18nKey="why-idena-eco-friendly-mining"
