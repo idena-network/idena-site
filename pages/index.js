@@ -500,7 +500,7 @@ export default function Home() {
                 <div className="col-md-12 col-lg-8">
                   <h4>{t('Equal human rights', {ns: 'index'})}</h4>
                   <p>
-                    <Trans i18nKey="why-idena-no-authorities" t={t} ns="index">
+                    <Trans i18nKey="why-idena-equal-human-rights" t={t} ns="index">
                       All cryptoidentities in Idena have equal rights: to
                       validate other identities, to vote, to verify
                       transactions. Self-sovereign, decentralized and anonymous
@@ -580,7 +580,7 @@ export default function Home() {
                   <h4>{t('Universal basic income', {ns: 'index'})}</h4>
                   <p>
                     <Trans
-                      i18nKey="use-cases-freedom-of-speech"
+                      i18nKey="use-cases-universal-basic-income"
                       t={t}
                       ns="index"
                     >
