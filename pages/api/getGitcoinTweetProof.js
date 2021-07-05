@@ -11,21 +11,6 @@ export default async (req, res) => {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
   })
 
-  client.get(
-    'search/tweets',
-    {
-      q: 'from:IdenaNetwork "idena" -is:retweet',
-    },
-    function(error, data, response) {
-      if (!error) {
-        console.log(data)
-      } else {
-        console.log(error)
-      }
-    }
-  )
-  return res.status(200).send('yeah')
-
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
   const currentEpochJson = await currentEpoch.json()
   const previousEpoch = await fetch(
@@ -64,7 +49,7 @@ export default async (req, res) => {
             try {
               codeResponse = getCode(
                 req.query.screen_name,
-                previousEpochJson.result.epoch
+                currentEpochJson.result.epoch
               )
               return res.status(200).send(codeResponse)
             } catch (e) {

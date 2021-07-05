@@ -90,8 +90,7 @@ export default function Gitcoin() {
 
   const getKeyByTwitter = async name => {
     const tweetData = await axios.get('/api/getGitcoinTweetProof', {
-      params: {screen_name: 'idenaNetwork'},
-      // params: {screen_name: name},
+      params: {screen_name: name},
     })
     console.log(tweetData)
   }
@@ -230,12 +229,6 @@ export default function Gitcoin() {
                               />
                               Tweet
                             </a>
-                            <a
-                              onClick={() => getKeyByTwitter(twitterName)}
-                              className="btn btn-light btn-sm m-l-s"
-                            >
-                              Get an invitation code
-                            </a>
                             <div
                               className="section_tight m-t-m"
                               style={{margin: '0px'}}
@@ -252,6 +245,10 @@ export default function Gitcoin() {
                                       placeholder="Username"
                                       aria-label="Username"
                                       aria-describedby="twitterAtSign"
+                                      value={twitterName}
+                                      onChange={n =>
+                                        setTwitterName(n.target.value)
+                                      }
                                     />
                                   </InputGroup>
                                 </div>
@@ -266,7 +263,7 @@ export default function Gitcoin() {
                                       fontWeight: 500,
                                       cursor: 'pointer',
                                     }}
-                                    onClick={() => getCode()}
+                                    onClick={() => getKeyByTwitter(twitterName)}
                                   >
                                     {t('Get an invitation code', {
                                       ns: 'gitcoin',
@@ -275,6 +272,7 @@ export default function Gitcoin() {
                                 </div>
                               </div>
                             </div>
+                            <Alert state={emailActionState} />
                           </p>
                         </Tab>
                         <Tab eventKey="#social_email" title="Email">
