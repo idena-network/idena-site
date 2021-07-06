@@ -17,7 +17,6 @@ import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
-// import Twitter from "twitter";
 
 const EmailSavingState = {
   None: 0,
@@ -27,7 +26,7 @@ const EmailSavingState = {
 }
 
 // eslint-disable-next-line react/prop-types
-function Alert({state}) {
+function Alert({state, message}) {
   return (
     <div
       style={{
@@ -41,17 +40,27 @@ function Alert({state}) {
         borderRadius: '8px',
       }}
     >
-      {state === EmailSavingState.Success && (
-        <span>Email submitted. We will contact you soon.</span>
-      )}
-      {state === EmailSavingState.InvalidEmail && (
-        <span>Wrong email address. Please try another one.</span>
-      )}
-      {state === EmailSavingState.Error && (
-        <span>An error occured. Pleasetry again later.</span>
-      )}
+      <span>{message}</span>
     </div>
   )
+}
+
+function getEmailAlertMessage(state) {
+  let message = ''
+  switch (state) {
+    case EmailSavingState.Success:
+      message = 'Email submitted. We will contact you soon.'
+      break
+    case EmailSavingState.InvalidEmail:
+      message = 'Wrong email address. Please try another one.'
+      break
+    case EmailSavingState.Error:
+    default:
+      message = 'An error occured. Please try again later.'
+      break
+  }
+
+  return message
 }
 
 export default function Gitcoin() {
@@ -62,6 +71,10 @@ export default function Gitcoin() {
   const [twitterName, setTwitterName] = useState()
   const [email, setEmail] = useState()
   const [emailActionState, setEmailActionState] = useState(
+    EmailSavingState.None
+  )
+  const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
+  const [twitterAlertState, setTwitterAlertState] = useState(
     EmailSavingState.None
   )
 
@@ -89,10 +102,21 @@ export default function Gitcoin() {
   }
 
   const getKeyByTwitter = async name => {
-    const tweetData = await axios.get('/api/getGitcoinTweetProof', {
-      params: {screen_name: name},
-    })
-    console.log(tweetData)
+    try {
+      const response = await axios.get('/api/getGitcoinTweetProof', {
+        params: {screen_name: name},
+      })
+      console.log(response.response.data)
+      // setTwitterAlertMessage(response)
+      setTwitterAlertState(EmailSavingState.Success)
+    } catch (e) {
+      if (!e.response) {
+        setTwitterAlertMessage('Something went wrong')
+      } else {
+        setTwitterAlertMessage(e.response.data)
+      }
+      setTwitterAlertState(EmailSavingState.Error)
+    }
   }
 
   return (
@@ -272,7 +296,7 @@ export default function Gitcoin() {
                                 </div>
                               </div>
                             </div>
-                            <Alert state={emailActionState} />
+                            <Alert state={twitterAlertState} message={twitterAlertMessage}/>
                           </p>
                         </Tab>
                         <Tab eventKey="#social_email" title="Email">
@@ -313,7 +337,7 @@ export default function Gitcoin() {
                               </div>
                             </div>
                           </div>
-                          <Alert state={emailActionState} />
+                          <Alert state={emailActionState} message={getEmailAlertMessage(emailActionState)}/>
                         </Tab>
                       </Tabs>
                     </div>
