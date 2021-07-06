@@ -212,6 +212,17 @@
   }
 }
 
+.btn.btn-light {
+  background-color: #e8eaed;
+  border-radius: 6px;
+  color: #96999e;
+  font-weight: 500;
+
+  &:hover {
+    color: #578FFF;
+  }
+}
+
 .btn.btn-cta {
   background-color: #ffffff;
   border-radius: 6px;
@@ -312,6 +323,13 @@
   cursor: pointer;
 }
 
+
+.m-l-s {
+  margin-left: 0.5rem;
+}
+.m-t-m {
+  margin-top: 1rem !important;
+}
 
 .m-l-s {
   margin-left: 0.5rem;
