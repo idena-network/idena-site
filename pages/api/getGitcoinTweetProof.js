@@ -21,7 +21,7 @@ export default async (req, res) => {
     return res.status(400).send('Something went wrong')
   }
 
-  client.get('users/lookup', req.query, function(error, data, response) {
+  client.get('users/lookup', req.query, async function(error, data, response) {
     if (!error && data.length > 0) {
       if (data[0].followers_count < 10) {
         return res
@@ -36,18 +36,19 @@ export default async (req, res) => {
         {
           q: `from:${req.query.screen_name} @IdenaNetwork @gitcoin #IdenaTrustBonus -is:retweet`,
         },
-        function(error, tweets, tweetsResponse) {
-          if (!error && tweets.length > 0) {
+        async function(error, tweets, tweetsResponse) {
+          console.log(tweets.statuses)
+          if (!error && tweets.statuses.length > 0) {
             if (
               Date.parse(previousEpochJson.result.validationTime) >
-              Date.parse(tweets.statuses.created_at)
+              Date.parse(tweets.statuses[0].created_at)
             ) {
               return res.status(400).send('Can not verify your tweet')
             }
 
             let codeResponse
             try {
-              codeResponse = getCode(
+              codeResponse = await getCode(
                 req.query.screen_name,
                 currentEpochJson.result.epoch
               )
