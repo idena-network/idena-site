@@ -3,7 +3,6 @@ import {query as q} from 'faunadb'
 import {serverClient} from '../../shared/utils/faunadb'
 
 export default async (req, res) => {
-  const ONE_MONTH = 1000 * 60 * 60 * 24 * 30
   const client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -23,12 +22,15 @@ export default async (req, res) => {
 
   client.get('users/lookup', req.query, async function(error, data, response) {
     if (!error && data.length > 0) {
-      if (data[0].followers_count < 10) {
+      if (data[0].followers_count < process.env.TWITTER_MINIMUM_SUBS_COUNT) {
         return res
           .status(400)
           .send('Your twitter account has too few subscribers')
       }
-      if (Date.now() - Date.parse(data[0].status.created_at) > ONE_MONTH) {
+      if (
+        Date.now() - Date.parse(data[0].created_at) <
+        process.env.TWITTER_AGE_MILLIS
+      ) {
         return res.status(400).send('Your twitter account is too new')
       }
       client.get(

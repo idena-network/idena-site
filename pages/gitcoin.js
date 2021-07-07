@@ -30,17 +30,17 @@ const EmailSavingState = {
 function Alert({state, message}) {
   return (
     <div
-      style={{
-        display: state === EmailSavingState.None ? 'none' : 'block',
-        backgroundColor:
-          state === EmailSavingState.Success ? '#27d980' : '#ff6666',
-        padding: '18px 24px',
-        color: 'white',
-        fontSize: '1rem',
-        marginTop: '1rem',
-        borderRadius: '8px',
-      }}
+      className={`alert ${state === EmailSavingState.None ? 'hide' : ''} ${
+        state === EmailSavingState.Success ? 'success' : 'error'
+      }`}
     >
+      <img
+        src={`/static/images/alert-${
+          state === EmailSavingState.Success ? 'success' : 'error'
+        }.svg`}
+        alt="alert"
+        width="20"
+      />
       <span>{message}</span>
     </div>
   )
@@ -70,12 +70,14 @@ export default function Gitcoin() {
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
   const [twitterName, setTwitterName] = useState()
+  const [isTweetChecking, setIsTweetChecking] = useState(false)
   const [email, setEmail] = useState()
   const [emailActionState, setEmailActionState] = useState(
     EmailSavingState.None
   )
   const [isTextCopied, setIsTextCopied] = useState(false)
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
+  const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(
     EmailSavingState.None
   )
@@ -104,12 +106,15 @@ export default function Gitcoin() {
   }
 
   const getKeyByTwitter = async name => {
+    setIsTweetChecking(true)
     try {
       const response = await axios.get('/api/getGitcoinTweetProof', {
         params: {screen_name: name},
       })
-      console.log(response.response.data)
-      // setTwitterAlertMessage(response)
+      setTwitterAlertMessage(
+        'Your invitation code has been generated successfully!'
+      )
+      setTwitterKey(response.data)
       setTwitterAlertState(EmailSavingState.Success)
     } catch (e) {
       if (!e.response) {
@@ -119,6 +124,14 @@ export default function Gitcoin() {
       }
       setTwitterAlertState(EmailSavingState.Error)
     }
+  }
+
+  function copyTweet() {
+    navigator.clipboard.writeText(
+      'I want to join @IdenaNetwork to get +50% Trust Bonus on @gitcoin ' +
+        '#IdenaTrustBonus'
+    )
+    setIsTextCopied(true)
   }
 
   function copyKey() {
@@ -236,7 +249,18 @@ export default function Gitcoin() {
                               {ns: 'gitcoin', nsSeparator: '!'}
                             )}
                           </p>
-                          <div className="dedicated_info">
+                          <div className="dedicated_info inactive">
+                            <img
+                              style={{
+                                position: 'absolute',
+                                right: '2rem',
+                                cursor: 'pointer',
+                              }}
+                              onClick={() => copyTweet()}
+                              src="/static/images/icon-copy.svg"
+                              alt="copy"
+                              width="13"
+                            />
                             I want to join @IdenaNetwork to get +50% Trust Bonus
                             on @gitcoin
                             <br />
@@ -244,24 +268,7 @@ export default function Gitcoin() {
                               #IdenaTrustBonus
                             </span>
                           </div>
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
-                            className="btn btn-secondary btn-sm"
-                          >
-                            <img
-                              src="/static/images/twitter-icn.svg"
-                              alt="tweet"
-                              width="24"
-                              style={{
-                                color: '#d8d8d8',
-                                margin: '-0.375rem 0.5rem -0.25rem 0',
-                              }}
-                            />
-                            Tweet
-                          </a>
-                          <div className="section_tight margin-t-l">
+                          <div className="section_tight">
                             <div className="row">
                               <div className="col-sm-7 section_tight__input">
                                 <InputGroup className="section_input">
@@ -271,8 +278,8 @@ export default function Gitcoin() {
                                     </InputGroup.Text>
                                   </InputGroup.Prepend>
                                   <FormControl
-                                    placeholder="Username"
-                                    aria-label="Username"
+                                    placeholder="Your nickname"
+                                    aria-label="Your nickname"
                                     aria-describedby="twitterAtSign"
                                     value={twitterName}
                                     onChange={n =>
@@ -287,7 +294,9 @@ export default function Gitcoin() {
                               >
                                 <a
                                   style={{
-                                    color: '#578fff',
+                                    color: isTweetChecking
+                                      ? '#96999e'
+                                      : '#578fff',
                                     lineHeight: '2rem',
                                     fontWeight: 500,
                                     cursor: 'pointer',
@@ -305,6 +314,17 @@ export default function Gitcoin() {
                             state={twitterAlertState}
                             message={twitterAlertMessage}
                           />
+                          {isTweetChecking &&
+                            twitterAlertState === EmailSavingState.None && (
+                              <div className="loadingState">
+                                <img
+                                  style={{backgroundColor: '#f5f6f7'}}
+                                  src="/static/images/spinner.svg"
+                                  alt="Loading..."
+                                  width="48"
+                                />
+                              </div>
+                            )}
                           {twitterAlertState === EmailSavingState.Success && (
                             <div
                               className="section_tight margin-t-m"
@@ -321,10 +341,15 @@ export default function Gitcoin() {
                               </span>
 
                               <div style={{wordBreak: 'break-all'}}>
-                                {twitterAlertMessage}
+                                {twitterKey}
                                 {isTextCopied ? (
                                   <span
-                                    style={{fontSize: '14px', color: '#578fff'}}
+                                    style={{
+                                      marginLeft: '0.5rem',
+                                      fontSize: '14px',
+                                      fontWeight: '500',
+                                      color: '#27d980',
+                                    }}
                                   >
                                     Copied!
                                   </span>
