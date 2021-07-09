@@ -35,7 +35,7 @@ export default async (req, res) => {
       client.get(
         'search/tweets',
         {
-          q: `from:${req.query.screen_name} @IdenaNetwork @gitcoin #IdenaTrustBonus -is:retweet`,
+          q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
         },
         async function(error, tweets, tweetsResponse) {
           if (!error && tweets.statuses.length > 0) {

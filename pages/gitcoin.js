@@ -71,14 +71,15 @@ export default function Gitcoin() {
   const [hash] = useHash()
   const [twitterName, setTwitterName] = useState()
   const [isTweetChecking, setIsTweetChecking] = useState(false)
-  const [email, setEmail] = useState()
-  const [emailActionState, setEmailActionState] = useState(
-    EmailSavingState.None
-  )
   const [isTextCopied, setIsTextCopied] = useState(false)
+  const [isTweetCopied, setIsTweetCopied] = useState(false)
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(
+    EmailSavingState.None
+  )
+  const [email, setEmail] = useState()
+  const [emailActionState, setEmailActionState] = useState(
     EmailSavingState.None
   )
 
@@ -131,7 +132,7 @@ export default function Gitcoin() {
       'I want to join @IdenaNetwork to get +50% Trust Bonus on @gitcoin ' +
         '#IdenaTrustBonus'
     )
-    setIsTextCopied(true)
+    setIsTweetCopied(true)
   }
 
   function copyKey() {
@@ -244,23 +245,49 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
-                            {t(
-                              'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony. The tweet should say:',
-                              {ns: 'gitcoin', nsSeparator: '!'}
-                            )}
+                            <Trans i18nKey="tweetSendingTip" t={t} ns="gitcoin">
+                              <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
+                              >
+                                Send a tweet
+                              </a>{' '}
+                              with a hashtag #IdenaTrustBonus from your account.
+                              Most active accounts get invites to join the next
+                              Validation Ceremony. The tweet should say:
+                            </Trans>
                           </p>
-                          <div className="dedicated_info inactive">
-                            <img
-                              style={{
-                                position: 'absolute',
-                                right: '2rem',
-                                cursor: 'pointer',
-                              }}
-                              onClick={() => copyTweet()}
-                              src="/static/images/icon-copy.svg"
-                              alt="copy"
-                              width="13"
-                            />
+                          <div
+                            style={{paddingRight: '5rem'}}
+                            className="dedicated_info inactive"
+                          >
+                            {isTweetCopied ? (
+                              <span
+                                style={{
+                                  position: 'absolute',
+                                  right: '2rem',
+                                  marginTop: '-0.5rem',
+                                  fontSize: '14px',
+                                  fontWeight: '500',
+                                  color: '#27d980',
+                                }}
+                              >
+                                Copied!
+                              </span>
+                            ) : (
+                              <img
+                                style={{
+                                  position: 'absolute',
+                                  right: '2rem',
+                                  cursor: 'pointer',
+                                }}
+                                onClick={() => copyTweet()}
+                                src="/static/images/icon-copy.svg"
+                                alt="copy"
+                                width="13"
+                              />
+                            )}
                             I want to join @IdenaNetwork to get +50% Trust Bonus
                             on @gitcoin
                             <br />
@@ -369,49 +396,49 @@ export default function Gitcoin() {
                             </div>
                           )}
                         </Tab>
-                        <Tab eventKey="#social_email" title="Email">
-                          <p style={{marginTop: '2rem'}}>
-                            {t(
-                              'Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.',
-                              {ns: 'gitcoin'}
-                            )}
-                          </p>
-                          <div
-                            className="section_tight"
-                            style={{margin: '0px'}}
-                          >
-                            <div className="row">
-                              <div className="col-sm-7 section_tight__info">
-                                <input
-                                  type="text"
-                                  placeholder="Your email"
-                                  value={email}
-                                  onChange={e => setEmail(e.target.value)}
-                                />
-                              </div>
-                              <div
-                                className="col-sm-4 section_tight__info separated"
-                                style={{marginLeft: '2rem'}}
-                              >
-                                <a
-                                  style={{
-                                    color: '#578fff',
-                                    lineHeight: '2rem',
-                                    fontWeight: 500,
-                                    cursor: 'pointer',
-                                  }}
-                                  onClick={() => getCode()}
-                                >
-                                  {t('Get an invitation code', {ns: 'gitcoin'})}
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <Alert
-                            state={emailActionState}
-                            message={getEmailAlertMessage(emailActionState)}
-                          />
-                        </Tab>
+                        {/* <Tab eventKey="#social_email" title="Email"> */}
+                        {/*  <p style={{marginTop: '2rem'}}> */}
+                        {/*    {t( */}
+                        {/*      'Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.', */}
+                        {/*      {ns: 'gitcoin'} */}
+                        {/*    )} */}
+                        {/*  </p> */}
+                        {/*  <div */}
+                        {/*    className="section_tight" */}
+                        {/*    style={{margin: '0px'}} */}
+                        {/*  > */}
+                        {/*    <div className="row"> */}
+                        {/*      <div className="col-sm-7 section_tight__info"> */}
+                        {/*        <input */}
+                        {/*          type="text" */}
+                        {/*          placeholder="Your email" */}
+                        {/*          value={email} */}
+                        {/*          onChange={e => setEmail(e.target.value)} */}
+                        {/*        /> */}
+                        {/*      </div> */}
+                        {/*      <div */}
+                        {/*        className="col-sm-4 section_tight__info separated" */}
+                        {/*        style={{marginLeft: '2rem'}} */}
+                        {/*      > */}
+                        {/*        <a */}
+                        {/*          style={{ */}
+                        {/*            color: '#578fff', */}
+                        {/*            lineHeight: '2rem', */}
+                        {/*            fontWeight: 500, */}
+                        {/*            cursor: 'pointer', */}
+                        {/*          }} */}
+                        {/*          onClick={() => getCode()} */}
+                        {/*        > */}
+                        {/*          {t('Get an invitation code', {ns: 'gitcoin'})} */}
+                        {/*        </a> */}
+                        {/*      </div> */}
+                        {/*    </div> */}
+                        {/*  </div> */}
+                        {/*  <Alert */}
+                        {/*    state={emailActionState} */}
+                        {/*    message={getEmailAlertMessage(emailActionState)} */}
+                        {/*  /> */}
+                        {/* </Tab> */}
                       </Tabs>
                     </div>
                   </Accordion.Collapse>

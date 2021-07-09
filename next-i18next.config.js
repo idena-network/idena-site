@@ -25,4 +25,8 @@ module.exports = {
     ],
     defaultLocale: 'en',
   },
+  react: {
+    useSuspense: false,
+    wait: true,
+  },
 }
