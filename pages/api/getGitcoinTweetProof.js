@@ -10,6 +10,7 @@ export default async (req, res) => {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
   })
 
+  const ONE_YEAR = 1000 * 60 * 60 * 24 * 365
   const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 10
   const minTwitterAge = process.env.TWITTER_AGE_MILLIS || 2592000000
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
@@ -24,12 +25,15 @@ export default async (req, res) => {
 
   client.get('users/lookup', req.query, async function(error, data, response) {
     if (!error && data.length > 0) {
-      if (data[0].followers_count < minTwitterSubs) {
+      if (
+        data[0].followers_count < minTwitterSubs &&
+        Date.now() - Date.parse(data[0].created_at) < minTwitterAge
+      ) {
         return res
           .status(400)
           .send('Your twitter account has too few subscribers')
       }
-      if (Date.now() - Date.parse(data[0].created_at) < minTwitterAge) {
+      if (Date.now() - Date.parse(data[0].created_at) < ONE_YEAR) {
         return res.status(400).send('Your twitter account is too new')
       }
       client.get(

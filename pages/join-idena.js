@@ -24,6 +24,7 @@ const EmailSavingState = {
   InvalidEmail: 2,
   Error: 3,
 }
+const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
 
 // eslint-disable-next-line react/prop-types
 function Alert({state, message}) {
@@ -210,7 +211,11 @@ export default function JoinIdena() {
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
-                            <Trans i18nKey="tweetSendingTip" t={t} ns="join-idena">
+                            <Trans
+                              i18nKey="tweetSendingTip"
+                              t={t}
+                              ns="join-idena"
+                            >
                               <a
                                 target="_blank"
                                 rel="noreferrer"
@@ -218,9 +223,13 @@ export default function JoinIdena() {
                               >
                                 Send a tweet
                               </a>{' '}
-                              with a hashtag #IdenaInvite from your account.
-                              Most active accounts get invites to join the next
-                              Validation Ceremony. The tweet should say:
+                              with a hashtag #IdenaInvite from your account. To
+                              get an invite, your account should be{' '}
+                              <b>
+                                older older than 1 year or older than two months
+                                and have at least {{followersCount}} followers
+                              </b>
+                              . The tweet should say:
                             </Trans>
                           </p>
                           <div

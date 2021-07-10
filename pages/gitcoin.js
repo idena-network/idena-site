@@ -25,6 +25,7 @@ const EmailSavingState = {
   InvalidEmail: 2,
   Error: 3,
 }
+const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
 
 // eslint-disable-next-line react/prop-types
 function Alert({state, message}) {
@@ -254,8 +255,12 @@ export default function Gitcoin() {
                                 Send a tweet
                               </a>{' '}
                               with a hashtag #IdenaTrustBonus from your account.
-                              Most active accounts get invites to join the next
-                              Validation Ceremony. The tweet should say:
+                              To get an invite, your account should be{' '}
+                              <b>
+                                older older than 1 year or older than two months
+                                and least {{followersCount}} followers
+                              </b>
+                              . The tweet should say:
                             </Trans>
                           </p>
                           <div
