@@ -237,10 +237,8 @@ export default function JoinIdena() {
                             className="dedicated_info inactive"
                           >
                             {isTweetCopied ? (
-                              <span
+                              <span className="copy_element"
                                 style={{
-                                  position: 'absolute',
-                                  right: '2rem',
                                   marginTop: '-0.5rem',
                                   fontSize: '14px',
                                   fontWeight: '500',
@@ -250,10 +248,8 @@ export default function JoinIdena() {
                                 Copied!
                               </span>
                             ) : (
-                              <img
+                              <img className="copy_element"
                                 style={{
-                                  position: 'absolute',
-                                  right: '2rem',
                                   cursor: 'pointer',
                                 }}
                                 onClick={() => copyTweet()}

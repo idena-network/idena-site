@@ -282,6 +282,10 @@
   &__info {
     vertical-align: middle;
     padding: 0.125rem 0 !important;
+
+    @media (#{$max_phones--big}) {
+      margin-left: 0 !important;
+    }
   }
 
   &__input {
@@ -303,10 +307,19 @@
       height: 60px;
       padding-left: 0.5rem !important;
     }
+
+    @media (#{$max_phones--big}) {
+      margin: -12px 0px 0px -24px;
+    }
   }
 
   .separated {
     border-left: 1px solid #e8eaed;
+
+    @media (#{$max_phones--big}) {
+      border-left: none;
+      border-top: 1px solid #e8eaed;
+    }
   }
 
   input {
@@ -616,6 +629,15 @@
 
   &.inactive {
     background-color: #ECEEEF;
+  }
+
+  .copy_element {
+    position: absolute;
+    right: 2rem;
+
+    @media (#{$max_phones--big}) {
+      right: 4.25rem;
+    }
   }
 }
 
