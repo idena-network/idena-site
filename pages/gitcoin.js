@@ -19,10 +19,9 @@ import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
 // import Twitter from "twitter";
 
-const EmailSavingState = {
+const ResponseState = {
   None: 0,
   Success: 1,
-  InvalidEmail: 2,
   Error: 3,
 }
 const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
@@ -31,13 +30,13 @@ const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
 function Alert({state, message}) {
   return (
     <div
-      className={`alert ${state === EmailSavingState.None ? 'hide' : ''} ${
-        state === EmailSavingState.Success ? 'success' : 'error'
+      className={`alert ${state === ResponseState.None ? 'hide' : ''} ${
+        state === ResponseState.Success ? 'success' : 'error'
       }`}
     >
       <img
         src={`/static/images/alert-${
-          state === EmailSavingState.Success ? 'success' : 'error'
+          state === ResponseState.Success ? 'success' : 'error'
         }.svg`}
         alt="alert"
         width="20"
@@ -45,24 +44,6 @@ function Alert({state, message}) {
       <span>{message}</span>
     </div>
   )
-}
-
-function getEmailAlertMessage(state) {
-  let message = ''
-  switch (state) {
-    case EmailSavingState.Success:
-      message = 'Email submitted. We will contact you soon.'
-      break
-    case EmailSavingState.InvalidEmail:
-      message = 'Wrong email address. Please try another one.'
-      break
-    case EmailSavingState.Error:
-    default:
-      message = 'An error occured. Please try again later.'
-      break
-  }
-
-  return message
 }
 
 export default function Gitcoin() {
@@ -77,11 +58,7 @@ export default function Gitcoin() {
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(
-    EmailSavingState.None
-  )
-  const [email, setEmail] = useState()
-  const [emailActionState, setEmailActionState] = useState(
-    EmailSavingState.None
+    ResponseState.None
   )
 
   useEffect(() => {
@@ -90,22 +67,6 @@ export default function Gitcoin() {
 
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
-
-  const getCode = async () => {
-    try {
-      if (!validator.isEmail(email)) {
-        setEmailActionState(EmailSavingState.InvalidEmail)
-        return
-      }
-
-      await axios.post('/api/saveEmail', {email})
-
-      setEmailActionState(EmailSavingState.Success)
-    } catch (e) {
-      setEmailActionState(EmailSavingState.Error)
-      console.error('cannot send request')
-    }
-  }
 
   const getKeyByTwitter = async name => {
     setIsTweetChecking(true)
@@ -117,14 +78,14 @@ export default function Gitcoin() {
         'Your invitation code has been generated successfully!'
       )
       setTwitterKey(response.data)
-      setTwitterAlertState(EmailSavingState.Success)
+      setTwitterAlertState(ResponseState.Success)
     } catch (e) {
       if (!e.response) {
         setTwitterAlertMessage('Something went wrong')
       } else {
         setTwitterAlertMessage(e.response.data)
       }
-      setTwitterAlertState(EmailSavingState.Error)
+      setTwitterAlertState(ResponseState.Error)
     }
   }
 
@@ -343,7 +304,7 @@ export default function Gitcoin() {
                             message={twitterAlertMessage}
                           />
                           {isTweetChecking &&
-                            twitterAlertState === EmailSavingState.None && (
+                            twitterAlertState === ResponseState.None && (
                               <div className="loadingState">
                                 <img
                                   style={{backgroundColor: '#f5f6f7'}}
@@ -353,7 +314,7 @@ export default function Gitcoin() {
                                 />
                               </div>
                             )}
-                          {twitterAlertState === EmailSavingState.Success && (
+                          {twitterAlertState === ResponseState.Success && (
                             <div
                               className="section_tight margin-t-m"
                               style={{margin: '0px', textAlign: 'left'}}
@@ -397,49 +358,6 @@ export default function Gitcoin() {
                             </div>
                           )}
                         </Tab>
-                        {/* <Tab eventKey="#social_email" title="Email"> */}
-                        {/*  <p style={{marginTop: '2rem'}}> */}
-                        {/*    {t( */}
-                        {/*      'Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.', */}
-                        {/*      {ns: 'gitcoin'} */}
-                        {/*    )} */}
-                        {/*  </p> */}
-                        {/*  <div */}
-                        {/*    className="section_tight" */}
-                        {/*    style={{margin: '0px'}} */}
-                        {/*  > */}
-                        {/*    <div className="row"> */}
-                        {/*      <div className="col-sm-7 section_tight__info"> */}
-                        {/*        <input */}
-                        {/*          type="text" */}
-                        {/*          placeholder="Your email" */}
-                        {/*          value={email} */}
-                        {/*          onChange={e => setEmail(e.target.value)} */}
-                        {/*        /> */}
-                        {/*      </div> */}
-                        {/*      <div */}
-                        {/*        className="col-sm-4 section_tight__info separated" */}
-                        {/*        style={{marginLeft: '2rem'}} */}
-                        {/*      > */}
-                        {/*        <a */}
-                        {/*          style={{ */}
-                        {/*            color: '#578fff', */}
-                        {/*            lineHeight: '2rem', */}
-                        {/*            fontWeight: 500, */}
-                        {/*            cursor: 'pointer', */}
-                        {/*          }} */}
-                        {/*          onClick={() => getCode()} */}
-                        {/*        > */}
-                        {/*          {t('Get an invitation code', {ns: 'gitcoin'})} */}
-                        {/*        </a> */}
-                        {/*      </div> */}
-                        {/*    </div> */}
-                        {/*  </div> */}
-                        {/*  <Alert */}
-                        {/*    state={emailActionState} */}
-                        {/*    message={getEmailAlertMessage(emailActionState)} */}
-                        {/*  /> */}
-                        {/* </Tab> */}
                       </Tabs>
                     </div>
                   </Accordion.Collapse>

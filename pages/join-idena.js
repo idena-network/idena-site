@@ -18,10 +18,9 @@ import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
 
-const EmailSavingState = {
+const ResponseState = {
   None: 0,
   Success: 1,
-  InvalidEmail: 2,
   Error: 3,
 }
 const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
@@ -30,13 +29,13 @@ const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
 function Alert({state, message}) {
   return (
     <div
-      className={`alert ${state === EmailSavingState.None ? 'hide' : ''} ${
-        state === EmailSavingState.Success ? 'success' : 'error'
+      className={`alert ${state === ResponseState.None ? 'hide' : ''} ${
+        state === ResponseState.Success ? 'success' : 'error'
       }`}
     >
       <img
         src={`/static/images/alert-${
-          state === EmailSavingState.Success ? 'success' : 'error'
+          state === ResponseState.Success ? 'success' : 'error'
         }.svg`}
         alt="alert"
         width="20"
@@ -58,7 +57,7 @@ export default function JoinIdena() {
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(
-    EmailSavingState.None
+    ResponseState.None
   )
 
   useEffect(() => {
@@ -75,14 +74,14 @@ export default function JoinIdena() {
         'Your invitation code has been generated successfully!'
       )
       setTwitterKey(response.data)
-      setTwitterAlertState(EmailSavingState.Success)
+      setTwitterAlertState(ResponseState.Success)
     } catch (e) {
       if (!e.response) {
         setTwitterAlertMessage('Something went wrong')
       } else {
         setTwitterAlertMessage(e.response.data)
       }
-      setTwitterAlertState(EmailSavingState.Error)
+      setTwitterAlertState(ResponseState.Error)
     }
   }
 
@@ -310,7 +309,7 @@ export default function JoinIdena() {
                             message={twitterAlertMessage}
                           />
                           {isTweetChecking &&
-                            twitterAlertState === EmailSavingState.None && (
+                            twitterAlertState === ResponseState.None && (
                               <div className="loadingState">
                                 <img
                                   style={{backgroundColor: '#f5f6f7'}}
@@ -320,7 +319,7 @@ export default function JoinIdena() {
                                 />
                               </div>
                             )}
-                          {twitterAlertState === EmailSavingState.Success && (
+                          {twitterAlertState === ResponseState.Success && (
                             <div
                               className="section_tight margin-t-m"
                               style={{margin: '0px', textAlign: 'left'}}
