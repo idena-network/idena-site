@@ -70,7 +70,7 @@ export default function JoinIdena() {
     setTwitterAlertState(ResponseState.None)
 
     try {
-      const response = await axios.get('/api/getGitcoinTweetProof', {
+      const response = await axios.get('/api/getInvitationTweetProof', {
         params: {screen_name: name},
       })
       setTwitterAlertMessage(
