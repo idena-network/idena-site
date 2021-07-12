@@ -1,6 +1,13 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import {Accordion, Card, Tab, Tabs} from 'react-bootstrap'
+import {
+  Accordion,
+  Card,
+  FormControl,
+  InputGroup,
+  Tab,
+  Tabs,
+} from 'react-bootstrap'
 import {useEffect, useState} from 'react'
 import validator from 'validator'
 import axios from 'axios'
@@ -10,38 +17,31 @@ import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
+// import Twitter from "twitter";
 
-const EmailSavingState = {
+const ResponseState = {
   None: 0,
   Success: 1,
-  InvalidEmail: 2,
   Error: 3,
 }
+const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
 
 // eslint-disable-next-line react/prop-types
-function Alert({state}) {
+function Alert({state, message}) {
   return (
     <div
-      style={{
-        display: state === EmailSavingState.None ? 'none' : 'block',
-        backgroundColor:
-          state === EmailSavingState.Success ? '#27d980' : '#ff6666',
-        padding: '18px 24px',
-        color: 'white',
-        fontSize: '1rem',
-        marginTop: '1rem',
-        borderRadius: '8px',
-      }}
+      className={`alert ${state === ResponseState.None ? 'hide' : ''} ${
+        state === ResponseState.Success ? 'success' : 'error'
+      }`}
     >
-      {state === EmailSavingState.Success && (
-        <span>Email submitted. We will contact you soon.</span>
-      )}
-      {state === EmailSavingState.InvalidEmail && (
-        <span>Wrong email address. Please try another one.</span>
-      )}
-      {state === EmailSavingState.Error && (
-        <span>An error occured. Pleasetry again later.</span>
-      )}
+      <img
+        src={`/static/images/alert-${
+          state === ResponseState.Success ? 'success' : 'error'
+        }.svg`}
+        alt="alert"
+        width="20"
+      />
+      <span>{message}</span>
     </div>
   )
 }
@@ -51,9 +51,14 @@ export default function Gitcoin() {
 
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
-  const [email, setEmail] = useState()
-  const [emailActionState, setEmailActionState] = useState(
-    EmailSavingState.None
+  const [twitterName, setTwitterName] = useState()
+  const [isTweetChecking, setIsTweetChecking] = useState(false)
+  const [isTextCopied, setIsTextCopied] = useState(false)
+  const [isTweetCopied, setIsTweetCopied] = useState(false)
+  const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
+  const [twitterKey, setTwitterKey] = useState('')
+  const [twitterAlertState, setTwitterAlertState] = useState(
+    ResponseState.None
   )
 
   useEffect(() => {
@@ -63,20 +68,38 @@ export default function Gitcoin() {
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
-  const getCode = async () => {
+  const getKeyByTwitter = async name => {
+    setIsTweetChecking(true)
     try {
-      if (!validator.isEmail(email)) {
-        setEmailActionState(EmailSavingState.InvalidEmail)
-        return
-      }
-
-      await axios.post('/api/saveEmail', {email})
-
-      setEmailActionState(EmailSavingState.Success)
+      const response = await axios.get('/api/getGitcoinTweetProof', {
+        params: {screen_name: name},
+      })
+      setTwitterAlertMessage(
+        'Your invitation code has been generated successfully!'
+      )
+      setTwitterKey(response.data)
+      setTwitterAlertState(ResponseState.Success)
     } catch (e) {
-      setEmailActionState(EmailSavingState.Error)
-      console.error('cannot send request')
+      if (!e.response) {
+        setTwitterAlertMessage('Something went wrong')
+      } else {
+        setTwitterAlertMessage(e.response.data)
+      }
+      setTwitterAlertState(ResponseState.Error)
     }
+  }
+
+  async function copyTweet() {
+    await navigator.clipboard.writeText(
+      'I want to join @IdenaNetwork to get +50% Trust Bonus on @gitcoin ' +
+        '#IdenaTrustBonus'
+    )
+    setIsTweetCopied(true)
+  }
+
+  async function copyKey() {
+    await navigator.clipboard.writeText(twitterAlertMessage)
+    setIsTextCopied(true)
   }
 
   return (
@@ -184,76 +207,156 @@ export default function Gitcoin() {
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <p style={{marginTop: '2rem'}}>
-                            {t(
-                              'Send a tweet with a hashtag #IdenaTrustBonus from your account. Most active accounts get invites to join the next Validation Ceremony. The tweet should say:',
-                              {ns: 'gitcoin', nsSeparator: '!'}
-                            )}
-                            <div className="dedicated_info">
-                              I want to join @IdenaNetwork to get +50% Trust
-                              Bonus on @gitcoin
-                              <br />
-                              <span style={{color: '#578fff'}}>
-                                #IdenaTrustBonus
-                              </span>
-                            </div>
-                            <a
-                              rel="noreferrer"
-                              target="_blank"
-                              href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
-                              className="btn btn-secondary btn-sm client_darwin_latest"
-                            >
-                              <img
-                                src="/static/images/twitter-icn.svg"
-                                alt="tweet"
-                                width="24"
-                                style={{
-                                  color: '#d8d8d8',
-                                  margin: '-0.375rem 0.5rem -0.25rem 0',
-                                }}
-                              />
-                              Tweet
-                            </a>
-                          </p>
-                        </Tab>
-                        <Tab eventKey="#social_email" title="Email">
-                          <p style={{marginTop: '2rem'}}>
-                            {t(
-                              'Email verification is the least reliable way to confirm you are a unique human. That means that you will be the last in the queue to get an invitation. Please consider other channels and use this option only as the last resort.',
-                              {ns: 'gitcoin'}
-                            )}
+                            <Trans i18nKey="tweetSendingTip" t={t} ns="gitcoin">
+                              <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
+                              >
+                                Send a tweet
+                              </a>{' '}
+                              with a hashtag #IdenaTrustBonus from your account.
+                              To get an invite, your account should be{' '}
+                              <b>
+                                older older than 1 year or older than two months
+                                and least {{followersCount}} followers
+                              </b>
+                              . The tweet should say:
+                            </Trans>
                           </p>
                           <div
-                            className="section_tight"
-                            style={{margin: '0px'}}
+                            style={{paddingRight: '5rem'}}
+                            className="dedicated_info inactive"
                           >
+                            {isTweetCopied ? (
+                              <span className="copy_element"
+                                style={{
+                                  marginTop: '-0.5rem',
+                                  fontSize: '14px',
+                                  fontWeight: '500',
+                                  color: '#27d980',
+                                }}
+                              >
+                                Copied!
+                              </span>
+                            ) : (
+                              <img className="copy_element"
+                                style={{
+                                  cursor: 'pointer',
+                                }}
+                                onClick={copyTweet}
+                                src="/static/images/icon-copy.svg"
+                                alt="copy"
+                                width="13"
+                              />
+                            )}
+                            I want to join @IdenaNetwork to get +50% Trust Bonus
+                            on @gitcoin
+                            <br />
+                            <span style={{color: '#578fff'}}>
+                              #IdenaTrustBonus
+                            </span>
+                          </div>
+                          <div className="section_tight">
                             <div className="row">
-                              <div className="col-sm-7 section_tight__info">
-                                <input
-                                  type="text"
-                                  placeholder="Your email"
-                                  value={email}
-                                  onChange={e => setEmail(e.target.value)}
-                                />
+                              <div className="col-sm-7 section_tight__input">
+                                <InputGroup className="section_input">
+                                  <InputGroup.Prepend>
+                                    <InputGroup.Text id="twitterAtSign">
+                                      @
+                                    </InputGroup.Text>
+                                  </InputGroup.Prepend>
+                                  <FormControl
+                                    placeholder="Your nickname"
+                                    aria-label="Your nickname"
+                                    aria-describedby="twitterAtSign"
+                                    value={twitterName}
+                                    onChange={n =>
+                                      setTwitterName(n.target.value)
+                                    }
+                                  />
+                                </InputGroup>
                               </div>
                               <div
                                 className="col-sm-4 section_tight__info separated"
-                                style={{marginLeft: '2rem'}}
+                                style={{marginLeft: '4rem'}}
                               >
                                 <a
                                   style={{
-                                    color: '#578fff',
+                                    color: isTweetChecking
+                                      ? '#96999e'
+                                      : '#578fff',
                                     lineHeight: '2rem',
                                     fontWeight: 500,
                                     cursor: 'pointer',
                                   }}
-                                  onClick={() => getCode()}
+                                  onClick={() => getKeyByTwitter(twitterName)}
                                 >
-                                  {t('Get an invitation code', {ns: 'gitcoin'})}
+                                  {t('Get an invitation code', {
+                                    ns: 'gitcoin',
+                                  })}
                                 </a>
                               </div>
                             </div>
                           </div>
-                          <Alert state={emailActionState} />
+                          <Alert
+                            state={twitterAlertState}
+                            message={twitterAlertMessage}
+                          />
+                          {isTweetChecking &&
+                            twitterAlertState === ResponseState.None && (
+                              <div className="loadingState">
+                                <img
+                                  style={{backgroundColor: '#f5f6f7'}}
+                                  src="/static/images/spinner.svg"
+                                  alt="Loading..."
+                                  width="48"
+                                />
+                              </div>
+                            )}
+                          {twitterAlertState === ResponseState.Success && (
+                            <div
+                              className="section_tight margin-t-m"
+                              style={{margin: '0px', textAlign: 'left'}}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '14px',
+                                  color: '#96999e',
+                                  fontWeight: '500',
+                                }}
+                              >
+                                Invitation code
+                              </span>
+
+                              <div style={{wordBreak: 'break-all'}}>
+                                {twitterKey}
+                                {isTextCopied ? (
+                                  <span
+                                    style={{
+                                      marginLeft: '0.5rem',
+                                      fontSize: '14px',
+                                      fontWeight: '500',
+                                      color: '#27d980',
+                                    }}
+                                  >
+                                    Copied!
+                                  </span>
+                                ) : (
+                                  <img
+                                    style={{
+                                      marginLeft: '0.25rem',
+                                      cursor: 'pointer',
+                                    }}
+                                    onClick={copyKey}
+                                    src="/static/images/icon-copy.svg"
+                                    alt="copy"
+                                    width="13"
+                                  />
+                                )}
+                              </div>
+                            </div>
+                          )}
                         </Tab>
                       </Tabs>
                     </div>

@@ -212,6 +212,17 @@
   }
 }
 
+.btn.btn-light {
+  background-color: #e8eaed;
+  border-radius: 6px;
+  color: #96999e;
+  font-weight: 500;
+
+  &:hover {
+    color: #578FFF;
+  }
+}
+
 .btn.btn-cta {
   background-color: #ffffff;
   border-radius: 6px;
@@ -234,6 +245,17 @@
   &:active {
     outline: none !important;
     box-shadow: none !important;
+  }
+}
+
+.btn.btn-light {
+  background-color: #e8eaed;
+  border-radius: 6px;
+  color: #96999e;
+  font-weight: 500;
+
+  &:hover {
+    color: #578FFF;
   }
 }
 
@@ -299,4 +321,16 @@
 
 .clickable {
   cursor: pointer;
+}
+
+.margin-l-s {
+  margin-left: 0.5rem;
+}
+
+.margin-t-m {
+  margin-top: 1rem !important;
+}
+
+.margin-t-l {
+  margin-top: 2rem !important;
 }

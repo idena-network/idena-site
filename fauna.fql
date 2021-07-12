@@ -1,0 +1,61 @@
+CreateCollection({
+  name: "emails",
+  history_days: 30,
+  ttl_days: null
+})
+
+CreateCollection({
+  name: "invites",
+  history_days: 30,
+  ttl_days: null
+})
+
+CreateIndex({
+  name: "search_by_name_epoch",
+  unique: true,
+  serialized: true,
+  source: "invites",
+  terms: [
+    {
+      field: ["data", "name"]
+    },
+    {
+      field: ["data", "epoch"]
+    }
+  ],
+  values: [
+    {
+      field: ["ref"]
+    }
+  ]
+})
+
+CreateIndex({
+  name: "search_free_invite",
+  unique: false,
+  serialized: true,
+  source: [{
+    collection: Collection("invites"),
+    fields: {
+      is_free: Query(
+        Lambda(
+          "k",
+          Equals(Select(["data", "name"], Var("k"), null), null)
+        )
+      )
+    }
+  }],
+  terms: [
+    {
+      field: ["data", "epoch"]
+    },
+    {
+      binding: "is_free"
+    }
+  ],
+  values: [
+    {
+      field: ["ref"]
+    }
+  ]
+})

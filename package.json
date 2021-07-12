@@ -27,7 +27,8 @@
     "sass-rem": "^2.0.1",
     "validator": "^13.6.0",
     "i18next": "^19.0.1",
-    "next-i18next": "^8.2.0"
+    "next-i18next": "^8.2.0",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

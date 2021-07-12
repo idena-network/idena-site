@@ -1,24 +1,101 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import Link from 'next/link'
-import {Accordion, Card, Tab, Tabs} from 'react-bootstrap'
+import {
+  Accordion,
+  Card,
+  FormControl,
+  InputGroup,
+  Tab,
+  Tabs,
+} from 'react-bootstrap'
 import {useEffect, useState} from 'react'
 import {Trans, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import axios from 'axios'
 import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
 import {getGoogleCalendarLink, useNextValidationTime} from '../shared/api'
+
+const ResponseState = {
+  None: 0,
+  Success: 1,
+  Error: 3,
+}
+const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
+
+// eslint-disable-next-line react/prop-types
+function Alert({state, message}) {
+  return (
+    <div
+      className={`alert ${state === ResponseState.None ? 'hide' : ''} ${
+        state === ResponseState.Success ? 'success' : 'error'
+      }`}
+    >
+      <img
+        src={`/static/images/alert-${
+          state === ResponseState.Success ? 'success' : 'error'
+        }.svg`}
+        alt="alert"
+        width="20"
+      />
+      <span>{message}</span>
+    </div>
+  )
+}
 
 export default function JoinIdena() {
   const {t} = useTranslation('join-idena')
 
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
+  const [twitterName, setTwitterName] = useState()
+  const [isTweetChecking, setIsTweetChecking] = useState(false)
+  const [isTextCopied, setIsTextCopied] = useState(false)
+  const [isTweetCopied, setIsTweetCopied] = useState(false)
+  const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
+  const [twitterKey, setTwitterKey] = useState('')
+  const [twitterAlertState, setTwitterAlertState] = useState(
+    ResponseState.None
+  )
 
   useEffect(() => {
     setActiveHash(hash)
   }, [hash])
+
+  const getKeyByTwitter = async name => {
+    setIsTweetChecking(true)
+    try {
+      const response = await axios.get('/api/getInvitationTweetProof', {
+        params: {screen_name: name},
+      })
+      setTwitterAlertMessage(
+        'Your invitation code has been generated successfully!'
+      )
+      setTwitterKey(response.data)
+      setTwitterAlertState(ResponseState.Success)
+    } catch (e) {
+      if (!e.response) {
+        setTwitterAlertMessage('Something went wrong')
+      } else {
+        setTwitterAlertMessage(e.response.data)
+      }
+      setTwitterAlertState(ResponseState.Error)
+    }
+  }
+
+  async function copyTweet() {
+    await navigator.clipboard.writeText(
+      'I want to join @IdenaNetwork to become a validator of the first Proof-of-Person blockchain #IdenaInvite'
+    )
+    setIsTweetCopied(true)
+  }
+
+  async function copyKey() {
+    await navigator.clipboard.writeText(twitterAlertMessage)
+    setIsTextCopied(true)
+  }
 
   const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
@@ -130,6 +207,161 @@ export default function JoinIdena() {
                               in <code>#invite-requests</code> channel.
                             </Trans>
                           </p>
+                        </Tab>
+                        <Tab eventKey="#social_twitter" title="Twitter">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="tweetSendingTip"
+                              t={t}
+                              ns="join-idena"
+                            >
+                              <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite"
+                              >
+                                Send a tweet
+                              </a>{' '}
+                              with a hashtag #IdenaInvite from your account. To
+                              get an invite, your account should be{' '}
+                              <b>
+                                older older than 1 year or older than two months
+                                and have at least {{followersCount}} followers
+                              </b>
+                              . The tweet should say:
+                            </Trans>
+                          </p>
+                          <div
+                            style={{paddingRight: '5rem'}}
+                            className="dedicated_info inactive"
+                          >
+                            {isTweetCopied ? (
+                              <span className="copy_element"
+                                style={{
+                                  marginTop: '-0.5rem',
+                                  fontSize: '14px',
+                                  fontWeight: '500',
+                                  color: '#27d980',
+                                }}
+                              >
+                                Copied!
+                              </span>
+                            ) : (
+                              <img className="copy_element"
+                                style={{
+                                  cursor: 'pointer',
+                                }}
+                                onClick={copyTweet}
+                                src="/static/images/icon-copy.svg"
+                                alt="copy"
+                                width="13"
+                              />
+                            )}
+                            I want to join @IdenaNetwork to become a validator
+                            of the first Proof-of-Person blockchain
+                            <br />
+                            <span style={{color: '#578fff'}}>#IdenaInvite</span>
+                          </div>
+                          <div className="section_tight">
+                            <div className="row">
+                              <div className="col-sm-7 section_tight__input">
+                                <InputGroup className="section_input">
+                                  <InputGroup.Prepend>
+                                    <InputGroup.Text id="twitterAtSign">
+                                      @
+                                    </InputGroup.Text>
+                                  </InputGroup.Prepend>
+                                  <FormControl
+                                    placeholder="Your nickname"
+                                    aria-label="Your nickname"
+                                    aria-describedby="twitterAtSign"
+                                    value={twitterName}
+                                    onChange={n =>
+                                      setTwitterName(n.target.value)
+                                    }
+                                  />
+                                </InputGroup>
+                              </div>
+                              <div
+                                className="col-sm-4 section_tight__info separated"
+                                style={{marginLeft: '4rem'}}
+                              >
+                                <a
+                                  style={{
+                                    color: isTweetChecking
+                                      ? '#96999e'
+                                      : '#578fff',
+                                    lineHeight: '2rem',
+                                    fontWeight: 500,
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={() => getKeyByTwitter(twitterName)}
+                                >
+                                  {t('Get an invitation code', {
+                                    ns: 'join-idena',
+                                  })}
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <Alert
+                            state={twitterAlertState}
+                            message={twitterAlertMessage}
+                          />
+                          {isTweetChecking &&
+                            twitterAlertState === ResponseState.None && (
+                              <div className="loadingState">
+                                <img
+                                  style={{backgroundColor: '#f5f6f7'}}
+                                  src="/static/images/spinner.svg"
+                                  alt="Loading..."
+                                  width="48"
+                                />
+                              </div>
+                            )}
+                          {twitterAlertState === ResponseState.Success && (
+                            <div
+                              className="section_tight margin-t-m"
+                              style={{margin: '0px', textAlign: 'left'}}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '14px',
+                                  color: '#96999e',
+                                  fontWeight: '500',
+                                }}
+                              >
+                                Invitation code
+                              </span>
+
+                              <div style={{wordBreak: 'break-all'}}>
+                                {twitterKey}
+                                {isTextCopied ? (
+                                  <span
+                                    style={{
+                                      marginLeft: '0.5rem',
+                                      fontSize: '14px',
+                                      fontWeight: '500',
+                                      color: '#27d980',
+                                    }}
+                                  >
+                                    Copied!
+                                  </span>
+                                ) : (
+                                  <img
+                                    style={{
+                                      marginLeft: '0.25rem',
+                                      cursor: 'pointer',
+                                    }}
+                                    onClick={copyKey}
+                                    src="/static/images/icon-copy.svg"
+                                    alt="copy"
+                                    width="13"
+                                  />
+                                )}
+                              </div>
+                            </div>
+                          )}
                         </Tab>
                       </Tabs>
                     </div>
