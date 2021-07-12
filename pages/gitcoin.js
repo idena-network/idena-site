@@ -89,16 +89,16 @@ export default function Gitcoin() {
     }
   }
 
-  function copyTweet() {
-    navigator.clipboard.writeText(
+  async function copyTweet() {
+    await navigator.clipboard.writeText(
       'I want to join @IdenaNetwork to get +50% Trust Bonus on @gitcoin ' +
         '#IdenaTrustBonus'
     )
     setIsTweetCopied(true)
   }
 
-  function copyKey() {
-    navigator.clipboard.writeText(twitterAlertMessage)
+  async function copyKey() {
+    await navigator.clipboard.writeText(twitterAlertMessage)
     setIsTextCopied(true)
   }
 
@@ -244,7 +244,7 @@ export default function Gitcoin() {
                                 style={{
                                   cursor: 'pointer',
                                 }}
-                                onClick={() => copyTweet()}
+                                onClick={copyTweet}
                                 src="/static/images/icon-copy.svg"
                                 alt="copy"
                                 width="13"
