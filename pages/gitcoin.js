@@ -9,7 +9,6 @@ import {
   Tabs,
 } from 'react-bootstrap'
 import {useEffect, useState} from 'react'
-import validator from 'validator'
 import axios from 'axios'
 import {Trans, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
@@ -57,9 +56,7 @@ export default function Gitcoin() {
   const [isTweetCopied, setIsTweetCopied] = useState(false)
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
-  const [twitterAlertState, setTwitterAlertState] = useState(
-    ResponseState.None
-  )
+  const [twitterAlertState, setTwitterAlertState] = useState(ResponseState.None)
 
   useEffect(() => {
     setActiveHash(hash)
@@ -69,7 +66,12 @@ export default function Gitcoin() {
   const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
   const getKeyByTwitter = async name => {
+    if (!name) {
+      return
+    }
     setIsTweetChecking(true)
+    setTwitterAlertState(ResponseState.None)
+
     try {
       const response = await axios.get('/api/getGitcoinTweetProof', {
         params: {screen_name: name},
@@ -86,6 +88,8 @@ export default function Gitcoin() {
         setTwitterAlertMessage(e.response.data)
       }
       setTwitterAlertState(ResponseState.Error)
+    } finally {
+      setIsTweetChecking(false)
     }
   }
 
@@ -229,7 +233,8 @@ export default function Gitcoin() {
                             className="dedicated_info inactive"
                           >
                             {isTweetCopied ? (
-                              <span className="copy_element"
+                              <span
+                                className="copy_element"
                                 style={{
                                   marginTop: '-0.5rem',
                                   fontSize: '14px',
@@ -240,7 +245,8 @@ export default function Gitcoin() {
                                 Copied!
                               </span>
                             ) : (
-                              <img className="copy_element"
+                              <img
+                                className="copy_element"
                                 style={{
                                   cursor: 'pointer',
                                 }}
@@ -283,9 +289,10 @@ export default function Gitcoin() {
                               >
                                 <a
                                   style={{
-                                    color: isTweetChecking
-                                      ? '#96999e'
-                                      : '#578fff',
+                                    color:
+                                      isTweetChecking || !twitterName
+                                        ? '#96999e'
+                                        : '#578fff',
                                     lineHeight: '2rem',
                                     fontWeight: 500,
                                     cursor: 'pointer',
@@ -303,17 +310,15 @@ export default function Gitcoin() {
                             state={twitterAlertState}
                             message={twitterAlertMessage}
                           />
-                          {isTweetChecking &&
-                            twitterAlertState === ResponseState.None && (
-                              <div className="loadingState">
-                                <img
-                                  style={{backgroundColor: '#f5f6f7'}}
-                                  src="/static/images/spinner.svg"
-                                  alt="Loading..."
-                                  width="48"
-                                />
-                              </div>
-                            )}
+                          {isTweetChecking && (
+                            <div className="loadingState">
+                              <img
+                                src="/static/images/spinner.svg"
+                                alt="Loading..."
+                                width="48"
+                              />
+                            </div>
+                          )}
                           {twitterAlertState === ResponseState.Success && (
                             <div
                               className="section_tight margin-t-m"
