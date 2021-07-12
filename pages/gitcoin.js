@@ -348,7 +348,7 @@ export default function Gitcoin() {
                                       marginLeft: '0.25rem',
                                       cursor: 'pointer',
                                     }}
-                                    onClick={() => copyKey()}
+                                    onClick={copyKey}
                                     src="/static/images/icon-copy.svg"
                                     alt="copy"
                                     width="13"
