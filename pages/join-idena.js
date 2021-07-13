@@ -56,16 +56,19 @@ export default function JoinIdena() {
   const [isTweetCopied, setIsTweetCopied] = useState(false)
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
-  const [twitterAlertState, setTwitterAlertState] = useState(
-    ResponseState.None
-  )
+  const [twitterAlertState, setTwitterAlertState] = useState(ResponseState.None)
 
   useEffect(() => {
     setActiveHash(hash)
   }, [hash])
 
   const getKeyByTwitter = async name => {
+    if (!name) {
+      return
+    }
     setIsTweetChecking(true)
+    setTwitterAlertState(ResponseState.None)
+
     try {
       const response = await axios.get('/api/getInvitationTweetProof', {
         params: {screen_name: name},
@@ -82,6 +85,8 @@ export default function JoinIdena() {
         setTwitterAlertMessage(e.response.data)
       }
       setTwitterAlertState(ResponseState.Error)
+    } finally {
+      setIsTweetChecking(false)
     }
   }
 
@@ -225,7 +230,7 @@ export default function JoinIdena() {
                               with a hashtag #IdenaInvite from your account. To
                               get an invite, your account should be{' '}
                               <b>
-                                older older than 1 year or older than two months
+                                older than 1 year or older than two months
                                 and have at least {{followersCount}} followers
                               </b>
                               . The tweet should say:
@@ -236,7 +241,8 @@ export default function JoinIdena() {
                             className="dedicated_info inactive"
                           >
                             {isTweetCopied ? (
-                              <span className="copy_element"
+                              <span
+                                className="copy_element"
                                 style={{
                                   marginTop: '-0.5rem',
                                   fontSize: '14px',
@@ -247,7 +253,8 @@ export default function JoinIdena() {
                                 Copied!
                               </span>
                             ) : (
-                              <img className="copy_element"
+                              <img
+                                className="copy_element"
                                 style={{
                                   cursor: 'pointer',
                                 }}
@@ -288,9 +295,10 @@ export default function JoinIdena() {
                               >
                                 <a
                                   style={{
-                                    color: isTweetChecking
-                                      ? '#96999e'
-                                      : '#578fff',
+                                    color:
+                                      isTweetChecking || !twitterName
+                                        ? '#96999e'
+                                        : '#578fff',
                                     lineHeight: '2rem',
                                     fontWeight: 500,
                                     cursor: 'pointer',
@@ -308,17 +316,15 @@ export default function JoinIdena() {
                             state={twitterAlertState}
                             message={twitterAlertMessage}
                           />
-                          {isTweetChecking &&
-                            twitterAlertState === ResponseState.None && (
-                              <div className="loadingState">
-                                <img
-                                  style={{backgroundColor: '#f5f6f7'}}
-                                  src="/static/images/spinner.svg"
-                                  alt="Loading..."
-                                  width="48"
-                                />
-                              </div>
-                            )}
+                          {isTweetChecking && (
+                            <div className="loadingState">
+                              <img
+                                src="/static/images/spinner.svg"
+                                alt="Loading..."
+                                width="48"
+                              />
+                            </div>
+                          )}
                           {twitterAlertState === ResponseState.Success && (
                             <div
                               className="section_tight margin-t-m"

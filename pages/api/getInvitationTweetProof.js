@@ -24,6 +24,9 @@ export default async (req, res) => {
   }
 
   client.get('users/lookup', req.query, async function(error, data, response) {
+    if (data.errors && data.errors[0].code === 17) {
+      return res.status(400).send('Can not find the Twitter account')
+    }
     if (!error && data.length > 0) {
       if (
         data[0].followers_count < minTwitterSubs &&
