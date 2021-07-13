@@ -230,7 +230,7 @@ export default function JoinIdena() {
                               with a hashtag #IdenaInvite from your account. To
                               get an invite, your account should be{' '}
                               <b>
-                                older older than 1 year or older than two months
+                                older than 1 year or older than two months
                                 and have at least {{followersCount}} followers
                               </b>
                               . The tweet should say:

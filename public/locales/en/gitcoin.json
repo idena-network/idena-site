@@ -26,7 +26,7 @@
   "Congratulations! Your Idena account is now verified": "Congratulations! Your Idena account is now verified",
   "idenaTelegramGroupLink": "Join the official <2>Idena Telegram group</2> and request an invite from the community.",
   "idenaCommunityDiscordLink": "Join <2>Idena Community Discord</2> and request an invite from the community in <6>#invite-requests</6> channel.",
-  "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaTrustBonus from your account. To get an invite, your account should be <4>older older than 1 year or older than two months and least <1>{{followersCount}}</1> followers</4>. The tweet should say:",
+  "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaTrustBonus from your account. To get an invite, your account should be <4>older than 1 year or older than two months and least <1>{{followersCount}}</1> followers</4>. The tweet should say:",
   "idenaWebAppLink": "Open <2>Idena Web App</2>",
   "idenaWebAppSignIn": "<0>Sign in</0> to your Idena Web app <4>15 minutes before the next validation session starts</4>. Check you have Wait for validation status. Make sure you have reliable and fast internet connection. We advise to use a laptop/PC for better experience.",
   "validationResults": "Wait for the validation results. If you have successfully solved the flips, you will get a <2>Newbie</2> status. Congratulations, you are now a validated cryptoidentity!",
