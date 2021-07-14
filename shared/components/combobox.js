@@ -9,6 +9,7 @@ export function Combobox(
 ) {
   const CustomToggle = React.forwardRef(({children, onClick}, ref) => (
     <a
+      className="combobox-toggle"
       href=""
       ref={ref}
       onClick={e => {
