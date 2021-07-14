@@ -657,9 +657,16 @@ button {
 }
 
 .language {
-  a {
-    font-size: rem(14px);
-    line-height: rem(17px);
+  margin-top: 0.75rem;
+  line-height: 1.25rem;
+
+  &.row {
+    justify-content: center;
+  }
+
+  .combobox-toggle {
+    font-size: 1rem;
+    font-weight: 500;
     color: #53565c;
   }
 
@@ -667,6 +674,10 @@ button {
     img {
       transform: scaleY(-1);
     }
+  }
+
+  .dropdown {
+    padding-top: 0.125rem;
   }
 
   .dropdown-menu {
@@ -708,6 +719,21 @@ button {
 
   .dropdown-menu::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
+  }
+}
+
+.translate-link {
+  cursor: pointer;
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  img {
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.125rem;
   }
 }
 

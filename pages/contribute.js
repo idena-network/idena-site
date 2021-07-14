@@ -81,7 +81,7 @@ export default function Contribute() {
                   {t('French-speaking telegram group', {ns: 'contribute'})}
                 </li>
                 <li>
-                  <a href="https://t.me/Idena_RU">'Telegram</a>{' '}
+                  <a href="https://t.me/Idena_RU">Telegram</a>{' '}
                   {t('Russian-speaking group', {ns: 'contribute'})}
                 </li>
                 <li>

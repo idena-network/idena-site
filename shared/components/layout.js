@@ -443,7 +443,7 @@ export default function Layout({children, title = '', description = ''}) {
 
           <div className="row justify-content-center text-center">
             <div className="col-md-7 col-lg-6">
-              <div className="language">
+              <div className="language row">
                 <Combobox
                   title={currentLanguage.nativeName}
                   itemsList={AVAILABLE_LANGS.map(lng => ({
@@ -453,6 +453,19 @@ export default function Layout({children, title = '', description = ''}) {
                   }))}
                   itemsTitle="Choose a language"
                 />
+                <a
+                  href="https://translate.idena.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="translate-link"
+                >
+                  <img
+                    src="/static/images/icon-translate.svg"
+                    alt="translate"
+                    width="24"
+                  />
+                  <span>{t('Contribute translations')}</span>
+                </a>
               </div>
             </div>
           </div>
