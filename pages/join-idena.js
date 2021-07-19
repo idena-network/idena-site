@@ -63,8 +63,6 @@ export default function JoinIdena() {
   }, [hash])
 
   const getKeyByTwitter = async name => {
-    console.log(name)
-    console.log(!name)
     if (!name) {
       setTwitterAlertState(ResponseState.Error)
       setTwitterAlertMessage('Please enter your twitter nickname')
