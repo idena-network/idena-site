@@ -63,7 +63,11 @@ export default function JoinIdena() {
   }, [hash])
 
   const getKeyByTwitter = async name => {
+    console.log(name)
+    console.log(!name)
     if (!name) {
+      setTwitterAlertState(ResponseState.Error)
+      setTwitterAlertMessage('Please enter your twitter nickname')
       return
     }
     setIsTweetChecking(true)
@@ -295,10 +299,7 @@ export default function JoinIdena() {
                               >
                                 <a
                                   style={{
-                                    color:
-                                      isTweetChecking || !twitterName
-                                        ? '#96999e'
-                                        : '#578fff',
+                                    color: '#578fff',
                                     lineHeight: '2rem',
                                     fontWeight: 500,
                                     cursor: 'pointer',
