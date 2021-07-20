@@ -1,9 +1,7 @@
-CreateCollection({
-  name: "emails",
-  history_days: 30,
-  ttl_days: null
-})
-
+# Fields
+# invite <string>
+# epoch <int>
+# name <string>
 CreateCollection({
   name: "invites",
   history_days: 30,
@@ -51,6 +49,43 @@ CreateIndex({
     },
     {
       binding: "is_free"
+    }
+  ],
+  values: [
+    {
+      field: ["ref"]
+    }
+  ]
+})
+
+CreateIndex({
+  name: "invites_by_epoch",
+  unique: false,
+  serialized: true,
+  source: "invites",
+  terms: [
+    {
+      field: ["data", "epoch"]
+    }
+  ],
+  values: [
+    {
+      field: ["ref"]
+    }
+  ]
+})
+
+CreateIndex({
+  name: "invites_by_invite_epoch",
+  unique: true,
+  serialized: true,
+  source: "invites",
+  terms: [
+    {
+      field: ["data", "invite"]
+    },
+    {
+      field: ["data", "epoch"]
     }
   ],
   values: [
