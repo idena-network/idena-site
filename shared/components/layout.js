@@ -454,7 +454,7 @@ export default function Layout({children, title = '', description = ''}) {
                   itemsTitle="Choose a language"
                 />
                 <a
-                  href="https://translate.idena.io/"
+                  href="https://translate.idena.io/engage/idena-site/"
                   target="_blank"
                   rel="noreferrer"
                   className="translate-link"
