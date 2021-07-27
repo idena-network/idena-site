@@ -74,13 +74,15 @@ export default async (req, res) => {
   })
 }
 
-async function getCode(id, name, epoch) {
+async function getCode(name, screenName, epoch) {
   try {
     const {
       data: {invite},
     } = await serverClient.query(
       q.If(
-        q.Exists(q.Match(q.Index('search_by_name_epoch'), name, epoch)),
+        q.Exists(
+          q.Match(q.Index('search_by_name_epoch'), name, screenName, epoch)
+        ),
         q.Abort('Invitation code was already given to the twitter account'),
         q.Let(
           {
@@ -92,7 +94,7 @@ async function getCode(id, name, epoch) {
               'There are no invitation codes available, please try again later'
             ),
             q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {id, name},
+              data: {name, screenName},
             })
           )
         )
