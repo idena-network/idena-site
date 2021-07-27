@@ -403,14 +403,14 @@ export default function JoinIdena() {
                         </li>
                         <li>
                           {t('Follow the instructions to create your account', {
-                            ns: 'gitcoin',
+                            ns: 'join-idena',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
                           {t(
                             'Activate your invitation code. Please note that the invitation code expires 5 mins before validation!',
-                            {ns: 'gitcoin'}
+                            {ns: 'join-idena'}
                           )}
                         </li>
                         <img
