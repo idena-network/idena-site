@@ -57,6 +57,7 @@ export default async (req, res) => {
             try {
               codeResponse = await getCode(
                 data[0].id_str,
+                data[0].screen_name,
                 currentEpochJson.result.epoch
               )
               return res.status(200).send(codeResponse)
@@ -73,7 +74,7 @@ export default async (req, res) => {
   })
 }
 
-async function getCode(name, epoch) {
+async function getCode(id, name, epoch) {
   try {
     const {
       data: {invite},
