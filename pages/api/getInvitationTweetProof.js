@@ -92,7 +92,7 @@ async function getCode(id, name, epoch) {
               'There are no invitation codes available, please try again later'
             ),
             q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {name},
+              data: {id, name},
             })
           )
         )
