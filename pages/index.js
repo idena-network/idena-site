@@ -224,7 +224,7 @@ export default function Home() {
                 <div className="row justify-content-center">
                   <div className="col-auto">
                     <div className="row justify-content-center">
-                      <Link href="/join-idena?v1">
+                      <Link href="/join-idena">
                         <a className="btn btn-cta">
                           <img
                             src="/static/images/idena_black.svg"
@@ -372,15 +372,15 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_vitex.svg"
-                          alt="ViteX"
+                          src="/static/images/logo-probit.svg"
+                          alt="Probit"
                           width="40"
                         />
                         <div className="linkbar-value">
-                          <span>ViteX</span>
+                          <span>Probit</span>
                         </div>
                         <a
-                          href="https://x.vite.net/trade?symbol=IDNA-000_BTC-000"
+                          href="https://www.probit.com/app/exchange/IDNA-BTC"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -749,7 +749,7 @@ export default function Home() {
             <div className="row justify-content-center">
               <div className="col-auto">
                 <div className="row justify-content-center">
-                  <Link href="/join-idena?v2">
+                  <Link href="/join-idena">
                     <a className="btn btn-cta">
                       <img
                         src="/static/images/idena_black.svg"

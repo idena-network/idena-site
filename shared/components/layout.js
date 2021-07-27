@@ -23,12 +23,27 @@ const LiActive = ({className, children, ...props}) => {
   )
 }
 
+const PAGES_LIST = {
+  contribute: 'contribute-page',
+  donate: 'donate-page',
+  download: 'download-page',
+  faq: 'faq-page',
+  flipChallenge: 'flip-challenge-page',
+  gitcoin: 'gitcoin-page',
+  guide: 'guide-page',
+  index: 'main-page',
+  joinIdena: 'join-idena-page',
+}
+
 export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
   const [menuOpened, setMenuOpened] = useState(false)
   const {t} = useTranslation('common')
   const {i18n} = useTranslation()
   const currentLanguage = isoLangs[i18n.language]
+  const translationLink = `https://translate.idena.io/projects/idena-site${
+    router.pathname === '/' ? '/main' : router.pathname
+  }-page/${i18n.language === 'en' ? '' : i18n.language}`
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
@@ -62,39 +77,6 @@ export default function Layout({children, title = '', description = ''}) {
                     </a>
                   </Link>
                 </li>
-
-                {/* <LiActive className="nav-item header_nav__item"> */}
-                {/*  <Link href="/technology"> */}
-                {/*    <a */}
-                {/*      className="nav-link header_nav__link" */}
-                {/*      data-target="menu_technology" */}
-                {/*    > */}
-                {/*      How Idena works */}
-                {/*    </a> */}
-                {/*  </Link> */}
-                {/* </LiActive> */}
-
-                {/* <LiActive className="nav-item header_nav__item"> */}
-                {/*  <Link href="/manifesto"> */}
-                {/*    <a */}
-                {/*      className="nav-link header_nav__link" */}
-                {/*      data-target="menu_manifesto" */}
-                {/*    > */}
-                {/*      Manifesto */}
-                {/*    </a> */}
-                {/*  </Link> */}
-                {/* </LiActive> */}
-
-                {/* <LiActive className="nav-item header_nav__item"> */}
-                {/*  <Link href="/flip-challenge"> */}
-                {/*    <a */}
-                {/*      className="nav-link header_nav__link" */}
-                {/*      data-target="menu_flip-challenge" */}
-                {/*    > */}
-                {/*      Flip challenge */}
-                {/*    </a> */}
-                {/*  </Link> */}
-                {/* </LiActive> */}
 
                 <LiActive className="nav-item header_nav__item">
                   <Link href="/download">
@@ -454,7 +436,7 @@ export default function Layout({children, title = '', description = ''}) {
                   itemsTitle="Choose a language"
                 />
                 <a
-                  href="https://translate.idena.io/"
+                  href={translationLink}
                   target="_blank"
                   rel="noreferrer"
                   className="translate-link"
