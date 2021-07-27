@@ -392,9 +392,15 @@ export default function Gitcoin() {
                           </Trans>
                         </li>
                         <li>
+                          {t('Follow the instructions to create your account', {
+                            ns: 'gitcoin',
+                            nsSeparator: '!',
+                          })}
+                        </li>
+                        <li>
                           {t(
-                            'Follow the instructions to create your account and activate it with your invitation code:',
-                            {ns: 'gitcoin', nsSeparator: '!'}
+                            'Activate your invitation code. Please note that the invitation code expires 5 mins before validation!',
+                            {ns: 'gitcoin'}
                           )}
                         </li>
                         <img
