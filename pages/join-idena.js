@@ -232,8 +232,8 @@ export default function JoinIdena() {
                               with a hashtag #IdenaInvite from your account. To
                               get an invite, your account should be{' '}
                               <b>
-                                older than 1 year or older than two months
-                                and have at least {{followersCount}} followers
+                                older than 1 year or older than two months and
+                                have at least {{followersCount}} followers
                               </b>
                               . The tweet should say:
                             </Trans>
@@ -402,9 +402,15 @@ export default function JoinIdena() {
                           </Trans>
                         </li>
                         <li>
+                          {t('Follow the instructions to create your account', {
+                            ns: 'join-idena',
+                            nsSeparator: '!',
+                          })}
+                        </li>
+                        <li>
                           {t(
-                            'Follow the instructions to create your account and activate it with your invitation code:',
-                            {ns: 'join-idena', nsSeparator: '!'}
+                            'Activate your invitation code. Please note that the invitation code expires 5 mins before validation!',
+                            {ns: 'join-idena'}
                           )}
                         </li>
                         <img
