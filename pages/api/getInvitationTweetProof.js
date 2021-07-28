@@ -57,6 +57,7 @@ export default async (req, res) => {
             try {
               codeResponse = await getCode(
                 data[0].id_str,
+                data[0].screen_name,
                 currentEpochJson.result.epoch
               )
               return res.status(200).send(codeResponse)
@@ -73,7 +74,7 @@ export default async (req, res) => {
   })
 }
 
-async function getCode(name, epoch) {
+async function getCode(name, screenName, epoch) {
   try {
     const {
       data: {invite},
@@ -91,7 +92,7 @@ async function getCode(name, epoch) {
               'There are no invitation codes available, please try again later'
             ),
             q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {name},
+              data: {name, screenName},
             })
           )
         )
