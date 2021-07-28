@@ -80,9 +80,7 @@ async function getCode(name, screenName, epoch) {
       data: {invite},
     } = await serverClient.query(
       q.If(
-        q.Exists(
-          q.Match(q.Index('search_by_name_epoch'), name, screenName, epoch)
-        ),
+        q.Exists(q.Match(q.Index('search_by_name_epoch'), name, epoch)),
         q.Abort('Invitation code was already given to the twitter account'),
         q.Let(
           {
