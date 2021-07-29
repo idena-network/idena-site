@@ -555,6 +555,9 @@
 
       &:hover,
       &:active {
+        img {
+          opacity: 1 !important;
+        }
         filter: none;
         color: #578fff;
         background-color: #f5f6f7;
