@@ -315,25 +315,6 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_qtrade.svg"
-                          alt="qTrade"
-                          width="40"
-                        />
-                        <div className="linkbar-value">
-                          <span>qTrade</span>
-                        </div>
-                        <a
-                          href="https://qtrade.io/market/IDNA_BTC"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {' '}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div className="content">
-                        <img
                           src="/static/images/logo_pancakeswap.svg"
                           alt="Pancakeswap"
                           width="40"
@@ -353,15 +334,16 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_hotbit.svg"
-                          alt="Hotbit"
-                          width="40"
+                          style={{opacity: '0.7'}}
+                          src="/static/images/logo-probit.svg"
+                          alt="Probit"
+                          height="40"
                         />
                         <div className="linkbar-value">
-                          <span>Hotbit</span>
+                          <span>Probit</span>
                         </div>
                         <a
-                          href="https://www.hotbit.io/exchange?symbol=IDNA_BTC"
+                          href="https://www.probit.com/app/exchange/IDNA-BTC"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -372,15 +354,34 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo-probit.svg"
-                          alt="Probit"
+                          src="/static/images/logo_qtrade.svg"
+                          alt="qTrade"
                           width="40"
                         />
                         <div className="linkbar-value">
-                          <span>Probit</span>
+                          <span>qTrade</span>
                         </div>
                         <a
-                          href="https://www.probit.com/app/exchange/IDNA-BTC"
+                          href="https://qtrade.io/market/IDNA_BTC"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {' '}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="item">
+                      <div className="content">
+                        <img
+                          src="/static/images/logo_hotbit.svg"
+                          alt="Hotbit"
+                          width="40"
+                        />
+                        <div className="linkbar-value">
+                          <span>Hotbit</span>
+                        </div>
+                        <a
+                          href="https://www.hotbit.io/exchange?symbol=IDNA_BTC"
                           target="_blank"
                           rel="noreferrer"
                         >
