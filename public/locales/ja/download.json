@@ -1,1 +1,19 @@
-{}
+{
+    "Download": "ダウンロード",
+    "Size": "サイズ",
+    "Published": "公開",
+    "Version": "バージョン",
+    "Download Idena Node": "イデナノードのダウンロード",
+    "Loading...": "読み込み中...",
+    "Build": "ビルド",
+    "nodeBuildGuideLink": "サポートされているプラットフォーム用のDesktop Idena Appおよびnodeの最新の64ビット開発ビルドは、以下からダウンロードできます。<1></1>この<4><0>インストールとトラブルシューティングガイド</0></4>をIdenaノードのインストールおよび実行に問題がある場合は参照してください。",
+    "remoreNodeGuideLink": "また、リモートのIdenaノードを個別に運用している場合やVPS上で運用している場合にも、接続することができます。(この<2><0>ガイド</0></2>を参照）。",
+    "buildFromSourceGuideLink": "また、Desktop Idenaアプリをソースからビルドすることもできます（<2><0>ガイド</0></2>を参照）。",
+    "remoteNodeGuideLink": "個別に、またはリモートVPS上で実行したい場合は、イデナノードをダウンロードします（<2><0>ガイド</0></2>をご確認ください）。",
+    "allBuildsGithubLink": "Idenaノードのすべてのビルドは<2>Github</2>で公開されています。<4></4>また、<7>source</7>からIdenaノードをビルドすることもできます。",
+    "Desktop Idena App (built-in node is included)": "デスクトップイデナアプリ（内蔵ノードを含む）",
+    "All builds of the Desktop Idena App are available on": "デスクトップアイデナアプリのすべてのビルドはここで入手できます",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "イデナノード と デスクトップイデナアプリ の安定版および開発版をダウンロードします。",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "デスクトップイデナアプリをダウンロードして、コンピュータ上で実行します。初回起動時にはイデナノードが自動的にダウンロードされます。",
+    "Idena Node builds": "イデナノードのビルド"
+}
