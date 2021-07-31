@@ -69,5 +69,6 @@
     "Why can’t Idena have several validations at different times to make it more convenient for participants in different time zones?": "イデナでは、異なるタイムゾーンの参加者に便利なように、異なる時間帯に複数の検証を行うことができないのでしょうか？",
     "The validation time needs to be synchronized for people all over the world to verify the uniqueness of network participants. Otherwise, it would be possible to verify a different account at each of the various validation ceremonies.": "世界中の人々がネットワーク参加者の一意性を検証するためには、検証時刻を同期させる必要があります。そうしないと、さまざまな検証セレモニーのたびに、異なるアカウントを検証することが可能になってしまうからです。",
     "Am I allowed to participate in a validation ceremony if I have not submitted flips?": "フリップを提出していないのに、検証のセレモニーに参加してもいいのでしょうか？",
-    "Newbies and verified accounts must submit flips before the next validation ceremony. Not submitting flips is equal to missing a validation.": "『初心者』の方や『認証済」のアカウントの方は、次の検証式までにフリップを提出してください。フリップを提出しないと、検証に参加できないのと同じです。"
+    "Newbies and verified accounts must submit flips before the next validation ceremony. Not submitting flips is equal to missing a validation.": "『初心者』の方や『認証済」のアカウントの方は、次の検証式までにフリップを提出してください。フリップを提出しないと、検証に参加できないのと同じです。",
+    "Candidates, suspended accounts, and zombies do not submit flips for the validation ceremony.": "『候補者』、『中断」の方、『亡霊』の方は、認証式でフリップを提出しません。"
 }
