@@ -13,6 +13,8 @@ import {useEffect, useState} from 'react'
 import {Trans, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import axios from 'axios'
+import {useRouter} from 'next/router'
+import cookie from 'cookie-cutter'
 import Layout from '../shared/components/layout'
 import {CustomToggle} from '../shared/components/toggle'
 import {useHash} from '../shared/useHash'
@@ -47,6 +49,10 @@ function Alert({state, message}) {
 
 export default function JoinIdena() {
   const {t} = useTranslation('join-idena')
+  const router = useRouter()
+
+  const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
+  const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
   const [activeHash, setActiveHash] = useState()
   const [hash] = useHash()
@@ -57,10 +63,25 @@ export default function JoinIdena() {
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(ResponseState.None)
+  const [referral, setReferral] = useState('')
 
   useEffect(() => {
     setActiveHash(hash)
   }, [hash])
+
+  useEffect(() => {
+    const refLink = router.query.ref
+    if (!refLink) {
+      return
+    }
+
+    const refId = cookie.get('refId')
+    if (refId && refId !== refLink) {
+      return
+    }
+    cookie.set('refId', refLink, {expires: new Date(jsonDateString)})
+    setReferral(refLink)
+  }, [])
 
   const getKeyByTwitter = async name => {
     if (!name) {
@@ -73,7 +94,7 @@ export default function JoinIdena() {
 
     try {
       const response = await axios.get('/api/getInvitationTweetProof', {
-        params: {screen_name: name},
+        params: {screen_name: name, refId: referral},
       })
       setTwitterAlertMessage(
         'Your invitation code has been generated successfully!'
@@ -103,9 +124,6 @@ export default function JoinIdena() {
     await navigator.clipboard.writeText(twitterAlertMessage)
     setIsTextCopied(true)
   }
-
-  const {localeTime: validationTime, jsonDateString} = useNextValidationTime()
-  const validationCalendarLink = getGoogleCalendarLink(jsonDateString)
 
   return (
     <Layout
