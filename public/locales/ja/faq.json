@@ -41,5 +41,6 @@
     "The validation date will be adjusted to Saturdays once the network reaches 9441 identities. The total epoch duration is limited to 28 days.": "検証日は、ネットワークが 9441 個の ID に達した時点で土曜日に調整されます。全エポック期間は28日までです。",
     "Do you think the chosen validation time is fair for all countries?": "選ばれた検証時間は、すべての国にとって公平だと思いますか？",
     "Network size": "ネットワーク規模",
-    "Flip challenge": "フリップチャレンジ"
+    "Flip challenge": "フリップチャレンジ",
+    "The validation time of 13:30 UTC covers most countries when most people are awake. These are the local times for some of the world's cities (as of June 1, 2019):": "検証時間の13:30 UTCは、多くの人が起きているほとんどの国をカバーしています。世界のいくつかの都市の現地時間です（2019年6月1日現在）。"
 }
