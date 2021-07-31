@@ -57,5 +57,11 @@
     "What validation score do I need to be validated?": "どのような検証スコアが必要ですか？",
     "To get validated, you need to meet these three requirements during each validation session:": "検証を受けるためには、各検証セッションでこれらの3つの要件を満たす必要があります。",
     "Your current short validation session’s score should be 60% or more.": "現在の短い検証セッションのスコアが60％以上であること。",
-    "Your total score for the last 10 short validations (including the current validation session and all the previous ones) should be 75% or more.": "過去10回の短い検証（今回の検証セッションと過去のすべての検証セッションを含む）の合計スコアが75%以上であること。"
+    "Your total score for the last 10 short validations (including the current validation session and all the previous ones) should be 75% or more.": "過去10回の短い検証（今回の検証セッションと過去のすべての検証セッションを含む）の合計スコアが75%以上であること。",
+    "Your current long session’s score should be 75% or more.": "現在の長いセッションのスコアが75%以上であること。",
+    "In addition, you need to solve flips both correctly and fast. The first 6 flips must be solved in less than 2 minutes.": "さらに、フリップを正しくかつ速く解く必要があります。最初の6つのフリップは、2分以内に解かなければなりません。",
+    "Are all participants in Idena equal?": "イデナの参加者はみな平等なのでしょうか？",
+    "There are different statuses of participants in Idena:": "イデナの参加者には様々なステータスがあります：",
+    "What if I miss the validation? Can I still mine coins?": "検証に失敗したらどうするのですか？それでもコインを採掘できますか？",
+    "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch. A validated person may miss two validation sessions in a row without losing her cryptoidentity. But then this person cannot mine coins during the epochs when validations have been missed.": "参加者の検証状況は永遠ではありません。次のエポックが始まるときに失効します。参加者は、新しいエポックごとに検証ステータスを延長する必要がある。検証済みの人は、2回連続して検証セッションを欠席しても、暗号化IDを失うことはありません。しかし、その場合、検証に失敗したエポックの間はコインを採掘できません。"
 }
