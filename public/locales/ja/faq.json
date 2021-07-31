@@ -65,5 +65,6 @@
     "What if I miss the validation? Can I still mine coins?": "検証に失敗したらどうするのですか？それでもコインを採掘できますか？",
     "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch. A validated person may miss two validation sessions in a row without losing her cryptoidentity. But then this person cannot mine coins during the epochs when validations have been missed.": "参加者の検証状況は永遠ではありません。次のエポックが始まるときに失効します。参加者は、新しいエポックごとに検証ステータスを延長する必要がある。検証済みの人は、2回連続して検証セッションを欠席しても、暗号化IDを失うことはありません。しかし、その場合、検証に失敗したエポックの間はコインを採掘できません。",
     "Fig: Identity status flow (Candidate, Newbie, Verified, Human)": "図：状態変移図 （候補者、 新人、検証済、人間）",
-    "Fig: Identity status flow (Suspended, Zombie)": "図：　状態変移図（中断, 亡霊）"
+    "Fig: Identity status flow (Suspended, Zombie)": "図：　状態変移図（中断, 亡霊）",
+    "Why can’t Idena have several validations at different times to make it more convenient for participants in different time zones?": "イデナでは、異なるタイムゾーンの参加者に便利なように、異なる時間帯に複数の検証を行うことができないのでしょうか？"
 }
