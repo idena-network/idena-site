@@ -71,5 +71,6 @@
     "Am I allowed to participate in a validation ceremony if I have not submitted flips?": "フリップを提出していないのに、検証のセレモニーに参加してもいいのでしょうか？",
     "Newbies and verified accounts must submit flips before the next validation ceremony. Not submitting flips is equal to missing a validation.": "『初心者』の方や『認証済」のアカウントの方は、次の検証式までにフリップを提出してください。フリップを提出しないと、検証に参加できないのと同じです。",
     "Candidates, suspended accounts, and zombies do not submit flips for the validation ceremony.": "『候補者』、『中断』の方、『亡霊』の方は、認証式でフリップを提出しません。",
-    "Will I lose the coins I have mined in Idena when my cryptoidentity is killed?": "自分の暗号化IDが無効化されると、イデナで採掘したコインを失うことになりますか？"
+    "Will I lose the coins I have mined in Idena when my cryptoidentity is killed?": "自分の暗号化IDが無効化されると、イデナで採掘したコインを失うことになりますか？",
+    "If your cryptoidentity is killed by the network, you lose your stake: 20% of all your rewards (mining, validation rewards, flip rewards, valid invitation rewards, and so on), which cannot be spent while your Idena account is valid and which can be received only when you voluntary terminate your account.": "あなたの暗号化IDがネットワークによって無効化された場合、あなたはステークを失います：マイニング、検証報酬、フリップ報酬、有効な招待報酬などを足したすべての報酬の20％。この報酬は、あなたのイデナアカウントが有効である間は使うことができず、あなたが自発的にアカウントを終了したときにのみ受け取ることができます。"
 }
