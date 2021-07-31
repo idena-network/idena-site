@@ -67,5 +67,6 @@
     "Fig: Identity status flow (Candidate, Newbie, Verified, Human)": "図：状態変移図 （候補者、 新人、検証済、人間）",
     "Fig: Identity status flow (Suspended, Zombie)": "図：　状態変移図（中断, 亡霊）",
     "Why can’t Idena have several validations at different times to make it more convenient for participants in different time zones?": "イデナでは、異なるタイムゾーンの参加者に便利なように、異なる時間帯に複数の検証を行うことができないのでしょうか？",
-    "The validation time needs to be synchronized for people all over the world to verify the uniqueness of network participants. Otherwise, it would be possible to verify a different account at each of the various validation ceremonies.": "世界中の人々がネットワーク参加者の一意性を検証するためには、検証時刻を同期させる必要があります。そうしないと、さまざまな検証セレモニーのたびに、異なるアカウントを検証することが可能になってしまうからです。"
+    "The validation time needs to be synchronized for people all over the world to verify the uniqueness of network participants. Otherwise, it would be possible to verify a different account at each of the various validation ceremonies.": "世界中の人々がネットワーク参加者の一意性を検証するためには、検証時刻を同期させる必要があります。そうしないと、さまざまな検証セレモニーのたびに、異なるアカウントを検証することが可能になってしまうからです。",
+    "Am I allowed to participate in a validation ceremony if I have not submitted flips?": "フリップを提出していないのに、検証のセレモニーに参加してもいいのでしょうか？"
 }
