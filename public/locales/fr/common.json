@@ -1,1 +1,10 @@
-{}
+{
+    "Home": "Accueil",
+    "Download": "Télécharger",
+    "FAQ": "FAQ",
+    "Installation guide": "Guide d'installation",
+    "Web client": "Client web",
+    "Donate to Idena": "Faire un don à IDENA",
+    "Docs": "Docs",
+    "Whitepaper": "Livre blanc"
+}
