@@ -23,58 +23,63 @@ export default async (req, res) => {
     return res.status(400).send('Something went wrong')
   }
 
-  client.get('users/lookup', req.query, async function(error, data, response) {
-    if (data.errors && data.errors[0].code === 17) {
-      return res.status(400).send('Can not find the Twitter account')
-    }
-    if (!error && data.length > 0) {
-      if (
-        data[0].followers_count < minTwitterSubs &&
-        Date.now() - Date.parse(data[0].created_at) < minTwitterAge
-      ) {
-        return res
-          .status(400)
-          .send('Your twitter account has too few subscribers')
+  client.get(
+    'users/lookup',
+    {screen_name: req.query.screen_name},
+    async function(error, data, response) {
+      if (data.errors && data.errors[0].code === 17) {
+        return res.status(400).send('Can not find the Twitter account')
       }
-      if (Date.now() - Date.parse(data[0].created_at) < ONE_YEAR) {
-        return res.status(400).send('Your twitter account is too new')
-      }
-      client.get(
-        'search/tweets',
-        {
-          q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
-        },
-        async function(error, tweets, tweetsResponse) {
-          if (!error && tweets.statuses.length > 0) {
-            if (
-              Date.parse(previousEpochJson.result.validationTime) >
-              Date.parse(tweets.statuses[0].created_at)
-            ) {
-              return res.status(400).send('Can not verify your tweet')
-            }
-
-            let codeResponse
-            try {
-              codeResponse = await getCode(
-                data[0].id_str,
-                data[0].screen_name,
-                currentEpochJson.result.epoch
-              )
-              return res.status(200).send(codeResponse)
-            } catch (e) {
-              return res.status(400).send(e.message)
-            }
-          }
-          return res.status(400).send('Can not verify your tweet')
+      if (!error && data.length > 0) {
+        if (
+          data[0].followers_count < minTwitterSubs &&
+          Date.now() - Date.parse(data[0].created_at) < minTwitterAge
+        ) {
+          return res
+            .status(400)
+            .send('Your twitter account has too few subscribers')
         }
-      )
-    } else {
-      return res.status(400).send('Something went wrong')
+        if (Date.now() - Date.parse(data[0].created_at) < ONE_YEAR) {
+          return res.status(400).send('Your twitter account is too new')
+        }
+        client.get(
+          'search/tweets',
+          {
+            q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
+          },
+          async function(error, tweets, tweetsResponse) {
+            if (!error && tweets.statuses.length > 0) {
+              if (
+                Date.parse(previousEpochJson.result.validationTime) >
+                Date.parse(tweets.statuses[0].created_at)
+              ) {
+                return res.status(400).send('Can not verify your tweet')
+              }
+
+              let codeResponse
+              try {
+                codeResponse = await getCode(
+                  data[0].id_str,
+                  data[0].screen_name,
+                  currentEpochJson.result.epoch,
+                  req.query.refId ? req.query.refId : null
+                )
+                return res.status(200).send(codeResponse)
+              } catch (e) {
+                return res.status(400).send(e.message)
+              }
+            }
+            return res.status(400).send('Can not verify your tweet')
+          }
+        )
+      } else {
+        return res.status(400).send('Something went wrong')
+      }
     }
-  })
+  )
 }
 
-async function getCode(name, screenName, epoch) {
+async function getCode(name, screenName, epoch, refId) {
   try {
     const {
       data: {invite},
@@ -92,7 +97,7 @@ async function getCode(name, screenName, epoch) {
               'There are no invitation codes available, please try again later'
             ),
             q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {name, screenName},
+              data: {name, screenName, refId},
             })
           )
         )
