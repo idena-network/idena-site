@@ -18,15 +18,6 @@ export default function Faq() {
   const {t} = useTranslation('faq')
 
   useEffect(() => {
-    const fetchData = async () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const nextValidation = await useNextValidationTime()
-      setValidationTime(nextValidation.localeTime)
-    }
-    fetchData()
-  }, [])
-
-  useEffect(() => {
     setActiveHash(hash)
   }, [hash])
 

@@ -63,7 +63,6 @@ export default function JoinIdena() {
   const [twitterAlertMessage, setTwitterAlertMessage] = useState('')
   const [twitterKey, setTwitterKey] = useState('')
   const [twitterAlertState, setTwitterAlertState] = useState(ResponseState.None)
-  const [referral, setReferral] = useState('')
 
   useEffect(() => {
     setActiveHash(hash)
@@ -71,7 +70,7 @@ export default function JoinIdena() {
 
   useEffect(() => {
     const refLink = router.query.ref
-    if (!refLink) {
+    if (!refLink || !jsonDateString) {
       return
     }
 
@@ -80,8 +79,7 @@ export default function JoinIdena() {
       return
     }
     cookie.set('refId', refLink, {expires: new Date(jsonDateString)})
-    setReferral(refLink)
-  }, [])
+  }, [jsonDateString, router.query.ref])
 
   const getKeyByTwitter = async name => {
     if (!name) {
@@ -94,7 +92,7 @@ export default function JoinIdena() {
 
     try {
       const response = await axios.get('/api/getInvitationTweetProof', {
-        params: {screen_name: name, refId: referral},
+        params: {screen_name: name, refId: cookie.get('refId')},
       })
       setTwitterAlertMessage(
         'Your invitation code has been generated successfully!'
