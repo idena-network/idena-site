@@ -79,7 +79,7 @@ export default async (req, res) => {
   )
 }
 
-async function getCode(name, screenName, refId, epoch) {
+async function getCode(name, screenName, epoch, refId) {
   try {
     const {
       data: {invite},
