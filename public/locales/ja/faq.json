@@ -1,5 +1,5 @@
 {
-    "IDENA FAQ": "イデナのよくある質問",
+    "IDENA FAQ": "イデナ　よくある質問",
     "We are here to help you. Browse through the most frequently asked questions. Can’t find an answer? Email us at info@idena.io": "私たちはあなたをサポートします。よくあるご質問をまとめました。答えが見つかりませんか？info@idena.io までご連絡ください",
     "The uniqueness of participants is proven by the fact that they must solve and provide the answers for flip-puzzles synchronously. A single person is not able to validate herself multiple times because of the very limited timeframe for the submission of the answers.": "参加者の独自性は、フリップパズルを同期して解いて答えを出さなければならないことで証明されています。限られた時間内に解答を提出しなければならないため、一人で何度も検証することはできません。",
     "Technically, an account can be sold and bought. However, the Idena protocol introduces economic incentives to prevent participants from doing that. A person who sells their account can simply kill the cryptoidentity afterwards to unlock their frozen coins (frozen coins accumulate for each account as a part of UBI and cannot be spent while the account is valid).": "技術的には、アカウントを売買することは可能です。しかし、イデナプロトコルでは、参加者がそのようなことをしないように経済的なインセンティブを導入しています。アカウントを売却した人は、その後c暗号化IDを無効化するだけで、凍結されたコインのロックを解除することができます（凍結されたコインはUBIの一部としてアカウントごとに蓄積され、アカウントが有効な間は使用できません）。",
