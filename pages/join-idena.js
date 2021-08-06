@@ -119,7 +119,7 @@ export default function JoinIdena() {
   }
 
   async function copyKey() {
-    await navigator.clipboard.writeText(twitterAlertMessage)
+    await navigator.clipboard.writeText(twitterKey)
     setIsTextCopied(true)
   }
 
