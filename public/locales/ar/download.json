@@ -1,1 +1,11 @@
-{}
+{
+    "Size": "الحجم",
+    "Published": "تم النشر",
+    "Version": "النسخه",
+    "Desktop Idena App (built-in node is included)": "تطبيق ايدينا لسطح المكتب ( النود مدمجه بها )",
+    "Download": "تنزيل",
+    "Loading...": "جاري التحميل ...",
+    "All builds of the Desktop Idena App are available on": "كل نسخ تطبيق ايدينا لسطح المكتب متاحه في",
+    "Download Idena Node": "تنزيل نود ايدينا",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "تنزيل النسخه المتطوره والمستقره من تطبيق ايدينا لسطح المكتب ونود ايدينا ."
+}
