@@ -266,8 +266,8 @@ export default function Download() {
                 <Trans i18nKey="remoteNodeGuideLink" t={t} ns="download">
                   Download Idena node if you want to run it separately or on
                   your remote VPS (please check the{' '}
-                  <LinkText href="/guide#guide-remote-1">
-                    <a>guide</a>
+                  <LinkText href="/guide#guide-remote-0">
+                    <a>minimum requirements for VPS</a>
                   </LinkText>
                   ).
                 </Trans>
