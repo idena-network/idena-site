@@ -113,7 +113,9 @@ export default function JoinIdena() {
 
   async function copyTweet() {
     await navigator.clipboard.writeText(
-      'I want to join @IdenaNetwork to become a validator of the first Proof-of-Person blockchain #IdenaInvite'
+      'I want to join @IdenaNetwork to become a validator of the first Proof-of-Person blockchain #IdenaInvite\n' +
+        '\n' +
+        'https://www.idena.io/join-idena'
     )
     setIsTweetCopied(true)
   }
@@ -283,9 +285,13 @@ export default function JoinIdena() {
                               />
                             )}
                             I want to join @IdenaNetwork to become a validator
-                            of the first Proof-of-Person blockchain
-                            <br />
+                            of the first Proof-of-Person blockchain{' '}
                             <span style={{color: '#578fff'}}>#IdenaInvite</span>
+                            <br />
+                            <br />
+                            <span style={{color: '#578fff'}}>
+                              https://www.idena.io/join-idena
+                            </span>
                           </div>
                           <div className="section_tight">
                             <div className="row">
