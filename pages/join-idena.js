@@ -243,7 +243,7 @@ export default function JoinIdena() {
                               <a
                                 target="_blank"
                                 rel="noreferrer"
-                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite"
+                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
                               >
                                 Send a tweet
                               </a>{' '}
