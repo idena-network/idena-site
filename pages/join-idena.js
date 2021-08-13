@@ -113,7 +113,9 @@ export default function JoinIdena() {
 
   async function copyTweet() {
     await navigator.clipboard.writeText(
-      'I want to join @IdenaNetwork to become a validator of the first Proof-of-Person blockchain #IdenaInvite'
+      'I want to join @IdenaNetwork to become a validator of the first Proof-of-Person blockchain #IdenaInvite\n' +
+        '\n' +
+        'https://www.idena.io/join-idena'
     )
     setIsTweetCopied(true)
   }
@@ -241,7 +243,7 @@ export default function JoinIdena() {
                               <a
                                 target="_blank"
                                 rel="noreferrer"
-                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite"
+                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
                               >
                                 Send a tweet
                               </a>{' '}
@@ -283,9 +285,13 @@ export default function JoinIdena() {
                               />
                             )}
                             I want to join @IdenaNetwork to become a validator
-                            of the first Proof-of-Person blockchain
-                            <br />
+                            of the first Proof-of-Person blockchain{' '}
                             <span style={{color: '#578fff'}}>#IdenaInvite</span>
+                            <br />
+                            <br />
+                            <span style={{color: '#578fff'}}>
+                              https://www.idena.io/join-idena
+                            </span>
                           </div>
                           <div className="section_tight">
                             <div className="row">
