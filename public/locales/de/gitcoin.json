@@ -1,4 +1,20 @@
 {
-    "Add to calendar": "Kalender hinzufügen",
-    "Next validation:": "Nächste Validierung:"
+    "Add to calendar": "Trage in den Kalender ein",
+    "Next validation:": "Nächste Validierung:",
+    "Step 5": "Fünfter Schritt",
+    "Step 1": "Erster Schritt",
+    "Get an invitation code": "Erhalte einen Einladungs-Code",
+    "Step 2": "Zweiter Schritt",
+    "Create and activate your Idena account": "Eröffne und aktiviere deinen Idena Account",
+    "Step 3": "Dritter Schritt",
+    "Prepare yourself for the validation session": "Bereite dich vor auf die Validierungssitzung",
+    "Learn what a validation session is and how to pass it successfully": "Lerne was eine Validierungs-Session ist und wie Du erfolgreich an ihr teilnehmen kannst",
+    "Train to solve flips": "Übe das Lösen von Flips",
+    "Step 4": "Vierter Schritt",
+    "Join the validation ceremony to validate your account": "Nimm an der Validationszeremonie teil um deinen Account zu validieren",
+    "Follow the instructions to create your account and activate it with your invitation code:": "Folge der Anleitung, um deinen Account zu erstellen und aktiviere ihn mit deinem Einladungscode:",
+    "idenaWebAppLink": "Öffne <2>Idena Web App</2>",
+    "Please choose the platform where you have the most active account:": "Bitte wähle die Plattform, auf der Du den aktivesten Account hast:",
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "Warte auf den Beginn der Validations-Session. Folge den Anweisungen, löse Flips und habe Spaß dabei!",
+    "validationResults": "Warte auf die Validations-Ergebnisse. Wenn Du die Flips erfolgreich gelöst hast, wirst Du den <2>Newbie</2> Status erhalten. Glückwunsch, Du hast jetzt eine validierte Krypto-Identität!"
 }
