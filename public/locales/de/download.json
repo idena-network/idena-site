@@ -11,5 +11,6 @@
     "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Lade die Idena Desktop App herunter um sie auf deinem Computer zu nutzen. Der Idena Knoten wird automatisch heruntergeladen mit dem ersten Schritt.",
     "All builds of the Desktop Idena App are available on": "Alle Versionen der Desktop App sind erhältlich auf",
     "Idena Node builds": "Idena Knoten Version",
-    "nodeBuildGuideLink": "Du kannst die neueste 64-bit Entwickler-Version der Desktop Idena App herunterladen und den Knoten für alle unterstützten Plattformen. <1></1>Schau dir <4><0>Installation and troubleshooting guide</0></4> an, falls du Schwierigkeiten bei der Installation oder dem Betrieb des Idena Knotens hast."
+    "nodeBuildGuideLink": "Du kannst die neueste 64-bit Entwickler-Version der Desktop Idena App herunterladen und den Knoten für alle unterstützten Plattformen. <1></1>Schau dir <4><0>Installation and troubleshooting guide</0></4> an, falls du Schwierigkeiten bei der Installation oder dem Betrieb des Idena Knotens hast.",
+    "remoreNodeGuideLink": "Du kannst dich auch mit deinem externen Idena Knoten verbinden, wenn du ihn separat oder mit VPS nutzen willst (schau dir den <2><0>guide</0></2> an)."
 }
