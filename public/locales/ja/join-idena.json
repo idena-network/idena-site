@@ -32,6 +32,6 @@
     "Please choose the platform where you have the most active account:": "あなたが最もアクティブなアカウントを持っているプラットフォームを選択してください：",
     "Follow the instructions to create your account and activate it with your invitation code:": "指示に従ってアカウントを作成し、招待コードで活性化してください：",
     "Learn what a validation session is and how to pass it successfully": "検証セッションとは何か、そしてそれを成功させる方法を学ぶ",
-    "idenaWebAppSignIn": "<4>検証セッション開始の15分前<4>に、Idena Web Appに<0>サインイン<0>します。検証待ちの表示がされていることを確認します。信頼できる高速のインターネット接続があることを確認してください。より快適にご利用いただくために、ラップトップ/パソコンのご利用をお勧めします。",
+    "idenaWebAppSignIn": "<4>検証セッション開始の15分前<4>に、Idena Web Appに<0>サインイン<0>します。検証待ちの表示がされていることを確認します。安定したインターネット接続があることを確認してください。より快適にご利用いただくために、ラップトップ/パソコンのご利用をお勧めします。",
     "validationResults": "検証結果を待ちます。うまくフリップが解けていれば、<2>Newbie</2>という のステータスが表示されます。おめでとうございます！あなたは今、検証に合格しました！"
 }
