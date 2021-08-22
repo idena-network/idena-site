@@ -12,5 +12,8 @@
     "All builds of the Desktop Idena App are available on": "Alle Versionen der Desktop App sind erhältlich auf",
     "Idena Node builds": "Idena Knoten Version",
     "nodeBuildGuideLink": "Du kannst die neueste 64-bit Entwickler-Version der Desktop Idena App herunterladen und den Knoten für alle unterstützten Plattformen. <1></1>Schau dir <4><0>Installation and troubleshooting guide</0></4> an, falls du Schwierigkeiten bei der Installation oder dem Betrieb des Idena Knotens hast.",
-    "remoreNodeGuideLink": "Du kannst dich auch mit deinem externen Idena Knoten verbinden, wenn du ihn separat oder mit VPS nutzen willst (schau dir den <2><0>guide</0></2> an)."
+    "remoreNodeGuideLink": "Du kannst dich auch mit deinem externen Idena Knoten verbinden, wenn du ihn separat oder mit VPS nutzen willst (schau dir den <2><0>guide</0></2> an).",
+    "buildFromSourceGuideLink": "Du kannst die Desktop App auch vom Sourcecode aus bauen (, schaue dir den <2><0>guide</0></2> an).",
+    "remoteNodeGuideLink": "Lade den Idena Knoten herunter, wenn du ihn separat über VPS laufen lassen willst (bitte beachte den <2><0>guide</0></2>).",
+    "allBuildsGithubLink": "Alle Versionen des Idena Knoten sind verfügbar auf <2>Github</2>.<4></4>Du kannst den Idena Knoten auch aus dem Quellcode bauen <7>source</7>."
 }
