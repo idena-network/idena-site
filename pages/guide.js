@@ -354,7 +354,7 @@ export default function Guide() {
                       </p>
                       <ul>
                         <li>Linux/x64</li>
-                        <li>1 CPU core</li>
+                        <li>2 CPU core</li>
                         <li>2 Gb RAM</li>
                         <li>100 Gb HDD</li>
                         <li>100 Mbps uplink</li>

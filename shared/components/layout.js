@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
 import {useRouter} from 'next/router'
 import Link from 'next/link'
-import {Children, useState} from 'react'
+import {Children, useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next'
+import cookie from 'cookie-cutter'
 import Header from './header'
 import TopHeader from './topheader'
 import {Combobox} from './combobox'
@@ -44,6 +45,15 @@ export default function Layout({children, title = '', description = ''}) {
   const translationLink = `https://translate.idena.io/projects/idena-site${
     router.pathname === '/' ? '/main' : router.pathname
   }-page/${i18n.language === 'en' ? '' : i18n.language}`
+
+  useEffect(() => {
+    const savedLocale = cookie.get('NEXT_LOCALE')
+    if (savedLocale) {
+      if (router.locale !== savedLocale) {
+        router.push(router.pathname, null, {locale: savedLocale})
+      }
+    }
+  }, [router])
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
