@@ -1835,11 +1835,6 @@ export default function Faq() {
                           - A reward for a Verified invitee is 6 times bigger
                           than a basic reward for a validated Candidate.
                           <br />
-                          - A person who does not share their invitation is
-                          rewarded with at least 1/3 of the basic invitation
-                          reward with 50% probability to win 2/3 of the basic
-                          invitation reward for a non-spent invitation.
-                          <br />
                           <br />
                           Invitation rewards for the 2nd and 3rd validation are
                           not paid to the Idena foundation.
