@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import {Dropdown} from 'react-bootstrap'
+import cookie from 'cookie-cutter'
 
 export function Combobox(
   {title = '', itemsList = []},
@@ -38,6 +39,12 @@ export function Combobox(
         {itemsList.map(lang => (
           <Dropdown.Item
             href={lang.href}
+            onClick={() => {
+              cookie.set('NEXT_LOCALE', lang.key, {
+                expires: new Date(2147483647 * 1000),
+                path: '/',
+              })
+            }}
             onSelect={onItemClick}
             eventKey={lang.key}
           >

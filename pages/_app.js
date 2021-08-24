@@ -3,6 +3,7 @@ import '../styles/index.scss'
 import {useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {appWithTranslation} from 'next-i18next'
+import TagManager from 'react-gtm-module'
 
 const newReplace = {
   download: 'download',
@@ -37,6 +38,10 @@ function MyApp({Component, pageProps}) {
   useEffect(() => {
     ReactGA.initialize('UA-139651161-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
+  useEffect(() => {
+    TagManager.initialize({gtmId: 'GTM-P4K5GX4'})
   }, [])
 
   return <Component {...pageProps} />
