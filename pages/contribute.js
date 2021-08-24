@@ -58,7 +58,7 @@ export default function Contribute() {
               </h4>
               <ul>
                 <li>
-                  <a href="https://discuss.idena.website/">
+                  <a href="https://discuss.idena.site/">
                     {t('Idena Forum', {ns: 'contribute'})}
                   </a>{' '}
                   {t('Posts allowed for Idena validated participants', {
