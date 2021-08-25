@@ -1,1 +1,21 @@
-{}
+{
+    "IDENA Installation and troubleshooting guide": "IDENA Anleitung zur Installation und Fehlerbehebung",
+    "Installation and troubleshooting guide": "Anleitung zur Installation und Fehlerbehebung",
+    "Idena installation": "Idena Installation",
+    "How to install the Idena node on macOS?": "Wie installiere ich den Idena-Knoten auf macOS?",
+    "Download the latest version of the Idena node:": "Lade die aktuelle Version des Idena-Knoten:",
+    "Open the terminal": "Öffne das Terminal",
+    "Make the file executable by typing chmod +x command:": "Mach die Datei ausführbar indem Du das chmod +x Kommando eingibst:",
+    "Switch to the Idena folder by typing cd:": "Wechsle in den Idena Ordner indem Du cd eingibst:",
+    "Run the node:": "Starte den Knoten:",
+    "How to install the Idena client on macOS?": "Wie installiert man die Idena Anwendung auf macOS?",
+    "Open Idena as a normal app": "Öffne Idena als normale Anwendung",
+    "built-in node": "Eingebauter Knoten",
+    "Remote node": "Entfernter Knoten",
+    "How to move my identity address to another computer?": "Wie kann man die Identitäts-Adresse (identity address) auf einen anderen Computer verschieben?",
+    "We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions.": "Wir sind für Dich da um Dir zu helfen einen Idena-Knoten zu betreiben. Schau Dir die bekannten Probleme an und die meistgestellten Fragen.",
+    "Create an Idena folder on your desktop where the node will run": "Erstelle einen Idena Ordner auf Deinem Desktop wo Du den Knoten laufen lassen willst",
+    "Move the downloaded file into the newly created Idena folder": "Verschiebe die geladene Datei in den neu erstellten Idena Ordner",
+    "How to backup the private key?": "Wie wird der private Schlüssel (private key) gesichert?",
+    "The private key is generated automatically once the node is launched for the first time. You can find the private key in the directory where the node is located:": "Der private Schlüssel wird automatisch erstellt wenn der Knoten zum ersten Mal gestartet wird. Du findest den privaten Schlüssel in dem Verzeichnis in dem der Knoten liegt:"
+}
