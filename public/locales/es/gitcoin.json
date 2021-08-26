@@ -1,1 +1,26 @@
-{}
+{
+    "validationResults": "Espere los resultados de la validación. Si ha resuelto con éxito los giros, obtendrá un estado <2> Novato </2>. ¡Felicitaciones, ahora eres una criptoidentidad validada!",
+    "Verify your Gitcoin": "Verifica tu Gitcoin",
+    "How to verify your Gitcoin account with Idena": "Cómo verificar su cuenta de Gitcoin con Idena",
+    "Step 1": "Paso 1",
+    "Get an invitation code": "Obtén un código de invitación",
+    "Step 2": "Paso 2",
+    "Create and activate your Idena account": "Crea y activa tu cuenta Idena",
+    "Next validation:": "Siguiente validación:",
+    "Step 3": "Paso 3",
+    "Prepare yourself for the validation session": "Prepárate para la sesión de validación",
+    "Add to calendar": "Añadir al calendario",
+    "Learn what a validation session is and how to pass it successfully": "Aprenda qué es una sesión de validación y cómo aprobarla con éxito",
+    "Train to solve flips": "Entrena para resolver flips",
+    "Step 4": "Paso 4",
+    "Join the validation ceremony to validate your account": "Únase a la ceremonia de validación para validar su cuenta",
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "Espere a que comience la sesión de validación. ¡Sigue las instrucciones, resuelve flips y disfruta del proceso!",
+    "Follow the instructions to create your account and activate it with your invitation code:": "Siga las instrucciones para crear su cuenta y activarla con su código de invitación:",
+    "Connect your Idena account to your Gitcoin profile": "Conecte su cuenta de Idena a su perfil de Gitcoin",
+    "Authorise Gitcoin to access your Idena account": "Autoriza a Gitcoin para acceder a tu cuenta de Idena",
+    "Congratulations! Your Idena account is now verified": "¡Felicidades! Su cuenta de Idena ahora está verificada",
+    "idenaWebAppLink": "Abrir <2> Idena Web App </2>",
+    "Please choose the platform where you have the most active account:": "Elija la plataforma en la que tiene la cuenta más activa:",
+    "Step 5": "Paso 5",
+    "Find Idena and click Verify": "Busque Idena y haga clic en Verificar"
+}
