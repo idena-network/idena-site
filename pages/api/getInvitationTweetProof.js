@@ -35,7 +35,7 @@ export default async (req, res) => {
     return res.status(400).send('Something went wrong')
   }
 
-  if (userResponse?.errors[0]?.code === 17) {
+  if (userResponse?.errors?.[0]?.code === 17) {
     return res.status(400).send('Can not find the Twitter account')
   }
   if (!userResponse.length) {
