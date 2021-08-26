@@ -1,1 +1,26 @@
-{}
+{
+    "Installation and troubleshooting guide": "Guía de instalación y solución de problemas",
+    "Idena installation": "Instalación de Idena",
+    "How to install the Idena node on macOS?": "¿Cómo instalar el nodo Idena en macOS?",
+    "Create an Idena folder on your desktop where the node will run": "Cree una carpeta Idena en su escritorio donde se ejecutará el nodo",
+    "Download the latest version of the Idena node:": "Descargue la última versión del nodo Idena:",
+    "Switch to the Idena folder by typing cd:": "Cambie a la carpeta Idena escribiendo cd:",
+    "Make the file executable by typing chmod +x command:": "Haga que el archivo sea ejecutable escribiendo el comando chmod +x:",
+    "Run the node:": "Ejecute el nodo:",
+    "How to install the Idena client on macOS?": "¿Cómo instalar el cliente Idena en macOS?",
+    "How to backup the private key?": "¿Cómo hacer una copia de seguridad de la clave privada?",
+    "Remote node": "Nodo remoto",
+    "How to move my identity address to another computer?": "¿Cómo trasladar mi dirección de identidad a otra computadora?",
+    "How to build the Idena client from source?": "¿Cómo construir el cliente Idena desde la fuente?",
+    "Install the dependencies:": "Instale las dependencias:",
+    "Run the app:": "Ejecute la aplicación:",
+    "Running the Idena node on a remote server": "Ejecutando el nodo Idena en un servidor remoto",
+    "What are the minimum requirements for VPS to run the Idena node?": "Cuáles son los requisitos mínimos para que VPS ejecute el nodo Idena?",
+    "You can use the following minimum VPS configuration for running the Idena node:": "Puede utilizar la siguiente configuración mínima de VPS para ejecutar el nodo Idena:",
+    "IDENA Installation and troubleshooting guide": "Guía de instalación y solución de problemas de IDENA",
+    "We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions.": "Estamos aquí para ayudarlo a ejecutar el nodo Idena. Examine los problemas conocidos y las preguntas más frecuentes.",
+    "Move the downloaded file into the newly created Idena folder": "Mueva el archivo descargado a la carpeta Idena recién creada",
+    "Open Idena as a normal app": "Abra Idena como una aplicación normal",
+    "The private key is generated automatically once the node is launched for the first time. You can find the private key in the directory where the node is located:": "La clave privada se genera automáticamente una vez que se inicia el nodo por primera vez. Puede encontrar la clave privada en el directorio donde se encuentra el nodo:",
+    "In order to run the node with your existing address on another computer, make a copy of your node's private key. You can find the private key file in the directory where the node is located:": "Para ejecutar el nodo con su dirección existente en otra computadora, haga una copia de la clave privada de su nodo. Puede encontrar el archivo de clave privada en el directorio donde se encuentra el nodo:"
+}
