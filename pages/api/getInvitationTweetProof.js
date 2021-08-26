@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import Twitter from 'twitter'
 import {query as q} from 'faunadb'
 import {serverClient} from '../../shared/utils/faunadb'
@@ -22,61 +23,85 @@ export default async (req, res) => {
   if (!previousEpochJson.result) {
     return res.status(400).send('Something went wrong')
   }
+  let userResponse
+  let tweetResponse
+  let codeResponse
 
-  client.get(
-    'users/lookup',
-    {screen_name: req.query.screen_name},
-    async function(error, data, response) {
-      if (data.errors && data.errors[0].code === 17) {
-        return res.status(400).send('Can not find the Twitter account')
-      }
-      if (!error && data.length > 0) {
-        if (
-          data[0].followers_count < minTwitterSubs &&
-          Date.now() - Date.parse(data[0].created_at) < minTwitterAge
-        ) {
-          return res
-            .status(400)
-            .send('Your twitter account has too few subscribers')
-        }
-        if (Date.now() - Date.parse(data[0].created_at) < ONE_YEAR) {
-          return res.status(400).send('Your twitter account is too new')
-        }
-        client.get(
-          'search/tweets',
-          {
-            q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
-          },
-          async function(error, tweets, tweetsResponse) {
-            if (!error && tweets.statuses.length > 0) {
-              if (
-                Date.parse(previousEpochJson.result.validationTime) >
-                Date.parse(tweets.statuses[0].created_at)
-              ) {
-                return res.status(400).send('Can not verify your tweet')
-              }
+  try {
+    userResponse = await client.get('users/lookup', {
+      screen_name: req.query.screen_name,
+    })
+  } catch (e) {
+    return res.status(400).send('Something went wrong')
+  }
 
-              let codeResponse
-              try {
-                codeResponse = await getCode(
-                  data[0].id_str,
-                  data[0].screen_name,
-                  currentEpochJson.result.epoch,
-                  req.query.refId ? req.query.refId : null
-                )
-                return res.status(200).send(codeResponse)
-              } catch (e) {
-                return res.status(400).send(e.message)
-              }
-            }
-            return res.status(400).send('Can not verify your tweet')
-          }
+  if (userResponse?.errors[0]?.code === 17) {
+    return res.status(400).send('Can not find the Twitter account')
+  }
+  if (!userResponse.length) {
+    return res.status(400).send('Something went wrong')
+  }
+
+  const user = userResponse[0]
+  if (
+    user.followers_count < minTwitterSubs &&
+    Date.now() - Date.parse(user.created_at) < minTwitterAge
+  ) {
+    return res.status(400).send('Your twitter account has too few subscribers')
+  }
+  if (Date.now() - Date.parse(user.created_at) < ONE_YEAR) {
+    return res.status(400).send('Your twitter account is too new')
+  }
+
+  if (user.status?.text) {
+    const {text} = user.status
+    if (
+      text.includes('@IdenaNetwork') &&
+      text.includes('#IdenaInvite') &&
+      Date.parse(previousEpochJson.result.validationTime) <
+        Date.parse(user.status.created_at)
+    ) {
+      try {
+        codeResponse = await getCode(
+          user.id_str,
+          user.screen_name,
+          currentEpochJson.result.epoch,
+          req.query.refId ? req.query.refId : null
         )
-      } else {
-        return res.status(400).send('Something went wrong')
+        return res.status(200).send(codeResponse)
+      } catch (e) {
+        return res.status(400).send(e.message)
       }
     }
-  )
+  }
+
+  try {
+    tweetResponse = await client.get('search/tweets', {
+      q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
+    })
+  } catch (e) {
+    return res.status(400).send('Can not verify your tweet')
+  }
+
+  if (
+    !tweetResponse?.statuses?.length ||
+    Date.parse(previousEpochJson.result.validationTime) >
+      Date.parse(tweetResponse?.statuses[0]?.created_at)
+  ) {
+    return res.status(400).send('Can not verify your tweet')
+  }
+
+  try {
+    codeResponse = await getCode(
+      user.id_str,
+      user.screen_name,
+      currentEpochJson.result.epoch,
+      req.query.refId ? req.query.refId : null
+    )
+    return res.status(200).send(codeResponse)
+  } catch (e) {
+    return res.status(400).send(e.message)
+  }
 }
 
 async function getCode(name, screenName, epoch, refId) {
