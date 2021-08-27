@@ -1957,6 +1957,143 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
+              <h3>{t('How to buy iDNA?', {ns: 'faq'})}</h3>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
+                <Card id="#faq-buy-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-1">
+                      {t('How to buy iDNA on a centralized exchange?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-1">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaCentralizedExchange" t={t} ns="faq">
+                          Create an account on one of the{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://www.coingecko.com/en/coins/idena#markets"
+                          >
+                            exchanges where iDNA is traded
+                          </a>
+                          . Trade iDNA and{' '}
+                          <a href="#faq-buy-2">withdraw it to your wallet</a>.
+                          If you want to hold iDNA long-term, we do not
+                          recommend storing your coins on the exchange for
+                          safety reasons.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="#faq-buy-2">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-2">
+                      {t('How to withdraw iDNA to your Idena wallet?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-2">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaWalletWithdraw" t={t} ns="faq">
+                          You can use the Idena Web App or one of the{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/community/resources/#wallets"
+                          >
+                            Idena wallets created by the community
+                          </a>{' '}
+                          to store your iDNA. Choose a wallet you want to use,
+                          generate your address and use it to transfer your
+                          Idena coins. In general, storing coins in a private
+                          wallet is safer than keeping them on an exchange.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="#faq-buy-3">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-3">
+                      {t('How to buy iDNA on a decentralized exchange?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-3">
+                    <div className="card-body">
+                      <p>
+                        <Trans
+                          i18nKey="idnaDecentralizedExchange"
+                          t={t}
+                          ns="faq"
+                        >
+                          You can buy wrapped iDNA on a decentralized exchange
+                          using your metamask wallet. Open{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://pancakeswap.info/token/0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
+                          >
+                            pancakeswap
+                          </a>
+                          , click Trade and connect your wallet. Read{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
+                          >
+                            more
+                          </a>{' '}
+                          about using your metamask wallet with BSC blockchain
+                          to trade iDNA.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="#faq-buy-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-4">
+                      {t(
+                        'How to transfer wrapped iDNA to the Idena blockchain?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-4">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaBscTransfer" t={t} ns="faq">
+                          If you have traded wrapped iDNA on BSC blockchain and
+                          want to store them on the Idena blockchain, you can{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://bridge.idena.io/faq"
+                          >
+                            swap your iDNA using the Idena Bridge
+                          </a>
+                          .
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+
               <h3>Attacks</h3>
               <Accordion
                 activeKey={activeHash}
