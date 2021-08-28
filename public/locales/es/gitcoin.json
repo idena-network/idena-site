@@ -22,5 +22,10 @@
     "idenaWebAppLink": "Abrir <2> Idena Web App </2>",
     "Please choose the platform where you have the most active account:": "Elija la plataforma en la que tiene la cuenta más activa:",
     "Step 5": "Paso 5",
-    "Find Idena and click Verify": "Busque Idena y haga clic en Verificar"
+    "Find Idena and click Verify": "Busque Idena y haga clic en Verificar",
+    "idenaTelegramGroupLink": "Unete al <2> grupo oficial de Idena en Telegram </2> y solicite una invitación de la comunidad.",
+    "idenaCommunityDiscordLink": "Unete al <2>Discord de la comunidad Idena </2> y solicite una invitación de la comunidad en el canal <6> #invite-requests </6>.",
+    "idenaWebAppSignIn": "<0>Inicie sesión</0> en su Idena Web App <4> 15 minutos antes de que comience la próxima sesión de validación </4>. Compruebe que tiene el estado de espera de validación. Asegúrese de tener una conexión a Internet confiable y rápida. Recomendamos utilizar una computadora portátil / PC para una mejor experiencia.",
+    "tweetSendingTip": "<0>Envíe un tweet</0> con un hashtag #IdenaTrustBonus desde su cuenta. Para recibir una invitación, su cuenta debe tener <4> más de 1 año o más de dos meses y tener al menos <1> {{followersCount}}</1> seguidores </4>. El tweet debería decir:",
+    "gitcoinTrustBonusLink": "Ve a la pestaña <2> Trust Bonus </2> de su perfil de Gitcoin"
 }
