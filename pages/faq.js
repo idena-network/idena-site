@@ -968,6 +968,85 @@ export default function Faq() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
+
+                <Card id="faq-validation-11">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-validation-11">
+                      {t(
+                        'Why do I get Late submission even though I’m sure I’ve submitted my answers in time?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-validation-11">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'As Idena is a decentralized and distributed network it uses a gossip peer-to-peer protocol to ensure data disseminated to the network.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 13:32 UTC.',
+                          {ns: 'faq', nsSeparator: '!'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Also, the keys of your flips (for previously validated users) should spread across the network no later than 30 secs from the beginning of validation.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'If your node lost connection while submitting the answers/keys and connection was restored after the above time, the validation attempt will be considered as failed with the Late submission reason.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        <Trans
+                          i18nKey="validationConnectionLost"
+                          t={t}
+                          ns="faq"
+                        >
+                          Node disconnection happens if your node doesn’t have
+                          enough peers to maintain the stable data channel. This
+                          could be in 2 cases:
+                          <ol>
+                            <li>Low-performance computer or home router;</li>
+                            <li>
+                              You have synced the node right before validation
+                              and the node did not manage to find enough peers
+                              for stable connection.
+                            </li>
+                          </ol>
+                        </Trans>
+                      </p>
+                      <p>
+                        <Trans
+                          i18nKey="desktopNodeSyncRecommendation"
+                          t={t}
+                          ns="faq"
+                        >
+                          We recommend you to keep your desktop node
+                          synchronized at least 30 mins before validation,
+                          upgrade your hardware if possible or use Idena web app
+                          (
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://app.idena.io/"
+                          >
+                            app.idena.io
+                          </a>
+                          ) with a connection to one of shared nodes for
+                          validation.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
 
               <h3>{t('Flip challenge', {ns: 'faq'})}</h3>
