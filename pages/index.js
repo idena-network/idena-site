@@ -417,7 +417,7 @@ export default function Home() {
                         alt="Buy iDNA"
                         width="20"
                       />
-                      How to buy iDNA
+                      {t('How to buy iDNA', {ns: 'index'})}
                     </a>
                   </Link>
                 </div>
