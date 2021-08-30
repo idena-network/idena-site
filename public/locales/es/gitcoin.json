@@ -27,5 +27,6 @@
     "idenaCommunityDiscordLink": "Unete al <2>Discord de la comunidad Idena </2> y solicite una invitación de la comunidad en el canal <6> #invite-requests </6>.",
     "idenaWebAppSignIn": "<0>Inicie sesión</0> en su Idena Web App <4> 15 minutos antes de que comience la próxima sesión de validación </4>. Compruebe que tiene el estado de espera de validación. Asegúrese de tener una conexión a Internet confiable y rápida. Recomendamos utilizar una computadora portátil / PC para una mejor experiencia.",
     "tweetSendingTip": "<0>Envíe un tweet</0> con un hashtag #IdenaTrustBonus desde su cuenta. Para recibir una invitación, su cuenta debe tener <4> más de 1 año o más de dos meses y tener al menos <1> {{followersCount}}</1> seguidores </4>. El tweet debería decir:",
-    "gitcoinTrustBonusLink": "Ve a la pestaña <2> Trust Bonus </2> de su perfil de Gitcoin"
+    "gitcoinTrustBonusLink": "Ve a la pestaña <2> Trust Bonus </2> de su perfil de Gitcoin",
+    "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.": "El número de invitaciones es limitado. Para evitar el drenaje de invitaciones y dar la bienvenida a más usuarios nuevos, debemos confirmar que eres un ser humano único. Las invitaciones se distribuirán de forma competitiva: las cuentas más fiables recibirán primero las invitaciones."
 }
