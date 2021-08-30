@@ -140,6 +140,76 @@ export default function Gitcoin() {
                 </p>
               </div>
 
+              <div
+                className="section_lead__info lead_info"
+                style={{marginTop: '0px'}}
+              >
+                <div className="row">
+                  <div className="col-sm-8 lead_info__item">
+                    <div
+                      id="counter_top"
+                      className="_value row justify-content-center"
+                    >
+                      <div className="col-auto">
+                        <span className="days">-</span>
+                        <span className="_smalltext">d</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="hours">-</span>
+                        <span className="_smalltext">h</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="minutes">-</span>
+                        <span className="_smalltext">m</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="seconds">-</span>
+                        <span className="_smalltext">s</span>
+                      </div>
+                    </div>
+
+                    <p className="time _hint">
+                      {t('Next validation:', {
+                        ns: 'gitcoin',
+                        nsSeparator: '!',
+                      })}{' '}
+                      <span
+                        style={{fontSize: 'small'}}
+                        className="NextValidationDateTime"
+                      >
+                        {validationTime === null ? '' : validationTime}
+                      </span>
+                    </p>
+                  </div>
+
+                  <div
+                    className="col-sm-4 lead_info__counter"
+                    id="CalendarPanel"
+                  >
+                    {validationTime !== null &&
+                      validationTime !== 'RUNNING NOW' && (
+                        <div>
+                          <img
+                            src="/static/images/icon-plus.svg"
+                            alt=""
+                            width="20px"
+                          />
+                          <br />
+                          <a
+                            className="_calendar"
+                            href={validationCalendarLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            style={{margin: '0'}}
+                          >
+                            {t('Add to calendar', {ns: 'gitcoin'})}
+                          </a>
+                        </div>
+                      )}
+                  </div>
+                </div>
+              </div>
+
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
