@@ -304,65 +304,84 @@ export default function JoinIdena() {
                           </p>
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="tweetSendingTip"
-                              t={t}
-                              ns="join-idena"
+                          <ol>
+                            <li style={{marginTop: '2rem'}}>
+                              <Trans
+                                i18nKey="tweetSendingTip"
+                                t={t}
+                                ns="join-idena"
+                              >
+                                <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
+                                >
+                                  Send a tweet
+                                </a>{' '}
+                                with a hashtag #IdenaInvite from your account.
+                                To get an invite, your account should be{' '}
+                                <b>older than 1 year</b> or{' '}
+                                <b>
+                                  older than two months and have at least{' '}
+                                  {{followersCount}} followers
+                                </b>
+                                . The tweet should say:
+                              </Trans>
+                            </li>
+                            <div
+                              style={{
+                                paddingRight: '5rem',
+                                marginLeft: '-40px',
+                              }}
+                              className="dedicated_info inactive"
                             >
-                              <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
-                              >
-                                Send a tweet
-                              </a>{' '}
-                              with a hashtag #IdenaInvite from your account. To
-                              get an invite, your account should be{' '}
-                              <b>
-                                older than 1 year or older than two months and
-                                have at least {{followersCount}} followers
-                              </b>
-                              . The tweet should say:
-                            </Trans>
-                          </p>
-                          <div
-                            style={{paddingRight: '5rem'}}
-                            className="dedicated_info inactive"
-                          >
-                            {isTweetCopied ? (
-                              <span
-                                className="copy_element"
-                                style={{
-                                  marginTop: '-0.5rem',
-                                  fontSize: '14px',
-                                  fontWeight: '500',
-                                  color: '#27d980',
-                                }}
-                              >
-                                Copied!
+                              {isTweetCopied ? (
+                                <span
+                                  className="copy_element"
+                                  style={{
+                                    marginTop: '-0.5rem',
+                                    fontSize: '14px',
+                                    fontWeight: '500',
+                                    color: '#27d980',
+                                  }}
+                                >
+                                  Copied!
+                                </span>
+                              ) : (
+                                <img
+                                  className="copy_element"
+                                  style={{
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={copyTweet}
+                                  src="/static/images/icon-copy.svg"
+                                  alt="copy"
+                                  width="13"
+                                />
+                              )}
+                              I want to join @IdenaNetwork to become a validator
+                              of the first Proof-of-Person blockchain{' '}
+                              <span style={{color: '#578fff'}}>
+                                #IdenaInvite
                               </span>
-                            ) : (
-                              <img
-                                className="copy_element"
-                                style={{
-                                  cursor: 'pointer',
-                                }}
-                                onClick={copyTweet}
-                                src="/static/images/icon-copy.svg"
-                                alt="copy"
-                                width="13"
-                              />
-                            )}
-                            I want to join @IdenaNetwork to become a validator
-                            of the first Proof-of-Person blockchain{' '}
-                            <span style={{color: '#578fff'}}>#IdenaInvite</span>
-                            <br />
-                            <br />
-                            <span style={{color: '#578fff'}}>
-                              https://www.idena.io/join-idena
-                            </span>
-                          </div>
+                              <br />
+                              <br />
+                              <span style={{color: '#578fff'}}>
+                                https://www.idena.io/join-idena
+                              </span>
+                            </div>
+                            <li>
+                              <Trans
+                                i18nKey="getInviteWithTwitterName"
+                                t={t}
+                                ns="join-idena"
+                              >
+                                Enter your twitter name and press{' '}
+                                <i>Get an invitation code</i> button. The code
+                                will be shown automatically.
+                              </Trans>
+                            </li>
+                          </ol>
                           <div className="section_tight">
                             <div className="row">
                               <div className="col-sm-7 section_tight__input">

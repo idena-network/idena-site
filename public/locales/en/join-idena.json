@@ -5,7 +5,8 @@
     "Please choose the platform where you have the most active account:": "Please choose the platform where you have the most active account:",
     "Step 2": "Step 2",
     "Create and activate your Idena account": "Create and activate your Idena account",
-    "Follow the instructions to create your account and activate it with your invitation code:": "Follow the instructions to create your account and activate it with your invitation code:",
+    "Follow the instructions to create your account": "Follow the instructions to create your account",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!",
     "Step 3": "Step 3",
     "Prepare yourself for the validation session": "Prepare yourself for the validation session",
     "Learn what a validation session is and how to pass it successfully": "Learn what a validation session is and how to pass it successfully",
@@ -24,7 +25,7 @@
     "getInvitationNotes": "To minimize the probability of a Sybil attack, the pace of network growth is restricted: Idena network participation is invitation-based. New invitations can be sent out only by validated users. The number of invitations is limited and increases as the network grows.",
     "idenaTelegramGroupLink": "Join the official <2>Idena Telegram group</2> and request an invitation code from the community.",
     "idenaCommunityDiscordLink": "Join <2>Idena Community Discord</2> and request an invitation code from the community in <5>#invite-requests</5> channel.",
-    "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaInvite from your account. To get an invite, your account should be <4>older than 1 year or older than two months and have at least <1>{{followersCount}}</1> followers</4>. The tweet should say:",
+    "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaInvite from your account. To get an invite, your account should be <4>older than 1 year</4> or <7>older than two months and have at least <2>{{followersCount}}</2> followers</7>. The tweet should say:",
     "idenaWebAppLink": "Open <2>Idena Web App</2>",
     "idenaWebAppSignIn": "<0>Sign in</0> into your Idena web app <4>15 minutes before next validation session starts</4>. Check that you have wait for validation status. Make sure that you have a good internet connection. We recommend Laptop/PC for better experience.",
     "validationResults": "Wait for the validation results. If you have successfully solved the flips, you will get a <2>Newbie</2> status. Congratulations, you are now a validated cryptoidentity!",
@@ -33,5 +34,6 @@
     "ActivateMiningStatus": "Activate your Mining status and keep your Idena node synchronized to mine iDNA coins.",
     "ProlongCryptoidentityStatus": "Your cryptoidentity status is valid until the next epoch. You should prolong your validation status for every new epoch.",
     "SubmitFlips": "Learn how to create flips and submit three flips before the next validation. If you don't submit 3 flips you won't be allowed to participate in the next validation.",
-    "ScheduleNextValidation": "Schedule your next validation."
+    "ScheduleNextValidation": "Schedule your next validation.",
+    "getInviteWithTwitterName": "Enter your twitter name and press <2>Get an invitation code</2> button. The code will be shown automatically."
 }
