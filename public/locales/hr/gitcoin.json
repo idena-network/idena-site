@@ -16,5 +16,8 @@
     "idenaWebAppLink": "Otvori <2>Idena Web Aplikaciju</2>",
     "validationResults": "Pričekajte rezultate validacije. Ako ste uspješno riješili flipove, dobiti ćete <2>Newbie</2> status. Čestitamo, uspješno ste validirali vaš kripto identitet!",
     "Add to calendar": "Dodaj u kalendar",
-    "Next validation:": "Sljedeća validacija:"
+    "Next validation:": "Sljedeća validacija:",
+    "Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity — a unique person with equal voting power and mining income.": "Idena je prvi blockchain sa dokazom da ste čovjek koji se temelji na demokratskim principima. Svaki node je povezan sa kripto identitetom — jedinstvena osoba sa jednakim pravom glasa i prihodom od rudarenja.",
+    "Verify your Gitcoin": "Verificirajte vaš Gitcoin",
+    "How to verify your Gitcoin account with Idena": "Kako verificirati vaš Gitoin račun sa Idenom"
 }
