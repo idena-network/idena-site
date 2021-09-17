@@ -332,6 +332,7 @@ export default function JoinIdena() {
                               style={{
                                 paddingRight: '5rem',
                                 marginLeft: '-40px',
+                                marginTop: '16px',
                               }}
                               className="dedicated_info inactive"
                             >
@@ -370,7 +371,7 @@ export default function JoinIdena() {
                                 https://www.idena.io/join-idena
                               </span>
                             </div>
-                            <li>
+                            <li style={{marginTop: '32px'}}>
                               <Trans
                                 i18nKey="getInviteWithTwitterName"
                                 t={t}
@@ -382,7 +383,10 @@ export default function JoinIdena() {
                               </Trans>
                             </li>
                           </ol>
-                          <div className="section_tight">
+                          <div
+                            style={{marginTop: '-16px'}}
+                            className="section_tight"
+                          >
                             <div className="row">
                               <div className="col-sm-7 section_tight__input">
                                 <InputGroup className="section_input">
@@ -549,6 +553,62 @@ export default function JoinIdena() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#join-idena-1-3">
                     <div className="card-body">
+                      <p>
+                        {t(
+                          'Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.',
+                          {ns: 'join-idena'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'To get advance notifications about validation and Idena updates we strongly recommend to follow us on one of the social media:',
+                          {ns: 'join-idena'}
+                        )}
+                      </p>
+                      <ul style={{paddingLeft: '1.25rem'}}>
+                        <li>
+                          <Trans
+                            i18nKey="joinIdenaTelegramLink"
+                            t={t}
+                            ns="join-idena"
+                          >
+                            Telegram:{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaAnnouncements"
+                            >
+                              Idena Announcements channel
+                            </a>{' '}
+                            (important updates and announcements only)
+                          </Trans>
+                        </li>
+                        <li>
+                          {t('Twitter:', {ns: 'join-idena', nsSeparator: '!'})}{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://twitter.com/IdenaNetwork"
+                          >
+                            @IdenaNetwork
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+                <Card id="join-idena-1-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#join-idena-1-4">
+                      <span>{t('Step 4', {ns: 'join-idena'})}</span>
+                      <br />
+                      {t('Prepare yourself for the validation session', {
+                        ns: 'join-idena',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#join-idena-1-4">
+                    <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           <a
@@ -572,19 +632,6 @@ export default function JoinIdena() {
                           </a>
                         </li>
 
-                        <li>
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://t.me/IdenaAnnouncements"
-                          >
-                            {t(
-                              'Subscribe to the Idena Announcements Telegram channel to follow updates.',
-                              {ns: 'join-idena'}
-                            )}
-                          </a>
-                        </li>
-
                         <div className="video-responsive">
                           <iframe
                             width="600"
@@ -603,10 +650,10 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-                <Card id="join-idena-1-4">
+                <Card id="join-idena-1-5">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-4">
-                      <span>{t('Step 4', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-1-5">
+                      <span>{t('Step 5', {ns: 'join-idena'})}</span>
                       <br />
                       {t(
                         'Join the validation ceremony to validate your account',
@@ -614,7 +661,7 @@ export default function JoinIdena() {
                       )}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-4">
+                  <Accordion.Collapse eventKey="#join-idena-1-5">
                     <div className="card-body">
                       <div
                         className="section_lead__info lead_info"
@@ -685,7 +732,7 @@ export default function JoinIdena() {
                           </div>
                         </div>
                       </div>
-                      <ul style={{paddingLeft: '1.25rem'}}>
+                      <ul style={{marginTop: '-23px', paddingLeft: '1.25rem'}}>
                         <li>
                           <Trans
                             i18nKey="idenaWebAppSignIn"
@@ -731,17 +778,24 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-                <Card id="join-idena-1-5">
+              </Accordion>
+
+              <h3>{t('After validation', {ns: 'join-idena'})}</h3>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
+                <Card id="join-idena-2-1">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-5">
-                      <span>{t('Step 5', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-2-1">
+                      <span>{t('Step 1', {ns: 'join-idena'})}</span>
                       <br />
                       {t('Start mining', {
                         ns: 'join-idena',
                       })}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-5">
+                  <Accordion.Collapse eventKey="#join-idena-2-1">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
@@ -780,18 +834,17 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-
-                <Card id="join-idena-1-6">
+                <Card id="join-idena-2-2">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-6">
-                      <span>{t('Step 6', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-2-2">
+                      <span>{t('Step 2', {ns: 'join-idena'})}</span>
                       <br />
                       {t('Prolong your cryptoidentity status', {
                         ns: 'join-idena',
                       })}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-6">
+                  <Accordion.Collapse eventKey="#join-idena-2-2">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <p>
