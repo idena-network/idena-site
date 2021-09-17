@@ -331,7 +331,6 @@ export default function JoinIdena() {
                             <div
                               style={{
                                 paddingRight: '5rem',
-                                marginLeft: '-40px',
                                 marginTop: '16px',
                               }}
                               className="dedicated_info inactive"
@@ -382,50 +381,50 @@ export default function JoinIdena() {
                                 will be shown automatically.
                               </Trans>
                             </li>
-                          </ol>
-                          <div
-                            style={{marginTop: '-16px'}}
-                            className="section_tight"
-                          >
-                            <div className="row">
-                              <div className="col-sm-7 section_tight__input">
-                                <InputGroup className="section_input">
-                                  <InputGroup.Prepend>
-                                    <InputGroup.Text id="twitterAtSign">
-                                      @
-                                    </InputGroup.Text>
-                                  </InputGroup.Prepend>
-                                  <FormControl
-                                    placeholder="Your nickname"
-                                    aria-label="Your nickname"
-                                    aria-describedby="twitterAtSign"
-                                    value={twitterName}
-                                    onChange={n =>
-                                      setTwitterName(n.target.value)
-                                    }
-                                  />
-                                </InputGroup>
-                              </div>
-                              <div
-                                className="col-sm-4 section_tight__info separated"
-                                style={{marginLeft: '4rem'}}
-                              >
-                                <a
-                                  style={{
-                                    color: '#578fff',
-                                    lineHeight: '2rem',
-                                    fontWeight: 500,
-                                    cursor: 'pointer',
-                                  }}
-                                  onClick={() => getKeyByTwitter(twitterName)}
+                            <div
+                              style={{marginTop: '16px'}}
+                              className="section_tight"
+                            >
+                              <div className="row">
+                                <div className="col-sm-7 section_tight__input">
+                                  <InputGroup className="section_input">
+                                    <InputGroup.Prepend>
+                                      <InputGroup.Text id="twitterAtSign">
+                                        @
+                                      </InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                    <FormControl
+                                      placeholder="Your nickname"
+                                      aria-label="Your nickname"
+                                      aria-describedby="twitterAtSign"
+                                      value={twitterName}
+                                      onChange={n =>
+                                        setTwitterName(n.target.value)
+                                      }
+                                    />
+                                  </InputGroup>
+                                </div>
+                                <div
+                                  className="col-sm-4 section_tight__info separated"
+                                  style={{marginLeft: '4rem'}}
                                 >
-                                  {t('Get an invitation code', {
-                                    ns: 'join-idena',
-                                  })}
-                                </a>
+                                  <a
+                                    style={{
+                                      color: '#578fff',
+                                      lineHeight: '2rem',
+                                      fontWeight: 500,
+                                      cursor: 'pointer',
+                                    }}
+                                    onClick={() => getKeyByTwitter(twitterName)}
+                                  >
+                                    {t('Get an invitation code', {
+                                      ns: 'join-idena',
+                                    })}
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          </ol>
                           <Alert
                             state={twitterAlertState}
                             message={twitterAlertMessage}
