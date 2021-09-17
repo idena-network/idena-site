@@ -37,5 +37,5 @@
     "ProlongCryptoidentityStatus": "Your cryptoidentity status is valid until the next epoch. You should prolong your validation status for every new epoch.",
     "SubmitFlips": "Learn how to create flips and submit three flips before the next validation. If you don't submit 3 flips you won't be allowed to participate in the next validation.",
     "ScheduleNextValidation": "Schedule your next validation.",
-    "getInviteWithTwitterName": "Enter your twitter name and press <2>Get an invitation code</2> button. The code will be shown automatically."
+    "getInviteWithTwitterName": "Enter your twitter name and click <2>Get an invitation code</2> button. The code will be shown automatically."
 }

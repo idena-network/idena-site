@@ -376,7 +376,7 @@ export default function JoinIdena() {
                                 t={t}
                                 ns="join-idena"
                               >
-                                Enter your twitter name and press{' '}
+                                Enter your twitter name and click{' '}
                                 <i>Get an invitation code</i> button. The code
                                 will be shown automatically.
                               </Trans>
@@ -845,18 +845,18 @@ export default function JoinIdena() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#join-idena-2-2">
                     <div className="card-body">
+                      <p>
+                        <Trans
+                          i18nKey="ProlongCryptoidentityStatus"
+                          t={t}
+                          ns="join-idena"
+                        >
+                          Your cryptoidentity status is valid until the next
+                          epoch. You should prolong your validation status for
+                          every new epoch.
+                        </Trans>
+                      </p>
                       <ul style={{paddingLeft: '1.25rem'}}>
-                        <p>
-                          <Trans
-                            i18nKey="ProlongCryptoidentityStatus"
-                            t={t}
-                            ns="join-idena"
-                          >
-                            Your cryptoidentity status is valid until the next
-                            epoch. You should prolong your validation status for
-                            every new epoch.
-                          </Trans>
-                        </p>
                         <li>
                           <Trans i18nKey="SubmitFlips" t={t} ns="join-idena">
                             Learn how to create flips and submit three flips
