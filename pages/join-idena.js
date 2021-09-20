@@ -304,105 +304,127 @@ export default function JoinIdena() {
                           </p>
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans
-                              i18nKey="tweetSendingTip"
-                              t={t}
-                              ns="join-idena"
-                            >
-                              <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
-                              >
-                                Send a tweet
-                              </a>{' '}
-                              with a hashtag #IdenaInvite from your account. To
-                              get an invite, your account should be{' '}
-                              <b>
-                                older than 1 year or older than two months and
-                                have at least {{followersCount}} followers
-                              </b>
-                              . The tweet should say:
-                            </Trans>
-                          </p>
-                          <div
-                            style={{paddingRight: '5rem'}}
-                            className="dedicated_info inactive"
-                          >
-                            {isTweetCopied ? (
-                              <span
-                                className="copy_element"
-                                style={{
-                                  marginTop: '-0.5rem',
-                                  fontSize: '14px',
-                                  fontWeight: '500',
-                                  color: '#27d980',
-                                }}
-                              >
-                                Copied!
-                              </span>
-                            ) : (
-                              <img
-                                className="copy_element"
-                                style={{
-                                  cursor: 'pointer',
-                                }}
-                                onClick={copyTweet}
-                                src="/static/images/icon-copy.svg"
-                                alt="copy"
-                                width="13"
-                              />
-                            )}
-                            I want to join @IdenaNetwork to become a validator
-                            of the first Proof-of-Person blockchain{' '}
-                            <span style={{color: '#578fff'}}>#IdenaInvite</span>
-                            <br />
-                            <br />
-                            <span style={{color: '#578fff'}}>
-                              https://www.idena.io/join-idena
-                            </span>
-                          </div>
-                          <div className="section_tight">
-                            <div className="row">
-                              <div className="col-sm-7 section_tight__input">
-                                <InputGroup className="section_input">
-                                  <InputGroup.Prepend>
-                                    <InputGroup.Text id="twitterAtSign">
-                                      @
-                                    </InputGroup.Text>
-                                  </InputGroup.Prepend>
-                                  <FormControl
-                                    placeholder="Your nickname"
-                                    aria-label="Your nickname"
-                                    aria-describedby="twitterAtSign"
-                                    value={twitterName}
-                                    onChange={n =>
-                                      setTwitterName(n.target.value)
-                                    }
-                                  />
-                                </InputGroup>
-                              </div>
-                              <div
-                                className="col-sm-4 section_tight__info separated"
-                                style={{marginLeft: '4rem'}}
+                          <ol>
+                            <li style={{marginTop: '2rem'}}>
+                              <Trans
+                                i18nKey="tweetSendingTip"
+                                t={t}
+                                ns="join-idena"
                               >
                                 <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
+                                >
+                                  Send a tweet
+                                </a>{' '}
+                                with a hashtag #IdenaInvite from your account.
+                                To get an invite, your account should be{' '}
+                                <b>older than 1 year</b> or{' '}
+                                <b>
+                                  older than two months and have at least{' '}
+                                  {{followersCount}} followers
+                                </b>
+                                . The tweet should say:
+                              </Trans>
+                            </li>
+                            <div
+                              style={{
+                                paddingRight: '5rem',
+                                marginTop: '16px',
+                              }}
+                              className="dedicated_info inactive"
+                            >
+                              {isTweetCopied ? (
+                                <span
+                                  className="copy_element"
                                   style={{
-                                    color: '#578fff',
-                                    lineHeight: '2rem',
-                                    fontWeight: 500,
+                                    marginTop: '-0.5rem',
+                                    fontSize: '14px',
+                                    fontWeight: '500',
+                                    color: '#27d980',
+                                  }}
+                                >
+                                  Copied!
+                                </span>
+                              ) : (
+                                <img
+                                  className="copy_element"
+                                  style={{
                                     cursor: 'pointer',
                                   }}
-                                  onClick={() => getKeyByTwitter(twitterName)}
+                                  onClick={copyTweet}
+                                  src="/static/images/icon-copy.svg"
+                                  alt="copy"
+                                  width="13"
+                                />
+                              )}
+                              I want to join @IdenaNetwork to become a validator
+                              of the first Proof-of-Person blockchain{' '}
+                              <span style={{color: '#578fff'}}>
+                                #IdenaInvite
+                              </span>
+                              <br />
+                              <br />
+                              <span style={{color: '#578fff'}}>
+                                https://www.idena.io/join-idena
+                              </span>
+                            </div>
+                            <li style={{marginTop: '32px'}}>
+                              <Trans
+                                i18nKey="getInviteWithTwitterName"
+                                t={t}
+                                ns="join-idena"
+                              >
+                                Enter your twitter name and click{' '}
+                                <i>Get an invitation code</i> button. The code
+                                will be shown automatically.
+                              </Trans>
+                            </li>
+                            <div
+                              style={{marginTop: '16px'}}
+                              className="section_tight"
+                            >
+                              <div className="row">
+                                <div className="col-sm-7 section_tight__input">
+                                  <InputGroup className="section_input">
+                                    <InputGroup.Prepend>
+                                      <InputGroup.Text id="twitterAtSign">
+                                        @
+                                      </InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                    <FormControl
+                                      placeholder="Your nickname"
+                                      aria-label="Your nickname"
+                                      aria-describedby="twitterAtSign"
+                                      value={twitterName}
+                                      onChange={n =>
+                                        setTwitterName(n.target.value)
+                                      }
+                                    />
+                                  </InputGroup>
+                                </div>
+                                <div
+                                  className="col-sm-4 section_tight__info separated"
+                                  style={{marginLeft: '4rem'}}
                                 >
-                                  {t('Get an invitation code', {
-                                    ns: 'join-idena',
-                                  })}
-                                </a>
+                                  <a
+                                    style={{
+                                      color: '#578fff',
+                                      lineHeight: '2rem',
+                                      fontWeight: 500,
+                                      cursor: 'pointer',
+                                    }}
+                                    onClick={() => getKeyByTwitter(twitterName)}
+                                  >
+                                    {t('Get an invitation code', {
+                                      ns: 'join-idena',
+                                    })}
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          </ol>
                           <Alert
                             state={twitterAlertState}
                             message={twitterAlertMessage}
@@ -530,6 +552,62 @@ export default function JoinIdena() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#join-idena-1-3">
                     <div className="card-body">
+                      <p>
+                        {t(
+                          'Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.',
+                          {ns: 'join-idena'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'To get advance notifications about validation and Idena updates we strongly recommend to follow us on one of the social media:',
+                          {ns: 'join-idena'}
+                        )}
+                      </p>
+                      <ul style={{paddingLeft: '1.25rem'}}>
+                        <li>
+                          <Trans
+                            i18nKey="joinIdenaTelegramLink"
+                            t={t}
+                            ns="join-idena"
+                          >
+                            Telegram:{' '}
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaAnnouncements"
+                            >
+                              Idena Announcements channel
+                            </a>{' '}
+                            (important updates and announcements only)
+                          </Trans>
+                        </li>
+                        <li>
+                          {t('Twitter:', {ns: 'join-idena', nsSeparator: '!'})}{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://twitter.com/IdenaNetwork"
+                          >
+                            @IdenaNetwork
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+                <Card id="join-idena-1-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#join-idena-1-4">
+                      <span>{t('Step 4', {ns: 'join-idena'})}</span>
+                      <br />
+                      {t('Prepare yourself for the validation session', {
+                        ns: 'join-idena',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#join-idena-1-4">
+                    <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           <a
@@ -553,19 +631,6 @@ export default function JoinIdena() {
                           </a>
                         </li>
 
-                        <li>
-                          <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://t.me/IdenaAnnouncements"
-                          >
-                            {t(
-                              'Subscribe to the Idena Announcements Telegram channel to follow updates.',
-                              {ns: 'join-idena'}
-                            )}
-                          </a>
-                        </li>
-
                         <div className="video-responsive">
                           <iframe
                             width="600"
@@ -584,10 +649,10 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-                <Card id="join-idena-1-4">
+                <Card id="join-idena-1-5">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-4">
-                      <span>{t('Step 4', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-1-5">
+                      <span>{t('Step 5', {ns: 'join-idena'})}</span>
                       <br />
                       {t(
                         'Join the validation ceremony to validate your account',
@@ -595,7 +660,7 @@ export default function JoinIdena() {
                       )}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-4">
+                  <Accordion.Collapse eventKey="#join-idena-1-5">
                     <div className="card-body">
                       <div
                         className="section_lead__info lead_info"
@@ -666,7 +731,7 @@ export default function JoinIdena() {
                           </div>
                         </div>
                       </div>
-                      <ul style={{paddingLeft: '1.25rem'}}>
+                      <ul style={{marginTop: '-23px', paddingLeft: '1.25rem'}}>
                         <li>
                           <Trans
                             i18nKey="idenaWebAppSignIn"
@@ -712,17 +777,24 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-                <Card id="join-idena-1-5">
+              </Accordion>
+
+              <h3>{t('After validation', {ns: 'join-idena'})}</h3>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
+                <Card id="join-idena-2-1">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-5">
-                      <span>{t('Step 5', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-2-1">
+                      <span>{t('Step 1', {ns: 'join-idena'})}</span>
                       <br />
                       {t('Start mining', {
                         ns: 'join-idena',
                       })}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-5">
+                  <Accordion.Collapse eventKey="#join-idena-2-1">
                     <div className="card-body">
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
@@ -761,31 +833,30 @@ export default function JoinIdena() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
-
-                <Card id="join-idena-1-6">
+                <Card id="join-idena-2-2">
                   <Card.Header>
-                    <CustomToggle eventKey="#join-idena-1-6">
-                      <span>{t('Step 6', {ns: 'join-idena'})}</span>
+                    <CustomToggle eventKey="#join-idena-2-2">
+                      <span>{t('Step 2', {ns: 'join-idena'})}</span>
                       <br />
                       {t('Prolong your cryptoidentity status', {
                         ns: 'join-idena',
                       })}
                     </CustomToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="#join-idena-1-6">
+                  <Accordion.Collapse eventKey="#join-idena-2-2">
                     <div className="card-body">
+                      <p>
+                        <Trans
+                          i18nKey="ProlongCryptoidentityStatus"
+                          t={t}
+                          ns="join-idena"
+                        >
+                          Your cryptoidentity status is valid until the next
+                          epoch. You should prolong your validation status for
+                          every new epoch.
+                        </Trans>
+                      </p>
                       <ul style={{paddingLeft: '1.25rem'}}>
-                        <p>
-                          <Trans
-                            i18nKey="ProlongCryptoidentityStatus"
-                            t={t}
-                            ns="join-idena"
-                          >
-                            Your cryptoidentity status is valid until the next
-                            epoch. You should prolong your validation status for
-                            every new epoch.
-                          </Trans>
-                        </p>
                         <li>
                           <Trans i18nKey="SubmitFlips" t={t} ns="join-idena">
                             Learn how to create flips and submit three flips
