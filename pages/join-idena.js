@@ -305,7 +305,23 @@ export default function JoinIdena() {
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
                           <ol>
-                            <li style={{marginTop: '2rem'}}>
+                            <li style={{marginTop: '32px'}}>
+                              <Trans
+                                i18nKey="tweeterFollowLink"
+                                t={t}
+                                ns="join-idena"
+                              >
+                                Follow{' '}
+                                <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href="https://twitter.com/IdenaNetwork"
+                                >
+                                  @IdenaNetwork
+                                </a>
+                              </Trans>
+                            </li>
+                            <li style={{marginTop: '16px'}}>
                               <Trans
                                 i18nKey="tweetSendingTip"
                                 t={t}
@@ -424,63 +440,82 @@ export default function JoinIdena() {
                                 </div>
                               </div>
                             </div>
-                          </ol>
-                          <Alert
-                            state={twitterAlertState}
-                            message={twitterAlertMessage}
-                          />
-                          {isTweetChecking && (
-                            <div className="loadingState">
-                              <img
-                                src="/static/images/spinner.svg"
-                                alt="Loading..."
-                                width="48"
-                              />
-                            </div>
-                          )}
-                          {twitterAlertState === ResponseState.Success && (
-                            <div
-                              className="section_tight margin-t-m"
-                              style={{margin: '0px', textAlign: 'left'}}
-                            >
-                              <span
-                                style={{
-                                  fontSize: '14px',
-                                  color: '#96999e',
-                                  fontWeight: '500',
-                                }}
-                              >
-                                Invitation code
-                              </span>
-
-                              <div style={{wordBreak: 'break-all'}}>
-                                {twitterKey}
-                                {isTextCopied ? (
-                                  <span
-                                    style={{
-                                      marginLeft: '0.5rem',
-                                      fontSize: '14px',
-                                      fontWeight: '500',
-                                      color: '#27d980',
-                                    }}
-                                  >
-                                    Copied!
-                                  </span>
-                                ) : (
-                                  <img
-                                    style={{
-                                      marginLeft: '0.25rem',
-                                      cursor: 'pointer',
-                                    }}
-                                    onClick={copyKey}
-                                    src="/static/images/icon-copy.svg"
-                                    alt="copy"
-                                    width="13"
-                                  />
-                                )}
+                            <Alert
+                              state={twitterAlertState}
+                              message={twitterAlertMessage}
+                            />
+                            {isTweetChecking && (
+                              <div className="loadingState">
+                                <img
+                                  src="/static/images/spinner.svg"
+                                  alt="Loading..."
+                                  width="48"
+                                />
                               </div>
-                            </div>
-                          )}
+                            )}
+                            {twitterAlertState === ResponseState.Success && (
+                              <div
+                                className="section_tight margin-t-m"
+                                style={{margin: '0px', textAlign: 'left'}}
+                              >
+                                <span
+                                  style={{
+                                    fontSize: '14px',
+                                    color: '#96999e',
+                                    fontWeight: '500',
+                                  }}
+                                >
+                                  Invitation code
+                                </span>
+
+                                <div style={{wordBreak: 'break-all'}}>
+                                  {twitterKey}
+                                  {isTextCopied ? (
+                                    <span
+                                      style={{
+                                        marginLeft: '0.5rem',
+                                        fontSize: '14px',
+                                        fontWeight: '500',
+                                        color: '#27d980',
+                                      }}
+                                    >
+                                      Copied!
+                                    </span>
+                                  ) : (
+                                    <img
+                                      style={{
+                                        marginLeft: '0.25rem',
+                                        cursor: 'pointer',
+                                      }}
+                                      onClick={copyKey}
+                                      src="/static/images/icon-copy.svg"
+                                      alt="copy"
+                                      width="13"
+                                    />
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </ol>
+                        </Tab>
+                        <Tab eventKey="#social_reddit" title="Reddit">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="idenaCommunityRedditLink"
+                              t={t}
+                              ns="join-idena"
+                            >
+                              Join{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://www.reddit.com/r/Idena/"
+                              >
+                                Idena subreddit
+                              </a>{' '}
+                              and request an invitation code from the community
+                            </Trans>
+                          </p>
                         </Tab>
                       </Tabs>
                     </div>
@@ -545,7 +580,7 @@ export default function JoinIdena() {
                     <CustomToggle eventKey="#join-idena-1-3">
                       <span>{t('Step 3', {ns: 'join-idena'})}</span>
                       <br />
-                      {t('Prepare yourself for the validation session', {
+                      {t('Stay updated', {
                         ns: 'join-idena',
                       })}
                     </CustomToggle>

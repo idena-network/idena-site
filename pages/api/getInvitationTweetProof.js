@@ -12,6 +12,7 @@ export default async (req, res) => {
   })
 
   const ONE_YEAR = 1000 * 60 * 60 * 24 * 365
+  const IDENA_TWITTER_NAME = 'IdenaNetwork'
   const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 10
   const minTwitterAge = process.env.TWITTER_AGE_MILLIS || 2592000000
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
@@ -24,6 +25,7 @@ export default async (req, res) => {
     return res.status(400).send('Something went wrong')
   }
   let userResponse
+  let followResponse
   let tweetResponse
   let codeResponse
 
@@ -43,6 +45,20 @@ export default async (req, res) => {
   }
 
   const user = userResponse[0]
+
+  try {
+    followResponse = await client.get('friendships/show', {
+      source_screen_name: req.query.screen_name,
+      target_screen_name: IDENA_TWITTER_NAME,
+    })
+  } catch (e) {
+    return res.status(400).send('Something went wrong')
+  }
+
+  if (!followResponse.relationship.source.following) {
+    return res.status(400).send('Please follow @IdenaNetwork on twitter')
+  }
+
   if (
     user.followers_count < minTwitterSubs &&
     Date.now() - Date.parse(user.created_at) < minTwitterAge
