@@ -137,10 +137,18 @@ export default function Contribute() {
                         )}{' '}
                       </p>
                       <p>
-                        {t(
-                          '4. While you have less than 100 Idena validated members in your community, send an email at info@idena.io or message to @AndrewIdena telegram account, receive invitations from the Idena team and get rewards for successful invitations.',
-                          {ns: 'contribute'}
-                        )}
+                        <Trans
+                          i18nKey="applyForRefferalLink"
+                          t={t}
+                          ns="contribute"
+                        >
+                          4.{' '}
+                          <a href="https://docs.idena.io/docs/community/affiliate">
+                            Apply for a referral link
+                          </a>
+                          , share it with your community, and get rewards for
+                          successful invitations.
+                        </Trans>
                       </p>
                     </div>
                   </Accordion.Collapse>

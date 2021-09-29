@@ -968,6 +968,85 @@ export default function Faq() {
                     </div>
                   </Accordion.Collapse>
                 </Card>
+
+                <Card id="faq-validation-11">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-validation-11">
+                      {t(
+                        'Why do I get Late submission even though I’m sure I’ve submitted my answers in time?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-validation-11">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'As Idena is a decentralized and distributed network it uses a gossip peer-to-peer protocol to ensure data disseminated to the network.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 13:32 UTC.',
+                          {ns: 'faq', nsSeparator: '!'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Also, the keys of your flips (for previously validated users) should spread across the network no later than 30 secs from the beginning of validation.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'If your node lost connection while submitting the answers/keys and connection was restored after the above time, the validation attempt will be considered as failed with the Late submission reason.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        <Trans
+                          i18nKey="validationConnectionLost"
+                          t={t}
+                          ns="faq"
+                        >
+                          Node disconnection happens if your node doesn’t have
+                          enough peers to maintain the stable data channel. This
+                          could be in 2 cases:
+                          <ol>
+                            <li>Low-performance computer or home router;</li>
+                            <li>
+                              You have synced the node right before validation
+                              and the node did not manage to find enough peers
+                              for stable connection.
+                            </li>
+                          </ol>
+                        </Trans>
+                      </p>
+                      <p>
+                        <Trans
+                          i18nKey="desktopNodeSyncRecommendation"
+                          t={t}
+                          ns="faq"
+                        >
+                          We recommend you to keep your desktop node
+                          synchronized at least 30 mins before validation,
+                          upgrade your hardware if possible or use Idena web app
+                          (
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://app.idena.io/"
+                          >
+                            app.idena.io
+                          </a>
+                          ) with a connection to one of shared nodes for
+                          validation.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
 
               <h3>{t('Flip challenge', {ns: 'faq'})}</h3>
@@ -1558,6 +1637,152 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
+              <h3>{t('Delegation', {ns: 'faq'})}</h3>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
+                <Card id="faq-delegation-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-delegation-1">
+                      {t('What is delegation of mining status?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-delegation-1">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'You can delegate your mining status to another address which in this case will act as a pool.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'For example, if several members of your family have Idena nodes, you can benefit from delegation to one pool. Only this pool node has to be online to mine coins for delegated nodes. Pool rewards for block mining will be equal to those of a single identity.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Mining and validation rewards will go to the pool address. Your address will get only the part of rewards that goes to your stake.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Please keep in mind that your identity could be terminated by the pool owner and you can lose your stake. That is why we strongly recommend to use delegation only if you trust the pool owner.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'You can disable delegation in the next epoch only.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-delegation-2">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-delegation-2">
+                      {t(
+                        'Does a pool owner get my private key if I delegate mining to him?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-delegation-2">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'No keys are transferred from the delegating node to the pool. The fact of the delegation is stored only on the blockchain.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'However, the pool owner can terminate your identity and take your stake.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-delegation-3">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-delegation-3">
+                      {t('Does the pool address need to be validated?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-delegation-3">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'Any validated user can delegate their mining status to a not validated address which will become a pool.',
+                          {
+                            ns: 'faq',
+                          }
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-delegation-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-delegation-4">
+                      {t('Do I need to get validated if I delegated mining?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-delegation-4">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'Yes, you need to stay validated so that the pool can keep mining coins for you.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-delegation-5">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-delegation-5">
+                      {t(
+                        'Can I participate in Oracle voting if I delegated mining?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-delegation-5">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'Yes, you can vote in any Oracle voting and get rewards in accordance with the specific oracle voting. These rewards will go to the pool address.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'However, to determine the results of the Oracle voting only the last vote sent from the pool is counted.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+
               <h3>{t('Economy', {ns: 'faq'})}</h3>
               <Accordion
                 activeKey={activeHash}
@@ -1957,7 +2182,144 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>Attacks</h3>
+              <h3>{t('How to buy iDNA?', {ns: 'faq'})}</h3>
+              <Accordion
+                activeKey={activeHash}
+                onSelect={e => setActiveHash(e)}
+              >
+                <Card id="faq-buy-1">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-1">
+                      {t('How to buy iDNA on a centralized exchange?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-1">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaCentralizedExchange" t={t} ns="faq">
+                          Create an account on one of the{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://www.coingecko.com/en/coins/idena#markets"
+                          >
+                            exchanges where iDNA is traded
+                          </a>
+                          . Trade iDNA and{' '}
+                          <a href="#faq-buy-2">withdraw it to your wallet</a>.
+                          If you want to hold iDNA long-term, we do not
+                          recommend storing your coins on the exchange for
+                          safety reasons.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-buy-2">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-2">
+                      {t('How to withdraw iDNA to your Idena wallet?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-2">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaWalletWithdraw" t={t} ns="faq">
+                          You can use the Idena Web App or one of the{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/community/resources/#wallets"
+                          >
+                            Idena wallets created by the community
+                          </a>{' '}
+                          to store your iDNA. Choose a wallet you want to use,
+                          generate your address and use it to transfer your
+                          Idena coins. In general, storing coins in a private
+                          wallet is safer than keeping them on an exchange.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-buy-3">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-3">
+                      {t('How to buy iDNA on a decentralized exchange?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-3">
+                    <div className="card-body">
+                      <p>
+                        <Trans
+                          i18nKey="idnaDecentralizedExchange"
+                          t={t}
+                          ns="faq"
+                        >
+                          You can buy wrapped iDNA on a decentralized exchange
+                          using your metamask wallet. Open{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://pancakeswap.info/token/0x0de08c1abe5fb86dd7fd2ac90400ace305138d5b"
+                          >
+                            pancakeswap
+                          </a>
+                          , click Trade and connect your wallet. Read{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
+                          >
+                            more
+                          </a>{' '}
+                          about using your metamask wallet with BSC blockchain
+                          to trade iDNA.
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-buy-4">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-buy-4">
+                      {t(
+                        'How to transfer wrapped iDNA to the Idena blockchain?',
+                        {ns: 'faq'}
+                      )}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-buy-4">
+                    <div className="card-body">
+                      <p>
+                        <Trans i18nKey="idnaBscTransfer" t={t} ns="faq">
+                          If you have traded wrapped iDNA on BSC blockchain and
+                          want to store them on the Idena blockchain, you can{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://bridge.idena.io/faq"
+                          >
+                            swap your iDNA using the Idena Bridge
+                          </a>
+                          .
+                        </Trans>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+
+              <h3>{t('Attacks', {ns: 'faq  '})}</h3>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
