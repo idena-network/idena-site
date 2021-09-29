@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle Copy 24</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="How_buy_iDNA" transform="translate(-632.000000, -460.000000)">
+            <g id="Group" transform="translate(420.000000, 160.000000)">
+                <g id="Group-24" transform="translate(8.000000, 288.000000)">
+                    <g id="Group-23" transform="translate(204.000000, 12.000000)">
+                        <rect id="Rectangle-Copy-24" fill="#D8D8D8" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M21,2 C21.5522847,2 22,2.44771525 22,3 C22,3.55228475 21.5522847,4 21,4 L5.5,4 C4.67157288,4 4,4.67157288 4,5.5 C4,6.32842712 4.67157288,7 5.5,7 L20,7 C21.1045695,7 22,7.8954305 22,9 C22,10.1045695 21.1045695,11 20,11 L18.5,11 C16.5670034,11 15,12.5670034 15,14.5 C15,16.4329966 16.5670034,18 18.5,18 L20,18 C21.1045695,18 22,18.8954305 22,20 C22,21.1045695 21.1045695,22 20,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,6 C2,3.790861 3.790861,2 6,2 L21,2 Z M18.5,13 C19.3284271,13 20,13.6715729 20,14.5 C20,15.3284271 19.3284271,16 18.5,16 C17.6715729,16 17,15.3284271 17,14.5 C17,13.6715729 17.6715729,13 18.5,13 Z" id="Shape" fill="#578FFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -83,6 +83,7 @@ export function useNextValidationTime() {
         const nowDate = new Date()
         const diff = Math.ceil(nextValidationTime.getTime() - nowDate.getTime())
         initializeClock('counter', nextValidationTime)
+        initializeClock('counter_top', nextValidationTime)
 
         setState({
           localeTime:
