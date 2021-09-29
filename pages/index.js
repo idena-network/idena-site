@@ -392,6 +392,36 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <div className="index-price-info" style={{marginTop: '8px'}}>
+                <div
+                  style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Link href="/faq#faq-buy-1">
+                    <a
+                      style={{
+                        fontSize: '16px',
+                        lineHeight: '20px',
+                        color: '#578fff',
+                        fontWeight: 500,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <img
+                        style={{verticalAlign: 'sub', marginRight: '10px'}}
+                        src="/static/images/wallet-icn.svg"
+                        alt="Buy iDNA"
+                        width="20"
+                      />
+                      {t('How to buy iDNA', {ns: 'index'})}
+                    </a>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
