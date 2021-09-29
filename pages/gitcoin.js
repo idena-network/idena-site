@@ -140,6 +140,76 @@ export default function Gitcoin() {
                 </p>
               </div>
 
+              <div
+                className="section_lead__info lead_info"
+                style={{marginTop: '0px'}}
+              >
+                <div className="row">
+                  <div className="col-sm-8 lead_info__item">
+                    <div
+                      id="counter_top"
+                      className="_value row justify-content-center"
+                    >
+                      <div className="col-auto">
+                        <span className="days">-</span>
+                        <span className="_smalltext">d</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="hours">-</span>
+                        <span className="_smalltext">h</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="minutes">-</span>
+                        <span className="_smalltext">m</span>
+                      </div>
+                      <div className="col-auto">
+                        <span className="seconds">-</span>
+                        <span className="_smalltext">s</span>
+                      </div>
+                    </div>
+
+                    <p className="time _hint">
+                      {t('Next validation:', {
+                        ns: 'gitcoin',
+                        nsSeparator: '!',
+                      })}{' '}
+                      <span
+                        style={{fontSize: 'small'}}
+                        className="NextValidationDateTime"
+                      >
+                        {validationTime === null ? '' : validationTime}
+                      </span>
+                    </p>
+                  </div>
+
+                  <div
+                    className="col-sm-4 lead_info__counter"
+                    id="CalendarPanel"
+                  >
+                    {validationTime !== null &&
+                      validationTime !== 'RUNNING NOW' && (
+                        <div>
+                          <img
+                            src="/static/images/icon-plus.svg"
+                            alt=""
+                            width="20px"
+                          />
+                          <br />
+                          <a
+                            className="_calendar"
+                            href={validationCalendarLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            style={{margin: '0'}}
+                          >
+                            {t('Add to calendar', {ns: 'gitcoin'})}
+                          </a>
+                        </div>
+                      )}
+                  </div>
+                </div>
+              </div>
+
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -212,155 +282,211 @@ export default function Gitcoin() {
                           </p>
                         </Tab>
                         <Tab eventKey="#social_twitter" title="Twitter">
-                          <p style={{marginTop: '2rem'}}>
-                            <Trans i18nKey="tweetSendingTip" t={t} ns="gitcoin">
-                              <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20get%20%2B50%25%20Trust%20Bonus%20on%20%40gitcoin%20%0D%23IdenaTrustBonus"
+                          <ol>
+                            <li style={{marginTop: '32px'}}>
+                              <Trans
+                                i18nKey="tweeterFollowLink"
+                                t={t}
+                                ns="gitcoin"
                               >
-                                Send a tweet
-                              </a>{' '}
-                              with a hashtag #IdenaTrustBonus from your account.
-                              To get an invite, your account should be{' '}
-                              <b>
-                                older than 1 year or older than two months and
-                                and least {{followersCount}} followers
-                              </b>
-                              . The tweet should say:
-                            </Trans>
-                          </p>
-                          <div
-                            style={{paddingRight: '5rem'}}
-                            className="dedicated_info inactive"
-                          >
-                            {isTweetCopied ? (
-                              <span
-                                className="copy_element"
-                                style={{
-                                  marginTop: '-0.5rem',
-                                  fontSize: '14px',
-                                  fontWeight: '500',
-                                  color: '#27d980',
-                                }}
-                              >
-                                Copied!
-                              </span>
-                            ) : (
-                              <img
-                                className="copy_element"
-                                style={{
-                                  cursor: 'pointer',
-                                }}
-                                onClick={copyTweet}
-                                src="/static/images/icon-copy.svg"
-                                alt="copy"
-                                width="13"
-                              />
-                            )}
-                            I want to join @IdenaNetwork to get +50% Trust Bonus
-                            on @gitcoin
-                            <br />
-                            <span style={{color: '#578fff'}}>
-                              #IdenaTrustBonus
-                            </span>
-                          </div>
-                          <div className="section_tight">
-                            <div className="row">
-                              <div className="col-sm-7 section_tight__input">
-                                <InputGroup className="section_input">
-                                  <InputGroup.Prepend>
-                                    <InputGroup.Text id="twitterAtSign">
-                                      @
-                                    </InputGroup.Text>
-                                  </InputGroup.Prepend>
-                                  <FormControl
-                                    placeholder="Your nickname"
-                                    aria-label="Your nickname"
-                                    aria-describedby="twitterAtSign"
-                                    value={twitterName}
-                                    onChange={n =>
-                                      setTwitterName(n.target.value)
-                                    }
-                                  />
-                                </InputGroup>
-                              </div>
-                              <div
-                                className="col-sm-4 section_tight__info separated"
-                                style={{marginLeft: '4rem'}}
+                                Follow{' '}
+                                <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href="https://twitter.com/IdenaNetwork"
+                                >
+                                  @IdenaNetwork
+                                </a>
+                              </Trans>
+                            </li>
+                            <li style={{marginTop: '16px'}}>
+                              <Trans
+                                i18nKey="tweetSendingTip"
+                                t={t}
+                                ns="gitcoin"
                               >
                                 <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href="https://twitter.com/intent/tweet?text=I%20want%20to%20join%20%40IdenaNetwork%20to%20become%20a%20validator%20of%20the%20first%20Proof-of-Person%20blockchain%20%23IdenaInvite%0A%0Ahttps://www.idena.io/join-idena"
+                                >
+                                  Send a tweet
+                                </a>{' '}
+                                with a hashtag #IdenaTrustBonus from your
+                                account. To get an invite, your account should
+                                be <b>older than 1 year</b> or{' '}
+                                <b>
+                                  older than two months and have at least{' '}
+                                  {{followersCount}} followers
+                                </b>
+                                . The tweet should say:
+                              </Trans>
+                            </li>
+                            <div
+                              style={{marginTop: '16px', paddingRight: '5rem'}}
+                              className="dedicated_info inactive"
+                            >
+                              {isTweetCopied ? (
+                                <span
+                                  className="copy_element"
                                   style={{
-                                    color: '#578fff',
-                                    lineHeight: '2rem',
-                                    fontWeight: 500,
+                                    marginTop: '-0.5rem',
+                                    fontSize: '14px',
+                                    fontWeight: '500',
+                                    color: '#27d980',
+                                  }}
+                                >
+                                  Copied!
+                                </span>
+                              ) : (
+                                <img
+                                  className="copy_element"
+                                  style={{
                                     cursor: 'pointer',
                                   }}
-                                  onClick={() => getKeyByTwitter(twitterName)}
-                                >
-                                  {t('Get an invitation code', {
-                                    ns: 'gitcoin',
-                                  })}
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <Alert
-                            state={twitterAlertState}
-                            message={twitterAlertMessage}
-                          />
-                          {isTweetChecking && (
-                            <div className="loadingState">
-                              <img
-                                src="/static/images/spinner.svg"
-                                alt="Loading..."
-                                width="48"
-                              />
-                            </div>
-                          )}
-                          {twitterAlertState === ResponseState.Success && (
-                            <div
-                              className="section_tight margin-t-m"
-                              style={{margin: '0px', textAlign: 'left'}}
-                            >
-                              <span
-                                style={{
-                                  fontSize: '14px',
-                                  color: '#96999e',
-                                  fontWeight: '500',
-                                }}
-                              >
-                                Invitation code
+                                  onClick={copyTweet}
+                                  src="/static/images/icon-copy.svg"
+                                  alt="copy"
+                                  width="13"
+                                />
+                              )}
+                              I want to join @IdenaNetwork to get +50% Trust
+                              Bonus on @gitcoin
+                              <br />
+                              <span style={{color: '#578fff'}}>
+                                #IdenaTrustBonus
                               </span>
-
-                              <div style={{wordBreak: 'break-all'}}>
-                                {twitterKey}
-                                {isTextCopied ? (
-                                  <span
+                            </div>
+                            <li style={{marginTop: '32px'}}>
+                              <Trans
+                                i18nKey="getInviteWithTwitterName"
+                                t={t}
+                                ns="gitcoin"
+                              >
+                                Enter your twitter name and click{' '}
+                                <i>Get an invitation code</i> button. The code
+                                will be shown automatically.
+                              </Trans>
+                            </li>
+                            <div
+                              style={{marginTop: '16px'}}
+                              className="section_tight"
+                            >
+                              <div className="row">
+                                <div className="col-sm-7 section_tight__input">
+                                  <InputGroup className="section_input">
+                                    <InputGroup.Prepend>
+                                      <InputGroup.Text id="twitterAtSign">
+                                        @
+                                      </InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                    <FormControl
+                                      placeholder="Your nickname"
+                                      aria-label="Your nickname"
+                                      aria-describedby="twitterAtSign"
+                                      value={twitterName}
+                                      onChange={n =>
+                                        setTwitterName(n.target.value)
+                                      }
+                                    />
+                                  </InputGroup>
+                                </div>
+                                <div
+                                  className="col-sm-4 section_tight__info separated"
+                                  style={{marginLeft: '4rem'}}
+                                >
+                                  <a
                                     style={{
-                                      marginLeft: '0.5rem',
-                                      fontSize: '14px',
-                                      fontWeight: '500',
-                                      color: '#27d980',
-                                    }}
-                                  >
-                                    Copied!
-                                  </span>
-                                ) : (
-                                  <img
-                                    style={{
-                                      marginLeft: '0.25rem',
+                                      color: '#578fff',
+                                      lineHeight: '2rem',
+                                      fontWeight: 500,
                                       cursor: 'pointer',
                                     }}
-                                    onClick={copyKey}
-                                    src="/static/images/icon-copy.svg"
-                                    alt="copy"
-                                    width="13"
-                                  />
-                                )}
+                                    onClick={() => getKeyByTwitter(twitterName)}
+                                  >
+                                    {t('Get an invitation code', {
+                                      ns: 'gitcoin',
+                                    })}
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                          )}
+                            <Alert
+                              state={twitterAlertState}
+                              message={twitterAlertMessage}
+                            />
+                            {isTweetChecking && (
+                              <div className="loadingState">
+                                <img
+                                  src="/static/images/spinner.svg"
+                                  alt="Loading..."
+                                  width="48"
+                                />
+                              </div>
+                            )}
+                            {twitterAlertState === ResponseState.Success && (
+                              <div
+                                className="section_tight margin-t-m"
+                                style={{margin: '0px', textAlign: 'left'}}
+                              >
+                                <span
+                                  style={{
+                                    fontSize: '14px',
+                                    color: '#96999e',
+                                    fontWeight: '500',
+                                  }}
+                                >
+                                  Invitation code
+                                </span>
+
+                                <div style={{wordBreak: 'break-all'}}>
+                                  {twitterKey}
+                                  {isTextCopied ? (
+                                    <span
+                                      style={{
+                                        marginLeft: '0.5rem',
+                                        fontSize: '14px',
+                                        fontWeight: '500',
+                                        color: '#27d980',
+                                      }}
+                                    >
+                                      Copied!
+                                    </span>
+                                  ) : (
+                                    <img
+                                      style={{
+                                        marginLeft: '0.25rem',
+                                        cursor: 'pointer',
+                                      }}
+                                      onClick={copyKey}
+                                      src="/static/images/icon-copy.svg"
+                                      alt="copy"
+                                      width="13"
+                                    />
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </ol>
+                        </Tab>
+                        <Tab eventKey="#social_reddit" title="Reddit">
+                          <p style={{marginTop: '2rem'}}>
+                            <Trans
+                              i18nKey="idenaCommunityRedditLink"
+                              t={t}
+                              ns="gitcoin"
+                            >
+                              Join{' '}
+                              <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://www.reddit.com/r/Idena/"
+                              >
+                                Idena subreddit
+                              </a>{' '}
+                              and request an invitation code from the community
+                            </Trans>
+                          </p>
                         </Tab>
                       </Tabs>
                     </div>
