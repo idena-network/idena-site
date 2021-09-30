@@ -23,6 +23,7 @@ export const AVAILABLE_LANGS = [
   'bg',
   'sv',
   'ja',
+  'vi',
 ]
 
 export const isoLangs = {
