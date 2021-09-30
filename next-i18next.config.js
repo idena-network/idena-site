@@ -22,6 +22,7 @@ module.exports = {
       'bg',
       'sv',
       'ja',
+      'vi',
     ],
     defaultLocale: 'en',
   },
