@@ -7,7 +7,7 @@
 
   @media (#{$max_phones--big}) {
     img {
-      width: 77px;
+      width: rem(105px);
     }
   }
 }
@@ -442,7 +442,7 @@
 
   @media (#{$max_phones--big}) {
     border-radius: 0px;
-    margin: 12px;
+    margin: 60px 12px 12px 12px;
     height: 77px;
   }
 

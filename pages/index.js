@@ -81,7 +81,6 @@ export default function Home() {
           </div>
         </div>
         <br />
-        <br />
 
         <div className="container">
           <div className="row justify-content-center">

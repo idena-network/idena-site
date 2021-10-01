@@ -121,28 +121,6 @@ export default function Layout({children, title = '', description = ''}) {
                   </Link>
                 </LiActive>
 
-                <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/guide">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_guide"
-                    >
-                      {t('Installation guide')}
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/donate">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_donate"
-                    >
-                      {t('Donate to Idena')}
-                    </a>
-                  </Link>
-                </LiActive>
-
                 {/* <li className="header_nav__indicator"></li> */}
 
                 <LiActive className="nav-item header_nav__item mobile_only">

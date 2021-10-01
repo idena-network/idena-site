@@ -73,7 +73,7 @@
       padding: 0;
 
       .subtitle {
-        font-size: 19px;
+        font-size: 20px;
         line-height: normal;
         min-height: 80px;
         text-align: center;
@@ -631,7 +631,7 @@
   background-color: #ffffff;
 
   &.inactive {
-    background-color: #ECEEEF;
+    background-color: #eceeef;
   }
 
   .copy_element {
@@ -750,16 +750,16 @@ button {
 
   &.error {
     color: #ff6666;
-    background-color: #F6E3E4;
+    background-color: #f6e3e4;
   }
 
   &.success {
     color: #27d980;
-    background-color: #DCF2E7;
+    background-color: #dcf2e7;
   }
 
   &.hide {
-    display: none
+    display: none;
   }
 
   img {
