@@ -89,14 +89,25 @@ export default function Layout({children, title = '', description = ''}) {
                 </li>
 
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="/download">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_download"
-                    >
-                      {t('Download')}
-                    </a>
-                  </Link>
+                  <a
+                    href="https://scan.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    {t('Explorer')}
+                  </a>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item">
+                  <a
+                    href="https://bridge.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    {t('BSC bridge')}
+                  </a>
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
@@ -122,28 +133,6 @@ export default function Layout({children, title = '', description = ''}) {
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/webclient">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_webclient"
-                    >
-                      {t('Web client')}
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/contribute">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_contribute"
-                    >
-                      {t('Contribute')}
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item mobile_only">
                   <Link href="/donate">
                     <a
                       className="nav-link header_nav__link"
@@ -156,7 +145,7 @@ export default function Layout({children, title = '', description = ''}) {
 
                 {/* <li className="header_nav__indicator"></li> */}
 
-                <LiActive className="nav-item header_nav__item">
+                <LiActive className="nav-item header_nav__item mobile_only">
                   <a
                     href="https://docs.idena.io/docs/wp/summary/"
                     rel="noreferrer"
@@ -179,25 +168,36 @@ export default function Layout({children, title = '', description = ''}) {
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
-                  <a
-                    href="https://bridge.idena.io/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="nav-link header_nav__link"
-                  >
-                    {t('BSC bridge')}
-                  </a>
+                  <Link href="/contribute">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_contribute"
+                    >
+                      {t('Contribute')}
+                    </a>
+                  </Link>
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
-                  <a
-                    href="https://scan.idena.io/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="nav-link header_nav__link"
-                  >
-                    {t('Explorer')}
-                  </a>
+                  <Link href="/download">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_download"
+                    >
+                      {t('Download')}
+                    </a>
+                  </Link>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item highlighted">
+                  <Link href="https://app.idena.io">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_webclient"
+                    >
+                      {t('Web app')}
+                    </a>
+                  </Link>
                 </LiActive>
               </ul>
             </div>

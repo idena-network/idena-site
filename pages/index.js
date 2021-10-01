@@ -80,37 +80,23 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <br />
+        <br />
+
+        <div className="container">
+          <div className="row justify-content-center">
+            <Link href="/join-idena">
+              <a className="btn btn-secondary">
+                {t('Join Idena Network', {ns: 'index'})}
+              </a>
+            </Link>
+          </div>
+        </div>
 
         <div className="section_lead__body">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-md-7 col-lg-6">
-                <div className="lead_links">
-                  <div className="row justify-content-center">
-                    <div className="col-auto">
-                      <div className="row justify-content-center">
-                        <Link href="https://app.idena.io">
-                          <a style={{marginLeft: 15}} className="btn btn-link">
-                            <i className="icon icon--web"></i>
-                            <span>{t('Idena Web App', {ns: 'index'})}</span>
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="col-auto">
-                      <div className="row justify-content-center">
-                        <Link href="/download">
-                          <a className="btn btn-link">
-                            <i className="icon icon--download"></i>
-                            <span>{t('Idena Desktop App', {ns: 'index'})}</span>
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="section_lead__info lead_info">
                   <div className="row">
                     <div
@@ -219,25 +205,6 @@ export default function Home() {
                   of flip-tests (CAPTCHAs).
                 </Trans>
               </p>
-
-              <div className="lead_links">
-                <div className="row justify-content-center">
-                  <div className="col-auto">
-                    <div className="row justify-content-center">
-                      <Link href="/join-idena">
-                        <a className="btn btn-cta">
-                          <img
-                            src="/static/images/idena_black.svg"
-                            alt="tweet"
-                            width="38px"
-                          />
-                          {t('Join Idena Network', {ns: 'index'})}
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div className="index-price-info">
                 <div className="row">
@@ -776,22 +743,14 @@ export default function Home() {
           </div>
 
           <br />
-          <div className="lead_links">
+
+          <div className="container">
             <div className="row justify-content-center">
-              <div className="col-auto">
-                <div className="row justify-content-center">
-                  <Link href="/join-idena">
-                    <a className="btn btn-cta">
-                      <img
-                        src="/static/images/idena_black.svg"
-                        alt="tweet"
-                        width="38px"
-                      />
-                      {t('Join Idena Network', {ns: 'index'})}
-                    </a>
-                  </Link>
-                </div>
-              </div>
+              <Link href="/join-idena">
+                <a className="btn btn-secondary">
+                  {t('Join Idena Network', {ns: 'index'})}
+                </a>
+              </Link>
             </div>
           </div>
         </div>
