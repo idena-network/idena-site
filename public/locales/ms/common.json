@@ -1,1 +1,27 @@
-{}
+{
+    "Support Idena by making a donation": "Sokong idena dengan menderma",
+    "Idena price | 24h price change https://coingecko.com": "Harga iDNA | Perubahan harga 24j",
+    "Epoch mining rewards per user ({{epochDuration}} days)": "Ganjaran perlombongan dalam satu masa bagi setiap pengguna",
+    "Whitepaper": "Whitepaper",
+    "Apps & Resources": "Aplikasi dan sumber",
+    "Blog": "Blog",
+    "Contribute translations": "Sumbangan terjemahan",
+    "iDNA price": "Harga iDNA",
+    "Epoch mining": "Perlombongan epoch",
+    "Validation rewards": "Ganjaran validasi",
+    "Last validation rewards paid per user": "Ganjaran validasi terakhir yang dibayar bagi setiap pengguna",
+    "Rewards paid": "Ganjaran dibayar",
+    "Total rewards paid for last validation": "Jumlah ganjaran yang dibayar untuk validasi terakhir",
+    "Market cap": "Cap pasar",
+    "Network size": "Saiz network",
+    "Total nodes | Change since last validation": "Jumlah nodes | berdasarkan validasi terakhir",
+    "Download": "Muat turun",
+    "Installation guide": "Arahan pemasangan",
+    "Web client": "Web client",
+    "Contribute": "Menyumbang",
+    "Donate to Idena": "Menderma pada idena",
+    "How to start mining Idena": "Bagaimana memulakan lombong idena",
+    "Documentation": "Dokumentasi",
+    "How to contribute": "Bagaimana cara menyumbang",
+    "Blockchain explorer": "Penjelajah blockchain"
+}
