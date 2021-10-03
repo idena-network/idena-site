@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="container">
           <div className="row justify-content-center">
-            <Link href="/join-idena">
+            <Link href="https://app.idena.io">
               <a className="btn btn-secondary">
                 {t('Join Idena Network', {ns: 'index'})}
               </a>
@@ -745,7 +745,7 @@ export default function Home() {
 
           <div className="container">
             <div className="row justify-content-center">
-              <Link href="/join-idena">
+              <Link href="https://app.idena.io">
                 <a className="btn btn-secondary">
                   {t('Join Idena Network', {ns: 'index'})}
                 </a>

@@ -616,8 +616,7 @@
   }
 
   @media (#{$max_phones}) {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 1.5rem;
   }
 }
 
@@ -659,12 +658,33 @@ button {
   overflow: hidden;
 }
 
-.language {
-  margin-top: 0.75rem;
-  line-height: 1.25rem;
+.language-container {
+  padding-right: 170px;
+  @media (#{$max_tablets}) {
+    padding-right: 0;
+  }
 
-  &.row {
-    justify-content: center;
+  .language {
+    margin-top: 0.75rem;
+    line-height: 1.25rem;
+
+    &.row {
+      justify-content: right;
+      padding-left: rem(35px);
+      @media (#{$max_tablets}) {
+        justify-content: center;
+        padding-left: 0;
+      }
+    }
+
+    &.row-left {
+      justify-content: left;
+      text-align: left;
+      @media (#{$max_tablets}) {
+        justify-content: center;
+        text-align: center;
+      }
+    }
   }
 
   .combobox-toggle {
@@ -734,7 +754,6 @@ button {
   }
 
   img {
-    margin-left: 2rem;
     margin-right: 0.5rem;
     margin-bottom: 0.125rem;
   }

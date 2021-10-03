@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-no-target-blank */
 import {useRouter} from 'next/router'
 import Link from 'next/link'
@@ -192,6 +193,15 @@ export default function Layout({children, title = '', description = ''}) {
         <i></i>
         <i></i>
       </button>
+
+      <button
+        className={`btn btn-sm btn-icon btn_menu_secondary d-md-none ${
+          menuOpened ? `active` : ``
+        }`}
+      >
+        <a href="https://app.idena.io">Web app</a>
+      </button>
+
       {children}
       <footer className="footer">
         <div className="container">
@@ -220,9 +230,9 @@ export default function Layout({children, title = '', description = ''}) {
             </LiActive>
 
             <li className="nav-item header_nav__item">
-              <Link href="/faq#faq-start-1">
+              <Link href="/join-idena">
                 <a className="nav-link header_nav__link where_to_start">
-                  {t('How to start mining Idena')}
+                  {t('How to join Idena')}
                 </a>
               </Link>
             </li>
@@ -333,17 +343,6 @@ export default function Layout({children, title = '', description = ''}) {
                 {t('Blog')}
               </a>
             </li>
-
-            <LiActive className="nav-item header_nav__item">
-              <Link href="/donate">
-                <a
-                  className="nav-link header_nav__link"
-                  data-target="menu_donate"
-                >
-                  {t('Donate to Idena')}
-                </a>
-              </Link>
-            </LiActive>
           </ul>
 
           <div className="row justify-content-center text-center">
@@ -404,39 +403,47 @@ export default function Layout({children, title = '', description = ''}) {
                   <i className="icon icon--mail-fill"></i>
                 </a>
               </div>
-              <div className="copy"></div>
-              <div className="donate">
-                <a href="/donate">{t('Support Idena by making a donation')}</a>
-              </div>
             </div>
           </div>
 
-          <div className="row justify-content-center text-center">
-            <div className="col-md-7 col-lg-6">
-              <div className="language row">
-                <Combobox
-                  title={currentLanguage.nativeName}
-                  itemsList={AVAILABLE_LANGS.map(lng => ({
-                    key: lng,
-                    title: isoLangs[lng].nativeName,
-                    href: `/${lng}${router.pathname}`,
-                  }))}
-                  itemsTitle="Choose a language"
-                />
-                <a
-                  href={translationLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="translate-link"
-                >
-                  <img
-                    src="/static/images/icon-translate.svg"
-                    alt="translate"
-                    width="24"
+          <div className="container language-container">
+            <div className="row justify-content-center text-center">
+              <div className="col-md-8 col-lg-4">
+                <div className="language row">
+                  <Combobox
+                    title={currentLanguage.nativeName}
+                    itemsList={AVAILABLE_LANGS.map(lng => ({
+                      key: lng,
+                      title: isoLangs[lng].nativeName,
+                      href: `/${lng}${router.pathname}`,
+                    }))}
+                    itemsTitle="Choose a language"
                   />
-                  <span>{t('Contribute translations')}</span>
-                </a>
+                </div>
               </div>
+
+              <div className="col-md-8 col-lg-4">
+                <div className="language row-left">
+                  <a
+                    href={translationLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="translate-link"
+                  >
+                    <img
+                      src="/static/images/icon-translate.svg"
+                      alt="translate"
+                      width="24"
+                    />
+                    <span>{t('Contribute translations')}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center text-center">
+            <div className="donate">
+              <a href="/donate">{t('Support Idena by making a donation')}</a>
             </div>
           </div>
         </div>

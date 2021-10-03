@@ -398,6 +398,32 @@
   }
 }
 
+.btn_menu_secondary {
+  width: 100px;
+  height: 40px;
+  padding: 7px;
+  top: 16px;
+  right: 72px;
+  position: fixed;
+  z-index: 101;
+  border-radius: 100px;
+  box-shadow: 0px 2px 4px rgba(83, 86, 92, 0.06) !important;
+
+  background-color: #578fff;
+  a {
+    color: $white;
+  }
+
+  &:hover {
+    background-color: darken(#578fff, 3%) !important;
+  }
+
+  &.active {
+    opacity: 0;
+    transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
 .nav_next {
   margin-bottom: 12px;
   font-size: 13px;
