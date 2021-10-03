@@ -39,10 +39,26 @@
 .mobile_only {
   display: none;
   @media (#{$max_phones--big}) {
-     display: block;
+    display: block;
   }
 }
 
+.highlighted {
+  background-color: #578fff;
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  .nav-link {
+    color: white;
+  }
+  @media (#{$max_phones--big}) {
+    background-color: inherit;
+    border-radius: inherit;
+    .nav-link {
+      color: inherit;
+    }
+  }
+}
 
 .sidebar {
   .nav-link {
@@ -71,7 +87,7 @@
     .nav-item {
       opacity: 0;
       visibility: hidden;
-      transition: all .4s;
+      transition: all 0.4s;
       transform: translate3d(0, 10px, 0);
     }
 
@@ -85,31 +101,31 @@
       visibility: visible;
       transform: translate3d(0, 0, 0);
 
-      .nav-item  {
+      .nav-item {
         opacity: 1;
         visibility: visible;
         transform: translate3d(0, 0, 0);
 
         &:nth-child(1) {
-          transition-delay: .2s;
+          transition-delay: 0.2s;
         }
         &:nth-child(2) {
-          transition-delay: .25s;
+          transition-delay: 0.25s;
         }
         &:nth-child(3) {
-          transition-delay: .3s;
+          transition-delay: 0.3s;
         }
         &:nth-child(4) {
-          transition-delay: .35s;
+          transition-delay: 0.35s;
         }
         &:nth-child(5) {
-          transition-delay: .4s;
+          transition-delay: 0.4s;
         }
         &:nth-child(6) {
-          transition-delay: .45s;
+          transition-delay: 0.45s;
         }
         &:nth-child(7) {
-          transition-delay: .50s;
+          transition-delay: 0.5s;
         }
       }
     }
