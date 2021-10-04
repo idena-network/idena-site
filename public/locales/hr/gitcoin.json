@@ -29,6 +29,11 @@
     "Congratulations! Your Idena account is now verified": "Čestitamo! Vaš Idena račun je verificiran",
     "idenaTelegramGroupLink": "Pridružite se službenoj <2>Idena Telegram grupi</2> i zatražite pozivnicu od zajednice.",
     "idenaCommunityDiscordLink": "Pridružite se <2>Neslužbenom Idena Discordu</2> i zatražite pozivnicu od zajednice u <6>#invite-requests</6> kanalu.",
-    "tweetSendingTip": "<0>Pošaljite tweet</0> sa hashtagom #IdenaTrustBonus sa vašeg računa. Da biste dobiti pozivnicu, vaš račun mora biti <4>stariji od 1 godinu ili biti stariji od 2 mjeseca i imati najmanje <1>{{followersCount}}</1> followers</4>. Tweet treba glasiti:",
-    "gitcoinTrustBonusLink": "Idite na <2>Karticu bonus za povjerenje</2> na vašem Gitcoin profilu"
+    "tweetSendingTip": "<0>Pošaljite tweet</0> sa hashtagom #IdenaTrustBonus sa vašeg računa. Da biste dobiti pozivnicu, vaš račun mora biti <3>stariji od 1 godinu</3> ili <6> biti stariji od 2 mjeseca i imati najmanje <2>{{followersCount}}</2> pratitelja</6>. Tweet treba glasiti:",
+    "gitcoinTrustBonusLink": "Idite na <2>Karticu bonus za povjerenje</2> na vašem Gitcoin profilu",
+    "tweeterFollowLink": "Pratite <2>@IdenaNetwork</2>",
+    "Follow the instructions to create your account": "Pratite upute kako biste stvorili vaš račun",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Aktivirajte vašu pozivnicu. Imajte na umu da pozivnica prestaje vrijediti 5 minuta prije validacije!",
+    "getInviteWithTwitterName": "Unesite vaše twitter ime i kliknite na <2>Dobij pozivnicu</2>. Kod će biti automatski prikazan.",
+    "idenaCommunityRedditLink": "Pridružite se <2>Idena subredditu</2> i zatražite pozivnicu od članova zajednice"
 }
