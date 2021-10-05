@@ -1,1 +1,15 @@
-{}
+{
+    "Step 1": "步驟 1",
+    "Get an invitation code": "取得一組邀請碼",
+    "Step 2": "步驟 2",
+    "Next validation:": "下次驗證:",
+    "Add to calendar": "加到日曆",
+    "Follow the instructions to create your account": "跟隨指示創建你的帳號",
+    "Join the validation ceremony to validate your account": "參與驗證儀式以啟用你的帳號",
+    "Learn what a validation session is and how to pass it successfully": "學習何謂驗證會期以及如何成功通過它",
+    "Train to solve flips": "訓練解答翻轉",
+    "Step 5": "步驟 5",
+    "Verify your Gitcoin": "驗證你的Gicoin帳號",
+    "How to verify your Gitcoin account with Idena": "如何透過Idena驗證你的Gitcoin帳號",
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "等得逞驗證會期的來臨。依照指示，解答翻轉並樂於參與過程!"
+}
