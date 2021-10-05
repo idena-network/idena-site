@@ -13,8 +13,8 @@
     "How to start mining Idena": "كيف تبدأ تعدين عملة ايدينا",
     "Documentation": "الشروحات",
     "Blockchain explorer": "متصفح الشبكة",
-    "Blog": "المنتدي",
-    "Support Idena by making a donation": "ادعم ايدينا بعمل تبرع",
+    "Blog": "المدونه",
+    "Support Idena by making a donation": "ادعم ايدينا بالتبرع",
     "Epoch mining": "تعدين الاختبار",
     "Validation rewards": "ارباح الاختبار",
     "Rewards paid": "الارباح المدفوعة",
@@ -23,8 +23,10 @@
     "Download": "تنزيل",
     "Installation guide": "دليل التثبيت",
     "Contribute": "ساهم",
-    "Donate to Idena": "تبرع لايدينا",
+    "Donate to Idena": "تبرع لمشروع ايدينا",
     "BSC bridge": "كوبري شبكة باينانس الذكية",
     "How to contribute": "كيف تساهم",
-    "Apps & Resources": "التطبيقات & الموارد"
+    "Apps & Resources": "التطبيقات & الموارد",
+    "Epoch mining rewards per user ({{epochDuration}} days)": "مكافأة تعدين الفتره لكل مستخدم ({{epochDuration}} يوم)",
+    "Total nodes | Change since last validation": "اجمالي المعدنين | التغير منذ اخر اختبار تحقق"
 }
