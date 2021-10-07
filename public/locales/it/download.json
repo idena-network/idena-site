@@ -11,7 +11,7 @@
     "Build": "Versione",
     "remoreNodeGuideLink": "Puoi anche collegarti al tuo nodo Idena remoto se lo stai eseguendo separatamente o su VPS (consulta la <2><0>guida</0></2>).",
     "buildFromSourceGuideLink": "Puoi anche compilare la Desktop App Idena a partire dal codice sorgente (consulta la <2><0>guida</0></2>).",
-    "remoteNodeGuideLink": "Scarica il nodo Idena se vuoi eseguirlo separatamente o sulla tua VPS remota (si prega di consultare la <2><0>guida</0></2>).",
+    "remoteNodeGuideLink": "Scarica il nodo Idena se vuoi eseguirlo separatamente o sul tuo VPS remoto (si prega di consultare i <2><0>requisiti minimi per il VPS</0></2>).",
     "Download Idena Node": "Scarica il Nodo Idena",
     "Download the Idena app to run it on your desktop. The Idena node will be downloaded automatically with the first start.": "Scarica l'app Idena per eseguirla sul tuo desktop. Il nodo Idena verrà scaricato automaticamente alla prima esecuzione.",
     "nodeBuildGuideLink": "Puoi scaricare le versioni di sviluppo a 64 bit più recenti della Desktop App Idena e del nodo Idena per le piattaforme supportate sotto.<1></1>Consulta la<4><0>guida all'installazione e soluzione dei problemi</0></4> in caso di difficoltà con l'installazione e l'esecuzione del nodo Idena.",

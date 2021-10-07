@@ -1,1 +1,19 @@
-{}
+{
+    "All builds of the Desktop Idena App are available on": "Todas las versiones de la Desktop Idena App están disponibles en",
+    "nodeBuildGuideLink": "Puede descargar las últimas compilaciones de desarrollo de 64 bits de la Desktop Idena App y el nodo para las plataformas compatibles a continuación. <1> </1> Consulte la <4> <0> Guía de instalación y solución de problemas </0> </4> si tiene problemas con la instalación y la ejecución del nodo Idena.",
+    "allBuildsGithubLink": "Todas las compilaciones del nodo Idena están disponibles en <2> Github </2>. <4> </4> También puede compilar el nodo Idena desde <7> fuente </7>.",
+    "Size": "Tamaño",
+    "Published": "Publicado",
+    "Version": "Versión",
+    "Download Idena Node": "Descargar Idena Node",
+    "Loading...": "Cargando...",
+    "remoreNodeGuideLink": "También puede conectarse a su nodo Idena remoto si lo ejecuta por separado o en VPS (consulte la <2> <0> guía </0> </2>).",
+    "buildFromSourceGuideLink": "También puede crear la Desktop Idena App desde la fuente (consulte la <2> <0> guía </0> </2>).",
+    "remoteNodeGuideLink": "Descargue el nodo Idena si desea ejecutarlo por separado o en su VPS remoto (verifique los <2> <0> requisitos mínimos para VPS </0> </2>).",
+    "Download": "Descargar",
+    "Build": "Build",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Descargue la Desktop Idena App para ejecutarla en su computadora. El nodo Idena se descargará automáticamente con el primer inicio.",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Descargue y desarrolle versiones estables de Idena Node y Desktop Idena App.",
+    "Desktop Idena App (built-in node is included)": "Desktop Idena App (nodo incluido)",
+    "Idena Node builds": "Idena Nodo builds"
+}

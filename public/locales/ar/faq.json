@@ -1,4 +1,15 @@
 {
     "Network size": "حجم الشبكة",
-    "IDENA FAQ": "اسئلة واجوبة"
+    "IDENA FAQ": "ايدينا - اسئلة واجوبة",
+    "We are here to help you. Browse through the most frequently asked questions. Can’t find an answer? Email us at info@idena.io": "نحن هنا لمساعدتك . تصفح اجابات معظم الاسئلة الشائعه . لا تجد اجابه؟ راسلنا علي البريد الالكتروني الخاص بنا info@idena.io",
+    "Proof of person": "اثبات الشخصيه",
+    "How do you ensure that the network does not have duplicate users?": "كيف تتأكد من ان الشبكة لا تحمل مستخدمين بأكثر من حساب متكرر؟",
+    "How do you prevent users from buying or selling their accounts?": "كيف يتم منع المستخدمين من شراء وبيع كود الدعوه ؟",
+    "To sell an account, the seller provides a copy of the account's private key. The buyer cannot be sure that another copy of the private key will not stay with the seller. Thus, the private key enables the seller to kill the cryptoidentity at any time, and the buyer would not have an economic reason to buy an Idena account.": "لبيع الحساب،البائع يقدم نسخه من المفتاح الخاص بالحساب ، المشتري لا يمكنه التأكد بأن البائع لا يملك نسخة اخري من المفتاح الخاص بالحساب . لذلك المفتاح الخاص يمكن البائع من قتل الشخصيه في اي وقت ، والمشتري لا يملك اي سبب لشراء حساب ايدينا .",
+    "Where to start": "كيف تبدأ",
+    "How do I join the network?": "كيف انضم للشبكة ؟",
+    "To use Idena only for sending coins, you just need to download the app. To create a cryptoidentity and start mining coins, you should receive an invitation code from a validated participant of the network and use the code to apply for validation.": "لاستخدام ايدينا فقط لارسال واستقبال العملات فقط ، يجب عليك تنزيل التطبيق . لانشاء شخصية وبدء التعدين ، يجب ان تحصل علي كود الدعوه من شخصيه مؤكده داخل الشبكه وتستخدمه لحضور الاختبار.",
+    "The uniqueness of participants is proven by the fact that they must solve and provide the answers for flip-puzzles synchronously. A single person is not able to validate herself multiple times because of the very limited timeframe for the submission of the answers.": "يتم اثبات تفرد المستخدمين بأنهم يجب ان يقدموا اجابات اختبار حل الصور بشكل متزامن . كل شخص لا يمكنه ان يشارك بأكثر من حساب بسبب ضيق الوقت المسموح به لتقديم الاجابات .",
+    "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch.": "حالة التحقق من المشتركين لا تبقي الي الابد . تنتهي صلاحيتها في الاختبار التالي . والمشتركين يجب ان يحضروا الاختبار مرة اخري لكي يحافظوا علي حالة التحقق الخاصه بهم كل اختبار.",
+    "Technically, an account can be sold and bought. However, the Idena protocol introduces economic incentives to prevent participants from doing that. A person who sells their account can simply kill the cryptoidentity afterwards to unlock their frozen coins (frozen coins accumulate for each account as a part of UBI and cannot be spent while the account is valid).": "تقنياً ، يمكن بيع وشراء كود الدعوه . بالرغم من ذلك ، نظام ايدينا يقدم دافع اقتصادي لمنع المشاركين من فعل ذلك . المستخدم الذي يبيع كود الدعوه الخاصه به يمكنه ببساطه قتل الشخصيه ليسترد عملات الستاك المجمده ( تتراكم العملات المجمده الستاك كجزء من الحساب ولا يمكن انفاقها اثناء صلاحية الحساب ،يجب تدميره لاخذهم )."
 }

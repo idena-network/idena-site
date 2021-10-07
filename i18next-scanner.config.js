@@ -6,6 +6,8 @@ const AVAILABLE_LANGS = [
   'es',
   'ru',
   'zh',
+  'zh_Hant',
+  'ar',
   'ko',
   'hr',
   'uk',
