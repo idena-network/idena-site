@@ -60,63 +60,70 @@ export default async (req, res) => {
   }
 
   if (
-    user.followers_count < minTwitterSubs &&
-    Date.now() - Date.parse(user.created_at) < minTwitterAge
+    (user.followers_count >= minTwitterSubs &&
+      Date.now() - Date.parse(user.created_at) > minTwitterAge) ||
+    Date.now() - Date.parse(user.created_at) > ONE_YEAR
   ) {
-    return res.status(400).send('Your twitter account has too few subscribers')
-  }
-  if (Date.now() - Date.parse(user.created_at) < ONE_YEAR) {
-    return res.status(400).send('Your twitter account is too new')
-  }
-
-  if (user.status?.text) {
-    const {text} = user.status
-    if (
-      text.includes('@IdenaNetwork') &&
-      text.includes('#IdenaInvite') &&
-      Date.parse(previousEpochJson.result.validationTime) <
-        Date.parse(user.status.created_at)
-    ) {
-      try {
-        codeResponse = await getCode(
-          user.id_str,
-          user.screen_name,
-          currentEpochJson.result.epoch,
-          req.query.refId ? req.query.refId : null
-        )
-        return res.status(200).send(codeResponse)
-      } catch (e) {
-        return res.status(400).send(e.message)
+    if (user.status?.text) {
+      const {text} = user.status
+      if (
+        text.includes('@IdenaNetwork') &&
+        text.includes('#IdenaInvite') &&
+        Date.parse(previousEpochJson.result.validationTime) <
+          Date.parse(user.status.created_at)
+      ) {
+        try {
+          codeResponse = await getCode(
+            user.id_str,
+            user.screen_name,
+            currentEpochJson.result.epoch,
+            req.query.refId ? req.query.refId : null
+          )
+          return res.status(200).send(codeResponse)
+        } catch (e) {
+          return res.status(400).send(e.message)
+        }
       }
     }
-  }
 
-  try {
-    tweetResponse = await client.get('search/tweets', {
-      q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
-    })
-  } catch (e) {
-    return res.status(400).send('Can not verify your tweet')
-  }
+    try {
+      tweetResponse = await client.get('search/tweets', {
+        q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
+      })
+    } catch (e) {
+      return res.status(400).send('Can not verify your tweet')
+    }
 
-  if (
-    !tweetResponse?.statuses?.length ||
-    Date.parse(previousEpochJson.result.validationTime) >
-      Date.parse(tweetResponse?.statuses[0]?.created_at)
-  ) {
-    return res.status(400).send('Can not verify your tweet')
-  }
+    if (
+      !tweetResponse?.statuses?.length ||
+      Date.parse(previousEpochJson.result.validationTime) >
+        Date.parse(tweetResponse?.statuses[0]?.created_at)
+    ) {
+      return res.status(400).send('Can not verify your tweet')
+    }
 
-  try {
-    codeResponse = await getCode(
-      user.id_str,
-      user.screen_name,
-      currentEpochJson.result.epoch,
-      req.query.refId ? req.query.refId : null
-    )
-    return res.status(200).send(codeResponse)
-  } catch (e) {
-    return res.status(400).send(e.message)
+    try {
+      codeResponse = await getCode(
+        user.id_str,
+        user.screen_name,
+        currentEpochJson.result.epoch,
+        req.query.refId ? req.query.refId : null
+      )
+      return res.status(200).send(codeResponse)
+    } catch (e) {
+      return res.status(400).send(e.message)
+    }
+  } else {
+    if (
+      user.followers_count < minTwitterSubs &&
+      Date.now() - Date.parse(user.created_at) < minTwitterAge
+    ) {
+      return res
+        .status(400)
+        .send('Your twitter account has too few subscribers')
+    }
+
+    return res.status(400).send('Your twitter account is too new')
   }
 }
 
