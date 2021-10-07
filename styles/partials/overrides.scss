@@ -119,13 +119,13 @@
 }
 
 .btn {
-  padding: rem(17px 24px 19px);
+  padding: rem(17px 28px 19px);
   color: $white;
   background-color: $dark;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  font-size: rem(20px);
+  font-size: rem(18px);
   line-height: normal;
   letter-spacing: -0.28px;
   text-align: center;
@@ -199,7 +199,6 @@
   background-color: #578fff;
   border-radius: 6px;
   color: $white;
-  font-weight: 500;
 
   &:hover {
     background-color: darken(#578fff, 3%) !important;
@@ -219,7 +218,7 @@
   font-weight: 500;
 
   &:hover {
-    color: #578FFF;
+    color: #578fff;
   }
 }
 
@@ -255,7 +254,7 @@
   font-weight: 500;
 
   &:hover {
-    color: #578FFF;
+    color: #578fff;
   }
 }
 
