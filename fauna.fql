@@ -94,3 +94,10 @@ CreateIndex({
     }
   ]
 })
+
+CreateIndex({
+  name: "invites_by_name_sort_by_epoch_desc",
+  source: Collection("invites"),
+  terms: [{ field: ["data", "name"] }],
+  values: [{ field: ["data", "epoch"], reverse: true }, { field: ["ref"] }]
+})
