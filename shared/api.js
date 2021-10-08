@@ -168,6 +168,20 @@ export async function getEpochRewardBounds(epoch) {
   return getResponse(apiClient().get(`epoch/${epoch}/rewardBounds`))
 }
 
+export async function searchInvite(invite) {
+  return getResponse(apiClient().get('search', {params: {value: invite}}))
+}
+
+export async function getTxs(address) {
+  return getResponse(
+    apiClient().get(`address/${address}/txs`, {params: {limit: 10}})
+  )
+}
+
+export async function getIdentity(address) {
+  return getResponse(apiClient().get(`identity/${address}`))
+}
+
 export function getGoogleCalendarLink(jsonDate) {
   if (!jsonDate) return null
   const validationDate = jsonDate.replaceAll('-', '').substring(0, 8)

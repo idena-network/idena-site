@@ -1,6 +1,5 @@
 import Twitter from 'twitter'
-import {query as q} from 'faunadb'
-import {serverClient} from '../../shared/utils/faunadb'
+import {getInvitationCode} from '../../shared/utils/get-invitation'
 
 export default async (req, res) => {
   const client = new Twitter({
@@ -44,7 +43,7 @@ export default async (req, res) => {
         {
           q: `from:${req.query.screen_name} @IdenaNetwork @gitcoin #IdenaTrustBonus -is:retweet`,
         },
-        async function(error, tweets, tweetsResponse) {
+        async function(error, tweets) {
           if (!error && tweets.statuses.length > 0) {
             if (
               Date.parse(previousEpochJson.result.validationTime) >
@@ -55,7 +54,7 @@ export default async (req, res) => {
 
             let codeResponse
             try {
-              codeResponse = await getCode(
+              codeResponse = await getInvitationCode(
                 data[0].id_str,
                 data[0].screen_name,
                 currentEpochJson.result.epoch
@@ -72,38 +71,4 @@ export default async (req, res) => {
       return res.status(400).send('Something went wrong')
     }
   })
-}
-
-async function getCode(name, screenName, epoch) {
-  try {
-    const {
-      data: {invite},
-    } = await serverClient.query(
-      q.If(
-        q.Exists(q.Match(q.Index('search_by_name_epoch'), name, epoch)),
-        q.Abort('Invitation code was already given to the twitter account'),
-        q.Let(
-          {
-            freeInvite: q.Match(q.Index('search_free_invite'), epoch, true),
-          },
-          q.If(
-            q.IsEmpty(q.Var('freeInvite')),
-            q.Abort(
-              'There are no invitation codes available, please try again later'
-            ),
-            q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {name, screenName},
-            })
-          )
-        )
-      )
-    )
-    return invite
-  } catch (e) {
-    const errors = e.errors()
-    if (errors.length) {
-      throw new Error(errors[0].description)
-    }
-    throw new Error('Something went wrong')
-  }
 }
