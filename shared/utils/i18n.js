@@ -9,6 +9,8 @@ export const AVAILABLE_LANGS = [
   'es',
   'ru',
   'zh',
+  'zh_Hant',
+  'ar',
   'ko',
   'hr',
   'hi',
@@ -146,6 +148,10 @@ export const isoLangs = {
   zh: {
     name: 'Chinese',
     nativeName: '中文 (Zhōngwén), 汉语, 漢語',
+  },
+  zh_Hant: {
+    name: 'Chinese (Traditional)',
+    nativeName: '中國傳統的',
   },
   cv: {
     name: 'Chuvash',

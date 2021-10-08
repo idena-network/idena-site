@@ -1,0 +1,22 @@
+{
+    "Installation and troubleshooting guide": "دليل التثبيت وحل المشكلات",
+    "Idena installation": "تثبيت ايدينا",
+    "How to install the Idena node on macOS?": "كيفية تثبيت برنامج تعدين ايدينا علي نظام تشغيل ماك؟",
+    "Create an Idena folder on your desktop where the node will run": "انشئ مجلد لايدينا علي حاسوبك الشخصي حيث سيعمل برنامج التعدين",
+    "Download the latest version of the Idena node:": "تنزيل احدث نسخه من برنامج تعدين ايدينا:",
+    "Open the terminal": "افتح موجه الاوامر",
+    "Switch to the Idena folder by typing cd:": "تغيير مجلد ايدينا بكتابة امر cd :",
+    "Make the file executable by typing chmod +x command:": "اجعل الملف قابل للتشغيل بكتابة امرchmod +x:",
+    "Run the node:": "تشغيل برنامج تشغيل ايدينا:",
+    "How to install the Idena client on macOS?": "كيفية تثبيت برنامج تشغيل ايدينا علي نظام ماك؟",
+    "Open Idena as a normal app": "افتح ايدينا كتطبيق عادي",
+    "built-in node": "برنامج التعدين المدمج بتطبيق ايدينا",
+    "Remote node": "برنامج التعدين الخاص بالخادم البعيد",
+    "Install the dependencies:": "تثبيت الادوات المساعده:",
+    "Run the app:": "تشغيل التطبيق:",
+    "IDENA Installation and troubleshooting guide": "دليل تثبيت وحل مشكلات ايدينا",
+    "We are here to help to you with running the Idena Node. Browse through the known issues and most frequently asked questions.": "نحن هنا لمساعدتك علي تشغيل برنامج تعدين ايدينا. تصفح اغلب المشاكل المعروفه والاسئلة المتكرره.",
+    "Move the downloaded file into the newly created Idena folder": "انقل الملف الذي تم تنزيله للمجلد المنشأ حديثا لايدينا",
+    "How to backup the private key?": "كيف تنسخ المفتاح الخاص احتياطيا؟",
+    "Running the Idena node on a remote server": "تشغيل برنامج تعدين ايدينا علي الخادم البعيد"
+}

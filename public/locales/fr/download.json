@@ -1,3 +1,19 @@
 {
-    "Download": "Télécharger"
+    "Download": "Télécharger",
+    "remoteNodeGuideLink": "Téléchargez le nœud Idena si vous souhaitez l'exécuter séparément ou sur votre VPS distant (veuillez vérifier les <2><0>exigences minimales pour VPS</0></2>).",
+    "Version": "Version",
+    "Size": "Taille",
+    "Published": "Publié",
+    "Loading...": "Chargement...",
+    "Build": "Version",
+    "remoreNodeGuideLink": "Vous pouvez également vous connecter à votre nœud Idena distant si vous l'exécutez séparément ou sur VPS (voir le <2><0>guide</0></2>).",
+    "buildFromSourceGuideLink": "Vous pouvez également créer l'application Desktop Idena à partir des sources (voir le <2><0>guide</0></2>).",
+    "allBuildsGithubLink": "Toutes les versions du nœud Idena sont disponibles sur <2>Github</2>.<4></4>Vous pouvez également créer le nœud Idena à partir de la <7>source</7>.",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Téléchargez et développez des versions stables d'Idena Node et de l'application Desktop Idena.",
+    "Desktop Idena App (built-in node is included)": "Application de bureau Idena (nœud intégré inclus)",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Téléchargez l'application de bureau Idena pour l'exécuter sur votre ordinateur. Le nœud Idena sera téléchargé automatiquement au premier démarrage.",
+    "All builds of the Desktop Idena App are available on": "Toutes les versions de l'application Desktop Idena sont disponibles sur",
+    "Idena Node builds": "Constructions de nœuds Idena",
+    "Download Idena Node": "Télécharger Idena Node",
+    "nodeBuildGuideLink": "Vous pouvez télécharger les dernières versions de développement 64 bits de l'application Desktop Idena et du nœud pour les plates-formes prises en charge ci-dessous.<1></1>Voir le <4><0>Guide d'installation et de dépannage</0></4> si vous rencontrez des problèmes avec l'installation et l'exécution du nœud Idena."
 }

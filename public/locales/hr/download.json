@@ -1,1 +1,19 @@
-{}
+{
+    "Size": "Veličina",
+    "Published": "Objavljeno",
+    "Version": "Verzija",
+    "Download Idena Node": "Preuzmi Idena node",
+    "Download": "Preuzimanje",
+    "Loading...": "Učitavanje...",
+    "nodeBuildGuideLink": "Možete preuzeti posljednje 64-bitne verzije Idena Desktop Aplikacije i noda za platforme koje su navedene ispod.",
+    "remoreNodeGuideLink": "Također se možete povezati na vaš udaljeni Idena node ako ga pokrenete odvojeno na VPS-u (pogledajte <2><0>upute</0></2>).",
+    "allBuildsGithubLink": "Sve verzije Idena noda dostupne su na <2>Github-u</2>.<4></4>Također možete sastaviti Idena node iz <7>izvonog koda</7>.",
+    "Desktop Idena App (built-in node is included)": "Desktop Idena Aplikacija (sa ugrađenim nodom)",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Preuzmite Idena Desktop aplikaciju kako bi je pokrenuli na računalu. Idena node će biti automatski preuzet pri prvom pokretanju.",
+    "All builds of the Desktop Idena App are available on": "Sve verzije Idena Desktop Aplikacije su dostupne ovdje",
+    "Idena Node builds": "Verzije Idena noda",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Preuzmite stabilne i razvojne verzije Idena noda i Idena Desktop Aplikacije.",
+    "remoteNodeGuideLink": "Preuzmite Idena node ako ga želite pokrenuti samostalno na vašem udaljenom VPS-u (molimo pogledajte <2><0>upute</0></2>).",
+    "Build": "Verzija",
+    "buildFromSourceGuideLink": "Također možete sastaviti Idena Desktop Aplikaciju iz izvornog koda (pogledajte <2><0>upute</0></2>)."
+}

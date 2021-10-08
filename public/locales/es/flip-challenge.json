@@ -1,1 +1,13 @@
-{}
+{
+    "What is a flip": "Que es un flip",
+    "Example of a flip: a meaningful story (left) and a meaningless sequence of pictures (right)": "Ejemplo de un giro: una historia significativa (izquierda) y una secuencia de imágenes sin sentido (derecha)",
+    "Why machines have no common sense": "Por qué las máquinas no tienen sentido común",
+    "No winner": "Sin ganador",
+    "The Idena team reserves the right to cancel or amend the flip challenge and these rules and conditions.": "El equipo de Idena se reserva el derecho de cancelar o modificar el desafío de flip y estas reglas y condiciones.",
+    "readMoreAboutCaptcha": "Lea más sobre <2> captchas resistentes a la IA </2> en el blog de Idena.",
+    "testYourselfFlipLink": "Intenta <2> ponerte a prueba </2> para comprobar si eres un bot o no.",
+    "Flip is AI-hard CAPTCHA created by a human. Common sense is required to identify a meaningful story told in pictures": "Flip es un CAPTCHA de inteligencia artificial creado por un humano. Se requiere sentido común para identificar una historia significativa contada en imágenes",
+    "A flip is not an IQ test but a test for common sense. There are no predefined correct answers: The correct answer will be the one chosen by a majority of people.": "Un salto no es una prueba de coeficiente intelectual, sino una prueba de sentido común. No hay respuestas correctas predefinidas: la respuesta correcta será la elegida por la mayoría de las personas.",
+    "The contest is designed and administered by the Idena team.": "El concurso está diseñado y administrado por el equipo de Idena.",
+    "aiTrainingFlips": "La IA debe estar entrenada en el conjunto de datos de flips que están disponibles actualmente en el <2> explorador de blockchain </2>. El equipo de Idena usará el número limitado de invitaciones para recolectar muestras de flips para las pruebas de IA de los concursantes."
+}
