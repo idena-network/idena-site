@@ -1,7 +1,6 @@
 /* eslint-disable prefer-const */
 import Twitter from 'twitter'
-import {query as q} from 'faunadb'
-import {serverClient} from '../../shared/utils/faunadb'
+import {getInvitationCode} from '../../shared/utils/get-invitation'
 
 export default async (req, res) => {
   const client = new Twitter({
@@ -73,7 +72,7 @@ export default async (req, res) => {
           Date.parse(user.status.created_at)
       ) {
         try {
-          codeResponse = await getCode(
+          codeResponse = await getInvitationCode(
             user.id_str,
             user.screen_name,
             currentEpochJson.result.epoch,
@@ -103,7 +102,7 @@ export default async (req, res) => {
     }
 
     try {
-      codeResponse = await getCode(
+      codeResponse = await getInvitationCode(
         user.id_str,
         user.screen_name,
         currentEpochJson.result.epoch,
@@ -124,39 +123,5 @@ export default async (req, res) => {
     }
 
     return res.status(400).send('Your twitter account is too new')
-  }
-}
-
-async function getCode(name, screenName, epoch, refId) {
-  try {
-    const {
-      data: {invite},
-    } = await serverClient.query(
-      q.If(
-        q.Exists(q.Match(q.Index('search_by_name_epoch'), name, epoch)),
-        q.Abort('Invitation code was already given to the twitter account'),
-        q.Let(
-          {
-            freeInvite: q.Match(q.Index('search_free_invite'), epoch, true),
-          },
-          q.If(
-            q.IsEmpty(q.Var('freeInvite')),
-            q.Abort(
-              'There are no invitation codes available, please try again later'
-            ),
-            q.Update(q.Select('ref', q.Get(q.Var('freeInvite'))), {
-              data: {name, screenName, refId},
-            })
-          )
-        )
-      )
-    )
-    return invite
-  } catch (e) {
-    const errors = e.errors()
-    if (errors.length) {
-      throw new Error(errors[0].description)
-    }
-    throw new Error('Something went wrong')
   }
 }
