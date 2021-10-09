@@ -11,5 +11,14 @@
     "Step 5": "步驟 5",
     "Verify your Gitcoin": "驗證你的Gicoin帳號",
     "How to verify your Gitcoin account with Idena": "如何透過Idena驗證你的Gitcoin帳號",
-    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "等得逞驗證會期的來臨。依照指示，解答翻轉並樂於參與過程!"
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "等得逞驗證會期的來臨。依照指示，解答翻轉並樂於參與過程!",
+    "getInviteWithTwitterName": "填寫你的推特名稱並點擊<2>Get an invitation code</2>按鍵。邀請碼會自動顯示。",
+    "validationResults": "等待驗證結果。如果你成功地解答完翻轉，你會得到一個<2>新手</2> 狀態。恭喜，你現在是一個有效的加密身分！",
+    "Idena is the first proof-of-person blockchain based on democratic principles. Every node is linked to a cryptoidentity — a unique person with equal voting power and mining income.": "Idena是第一個基於民主原則的個人驗證區塊鏈。每一個節點都與一個加密身分連結—加密身分代表獨一無二的個人，擁有平等的投票權以及挖礦收益。",
+    "Step 3": "步驟 3",
+    "Step 4": "步驟 4",
+    "Prepare yourself for the validation session": "為驗證會期做好自我準備",
+    "idenaWebAppLink": "開啟<2>Idena網站應用</2>",
+    "idenaCommunityRedditLink": "加入 <2>Idena Reddit子板塊</2>並且向社群成員請求邀請碼",
+    "tweeterFollowLink": "跟隨<2>@IdenaNetwork</2>推特帳號"
 }
