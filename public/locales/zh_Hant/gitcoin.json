@@ -20,5 +20,19 @@
     "Prepare yourself for the validation session": "為驗證會期做好自我準備",
     "idenaWebAppLink": "開啟<2>Idena網站應用</2>",
     "idenaCommunityRedditLink": "加入 <2>Idena Reddit子板塊</2>並且向社群成員請求邀請碼",
-    "tweeterFollowLink": "跟隨<2>@IdenaNetwork</2>推特帳號"
+    "tweeterFollowLink": "跟隨<2>@IdenaNetwork</2>推特帳號",
+    "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.": "你的有效加密身份證明確認你是獨一無二的人類而無須揭露任何個人資料。它允許你擁有更多的投票權力當這個投票易受到女巫攻擊時。Ｇitcoin帳號如果經過Idena驗證過的話將會在Gitcoin融資中拿到多50%的資助兢賽紅利。",
+    "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.": "邀請的數量是有限的。為了要避免邀請流失以及歡迎更多新使用者，我們需要確認你是一個獨一無二的人類。邀請的發送是以兢爭的基礎上做發送的:最值得信任的帳號將會先得到邀請。",
+    "Find Idena and click Verify": "找尋Idena並點擊確認",
+    "Congratulations! Your Idena account is now verified": "恭喜!你的Idena帳號現在已經確認有效",
+    "idenaWebAppSignIn": "<4>在下個驗證會期開始前15分鐘</4><0>登入</0> 你的Idena 網站 app。 檢查你已經在等待驗證狀態 。確認你的網路連線是可靠且快速的。 我們建議你使用筆記型電腦或桌上型電腦以得到較佳的體驗。",
+    "Please choose the platform where you have the most active account:": "請選擇你最常用帳號的平台:",
+    "Create and activate your Idena account": "創建並啟用你的Idena帳號",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "啟用你的邀請碼。請記住邀請碼將會在驗證會期開始前五分鐘失效!",
+    "Connect your Idena account to your Gitcoin profile": "連結你的Idena帳號到你的Gitcoin個 人履歷表",
+    "Authorise Gitcoin to access your Idena account": "授權Gitcoin存取你的Idena 帳號",
+    "idenaTelegramGroupLink": "參加官方<2>Idena電報群</2> 並且向社群請求邀請碼。",
+    "idenaCommunityDiscordLink": "參加<2>Idena Discord社群</2>並且在<6>#invite-requests</6>頻道向社群請求邀請碼。",
+    "tweetSendingTip": "用你的帳號<0>發一則推文</0>包含關鍵字標籤#IdenaTrustBonus。要能夠得到邀請，你的帳號必需是註冊<3>超過一年或是</3><6>註冊超過二個月並且擁有至少 <2>{{followersCount}}</2> 跟隨者</6>。 推文中應該提到:",
+    "gitcoinTrustBonusLink": "瀏覽你的Gitcoin個人履歷表並且點擊<2>Trust Bonus tab</2>"
 }
