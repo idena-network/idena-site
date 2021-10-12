@@ -33,5 +33,15 @@
     "Follow the instructions to create your account and activate it with your invitation code:": "指示に従ってアカウントを作成し、招待コードで活性化してください：",
     "Learn what a validation session is and how to pass it successfully": "検証セッションとは何か、そしてそれを成功させる方法を学ぶ",
     "idenaWebAppSignIn": "<4>検証セッション開始の15分前</4>に、Idena Web Appに<0>サインイン</0>します。検証待ちの表示がされていることを確認します。安定したインターネット接続があることを確認してください。より快適にご利用いただくために、ラップトップ/パソコンのご利用をお勧めします。",
-    "validationResults": "検証結果を待ちます。うまくフリップが解けていれば、<2>Newbie</2>という のステータスが表示されます。おめでとうございます！あなたは今、検証に合格しました！"
+    "validationResults": "検証結果を待ちます。うまくフリップが解けていれば、<2>Newbie</2>という のステータスが表示されます。おめでとうございます！あなたは今、検証に合格しました！",
+    "tweeterFollowLink": "<2>@IdenaNetwork</2>をフォロー",
+    "getInviteWithTwitterName": "Twitterの名前を入力し、<2>Get an invitation code</2>ボタンをクリックします。招待コードが自動的に表示されます。",
+    "idenaCommunityRedditLink": "<2>Idena subreddit</2>に参加して、コミュニティに招待コードをリクエストする",
+    "Follow the instructions to create your account": "指示に従ってアカウントを作成する",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "招待コードを有効にしてください。招待コードの有効期限は、認証の5分前までですのでご注意ください ！",
+    "Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.": "検証セレモニーは厳密な時刻のイベントです。検証に参加するためには、時間を厳守し、最新バージョンのイデナアプリを使用する必要があります。1分でも遅れたり、アプリのバージョンが古かったりすると、失敗につながります。",
+    "After validation": "検証の後",
+    "joinIdenaTelegramLink": "テレグラム <2>イデナ・アナウンスメント・チャンネル</2>（重要なアップデートやアナウンスのみ）",
+    "Stay updated": "最新情報をお届け",
+    "Twitter:": "ツイッター："
 }
