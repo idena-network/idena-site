@@ -407,9 +407,9 @@ export default function Layout({children, title = '', description = ''}) {
           </div>
 
           <div className="container language-container">
-            <div className="row justify-content-center text-center">
-              <div className="col-md-8 col-lg-4">
-                <div className="language row">
+            <div className="language-centered">
+              <div className="row justify-content-center text-center">
+                <div className="language">
                   <Combobox
                     title={currentLanguage.nativeName}
                     itemsList={AVAILABLE_LANGS.map(lng => ({
@@ -420,10 +420,8 @@ export default function Layout({children, title = '', description = ''}) {
                     itemsTitle="Choose a language"
                   />
                 </div>
-              </div>
 
-              <div className="col-md-8 col-lg-4">
-                <div className="language row-left">
+                <div className="language">
                   <a
                     href={translationLink}
                     target="_blank"

@@ -659,31 +659,27 @@ button {
 }
 
 .language-container {
-  padding-right: 170px;
-  @media (#{$max_tablets}) {
-    padding-right: 0;
+  padding: rem(20px);
+
+  .language-centered {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+
+  @media (#{$max_phones--big}) {
+    padding: rem(80px) 0;
   }
 
   .language {
     margin-top: 0.75rem;
     line-height: 1.25rem;
+    padding: 0 rem(20px);
 
-    &.row {
-      justify-content: right;
-      padding-left: rem(35px);
-      @media (#{$max_tablets}) {
-        justify-content: center;
-        padding-left: 0;
-      }
-    }
-
-    &.row-left {
-      justify-content: left;
-      text-align: left;
-      @media (#{$max_tablets}) {
-        justify-content: center;
-        text-align: center;
-      }
+    @media (#{$max_phones--big}) {
+      padding: 0 rem(180px);
     }
   }
 
@@ -749,13 +745,16 @@ button {
   cursor: pointer;
 
   span {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
   }
 
   img {
     margin-right: 0.5rem;
     margin-bottom: 0.125rem;
+    @media (#{$max_tablets}) {
+      margin: -4px 0.5rem 0.125rem 0;
+    }
   }
 }
 
