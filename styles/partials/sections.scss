@@ -679,7 +679,7 @@ button {
     padding: 0 rem(20px);
 
     @media (#{$max_phones--big}) {
-      padding: 0 rem(180px);
+      width: 100%;
     }
   }
 
