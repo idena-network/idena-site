@@ -150,9 +150,9 @@ export default function Contribute() {
     <>
       <Header
         title="Welcome to Idena"
-        description={`Create and validate your cryptoidentity to earn up to
-                    ${usdFmt(precise1(reward))} every month for supporting the
-                    network`}
+        description={`Create and validate your cryptoidentity to earn up to ${usdFmt(
+          precise1(reward)
+        )} every month for supporting the network`}
       />
       <div className="landingpage">
         <div
