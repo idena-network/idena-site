@@ -798,3 +798,69 @@ button {
     bottom: 0;
   }
 }
+
+.landingpage {
+  font-size: rem(19px);
+  height: 100vh;
+  padding: rem(20px);
+  @media (#{$max_tablets}) {
+    height: 100%;
+  }
+
+  .btn {
+    font-size: rem(16px);
+  }
+  .logo {
+    margin-bottom: rem(20px);
+    img {
+      width: rem(116px);
+    }
+  }
+  .item-image {
+    border: 1px solid #e8eaed;
+    margin-bottom: 2rem;
+    @media (#{$max_tablets}) {
+      border: none;
+    }
+
+    img {
+      width: rem(220px);
+    }
+  }
+
+  .title {
+    font-size: rem(40px);
+    line-height: rem(40px);
+    margin: 0 0 rem(10px);
+    @media (#{$max_tablets}) {
+      margin-bottom: rem(20px);
+    }
+  }
+  .subtitle {
+    font-size: rem(24px);
+    margin: 0px;
+  }
+  .row > [class*=' col'] {
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    margin: 0;
+  }
+  .section {
+    display: table;
+    margin: auto;
+    height: 100%;
+  }
+
+  .centered {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .lead_info {
+    padding: rem(20px) rem(80px);
+    @media (#{$max_tablets}) {
+      padding: rem(20px) rem(20px) rem(60px);
+    }
+  }
+}
