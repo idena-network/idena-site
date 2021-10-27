@@ -843,6 +843,10 @@ button {
   .row > [class*=' col'] {
     padding: 0;
     margin: 0;
+
+    @media (#{$max_tablets}) {
+      margin: 0 1px;
+    }
   }
   .row {
     margin: 0;

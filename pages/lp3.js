@@ -210,17 +210,16 @@ export default function Contribute() {
                 </div>
 
                 <p className="text-center" style={{color: '#96999E'}}>
-                  <Trans i18nKey="whatIsIdenaNotes" t={t} ns="index">
+                  <Trans i18nKey="whatIsIdenaNotes_lp3" t={t} ns="index">
                     Idena is the first Proof-of-Person blockchain based on
-                    democratic principles. Every unique human can become an
-                    Idena validator no matter who they are and where they live.
+                    democratic principles. Everyone can mine on any hardware and
+                    with no investments.
                   </Trans>
                 </p>
                 <p className="text-center" style={{fontWeight: 500}}>
-                  <Trans i18nKey="CallToAction" t={t} ns="index">
-                    Create and validate your cryptoidentity to earn up to{' '}
-                    {usdFmt(precise1(reward))} every month for supporting the
-                    network!
+                  <Trans i18nKey="CallToAction_lp3" t={t} ns="index">
+                    Validate your cryptoidentity and mine up to{' '}
+                    {usdFmt(precise1(reward))} every month!
                   </Trans>
                 </p>
 

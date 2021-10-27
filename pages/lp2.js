@@ -203,24 +203,20 @@ export default function Contribute() {
             <div className="section lead_info" style={{height: '100%'}}>
               <div className="centered">
                 <div className="item-image">
-                  <img
-                    src="/static/images/main-cryptoidentity.svg"
-                    alt="Cryptoidentity"
-                  />
+                  <img src="/static/images/main-coins.svg" alt="UBI" />
                 </div>
 
                 <p className="text-center" style={{color: '#96999E'}}>
-                  <Trans i18nKey="whatIsIdenaNotes" t={t} ns="index">
+                  <Trans i18nKey="whatIsIdenaNotes_lp2" t={t} ns="index">
                     Idena is the first Proof-of-Person blockchain based on
-                    democratic principles. Every unique human can become an
-                    Idena validator no matter who they are and where they live.
+                    democratic principles. Every unique human can earn Universal
+                    Basic Income (UBI).
                   </Trans>
                 </p>
                 <p className="text-center" style={{fontWeight: 500}}>
-                  <Trans i18nKey="CallToAction" t={t} ns="index">
+                  <Trans i18nKey="CallToAction_lp2" t={t} ns="index">
                     Create and validate your cryptoidentity to earn up to{' '}
-                    {usdFmt(precise1(reward))} every month for supporting the
-                    network!
+                    {usdFmt(precise1(reward))} every month!
                   </Trans>
                 </p>
 
