@@ -314,7 +314,7 @@ export default function Gitcoin() {
                                 </a>{' '}
                                 with a hashtag #IdenaTrustBonus from your
                                 account. To get an invite, your account should
-                                be <b>older than 1 year</b> or{' '}
+                                be{' '}
                                 <b>
                                   older than two months and have at least{' '}
                                   {{followersCount}} followers
