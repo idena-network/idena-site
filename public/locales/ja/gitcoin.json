@@ -30,5 +30,10 @@
     "idenaTelegramGroupLink": "イデナの公式<2>テレグラムグループ</2>に参加し、コミュニティに招待コードをリクエストしてください。",
     "idenaWebAppLink": "<2>イデナウェブアプリ</2>を開く",
     "idenaWebAppSignIn": "<4>検証セッション開始の15分前</4>に、Idena Web Appに<0>サインイン</0>します。検証待ちの表示がされていることを確認します。安定したインターネット接続があることを確認してください。より快適にご利用いただくために、ラップトップ/パソコンのご利用をお勧めします。",
-    "gitcoinTrustBonusLink": "Gitcoinプロファイルの<2>Trust Bonusタブ</2>にアクセスします"
+    "gitcoinTrustBonusLink": "Gitcoinプロファイルの<2>Trust Bonusタブ</2>にアクセスします",
+    "Follow the instructions to create your account": "指示に従ってアカウントを作成する",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "招待コードを有効にしてください。招待コードの有効期限は、認証の5分前までですのでご注意ください ！",
+    "tweeterFollowLink": "<2>@IdenaNetwork</2>をフォロー",
+    "getInviteWithTwitterName": "Twitterの名前を入力し、<2>Get an invitation code</2>ボタンをクリックします。招待コードが自動的に表示されます。",
+    "idenaCommunityRedditLink": "<2>Idena subreddit</2>に参加して、コミュニティに招待コードをリクエストする"
 }
