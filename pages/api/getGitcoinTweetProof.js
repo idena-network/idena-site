@@ -10,7 +10,7 @@ export default async (req, res) => {
   })
 
   const ONE_YEAR = 1000 * 60 * 60 * 24 * 365
-  const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 10
+  const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
   const minTwitterAge = process.env.TWITTER_AGE_MILLIS || 2592000000
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
   const currentEpochJson = await currentEpoch.json()
@@ -33,10 +33,7 @@ export default async (req, res) => {
       ) {
         return res
           .status(400)
-          .send('Your twitter account has too few subscribers')
-      }
-      if (Date.now() - Date.parse(data[0].created_at) < ONE_YEAR) {
-        return res.status(400).send('Your twitter account is too new')
+          .send('Your twitter account is too new or has too few subscribers')
       }
       client.get(
         'search/tweets',

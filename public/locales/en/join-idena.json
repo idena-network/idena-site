@@ -28,7 +28,7 @@
     "idenaTelegramGroupLink": "Join the official <2>Idena Telegram group</2> and request an invitation code from the community.",
     "idenaCommunityDiscordLink": "Join <2>Idena Community Discord</2> and request an invitation code from the community in <5>#invite-requests</5> channel.",
     "tweeterFollowLink": "Follow <2>@IdenaNetwork</2>",
-    "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaInvite from your account. To get an invite, your account should be <4>older than 1 year</4> or <7>older than two months and have at least <2>{{followersCount}}</2> followers</7>. The tweet should say:",
+  "tweetSendingTip": "<0>Send a tweet</0> with a hashtag #IdenaInvite from your account. To get an invite, your account should be <4>older than two months and have at least <2>{{followersCount}}</2> followers</4>. The tweet should say:",
     "getInviteWithTwitterName": "Enter your twitter name and click <2>Get an invitation code</2> button. The code will be shown automatically.",
     "idenaCommunityRedditLink": "Join <2>Idena subreddit</2> and request an invitation code from the community",
     "idenaWebAppLink": "Open <2>Idena Web App</2>",

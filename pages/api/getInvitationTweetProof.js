@@ -12,7 +12,7 @@ export default async (req, res) => {
 
   const ONE_YEAR = 1000 * 60 * 60 * 24 * 365
   const IDENA_TWITTER_NAME = 'IdenaNetwork'
-  const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 10
+  const minTwitterSubs = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
   const minTwitterAge = process.env.TWITTER_AGE_MILLIS || 2592000000
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
   const currentEpochJson = await currentEpoch.json()
@@ -59,69 +59,59 @@ export default async (req, res) => {
   }
 
   if (
-    (user.followers_count >= minTwitterSubs &&
-      Date.now() - Date.parse(user.created_at) > minTwitterAge) ||
-    Date.now() - Date.parse(user.created_at) > ONE_YEAR
+    user.followers_count < minTwitterSubs &&
+    Date.now() - Date.parse(user.created_at) < minTwitterAge
   ) {
-    if (user.status?.text) {
-      const {text} = user.status
-      if (
-        text.includes('@IdenaNetwork') &&
-        text.includes('#IdenaInvite') &&
-        Date.parse(previousEpochJson.result.validationTime) <
-          Date.parse(user.status.created_at)
-      ) {
-        try {
-          codeResponse = await getInvitationCode(
-            user.id_str,
-            user.screen_name,
-            currentEpochJson.result.epoch,
-            req.query.refId ? req.query.refId : null
-          )
-          return res.status(200).send(codeResponse)
-        } catch (e) {
-          return res.status(400).send(e.message)
-        }
+    return res.status(400).send('Your twitter account is too new or has too few subscribers')
+  }
+
+  if (user.status?.text) {
+    const {text} = user.status
+    if (
+      text.includes('@IdenaNetwork') &&
+      text.includes('#IdenaInvite') &&
+      Date.parse(previousEpochJson.result.validationTime) <
+        Date.parse(user.status.created_at)
+    ) {
+      try {
+        codeResponse = await getInvitationCode(
+          user.id_str,
+          user.screen_name,
+          currentEpochJson.result.epoch,
+          req.query.refId ? req.query.refId : null
+        )
+        return res.status(200).send(codeResponse)
+      } catch (e) {
+        return res.status(400).send(e.message)
       }
     }
+  }
 
-    try {
-      tweetResponse = await client.get('search/tweets', {
-        q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
-      })
-    } catch (e) {
-      return res.status(400).send('Can not verify your tweet')
-    }
+  try {
+    tweetResponse = await client.get('search/tweets', {
+      q: `from:${req.query.screen_name} @IdenaNetwork #IdenaInvite -is:retweet`,
+    })
+  } catch (e) {
+    return res.status(400).send('Can not verify your tweet')
+  }
 
-    if (
-      !tweetResponse?.statuses?.length ||
-      Date.parse(previousEpochJson.result.validationTime) >
-        Date.parse(tweetResponse?.statuses[0]?.created_at)
-    ) {
-      return res.status(400).send('Can not verify your tweet')
-    }
+  if (
+    !tweetResponse?.statuses?.length ||
+    Date.parse(previousEpochJson.result.validationTime) >
+      Date.parse(tweetResponse?.statuses[0]?.created_at)
+  ) {
+    return res.status(400).send('Can not verify your tweet')
+  }
 
-    try {
-      codeResponse = await getInvitationCode(
-        user.id_str,
-        user.screen_name,
-        currentEpochJson.result.epoch,
-        req.query.refId ? req.query.refId : null
-      )
-      return res.status(200).send(codeResponse)
-    } catch (e) {
-      return res.status(400).send(e.message)
-    }
-  } else {
-    if (
-      user.followers_count < minTwitterSubs &&
-      Date.now() - Date.parse(user.created_at) < minTwitterAge
-    ) {
-      return res
-        .status(400)
-        .send('Your twitter account has too few subscribers')
-    }
-
-    return res.status(400).send('Your twitter account is too new')
+  try {
+    codeResponse = await getInvitationCode(
+      user.id_str,
+      user.screen_name,
+      currentEpochJson.result.epoch,
+      req.query.refId ? req.query.refId : null
+    )
+    return res.status(200).send(codeResponse)
+  } catch (e) {
+    return res.status(400).send(e.message)
   }
 }
