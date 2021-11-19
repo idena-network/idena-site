@@ -25,7 +25,7 @@
     "Join the validation ceremony to validate your account": "検証式典に参加してアカウントを有効にする",
     "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "検証セッションが始まるのを待ちます。指示に従ってフリップを解き、プロセスを楽しんでください！",
     "idenaCommunityDiscordLink": "<2>イデナコミュニティ Discord</2>に参加し、<5>#invite-requests</5>チャンネルでコミュニティに招待コードをリクエストしてください。",
-    "tweetSendingTip": "自分のアカウントからハッシュタグ#IdenaInviteをつけて<0>ツイートを送信 <0>してください。招待を受けるためには、あなたのアカウントが<4>1年以上または2ヶ月以上経過していて、少なくとも<1>{{followersCount}}</1>のフォロワーがいる<4>必要があります。ツイートの内容はこうです：",
+    "tweetSendingTip": "自分のアカウントからハッシュタグ#IdenaInviteをつけて<0>ツイートを送信 <0>してください。招待を受けるためには、あなたのアカウントが<4>2ヶ月以上経過していて、少なくとも<1>{{followersCount}}</1>のフォロワーがいる<4>必要があります。ツイートの内容はこうです：",
     "ToStartMiningIdena": "イデナのマイニングを開始するには、あなたのIDを検証する必要があります。個人情報の開示は一切必要ありません（KYC不要）。検証の式典が始まるときにオンラインで出席し、一連のフリップテスト（CAPTCHA）を解く必要があります。",
     "MigrateIdena": "イデナアカウントの移行（「設定」ページを使用）：秘密鍵のバックアップを イデナウェブアプリから取り出して、それを イデナデスクトップアプリで取り込みます。",
     "SubmitFlips": "フリップの作成方法を学び、次回の検証までに3枚のフリップを提出してください。3枚のフリップを提出しないと、次回の検証に参加できません。",
