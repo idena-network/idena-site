@@ -28,7 +28,7 @@ export default async (req, res) => {
     }
     if (!error && data.length > 0) {
       if (
-        data[0].followers_count < minTwitterSubs &&
+        data[0].followers_count < minTwitterSubs ||
         Date.now() - Date.parse(data[0].created_at) < minTwitterAge
       ) {
         return res

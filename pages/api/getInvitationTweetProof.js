@@ -59,7 +59,7 @@ export default async (req, res) => {
   }
 
   if (
-    user.followers_count < minTwitterSubs &&
+    user.followers_count < minTwitterSubs ||
     Date.now() - Date.parse(user.created_at) < minTwitterAge
   ) {
     return res.status(400).send('Your twitter account is too new or has too few subscribers')
