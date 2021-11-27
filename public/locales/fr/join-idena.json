@@ -1,7 +1,7 @@
 {
     "Next validation:": "Prochaine validation :",
     "Add to calendar": "Ajouter au calendrier",
-    "tweetSendingTip": "<0>Envoyez un tweet</0> avec un hashtag #IdenaInvite depuis votre compte. Pour recevoir une invitation, votre compte doit avoir <4>plus d'un an ou plus de deux mois et avoir au moins <1>{{followersCount}}</1> abonnés</4>. Vous devez tweeter :",
+    "tweetSendingTip": "<0>Envoyez un tweet</0> avec un hashtag #IdenaInvite depuis votre compte. Pour recevoir une invitation, votre compte doit avoir <4>plus de 2 mois et avoir au moins <2>{{followersCount}}</2> abonnés</4>. Vous devez tweeter :",
     "validationResults": "Attendez les résultats de la validation. Si vous avez réussi à résoudre les flips, vous obtiendrez le statut <2>Newbie</2>. Félicitations, vous avez maintenant une crypto-identité validée !",
     "MigrateIdena": "Migrez votre compte Idena (à l'aide de la page Paramètres) : exportez votre sauvegarde de clé privée depuis l'application Web Idena, puis importez-la dans votre application de bureau Idena.",
     "SubmitFlips": "Apprenez à créer des flips et à soumettre trois flips avant la prochaine validation. Si vous ne soumettez pas 3 flips, vous ne serez pas autorisé à participer à la prochaine validation.",
@@ -33,5 +33,15 @@
     "ActivateMiningStatus": "Activez votre statut de minage et gardez votre nœud Idena synchronisé pour extraire les coins iDNA.",
     "ProlongCryptoidentityStatus": "Votre statut de crypto-identité est valable jusqu'à la prochaine époque. Vous devez prolonger votre statut de validation pour chaque nouvelle époque.",
     "ScheduleNextValidation": "Organisez vous pour être disponible pour votre prochaine validation.",
-    "idenaWebAppSignIn": "<0>Connectez-vous</0> à votre application Web Idena <4>15 minutes avant le début de la prochaine session de validation</4>. Vérifiez que vous avez attendu le statut de validation. Assurez-vous d'avoir une bonne connexion Internet. Nous recommandons un ordinateur portable/PC pour une meilleure expérience."
+    "idenaWebAppSignIn": "<0>Connectez-vous</0> à votre application Web Idena <4>15 minutes avant le début de la prochaine session de validation</4>. Vérifiez que vous avez attendu le statut de validation. Assurez-vous d'avoir une bonne connexion Internet. Nous recommandons un ordinateur portable/PC pour une meilleure expérience.",
+    "Follow the instructions to create your account": "Suivez les instructions pour créer votre compte",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Activez votre code lié à votre invitation. Veuillez noter que ce code expire 5 minutes avant la validation !",
+    "Stay updated": "Restez à jour",
+    "Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.": "La cérémonie de validation est un événement important. Il oblige les utilisateurs à être strictement ponctuels et à utiliser la dernière version de l'application Idena pour pouvoir y participer. Même une minute en retard ou une application obsolète peut entraîner un échec.",
+    "Twitter:": "Twitter :",
+    "After validation": "Après la validation",
+    "tweeterFollowLink": "Suivez <2>@IdenaNetwork</2>",
+    "getInviteWithTwitterName": "Entrez votre nom Twitter et cliquez sur le bouton <2>Obtenir un code d'invitation</2>. Le code s'affichera automatiquement.",
+    "idenaCommunityRedditLink": "Rejoignez <2>Idena subreddit</2> et demandez un code d'invitation à la communauté",
+    "joinIdenaTelegramLink": "Telegram : <2>Canal Idena Announcements</2> (mises à jour et annonces importantes uniquement)"
 }
