@@ -27,5 +27,7 @@
     "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "Aspetta l'inizio della sessione di validazione. Segui le istruzioni, risolvi i flip e goditi il processo!",
     "tweetSendingTip": "<0>Invia un tweet</0> con l'hashtag #IdenaInvite dal tuo account. Per ottenere un invito, il tuo account deve essere <4>più vecchio di 1 anno o più vecchio di due mesi e con almeno <1>{{followersCount}}</1> followers</4>. Il tweet dovrebbe dire:",
     "Follow the instructions to create your account and activate it with your invitation code:": "Segui le istruzioni per creare il tuo account e attivarlo con il tuo codice d'invito:",
-    "idenaTelegramGroupLink": "Unisciti al gruppo ufficiale <2>Idena Telegram</2> e chiedi un codice d'invito alla comunità."
+    "idenaTelegramGroupLink": "Unisciti al gruppo ufficiale <2>Idena Telegram</2> e chiedi un codice d'invito alla comunità.",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Attiva il tuo codice di invito. Tieni presente che il codice di invito scade 5 minuti prima della convalida!",
+    "Stay updated": "Rimani aggiornato"
 }
