@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import {Trans, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import YouTube from 'react-youtube'
 import Layout from '../shared/components/layout'
 import {
   useNextValidationTime,
@@ -18,6 +19,30 @@ export default function Home() {
     priceChange: 0,
     marketCap: 0,
   })
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [isMobileVideoPlaying, setIsMobileVideoPlaying] = useState(false)
+
+  const opts = {
+    borderRadius: '12px',
+    height: '474',
+    width: '840',
+    playerVars: {
+      rel: 0,
+      autoplay: true,
+    },
+  }
+
+  const optsMobile = {
+    playerVars: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      height: '100%',
+      width: '100%',
+      rel: 0,
+      autoplay: true,
+    },
+  }
 
   const {t} = useTranslation('index')
 
@@ -51,7 +76,16 @@ export default function Home() {
     >
       <section className="section section_lead" id="lead">
         <div className="section_lead__header text-center">
-          <div className="container" data-target="menu_main">
+          {isVideoPlaying && (
+            <div className="index-video">
+              <YouTube
+                opts={opts}
+                onEnd={() => setIsVideoPlaying(false)}
+                videoId="yLt4Xal16IU"
+              />
+            </div>
+          )}
+          <div className="container index-heading" data-target="menu_main">
             <div
               className="logo nav-link"
               title={t('IDENA: Proof-of-Person blockchain', {
@@ -79,8 +113,18 @@ export default function Home() {
               })}
             </div>
           </div>
+          <div className="play-button-container">
+            {!isVideoPlaying && (
+              <button
+                type="button"
+                className="play-button"
+                onClick={() => setIsVideoPlaying(true)}
+              >
+                <img src="/static/images/play-icn.svg" alt="play" width="28" />
+              </button>
+            )}
+          </div>
         </div>
-        <br />
 
         <div className="container">
           <div className="row justify-content-center">
@@ -90,6 +134,41 @@ export default function Home() {
               </a>
             </Link>
           </div>
+        </div>
+
+        <div className="container mobile-video margin-t-m">
+          {isMobileVideoPlaying ? (
+            <>
+              <div
+                className={`video-mobile-placeholder ${
+                  isMobileVideoPlaying ? 'play' : ''
+                }`}
+              />
+              <div className="index-video-mobile">
+                <YouTube
+                  opts={optsMobile}
+                  onEnd={() => setIsMobileVideoPlaying(false)}
+                  videoId="yLt4Xal16IU"
+                />
+              </div>
+            </>
+          ) : (
+            <div className="row justify-content-center">
+              <a
+                className="btn btn-cta"
+                style={{paddingInline: '27px'}}
+                onClick={() => setIsMobileVideoPlaying(true)}
+              >
+                <img
+                  style={{paddingBottom: '2px'}}
+                  src="/static/images/play-icn-gray.svg"
+                  alt="play"
+                  width="28"
+                />
+                Watch video
+              </a>
+            </div>
+          )}
         </div>
 
         <div className="section_lead__body">
