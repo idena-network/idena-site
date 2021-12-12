@@ -1,4 +1,19 @@
 {
     "Download": "Pobierz",
-    "Version": "Wersja"
+    "Version": "Wersja",
+    "Size": "Rozmiar",
+    "Download Idena Node": "Pobierz Węzeł Ideny",
+    "Build": "Źródło",
+    "remoreNodeGuideLink": "Możesz także połączyć się ze zdalnym węzłem Ideny, jeśli uruchomisz go osobno lub na VPS (zobacz <2><0>przewodnik</0></2>).",
+    "buildFromSourceGuideLink": "Możesz także zbudować aplikację Desktopową Ideny ze źródła (zobacz <2><0>przewodnik</0></2>).",
+    "allBuildsGithubLink": "Wszystkie kompilacje węzła Idena są dostępne na <2>Github</2>.<4></4>Możesz także zbudować węzeł Ideny ze <7>źródła</7>.",
+    "Published": "Opublikowany",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Pobierz stabilną wersję lub wersję deweloperską węzła oraz aplikacji Idena.",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Pobierz aplikację Desktopową Ideny, aby uruchomić ją na swoim komputerze. Węzeł Ideny zostanie pobrany automatycznie przy pierwszym uruchomieniu.",
+    "Loading...": "Ładowanie...",
+    "nodeBuildGuideLink": "Możesz pobrać najnowsze 64-bitowe kompilacje programistyczne aplikacji Desktopowej Ideny jak i węzła dla obsługiwanych platform poniżej.<1></1>Zobacz <4><0>Przewodnik instalacji i rozwiązywania problemów</0></4>, jeśli masz problemy z instalacją lub uruchomieniem węzła Ideny.",
+    "remoteNodeGuideLink": "Pobierz węzeł Ideny, jeśli chcesz go uruchomić osobno lub na zdalnym VPS (sprawdź <2><0>minimalne wymagania dla VPS</0></2>).",
+    "Desktop Idena App (built-in node is included)": "Aplikacja Desktopowa Idena (z wbudowanym węzłem)",
+    "All builds of the Desktop Idena App are available on": "Wszystkie wersje aplikacji Desktopowej Ideny są dostępne na",
+    "Idena Node builds": "Węzeł Ideny"
 }
