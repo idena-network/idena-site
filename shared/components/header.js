@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Header({title, description, scripts}) {
+export default function Header({title, description}) {
   return (
     <>
       <Head>
@@ -60,8 +60,6 @@ export default function Header({title, description, scripts}) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-139651161-1"
         ></script>
-
-        {scripts && {...scripts}}
       </Head>
     </>
   )
