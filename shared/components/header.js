@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Header({title, description}) {
+export default function Header({title, description, scripts}) {
   return (
     <>
       <Head>
@@ -8,11 +8,28 @@ export default function Header({title, description}) {
         <meta charSet="UTF-8" />
         <meta name="description" content={description} />
         <meta httpEquiv="X-UA-Compatible" content="chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
+        />
         <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="favicon-16x16.png"
+        />
         <link rel="manifest" href="site.webmanifest" />
         <link rel="mask-icon" href="safari-pinned-tab.svg" color="#333333" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -22,7 +39,10 @@ export default function Header({title, description}) {
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="https://idena.io" />
-        <meta property="og:image" content="https://idena.io/static/images/Content_Image.png" />
+        <meta
+          property="og:image"
+          content="https://idena.io/static/images/Content_Image.png"
+        />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,9 +51,17 @@ export default function Header({title, description}) {
         <meta name="twitter:creator" content="@IdenaNetwork" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://idena.io/static/images/cover.png" />
+        <meta
+          name="twitter:image"
+          content="https://idena.io/static/images/cover.png"
+        />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139651161-1"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-139651161-1"
+        ></script>
+
+        {scripts && {...scripts}}
       </Head>
     </>
   )
