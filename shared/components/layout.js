@@ -37,12 +37,7 @@ const PAGES_LIST = {
   joinIdena: 'join-idena-page',
 }
 
-export default function Layout({
-  children,
-  title = '',
-  description = '',
-  scripts = '',
-}) {
+export default function Layout({children, title = '', description = ''}) {
   const router = useRouter()
   const [menuOpened, setMenuOpened] = useState(false)
   const {t} = useTranslation('common')
@@ -63,7 +58,7 @@ export default function Layout({
 
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
-      <Header title={title} description={description} scripts={scripts} />
+      <Header title={title} description={description} />
       <TopHeader />
       <header className="header">
         <div className="container">

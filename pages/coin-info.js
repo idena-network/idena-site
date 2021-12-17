@@ -1,15 +1,47 @@
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import {useEffect, useState} from 'react'
 import Layout from '../shared/components/layout'
 
+const useExternalScript = url => {
+  const [state, setState] = useState(url ? 'loading' : 'idle')
+
+  useEffect(() => {
+    if (!url) {
+      setState('idle')
+      return
+    }
+    let script = document.querySelector(`script[src="${url}"]`)
+
+    const handleScript = e => {
+      setState(e.type === 'load' ? 'ready' : 'error')
+    }
+
+    if (!script) {
+      script = document.createElement('script')
+      script.type = 'application/javascript'
+      script.src = url
+      script.async = true
+      document.body.appendChild(script)
+      script.addEventListener('load', handleScript)
+      script.addEventListener('error', handleScript)
+    }
+
+    script.addEventListener('load', handleScript)
+    script.addEventListener('error', handleScript)
+
+    return () => {
+      script.removeEventListener('load', handleScript)
+      script.removeEventListener('error', handleScript)
+    }
+  }, [url])
+
+  return state
+}
+
 export default function CoinInfo() {
+  useExternalScript('https://crypto.com/price/static/widget/index.js')
   return (
-    <Layout
-      title="Idena Coin Info (iDNA)"
-      description="Idena Coin Info (iDNA)"
-      scripts={
-        <script src="https://crypto.com/price/static/widget/index.js"></script>
-      }
-    >
+    <Layout title="Idena Coin Info (iDNA)" description="Idena Coin Info (iDNA)">
       <section
         className="section section_content menu_section_content menu_join_idena"
         id="coin-info"
@@ -24,13 +56,13 @@ export default function CoinInfo() {
                   blockchain
                 </p>
               </div>
-              <script src="https://crypto.com/price/static/widget/index.js"></script>
               <div
                 id="crypto-widget-CoinList"
                 data-transparent="true"
                 data-design="classic"
                 data-coins="idena"
               ></div>
+
               <h4>Project name</h4>
               <p>Idena Network</p>
               <h4>Asset Name</h4>
