@@ -1,0 +1,18 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="none" d="M0 0h80v80H0z"/>
+        <g fill-rule="nonzero" stroke="#578fff" stroke-linejoin="round" stroke-width="2">
+            <path fill="#578fff" d="m13 63.9 22.755-6.73V32.334L13 39.133z"/>
+            <path fill="#F5F6F7" stroke-linecap="round" d="m51.503 68.27-15.748-11.1V32.334l15.748 11.1zM35.755 57.17l15.748 11.1L28.748 75 13 63.9"/>
+            <g>
+                <path fill="#578fff" d="m62.812 13.672-21.576 2.844 8.533 19.287 21.645-2.845z"/>
+                <path fill="#F5F6F7" stroke-linecap="round" d="m34.576 30.669 6.66-14.153 8.533 19.287-6.66 14.152zM64.754 47.111 43.11 49.955l6.66-14.152 21.645-2.845z"/>
+            </g>
+            <g>
+                <path fill="#578fff" d="m18.134 13.394 15.47 2.845L35.34 32.61l-15.47-2.844z"/>
+                <path fill="#F5F6F7" stroke-linecap="round" d="m43.178 7.844-9.573 8.395 1.734 16.372 9.574-8.394z"/>
+                <path fill="#F5F6F7" stroke-linecap="round" d="m33.605 16.239 9.573-8.395L27.708 5l-9.574 8.394"/>
+            </g>
+        </g>
+    </g>
+</svg>

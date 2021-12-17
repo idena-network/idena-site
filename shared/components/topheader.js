@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import {useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next'
-import TooltipText from './tooltip'
+import {TooltipText} from './tooltip'
 import {usdFmt, precise1, precise2} from '../utils/utils'
 
 import {
