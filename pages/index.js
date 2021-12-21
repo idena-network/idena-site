@@ -493,13 +493,13 @@ export default function Home() {
                   href="https://cosmos.network/ecosystem/apps/"
                   imageLink="logo-cosmos"
                 />
-                <TooltipLogo tooltip="Aragon" href="" imageLink="logo-aragon" />
+                <TooltipLogo tooltip="Aragon" imageLink="logo-aragon" />
                 <TooltipLogo
                   tooltip="Discord"
                   href="https://github.com/iyomisc/idenauth"
                   imageLink="logo-discord"
                 />
-                <TooltipLogo tooltip="Amasa" href="" imageLink="logo-amasa" />
+                <TooltipLogo tooltip="Amasa" imageLink="logo-amasa" />
                 <TooltipLogo
                   tooltip="RadicalxChange"
                   href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
