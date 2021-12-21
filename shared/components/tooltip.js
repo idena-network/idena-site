@@ -61,7 +61,7 @@ export function TooltipLogo({
           target={ref.current}
           placement={placement}
           arrowClassName="toolTipArrow"
-          popperClassName="toolTipPopper"
+          popperClassName="toolTipPopper logo"
           innerClassName="toolTipInnerPopper"
           offset="0 8px"
           isOpen={tooltipOpen}

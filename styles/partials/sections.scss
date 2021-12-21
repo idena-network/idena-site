@@ -830,6 +830,12 @@
   }
 }
 
+.toolTipPopper.logo {
+  @media (#{$max_tablets}) {
+    display: none;
+  }
+}
+
 .dedicated_info {
   font-size: 1rem;
   line-height: 28px;
