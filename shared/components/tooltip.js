@@ -39,7 +39,7 @@ export function TooltipLogo({
   placement = 'bottom',
   imageLink,
   href,
-  widthPx = '80',
+  isWidth = false,
   ...props
 }) {
   const [tooltipOpen, setTooltipOpen] = useState(false)
@@ -49,9 +49,9 @@ export function TooltipLogo({
   const ref = useRef(null)
   return (
     <>
-      <div ref={ref} style={{width: `${widthPx}px`}} className="partners-info">
-        <img className="logo-gray" src={imgGray} alt={tooltip} width={widthPx} />
-        <img className="logo-color" src={imgColor} alt={tooltip} width={widthPx} />
+      <div ref={ref} className={`partners-info ${isWidth ? 'width' : ''}`}>
+        <img className="logo-gray" src={imgGray} alt={tooltip} />
+        <img className="logo-color" src={imgColor} alt={tooltip} />
         <a href={href} target="_blank" rel="noreferrer">
           {' '}
         </a>

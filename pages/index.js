@@ -480,76 +480,62 @@ export default function Home() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
-              <h1>{t('Partners and media', {ns: 'index'})}</h1>
+              <h1>{t('Partners and Media', {ns: 'index'})}</h1>
 
               <div className="index-partners-info">
-                <div className="partners-row">
-                  <TooltipLogo
-                    tooltip="Cosmos"
-                    href="https://cosmos.network/ecosystem/apps/"
-                    imageLink="logo-cosmos"
-                  />
-                  <TooltipLogo
-                    tooltip="Aragon"
-                    href=""
-                    imageLink="logo-aragon"
-                  />
-                  <TooltipLogo
-                    tooltip="Discord"
-                    href="https://github.com/iyomisc/idenauth"
-                    imageLink="logo-discord"
-                  />
-                  <TooltipLogo
-                    tooltip="Gitcoin"
-                    href="https://medium.com/idena/gitcoin-integrates-idena-to-add-sybil-resistance-to-gitcoin-grants-6730bb905053"
-                    imageLink="logo-gitcoin"
-                  />
-                  <TooltipLogo
-                    tooltip="Publish0x"
-                    href="https://www.publish0x.com/idena-trust-experiment"
-                    imageLink="logo-publish-0-x"
-                  />
-                </div>
-                <div className="partners-row">
-                  <TooltipLogo
-                    tooltip="Nomics"
-                    href="https://nomics.com/assets/dna2-idena/reviews"
-                    imageLink="logo-nomics"
-                  />
-                  <TooltipLogo
-                    tooltip="MyAltcoins"
-                    href="https://myaltcoins.info/idena-review/"
-                    imageLink="logo-my-altcoins"
-                  />
-                  <TooltipLogo
-                    tooltip="Amasa"
-                    href=""
-                    imageLink="logo-amasa"
-                  />
-                  <TooltipLogo
-                    tooltip="Frontiers in Blockchain"
-                    href="https://www.frontiersin.org/articles/10.3389/fbloc.2020.590171/full"
-                    imageLink="logo-frontier"
-                  />
-                  <TooltipLogo
-                    tooltip="Coindesk"
-                    href="https://www.coindesk.com/tech/2020/10/27/an-internet-for-humans-proof-of-personhood-explained/"
-                    imageLink="logo-coindesk"
-                  />
-                </div>
-                <div className="partners-row">
-                  <TooltipLogo
-                    tooltip="humanetics"
-                    href="https://humanetics.super.site/"
-                    imageLink="logo-humanetics"
-                  />
-                  <TooltipLogo
-                    tooltip="RadicalxChange"
-                    href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
-                    imageLink="logo-radical-ex"
-                    widthPx="210"
-                  />
-                </div>
+                <TooltipLogo
+                  tooltip="Cosmos"
+                  href="https://cosmos.network/ecosystem/apps/"
+                  imageLink="logo-cosmos"
+                />
+                <TooltipLogo tooltip="Aragon" href="" imageLink="logo-aragon" />
+                <TooltipLogo
+                  tooltip="Discord"
+                  href="https://github.com/iyomisc/idenauth"
+                  imageLink="logo-discord"
+                />
+                <TooltipLogo
+                  tooltip="Gitcoin"
+                  href="https://medium.com/idena/gitcoin-integrates-idena-to-add-sybil-resistance-to-gitcoin-grants-6730bb905053"
+                  imageLink="logo-gitcoin"
+                />
+                <TooltipLogo
+                  tooltip="Publish0x"
+                  href="https://www.publish0x.com/idena-trust-experiment"
+                  imageLink="logo-publish0x"
+                />
+                <TooltipLogo
+                  tooltip="Nomics"
+                  href="https://nomics.com/assets/dna2-idena/reviews"
+                  imageLink="logo-nomics"
+                />
+                <TooltipLogo
+                  tooltip="MyAltcoins"
+                  href="https://myaltcoins.info/idena-review/"
+                  imageLink="logo-myaltcoins"
+                />
+                <TooltipLogo tooltip="Amasa" href="" imageLink="logo-amasa" />
+                <TooltipLogo
+                  tooltip="Frontiers in Blockchain"
+                  href="https://www.frontiersin.org/articles/10.3389/fbloc.2020.590171/full"
+                  imageLink="logo-frontier"
+                />
+                <TooltipLogo
+                  tooltip="Coindesk"
+                  href="https://www.coindesk.com/tech/2020/10/27/an-internet-for-humans-proof-of-personhood-explained/"
+                  imageLink="logo-coindesk"
+                />
+                <TooltipLogo
+                  tooltip="humanetics"
+                  href="https://humanetics.super.site/"
+                  imageLink="logo-humanetics"
+                />
+                <TooltipLogo
+                  tooltip="RadicalxChange"
+                  href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
+                  imageLink="logo-radicalxchange"
+                  isWidth
+                />
               </div>
             </div>
           </div>
