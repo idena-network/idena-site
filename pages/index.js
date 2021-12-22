@@ -865,16 +865,6 @@ export default function Home() {
                 />
                 <TooltipLogo tooltip="Amasa" imageLink="logo-amasa" />
                 <TooltipLogo
-                  tooltip="CoinGecko"
-                  href="https://www.coingecko.com/en/coins/idena"
-                  imageLink="logo-coingecko"
-                />
-                <TooltipLogo
-                  tooltip="CoinMarketCap"
-                  href="https://coinmarketcap.com/currencies/idena/"
-                  imageLink="logo-coinmarketcap"
-                />
-                <TooltipLogo
                   tooltip="RadicalxChange"
                   href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
                   imageLink="logo-radicalxchange"
@@ -899,6 +889,16 @@ export default function Home() {
                   tooltip="Frontiers in Blockchain"
                   href="https://www.frontiersin.org/articles/10.3389/fbloc.2020.590171/full"
                   imageLink="logo-frontier"
+                />
+                <TooltipLogo
+                  tooltip="CoinGecko"
+                  href="https://www.coingecko.com/en/coins/idena"
+                  imageLink="logo-coingecko"
+                />
+                <TooltipLogo
+                  tooltip="CoinMarketCap"
+                  href="https://coinmarketcap.com/currencies/idena/"
+                  imageLink="logo-coinmarketcap"
                 />
                 <TooltipLogo
                   tooltip="Nomics"
