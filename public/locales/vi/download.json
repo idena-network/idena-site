@@ -1,3 +1,19 @@
 {
-    "Download": "Tải xuống"
+    "Download": "Tải xuống",
+    "Download Idena Node": "Tải xuống Idena Node",
+    "All builds of the Desktop Idena App are available on": "Tất cả bản xây của ứng dụng Desktop Idena hiện có trên",
+    "nodeBuildGuideLink": "Bạn có thể tải xuống các bản phát triển mới nhất 64-bit của ứng dụng Desktop Idena và node cho các nền tảng được hỗ trợ bên dưới.<1></1>Xem qua <4><0>Hướng dẫn cài đặt và gỡ lỗi</0></4> nếu có sự cố với việc cài đặt và chạy node Idena.",
+    "buildFromSourceGuideLink": "Bạn cũng có thể xây ứng dụng Desktop Idena từ mã nguồn (xem qua <2><0>hướng dẫn</0></2>).",
+    "Size": "Kích thước",
+    "Published": "Xuất bản",
+    "Version": "Phiên bản",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Tải xuống bản ổn định và phát triển các phiên bản của Idena Node và ứng dụng Desktop Idena.",
+    "Desktop Idena App (built-in node is included)": "Ứng dụng Desktop Idena (Có sẵn Node bên trong)",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Tải xuống bản Desktop ứng dụng Idena và chạy nó trên máy tính của bạn. Idena node sẽ tải xuống tự động với lần khởi chạy đầu tiên.",
+    "Loading...": "Đang chạy...",
+    "Idena Node builds": "Các bản xây của Idena Node",
+    "Build": "Bản xây",
+    "remoreNodeGuideLink": "Bạn cũng có thể kết nối từ xa Idena Node nếu bạn muốn chạy riêng nó hoặc trên VPS (xem qua <2><0>hướng dẫn</0></2>).",
+    "remoteNodeGuideLink": "Tải xuống Idena node nếu bạn muốn chạy riêng nó hoặc trên VPS từ xa (xin hãy kiểm tra <2><0>cấu hình tối thiểu VPS</0></2>).",
+    "allBuildsGithubLink": "Tất cả bản xây của Idena Node hiện có trên <2>Github</2>.<4></4>Bạn cũng có thể xây Idena node từ mã nguồn <7>source</7>."
 }
