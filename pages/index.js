@@ -188,7 +188,7 @@ export default function Home() {
                         {validatedCount === null ? '-' : validatedCount}
                       </div>
                       <p className="nodes _hint">
-                        {t('Validated nodes', {ns: 'index'})}
+                        {t('Validated identities', {ns: 'index'})}
                       </p>
                     </div>
 
@@ -842,7 +842,9 @@ export default function Home() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-9 col-lg-9 section_content">
-              <h1 className="h1 pg_main">{t('Partners and Media', {ns: 'index'})}</h1>
+              <h1 className="h1 pg_main">
+                {t('Partners and Media', {ns: 'index'})}
+              </h1>
 
               <div className="index-partners-info">
                 <TooltipLogo
@@ -863,10 +865,25 @@ export default function Home() {
                 />
                 <TooltipLogo tooltip="Amasa" imageLink="logo-amasa" />
                 <TooltipLogo
+                  tooltip="CoinGecko"
+                  href="https://www.coingecko.com/en/coins/idena"
+                  imageLink="logo-coingecko"
+                />
+                <TooltipLogo
+                  tooltip="CoinMarketCap"
+                  href="https://coinmarketcap.com/currencies/idena/"
+                  imageLink="logo-coinmarketcap"
+                />
+                <TooltipLogo
                   tooltip="RadicalxChange"
                   href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
                   imageLink="logo-radicalxchange"
                   isWidth
+                />
+                <TooltipLogo
+                  tooltip="humanetics"
+                  href="https://humanetics.super.site/"
+                  imageLink="logo-humanetics"
                 />
                 <TooltipLogo
                   tooltip="Coindesk"
