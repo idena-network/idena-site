@@ -545,7 +545,7 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-md-9 col-lg-9">
               <div className="section_header">
-                <h2 className="h1">{t('Why Idena', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Why Idena', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">
@@ -658,7 +658,7 @@ export default function Home() {
               </div>
 
               <div className="section_header">
-                <h2 className="h1">{t('Use cases', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Use cases', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">
@@ -767,7 +767,7 @@ export default function Home() {
               </div>
 
               <div className="section_header">
-                <h2 className="h1">{t('Technology', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Technology', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">

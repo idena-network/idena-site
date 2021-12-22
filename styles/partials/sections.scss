@@ -210,6 +210,10 @@
 
 .section_header {
   margin-bottom: rem(120px);
+
+  @media (#{$max_tablets}) {
+    margin-bottom: 25px;
+  }
 }
 
 .section_content {
@@ -220,6 +224,12 @@
   .h1 {
     margin-top: rem(75px);
     text-align: center;
+
+  &.pg_main{
+    @media (#{$max_tablets}) {
+      text-align: left;
+    }
+  }
   }
 
   .hint {
