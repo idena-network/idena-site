@@ -210,6 +210,10 @@
 
 .section_header {
   margin-bottom: rem(120px);
+
+  @media (#{$max_tablets}) {
+    margin-bottom: 25px;
+  }
 }
 
 .section_content {
@@ -220,6 +224,12 @@
   .h1 {
     margin-top: rem(75px);
     text-align: center;
+
+  &.pg_main{
+    @media (#{$max_tablets}) {
+      text-align: left;
+    }
+  }
   }
 
   .hint {
@@ -730,6 +740,111 @@
 
   @media (#{$max_phones}) {
     padding: 1.5rem;
+  }
+}
+
+.index-partners-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  //margin-left: -50px;
+
+  @media (#{$max_tablets}) {
+    justify-content: flex-start;
+    //margin-left: 0;
+  }
+}
+
+.partners-info {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-inline: 25px;
+  margin-bottom: 50px;
+  width: 80px;
+  height: 80px;
+
+  &.width {
+    width: 210px;
+
+    img {
+      width: 210px;
+
+      &.logo-color{
+        display: none;
+      }
+      &.logo-gray {
+        display: block;
+      }
+    }
+  }
+
+  img {
+    width: 80px;
+
+    &.logo-color{
+      display: none;
+    }
+    &.logo-gray {
+      display: block;
+    }
+  }
+
+  a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: inline;
+  }
+
+  &:hover,
+  &:active {
+
+  img {
+    &.logo-color {
+      display: block !important;
+    }
+
+    &.logo-gray {
+      display: none !important;
+    }
+  }
+  }
+
+  @media (#{$max_tablets}) {
+    background-color: white;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 80px;
+    padding: 7px;
+    margin: 4px !important;
+
+    img {
+      width: 100% !important;
+
+      &.logo-gray {
+        width: 100%;
+      }
+    }
+
+    &.width {
+      width: 100% !important;
+
+      &.logo-gray {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.toolTipPopper.logo {
+  @media (#{$max_tablets}) {
+    display: none;
   }
 }
 

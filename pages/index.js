@@ -12,6 +12,7 @@ import {
   getCoingeckoData,
 } from '../shared/api'
 import {precise2, usdFmt, LinkText} from '../shared/utils/utils'
+import {TooltipLogo} from '../shared/components/tooltip'
 
 export default function Home() {
   const [marketData, setMarketData] = useState({
@@ -187,7 +188,7 @@ export default function Home() {
                         {validatedCount === null ? '-' : validatedCount}
                       </div>
                       <p className="nodes _hint">
-                        {t('Validated nodes', {ns: 'index'})}
+                        {t('Validated identities', {ns: 'index'})}
                       </p>
                     </div>
 
@@ -480,7 +481,7 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-md-9 col-lg-9">
               <div className="section_header">
-                <h2 className="h1">{t('Why Idena', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Why Idena', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">
@@ -593,7 +594,7 @@ export default function Home() {
               </div>
 
               <div className="section_header">
-                <h2 className="h1">{t('Use cases', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Use cases', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">
@@ -702,7 +703,7 @@ export default function Home() {
               </div>
 
               <div className="section_header">
-                <h2 className="h1">{t('Technology', {ns: 'index'})}</h2>
+                <h2 className="h1 pg_main">{t('Technology', {ns: 'index'})}</h2>
               </div>
 
               <div className="row justify-content-center">
@@ -829,6 +830,87 @@ export default function Home() {
                   {t('Join Idena Network', {ns: 'index'})}
                 </a>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section section_content menu_section_content menu_main"
+        id="partners and media"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-9 col-lg-9 section_content">
+              <h1 className="h1 pg_main">
+                {t('Partners and Media', {ns: 'index'})}
+              </h1>
+
+              <div className="index-partners-info">
+                <TooltipLogo
+                  tooltip="Gitcoin"
+                  href="https://medium.com/idena/gitcoin-integrates-idena-to-add-sybil-resistance-to-gitcoin-grants-6730bb905053"
+                  imageLink="logo-gitcoin"
+                />
+                <TooltipLogo
+                  tooltip="Cosmos"
+                  href="https://cosmos.network/ecosystem/apps/"
+                  imageLink="logo-cosmos"
+                />
+                <TooltipLogo tooltip="Aragon" imageLink="logo-aragon" />
+                <TooltipLogo
+                  tooltip="Discord"
+                  href="https://github.com/iyomisc/idenauth"
+                  imageLink="logo-discord"
+                />
+                <TooltipLogo tooltip="Amasa" imageLink="logo-amasa" />
+                <TooltipLogo
+                  tooltip="RadicalxChange"
+                  href="https://www.radicalxchange.org/concepts/intersectional-social-identity/"
+                  imageLink="logo-radicalxchange"
+                  isWidth
+                />
+                <TooltipLogo
+                  tooltip="humanetics"
+                  href="https://humanetics.super.site/"
+                  imageLink="logo-humanetics"
+                />
+                <TooltipLogo
+                  tooltip="Coindesk"
+                  href="https://www.coindesk.com/tech/2020/10/27/an-internet-for-humans-proof-of-personhood-explained/"
+                  imageLink="logo-coindesk"
+                />
+                <TooltipLogo
+                  tooltip="Publish0x"
+                  href="https://www.publish0x.com/idena-trust-experiment"
+                  imageLink="logo-publish0x"
+                />
+                <TooltipLogo
+                  tooltip="Frontiers in Blockchain"
+                  href="https://www.frontiersin.org/articles/10.3389/fbloc.2020.590171/full"
+                  imageLink="logo-frontier"
+                />
+                <TooltipLogo
+                  tooltip="CoinGecko"
+                  href="https://www.coingecko.com/en/coins/idena"
+                  imageLink="logo-coingecko"
+                />
+                <TooltipLogo
+                  tooltip="CoinMarketCap"
+                  href="https://coinmarketcap.com/currencies/idena/"
+                  imageLink="logo-coinmarketcap"
+                />
+                <TooltipLogo
+                  tooltip="Nomics"
+                  href="https://nomics.com/assets/dna2-idena/reviews"
+                  imageLink="logo-nomics"
+                />
+                <TooltipLogo
+                  tooltip="MyAltcoins"
+                  href="https://myaltcoins.info/idena-review/"
+                  imageLink="logo-myaltcoins"
+                />
+              </div>
             </div>
           </div>
         </div>
