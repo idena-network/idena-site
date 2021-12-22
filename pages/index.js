@@ -507,11 +507,6 @@ export default function Home() {
                   isWidth
                 />
                 <TooltipLogo
-                  tooltip="humanetics"
-                  href="https://humanetics.super.site/"
-                  imageLink="logo-humanetics"
-                />
-                <TooltipLogo
                   tooltip="Coindesk"
                   href="https://www.coindesk.com/tech/2020/10/27/an-internet-for-humans-proof-of-personhood-explained/"
                   imageLink="logo-coindesk"
