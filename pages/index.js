@@ -901,6 +901,11 @@ export default function Home() {
                   imageLink="logo-coinmarketcap"
                 />
                 <TooltipLogo
+                  tooltip="Crypto"
+                  href="https://crypto.com/price/idena"
+                  imageLink="logo-crypto"
+                />
+                <TooltipLogo
                   tooltip="Nomics"
                   href="https://nomics.com/assets/dna2-idena/reviews"
                   imageLink="logo-nomics"
