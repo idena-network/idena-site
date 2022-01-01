@@ -860,7 +860,7 @@ export default function Home() {
                 <TooltipLogo tooltip="Aragon" imageLink="logo-aragon" />
                 <TooltipLogo
                   tooltip="Discord"
-                  href="https://github.com/iyomisc/idenauth"
+                  href="https://discord.com/invite/8BusRj7"
                   imageLink="logo-discord"
                 />
                 <TooltipLogo tooltip="Amasa" imageLink="logo-amasa" />
