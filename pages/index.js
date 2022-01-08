@@ -891,6 +891,11 @@ export default function Home() {
                   imageLink="logo-frontier"
                 />
                 <TooltipLogo
+                  tooltip="Bitcourier"
+                  href="https://bitcourier.co.uk/news/Idena-interview"
+                  imageLink="logo-bitcourier"
+                />
+                <TooltipLogo
                   tooltip="CoinGecko"
                   href="https://www.coingecko.com/en/coins/idena"
                   imageLink="logo-coingecko"
