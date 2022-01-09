@@ -1,4 +1,24 @@
 {
     "Next validation:": "下次验证：",
-    "Add to calendar": "加入日历"
+    "Add to calendar": "加入日历",
+    "Follow the instructions to create your account": "按照说明创建您的帐户",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "激活您的邀请码。请注意，邀请码在验证前5分钟过期！",
+    "Train to solve flips": "训练解决翻转问题",
+    "Join the validation ceremony to validate your account": "参加验证仪式，验证您的帐户",
+    "Step 5": "第五步",
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "等待验证会话开始。按照说明进行操作，解决翻转问题并享受过程！",
+    "tweeterFollowLink": "关注 <2>@IdenaNetwork</2>",
+    "Please choose the platform where you have the most active account:": "请选择您拥有最活跃帐户的平台：",
+    "getInviteWithTwitterName": "输入您的推特名称，然后单击获取邀请代码按钮。代码将自动显示。",
+    "idenaCommunityRedditLink": "加入</2>Idena reddit子板块</2>并从社区请求邀请码",
+    "idenaWebAppLink": "打开Idena Web应用程序",
+    "validationResults": "等待验证结果。如果您已成功解决翻转问题，您将获得一个<2>新手状态。祝贺您，您现在是一个经过验证的加密身份！",
+    "Step 1": "第一步",
+    "Get an invitation code": "获取邀请码",
+    "Step 2": "第二步",
+    "Create and activate your Idena account": "创建并激活您的Idena帐户",
+    "Step 3": "第三步",
+    "Prepare yourself for the validation session": "为验证会议做好准备",
+    "Learn what a validation session is and how to pass it successfully": "了解什么是验证会话以及如何成功通过验证会话",
+    "Step 4": "第四步"
 }
