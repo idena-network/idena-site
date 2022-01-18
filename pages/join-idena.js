@@ -47,6 +47,8 @@ function Alert({state, message}) {
   )
 }
 
+const isVercelProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+
 export default function JoinIdena() {
   const {t} = useTranslation('join-idena')
   const router = useRouter()
@@ -78,7 +80,10 @@ export default function JoinIdena() {
     if (refId && refId !== refLink) {
       return
     }
-    cookie.set('refId', refLink, {expires: new Date(jsonDateString)})
+    cookie.set('refId', refLink, {
+      expires: new Date(jsonDateString),
+      domain: isVercelProduction ? '.idena.io' : null,
+    })
   }, [jsonDateString, router.query.ref])
 
   const getKeyByTwitter = async name => {
