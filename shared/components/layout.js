@@ -51,7 +51,7 @@ export default function Layout({children, title = '', description = ''}) {
     const savedLocale = cookie.get('NEXT_LOCALE')
     if (savedLocale) {
       if (router.locale !== savedLocale) {
-        router.push(router.pathname, null, {locale: savedLocale})
+        router.push(router.asPath, null, {locale: savedLocale})
       }
     }
   }, [router])
