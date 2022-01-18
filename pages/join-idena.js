@@ -82,7 +82,8 @@ export default function JoinIdena() {
     }
     cookie.set('refId', refLink, {
       expires: new Date(jsonDateString),
-      domain: isVercelProduction ? '.idena.io' : null,
+      domain: isVercelProduction ? 'idena.io' : null,
+      path: '/',
     })
   }, [jsonDateString, router.query.ref])
 
