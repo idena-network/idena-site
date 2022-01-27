@@ -1,1 +1,25 @@
-{}
+{
+    "Next validation:": "Επόμενη επικύρωση:",
+    "Step 1": "Βήμα 1",
+    "Get an invitation code": "Λάβετε έναν κωδικό πρόσκλησης",
+    "Step 2": "Βήμα 2",
+    "Create and activate your Idena account": "Δημιουργία και ενεργοποίηση του λογαριασμού idena",
+    "Follow the instructions to create your account": "Ακολουθήστε τις οδηγίες για να δημιουργήσετε το λογαριασμό σας",
+    "Step 3": "Βήμα 3",
+    "Stay updated": "Μείνετε ενημερωμένοι",
+    "Twitter:": "Twitter:",
+    "Step 4": "Βήμα 4",
+    "Prepare yourself for the validation session": "Προετοιμαστείτε για την περίοδο επικύρωσης",
+    "Train to solve flips": "Εκπαιδευτείτε στην λύση τεστ ανατροπών",
+    "Step 5": "Βήμα 5",
+    "After validation": "Μετά την επικύρωση",
+    "Start mining": "Ξεκινήστε την εξόρυξη",
+    "How to join Idena": "Πώς να συμμετάσχετε στο Idena",
+    "Add to calendar": "Προσθήκη στο ημερολόγιο",
+    "Please choose the platform where you have the most active account:": "Παρακαλώ επιλέξτε την πλατφόρμα όπου έχετε τον πιο ενεργό λογαριασμό:",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Ενεργοποίησε τον κωδικό πρόσκλησής. Παρακαλώ προσέξτε ο κωδικός πρόσκλησης λήγει 5 λεπτά πριν από την επικύρωση!",
+    "Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.": "Η τελετή επικύρωσης είναι ένα ευαίσθητο στο χρόνο γεγονός. Απαιτεί από τους χρήστες να είναι αυστηρά έτοιμοι στην ώρα τους και να χρησιμοποιούν την πιο πρόσφατη έκδοση της εφαρμογής Idena για να μπορούν να συμμετέχουν. Ακόμη και η καθυστέρηση ενός λεπτού ή μια παλιά έκδοση της εφαρμογής θα μπορούσε να οδηγήσει σε αποτυχία.",
+    "Learn what a validation session is and how to pass it successfully": "Μάθετε τι είναι περίοδος επικύρωσης και πώς μπορείτε να την ολοκληρώσετε με επιτυχία",
+    "Join the validation ceremony to validate your account": "Συμμετάσχετε στην τελετή επικύρωσης με σκοπό την επικύρωση του λογαριασμού σας",
+    "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "Περιμένετε να ξεκινήσει η φάση επικύρωσης. Ακολουθήστε τις οδηγίες, λύστε τεστ ανατροπών και απολαύστε τη διαδικασία!"
+}
