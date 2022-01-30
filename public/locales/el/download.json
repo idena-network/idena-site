@@ -1,1 +1,19 @@
-{}
+{
+    "Size": "Μέγεθος",
+    "Published": "Δημοσίευση",
+    "Version": "Έκδοση",
+    "Download Idena Node": "Λήψη κόμβου Idena",
+    "Desktop Idena App (built-in node is included)": "Εφαρμογή επιφάνειας εργασίας Idena (περιλαμβάνει ενσωματωμένα τον κόμβο)",
+    "Download": "Λήψη",
+    "Loading...": "Φόρτωση...",
+    "All builds of the Desktop Idena App are available on": "Όλες οι εκδόσεις της εφαρμογής Idena είναι διαθέσιμες στο",
+    "Idena Node builds": "Εκδόσεις κόμβου Idena",
+    "Build": "Εκδόσεις",
+    "remoreNodeGuideLink": "Μπορείτε επίσης να συνδεθείτε στον απομακρυσμένο κόμβο Idena εάν τον εκτελέσετε ξεχωριστά ή στο VPS (δείτε τον <2><0>οδηγό</0></2>).",
+    "buildFromSourceGuideLink": "Μπορείτε επίσης να χτίσετε την εφαρμογή Desktop Idena από τον πηγαίο κώδικα(ανατρέξτε στον <2><0>οδηγό</0></2>).",
+    "remoteNodeGuideLink": "Κατεβάστε τον κόμβο Idena αν θέλετε να τον εκτελέσετε ξεχωριστά ή απομακρυσμένα στο VPS (ελέγξτε τις <2><0>ελάχιστες απαιτήσεις για VPS</0></2>).",
+    "allBuildsGithubLink": "Όλες οι αναπτύξεις του κόμβου Idena είναι διαθέσιμες στο <2>Github</2>.<4></4>Μπορείτε επίσης να δημιουργήσετε τον κόμβο Idena από τον <7>πηγαίο κώδικα</7>.",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "Κατεβάστε τη σταθερή και υπό ανάπτυξη έκδοση του κόμβου Idena και της εφαρμογής Idena .",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "Κατεβάστε την εφαρμογή Idena για να την εκτελέσετε στον υπολογιστή σας. Ο κόμβος Idena θα ληφθεί αυτόματα με την πρώτη εκκίνηση.",
+    "nodeBuildGuideLink": "Μπορείτε να κατεβάσετε τις πιο πρόσφατες 64-bit εκδοσεις της εφαρμογής Idena και του κόμβου για τις υποστηριζόμενες πλατφόρμες παρακάτω.<1></1>Δες <4><0>Ανάπτυξη και οδηγός αντιμετώπισης προβλημάτων</0></4> εάν αντιμετωπίζετε προβλήματα με την εγκατάσταση και την εκτέλεση του κόμβου Idena."
+}
