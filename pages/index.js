@@ -906,6 +906,12 @@ export default function Home() {
                   imageLink="logo-coinmarketcap"
                 />
                 <TooltipLogo
+                  tooltip="CoinLore"
+                  href="https://www.coinlore.com/coin/idena"
+                  imageLink="logo-coinlore"
+                  isWidth
+                />
+                <TooltipLogo
                   tooltip="Crypto"
                   href="https://crypto.com/price/idena"
                   imageLink="logo-crypto"
