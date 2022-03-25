@@ -1116,3 +1116,58 @@ button {
     }
   }
 }
+
+.info-two-col {
+  display: flex;
+  flex-wrap: wrap;
+
+  .info-block {
+    max-width: 50%;
+    padding-inline: 20px;
+  }
+}
+
+.page-area {
+  border-radius: 12px;
+  background-color: #fff;
+  padding-inline: 80px;
+  padding-top: 56px;
+  padding-bottom: 80px;
+
+  .illustrated-data {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .diagram-block {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  label, input {
+    position: relative;
+    display: block;
+    font-size: 21px;
+    font-weight: 500;
+    padding-right: 50px;
+    width: 150px;
+    box-sizing: border-box;
+    border: 0;
+  }
+
+  label::after {
+    content: attr(data-idna);
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    font-size: 21px;
+    font-weight: 500;
+    display: block;
+    color: #53565c;
+  }
+}
