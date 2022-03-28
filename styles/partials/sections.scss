@@ -1138,10 +1138,12 @@ button {
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin-top: 56px;
 
     .diagram-block {
       display: flex;
       flex-direction: column;
+      margin-right: 20px;
     }
   }
 

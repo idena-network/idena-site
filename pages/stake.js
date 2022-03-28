@@ -1,18 +1,31 @@
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {getTrackBackground, Range} from 'react-range'
-import {useEffect, useState} from 'react'
-import {AreaChart, Area} from 'recharts'
+import {useState, useEffect} from 'react'
+import {
+  AreaChart,
+  Area,
+  Tooltip as ChartTooltip,
+  ReferenceDot,
+  YAxis,
+} from 'recharts'
 import Layout from '../shared/components/layout'
+import {TooltipText} from '../shared/components/tooltip'
 
 export default function Stake() {
   const {t} = useTranslation('contribute')
-  const [amountValue, setAmountValue] = useState([0])
-  const [amountSlider, setAmountSlider] = useState([0])
+  const [amountValue, setAmountValue] = useState(1000)
+  const [amountSlider, setAmountSlider] = useState([5])
+  const [weight, setWeight] = useState(1)
+  const [epochReward, setEpochReward] = useState(0)
+  const [totalStake, setTotalStake] = useState('0')
+  const [epochRewardFund, setEpochRewardFund] = useState([0])
+  const [epochDays, setEpochDays] = useState(0)
 
   const STEP = 1
   const MIN = 0
-  const MAX = 19
+  const MAX = 20
+  const BLOCKS_IN_ONE_DAY = 4320
   const AMOUNT_STAKED = [
     0,
     0,
@@ -36,10 +49,57 @@ export default function Stake() {
     773781,
     1000000,
   ]
+  // const STAKE_REWARDS = AMOUNT_STAKED.map((amount, index) => ({
+  //   index,
+  //   amount: (((index * 50000) ** 0.9 / weight) * epochRewardFund),
+  // }))
 
-  const getAmountValue = AMOUNT_STAKED[amountSlider[0]]
-  const getAmountSlider =
-    AMOUNT_STAKED.findIndex(item => item > amountValue) - 1
+  const getArray = () => {
+    const rewards = []
+    let i = 1
+    while (i < 41) {
+      rewards.push({index: i, amount: Math.log(i)})
+      i += 1
+    }
+    return rewards
+  }
+
+  useEffect(() => {
+    async function getStakeData() {
+      try {
+        const coinsResponse = await fetch('https://api.idena.io/api/coins')
+        const coinsData = await coinsResponse.json()
+
+        const stakeResponse = await fetch('https://api.idena.io/api/staking')
+        const stakingData = await stakeResponse.json()
+
+        const epochResponse = await fetch('http://api.idena.io/api/epoch/last')
+        const jsonEpoch = await epochResponse.json()
+        const epochNumber = jsonEpoch.result.epoch - 1
+
+        const rewardsResponse = await fetch(
+          `https://api.idena.io/api/epoch/${epochNumber}/rewardssummary`
+        )
+        const rewardsData = await rewardsResponse.json()
+
+        const totalEpochReward =
+          (stakingData.result.weight ** 0.9 / coinsData.result.totalStake) *
+          rewardsData.result.validation
+        setWeight(stakingData.result.weight)
+        setEpochRewardFund(rewardsData.result.validation * 0.8)
+        setEpochDays(rewardsData.result.epochDuration / BLOCKS_IN_ONE_DAY)
+        setTotalStake(coinsData.result.totalStake)
+        setEpochReward(totalEpochReward)
+      } catch (e) {
+        console.error('cannot fetch API')
+      }
+    }
+    getStakeData()
+  }, [])
+
+  const updateAmountValue = value => setAmountValue(AMOUNT_STAKED[value])
+  const updateAmountSlider = amount =>
+    setAmountSlider([AMOUNT_STAKED.findIndex(item => item > amount) - 1])
 
   return (
     <Layout
@@ -143,8 +203,11 @@ export default function Stake() {
                     <input
                       type="text"
                       placeholder="Enter amount"
-                      value={amountValue[0]}
-                      onChange={n => setAmountValue([n.target.value])}
+                      value={amountValue}
+                      onChange={n => {
+                        setAmountValue([n.target.value])
+                        updateAmountSlider(n.target.value)
+                      }}
                     />
                   </label>
                   <Range
@@ -152,7 +215,13 @@ export default function Stake() {
                     step={STEP}
                     min={MIN}
                     max={MAX}
-                    onChange={values => setAmountSlider(values)}
+                    onChange={values => {
+                      setAmountSlider(values)
+                      console.log(
+                        `amount - ${amountValue} slider - ${amountSlider}`
+                      )
+                      updateAmountValue(values[0])
+                    }}
                     renderTrack={({props, children}) => (
                       <div
                         {...props}
@@ -161,7 +230,7 @@ export default function Stake() {
                           width: '100%',
                           borderRadius: '6px',
                           background: getTrackBackground({
-                            values: amountValue,
+                            values: amountSlider,
                             colors: ['#548BF4', '#ccc'],
                             min: MIN,
                             max: MAX,
@@ -187,22 +256,86 @@ export default function Stake() {
                   />
                   <div className="illustrated-data">
                     <div className="diagram-block">
-                      <AreaChart data={STAKE_REWARDS}>
+                      <AreaChart width={320} height={120} data={getArray()}>
+                        <ReferenceDot x={11} y={Math.log(11)} display="none" />
                         <Area
                           type="monotone"
-                          dataKey="rewards"
+                          dataKey="amount"
                           stroke="#578fff"
                           fill="#578fffaa"
                           strokeWidth={2}
-                          activeDot={{r: 3}}
-                          dot={{r: 0}}
                         />
-                        {
-                          // <Tooltip cursor={false} content={<CustomTooltip />} />
-                        }
+                        <ChartTooltip />
                       </AreaChart>
+                      <span style={{fontWeight: 500, marginTop: '24px'}}>
+                        Stake power 0.9
+                      </span>
+                      <span style={{fontWeight: 500, color: '#96999e'}}>
+                        {t(
+                          'Quadratic staking encourages smaller players to increase their stakes. The lower the stake, the higher the percentage yield.'
+                        )}
+                      </span>
                     </div>
-                    <div></div>
+                    <div
+                      style={{
+                        backgroundColor: '#f5f6f7',
+                        borderRadius: '8px',
+                        width: '100%',
+                        marginLeft: '20px',
+                        padding: '32px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          paddingBottom: '20px',
+                          borderBottom: 'solid 1px #e8eaed',
+                        }}
+                      >
+                        <StakingData
+                          title="Stake"
+                          value={`${
+                            totalStake
+                              ? totalStake.substr(0, totalStake.indexOf('.'))
+                              : '0'
+                          } iDNA`}
+                        />
+                        <StakingData
+                          title="Share"
+                          value={`${Math.round(
+                            (amountValue * 100) / totalStake
+                          )} %`}
+                        />
+                        <StakingData
+                          title="EPY"
+                          tooltip="Epoch percentage yield"
+                          value={`${Math.round(
+                            (epochReward * 100) / totalStake
+                          )} %`}
+                        />
+                        <StakingData
+                          title="APY"
+                          tooltip="Annual percentage yield"
+                          value={`${Math.round(
+                            (((epochReward * 100) / totalStake) * 366) /
+                              epochDays
+                          )} %`}
+                        />
+                      </div>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          marginTop: '24px',
+                        }}
+                      >
+                        <div>
+                          <span style={{fontWeight: 'bold'}}>Epoch reward</span>
+                        </div>
+                        <span style={{fontWeight: 'bold'}}>
+                          {`${Math.round(epochReward)} iDNA`}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -211,6 +344,19 @@ export default function Stake() {
         </div>
       </section>
     </Layout>
+  )
+}
+
+// eslint-disable-next-line react/prop-types
+function StakingData({title, value, tooltip, ...props}) {
+  return (
+    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+      <div>
+        <span style={{fontWeight: 500, color: '#96999e'}}>{title}</span>
+        {tooltip && <TooltipText />}
+      </div>
+      <span style={{fontWeight: 500, color: '#53565c'}}>{value}</span>
+    </div>
   )
 }
 
