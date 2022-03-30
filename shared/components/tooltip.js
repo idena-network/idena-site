@@ -73,3 +73,41 @@ export function TooltipLogo({
     </>
   )
 }
+
+export function Tooltipicon({
+  tooltip,
+  placement = 'top',
+  imageLink,
+  href,
+  isWidth = false,
+  ...props
+}) {
+  const [tooltipOpen, setTooltipOpen] = useState(false)
+
+  const ref = useRef(null)
+  return (
+    <>
+      <img
+        src="/static/images/info-icn-gray.svg"
+        alt="info"
+        width="12"
+        ref={ref}
+        {...props}
+      />
+      {ref.current && (
+        <Tooltip
+          target={ref.current}
+          placement={placement}
+          arrowClassName="toolTipArrow"
+          popperClassName="toolTipPopper"
+          innerClassName="toolTipInnerPopper"
+          offset="0 8px"
+          isOpen={tooltipOpen}
+          toggle={() => setTooltipOpen(!tooltipOpen)}
+        >
+          {tooltip}
+        </Tooltip>
+      )}
+    </>
+  )
+}

@@ -475,6 +475,42 @@ export default function Home() {
 
       <section
         className="section section_content menu_section_content menu_main"
+        id="Quadratic Staking"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-7 col-lg-6">
+              <h1 className="h1 coming_soon" style={{textAlign: 'left'}}>
+                {t('Quadratic Staking', {ns: 'index'})}
+              </h1>
+              <p>
+                <Trans i18nKey="whatIsQuadraticStaking" t={t} ns="index">
+                  Quadratic Staking encourages people to secure their identities
+                  with iDNA stakes, no matter how small, and ensures a
+                  democratic distribution of staking rewards.
+                </Trans>
+              </p>
+              <Link href="/staking">
+                <a
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    paddingInline: '16px',
+                    paddingTop: '11px',
+                    paddingBottom: '12px',
+                  }}
+                  className="btn btn-secondary"
+                >
+                  {t('Calculate my rewards', {ns: 'index'})}
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section section_content menu_section_content menu_main"
         id="Why Idena"
       >
         <div className="container">

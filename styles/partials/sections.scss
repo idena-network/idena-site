@@ -1116,3 +1116,165 @@ button {
     }
   }
 }
+
+.info-two-col {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (#{$max_phones--big}) {
+    flex-direction: column;
+  }
+
+  .info-block {
+    max-width: 50%;
+    padding-inline: 20px;
+
+    @media (#{$max_phones--big}) {
+      max-width: 100%;
+    }
+  }
+}
+
+.page-area {
+  border-radius: 12px;
+  background-color: #fff;
+  padding-inline: 80px;
+  padding-top: 56px;
+  padding-bottom: 80px;
+
+  @media (#{$max_phones}) {
+    padding-inline: 24px;
+  }
+
+  .illustrated-data {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 56px;
+
+    @media (#{$max_laptop--small}) {
+      flex-direction: column;
+    }
+    .diagram-block {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+
+      @media (#{$max_laptop--small}) {
+        margin-right: 0;
+      }
+    }
+
+    .user-info-block {
+      background-color: #f5f6f7;
+      border-radius: 8px;
+      height: fit-content;
+      width: 100%;
+      margin-left: 20px;
+      padding: 32px;
+
+      @media (#{$max_laptop--small}) {
+        margin-top: 24px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  label, input {
+    position: relative;
+    display: block;
+    font-size: 21px;
+    font-weight: 500;
+    padding-right: 50px;
+    width: 180px;
+    box-sizing: border-box;
+    border: 0;
+  }
+
+  label::after {
+    content: attr(data-idna);
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    font-size: 21px;
+    font-weight: 500;
+    display: block;
+    color: #53565c;
+  }
+}
+
+.stakingStat {
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 24px;
+  margin-top: 8px;
+
+  @media (#{$max_phones--big}) {
+    padding: 0;
+    padding-inline: 16px;
+  }
+
+  .stakingStatSection {
+    display: flex;
+    flex-direction: row;
+
+    @media (#{$max_phones--big}) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stakingStatBlock {
+      display: flex;
+      width: 25%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media (#{$max_phones--big}) {
+        width: 100%;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
+      &.divided {
+        border-right: solid 1px #e8eaed;
+
+        @media (#{$max_phones--big}) {
+          border-right: none;
+          border-bottom: solid 1px #e8eaed;
+        }
+      }
+    }
+  }
+}
+
+.microPie {
+  width: rem(30px);
+  height: rem(30px);
+  margin-right: rem(3px);
+  margin-top: rem(-2px);
+}
+
+.header52px {
+  font-size: 52px!important;
+
+  @media (#{$max_phones--big}) {
+    font-size: 36px!important;
+  }
+}
+
+.coming_soon:after {
+  position: absolute;
+  padding-left: 8px;
+  content: 'Coming soon';
+  margin-top: 1em;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: #27d980;
+}
