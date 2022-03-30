@@ -185,7 +185,7 @@ export default function Staking() {
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
                 <h3 className="h1 header52px coming_soon" style={{position: 'relative'}}>
-                  {t('Staking iDNA to get Quadratic Staking rewards', {
+                  {t('Stake iDNA to get Quadratic Staking rewards', {
                     ns: 'stake',
                   })}
                 </h3>
@@ -457,7 +457,7 @@ export default function Staking() {
                         }}
                       >
                         <StakingData
-                          title={t('Staking', {ns: 'stake'})}
+                          title={t('Stake', {ns: 'stake'})}
                           value={`${
                             isNotAmount
                               ? 0
