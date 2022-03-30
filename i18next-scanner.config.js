@@ -55,6 +55,7 @@ module.exports = {
       'guide',
       'gitcoin',
       'join-idena',
+      'stake',
     ],
     resource: {
       loadPath: 'locales/{{lng}}/{{ns}}.json',
