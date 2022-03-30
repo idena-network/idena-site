@@ -440,7 +440,7 @@ export default function Staking() {
                         </AreaChart>
                       </ResponsiveContainer>
                       <span style={{fontWeight: 500, marginTop: '24px'}}>
-                        {`${t('Stake power', {ns: 'stake'})} 0.9`}
+                        {`${t('Staking power', {ns: 'stake'})} 0.9`}
                       </span>
                       <span style={{fontWeight: 500, color: '#96999e'}}>
                         {t(
