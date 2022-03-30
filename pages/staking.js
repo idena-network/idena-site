@@ -73,11 +73,11 @@ export default function Staking() {
         const stakeResponse = await fetch('https://api.idena.io/api/staking')
         const stakingData = await stakeResponse.json()
 
-        const epochResponse = await fetch('http://api.idena.io/api/epoch/last')
+        const epochResponse = await fetch('https://api.idena.io/api/epoch/last')
         const jsonEpoch = await epochResponse.json()
         const epochNumber = jsonEpoch.result.epoch - 1
         const prevEpochResponse = await fetch(
-          `http://api.idena.io/api/epoch/${jsonEpoch.result.epoch - 1}`
+          `https://api.idena.io/api/epoch/${jsonEpoch.result.epoch - 1}`
         )
         const jsonPrevEpoch = await prevEpochResponse.json()
 
