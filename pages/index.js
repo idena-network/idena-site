@@ -932,6 +932,11 @@ export default function Home() {
                   imageLink="logo-bitcourier"
                 />
                 <TooltipLogo
+                  tooltip="Newsbit"
+                  href="https://newsbit.nl/idena-sharding-hoe-het-proof-of-personhood-consensus-het-schaalbaarheid-probleem-van-blockchain-kan-oplossen/"
+                  imageLink="logo-newsbit"
+                />
+                <TooltipLogo
                   tooltip="CoinGecko"
                   href="https://www.coingecko.com/en/coins/idena"
                   imageLink="logo-coingecko"
