@@ -1,5 +1,5 @@
 {
-    "Democratic governance": "民主的な統治",
+    "Democratic governance": "民主的な自治統治",
     "technology-smart-contracts": "ブロックチェーンの取引にはそのための費用がかかります。しかし、イデナでは誰でも暗号通貨を採掘でき、それを使いスマートコントラクトを実行できます。",
     "No authorities": "権力者がいない",
     "Smart contracts for everyone": "誰でも使えるスマートコントラクト",
@@ -10,8 +10,8 @@
     "Equal human rights": "平等な人権",
     "Universal basic income": "ユニバーサル・ベーシック・インカム",
     "Instant finality": "瞬時の合意収束",
-    "IDENA: Proof-of-Person blockchain": "イデナ：人物証明のブロックチェーン",
-    "Join the mining of the first human-centric cryptocurrency": "人が中心、人類初の暗号通貨の採掘鍛造に参加する",
+    "IDENA: Proof-of-Person blockchain": "イデナ：人が証明するブロックチェーン",
+    "Join the mining of the first human-centric cryptocurrency": "人を中心とした初の暗号通貨の採掘に参加する",
     "Next validation:": "次回の検証：",
     "Add to calendar": "カレンダーに追加",
     "why-idena-eco-friendly-mining": "イデナブロックチェーンは、環境に優しい人物証明コンセンサスによって駆動されます。取引を検証するために、イデナの採掘鍛造者は有効な暗号化IDを持ち、自分のノードをオンラインにしておく必要があります。採掘鍛造収入は、使用機器に依存しません。大量の電気やGPU、装置を使い切る必要はありません。",
@@ -32,12 +32,13 @@
     "Join the democratic borderless world": "国境のない民主的な世界へ参加",
     "Idena Web App": "イデナウェブアプリ",
     "Idena Desktop App": "イデナデスクトップアプリ",
-    "What is Idena": "イデナとは",
+    "What is Idena": "イデナとは何か",
     "Join Idena Network": "イデナネットワークに参加する",
-    "Why Idena": "なぜイデナか",
+    "Why Idena": "なぜイデナなのか",
     "Evolution of the Internet": "インターネットの進化",
     "whatIsIdenaToStartMining": "自分が誰であるか、どこに住んでいるかに関わらず、すべての個人がイデナの検証作業を行うことができます。イデナの採掘鍛造を始めるには、自分が一個の人間であることを証明する必要があります。個人情報の開示は一切必要ありません（KYCなし）。検証の式典行事期間にオンラインで出席し、一連のフリップテスト（キャプチャ）を解く必要があります。",
     "why-idena-no-authorities": "暗号化IDは、ピアツーピアネットワーク内の中央当局を介さず、ユーザーが相互に検証します。暗号化IDは、匿名で、自己管理されており、世界中で有効です。暗号化IDには中央発行者がいないため、禁止、制限、検閲することはできません。",
     "use-cases-attention-economy": "チェーン上の広告は、広告主がイデナ・オラクルにiDNAを支払って広告を審査してもらい、そのコインを焼却してネットワークの注目度を競うという、関心の経済でエコシステムを作ることができ、イデナネットワークの持続可能な経済を支えています。",
-    "technology-instant-finality": "イデナは、人物証明型のシビル制御機構と、コミットベースのBFTコンセンサスを実装しており、高速な収束性を実現しています。イデナの検証者によって採掘されたブロックは、ほぼ100％の確率で最終的なものとなるため、ブロックチェーンのフォークはほぼあり得ません。自分の取引が絶対に元に戻らないようにするためには、わずか2ブロック待つだけでよいのです。"
+    "technology-instant-finality": "イデナは、人物証明型のシビル制御機構と、コミットベースのBFTコンセンサスを実装しており、高速な収束性を実現しています。イデナの検証者によって採掘されたブロックは、ほぼ100％の確率で最終的なものとなるため、ブロックチェーンのフォークはほぼあり得ません。自分の取引が絶対に元に戻らないようにするためには、わずか2ブロック待つだけでよいのです。",
+    "How to buy iDNA": "イデナトークンを購入"
 }

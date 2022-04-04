@@ -17,5 +17,20 @@
     "No authorities": "无权限",
     "Idena Web App": "Idena 网页应用程序",
     "Democratic governance": "民主治理",
-    "Idena Desktop App": "Idena 客户端应用程序"
+    "Idena Desktop App": "Idena 客户端应用程序",
+    "Attention economy": "注意力经济",
+    "Technology": "技术",
+    "How to buy iDNA": "如何购买 iDNA",
+    "Smart contracts for everyone": "属于每个人的智能合约",
+    "Universal basic income": "普遍基本收入",
+    "whatIsIdenaToStartMining": "每个独一无二的人都可以成为Idena验证器，无论他们是谁，住在哪里。要开始挖掘Idena，你需要证明你是一个独一无二的人。它不要求披露任何个人数据（无需KYC）。验证仪式开始时，您需要在验证开始的时候上线并解决一系列翻转测试（人机验证）。",
+    "why-idena-cryptoidentity": "Idena是互联网上去中心化系统发展的下一步。首先，比特币带来了点对点加密货币支付。然后以太坊开发了一个虚拟机来运行分散的应用程序。Idena引入了加密身份验证，使人们能够在互联网上建立民主治理。",
+    "why-idena-sybil-resistance": "加密身份证明是经过数字验证的线上身份。它具有半独特性，这意味着您可以轻松验证一个帐户，但要想一人验证两个帐户要困难得多，更不可能获得多个帐户。它不能买卖，它的价值随着认证时间增长而增长，它不能被接管。匿名和对抗女巫攻击的身份证明是Web3.0缺少的一个领域。",
+    "why-idena-equal-human-rights": "Idena中的所有加密身份都具有同等的权利：验证其他身份、投票、验证交易。自主、去中心化和匿名的加密身份可以防止人权被权威漠视，并支持个人自我和自由互联的权利。",
+    "Equal human rights": "平等的人权",
+    "Eco friendly mining": "可持续环保挖矿",
+    "whatIsIdenaNotes": "Idena是第一个基于民主原则的个人区块链证明。每个采矿节点都链接到一个加密身份——一个人拥有同等的投票权和采矿收入。",
+    "why-idena-no-authorities": "加密身份由点对点网络中用户相互验证而非中心化的授权。它是匿名的、自治的、全球有效的。加密身份证明没有中心化的审核，因此不能被禁止、限制或审查。",
+    "Instant finality": "即时终结",
+    "Sharding + Cryptoidentity = Scalability": "共享+加密身份=可扩展性"
 }

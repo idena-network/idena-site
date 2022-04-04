@@ -39,5 +39,6 @@
     "technology-smart-contracts": "Les transactions blockchain peuvent être coûteuses. Mais Idena permet à quiconque d'exploiter la crypto-monnaie et de la dépenser lors de l'utilisation de contrats intelligents.",
     "technology-instant-finality": "Idena met en œuvre un mécanisme de contrôle Sybil Proof-of-Person et un consensus BFT basé sur un comité avec une finalité rapide. Chaque bloc extrait par les validateurs Idena est final avec une probabilité de près de 100 %, ce qui signifie que les fourches blockchain ne sont presque pas possibles. Vous devez attendre seulement 2 blocs pour vous assurer que votre transaction ne sera jamais annulée.",
     "why-idena-eco-friendly-mining": "La blockchain d'Idena est guidée par un consensus de preuve de personne respectueux de l'environnement. Pour vérifier les transactions, le mineur Idena doit avoir une crypto-identité valide et garder son nœud en ligne. Les revenus miniers ne dépendent pas de votre matériel. Il ne nécessite pas d'utiliser de gros volumes d'électricité, de GPU ou de plates-formes minières.",
-    "RUNNING NOW": "EN FONCTIONNEMENT MAINTENANT"
+    "RUNNING NOW": "EN FONCTIONNEMENT MAINTENANT",
+    "How to buy iDNA": "Comment acheter de l'iDNA"
 }
