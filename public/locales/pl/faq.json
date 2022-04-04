@@ -1,1 +1,10 @@
-{}
+{
+    "Network size": "Rozmiar sieci",
+    "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch.": "Status walidacji uczestnika nie jest wieczny. Wygasa, gdy zaczyna się następna epoka. Uczestnicy powinni przedłużać swój status walidacji na każdą nową epokę.",
+    "IDENA FAQ": "IDENA FAQ",
+    "We are here to help you. Browse through the most frequently asked questions. Can’t find an answer? Email us at info@idena.io": "Jesteśmy tutaj, aby Ci pomóc. Przejrzyj najczęściej zadawane pytania. Nie możesz znaleźć odpowiedzi? Napisz do nas na adres info@idena.io",
+    "Proof of person": "Proof of person",
+    "How do you ensure that the network does not have duplicate users?": "Jak upewnić się, że sieć nie ma zduplikowanych użytkowników?",
+    "The uniqueness of participants is proven by the fact that they must solve and provide the answers for flip-puzzles synchronously. A single person is not able to validate herself multiple times because of the very limited timeframe for the submission of the answers.": "O wyjątkowości uczestników świadczy fakt, że muszą synchronicznie rozwiązywać i odpowiadać na zagadki typu flip-puzzle. Pojedyncza osoba nie jest w stanie zrobić wielu walidacji jednocześnie ze względu na bardzo ograniczone ramy czasowe na złożenie odpowiedzi.",
+    "How do you prevent users from buying or selling their accounts?": "Jak uniemożliwić użytkownikom kupowanie lub sprzedawanie ich kont?"
+}
