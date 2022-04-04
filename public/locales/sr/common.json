@@ -9,7 +9,7 @@
     "Installation guide": "Uputstvo za instalaciju",
     "Web client": "Web klijent",
     "Contribute": "Učestvuj",
-    "Whitepaper": "Whitepaper",
+    "Whitepaper": "Beli papir",
     "Docs": "Dokumentacija",
     "BSC bridge": "BSC most",
     "Explorer": "Pretraživač",
@@ -26,6 +26,7 @@
     "Last validation rewards paid per user": "Nagrade za poslednju validaciju po osobi",
     "Rewards paid": "Plaćene nagrade",
     "Total rewards paid for last validation": "Ukupno plaćene nagrade za poslednju validaciju",
-    "Market cap": "Kapitulizacija tržišta",
-    "Network size": "Veličina mreže"
+    "Market cap": "Kapitalizacija tržišta",
+    "Network size": "Veličina mreže",
+    "Contribute translations": "Pridružite se prevođenju"
 }

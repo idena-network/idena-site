@@ -27,6 +27,6 @@
     "Epoch mining rewards per user ({{epochDuration}} days)": "每用戶所得 Epoch 挖礦獎勵({{epochDuration}} 天)",
     "Total rewards paid for last validation": "最近一次驗證所發給的獎勵總數",
     "Market cap": "市場資本額",
-    "Network size": "網路規模",
+    "Network size": "網路大小",
     "Total nodes | Change since last validation": "節點總數 | 自最近一次驗證以來的變化"
 }
