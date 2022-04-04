@@ -10,7 +10,7 @@
     "2. Contact the organizers and suggest a topic that could be of interest to their audience and allow telling about Idena. Be polite and respectful.": "2. 主催者に連絡を取り、視聴者が興味を持ちそうなトピックを提案し、イデナのことを伝えましょう。礼儀正しく、敬意を払ってください。",
     "3. Prepare a presentation. Feel free to reach out to the Idena community or the Idena team if you need more data or explanations that you cannot find on the Idena website or in the Idena blog.": "3. プレゼンテーションの準備 イデナのウェブサイトやブログに掲載されていないデータや説明が必要な場合は、お気軽にイデナコミュニティやイデナチームにお問い合わせください。",
     "Idena invites software security researchers to participate in the bug bounty program to hunt down its vulnerabilities.": "イデナは、ソフトウェア・セキュリティの研究者にバグ・バウンティ・プログラムへの参加を呼びかけ、その脆弱性を探し出します。",
-    "How to contribute": "貢献するには",
+    "How to contribute": "貢献の仕方",
     "How to contribute to Idena": "イデナへの貢献方法",
     "Idena is an open source project and the Idena community is its key driving force.": "イデナはオープンソースのプロジェクトであり、イデナ・コミュニティがその重要な原動力となっています。",
     "Idena is an open source project and the Idena community is its key driving force. Every community member should have an opportunity to contribute and get a reward.": "イデナはオープンソースプロジェクトであり、イデナ・コミュニティはその重要な原動力です。すべてのコミュニティメンバーには、貢献して報酬を得る機会があるべきです。",
@@ -84,5 +84,6 @@
     "contributeDisclamer": "*免責事項：リワード計算時のiDNA価格は、イデナチームによって定義されており、市場価格とは異なる場合があります。<1></1>Idenaチームは以下の権利を有しています。<3></3>- 証明を偽装したり、データを操作しようとした場合、報酬の申請を拒否する<5></5>- アクティビティと報酬のリストを変更する",
     "Idena's ambition is to be truly global and diverse. We would like people from various countries and of all languages to join Idena. If you speak a language other than English that is a valuable asset. Start and grow a new community in your own language, take your time to educate them about Idena and help them join the network.": "イデナの大望は、真にグローバルで多様性のある存在になることです。さまざまな国の、あらゆる言語の人に、イデナに参加してもらいたいと思っています。もしあなたが英語以外の言語を話せるなら、それは貴重な財産となります。自分の言語で新しいコミュニティを立ち上げ、成長させ、時間をかけてイデナのことを教え、ネットワークへの参加を支援してください。",
     "3. Educate the community about Idena. Feel free to reach out to the Idena community members or the Idena team if you need more data or explanations that you cannot find on the Idena website or in the Idena blog.": "3. イデナに関するコミュニティの教育を行う。イデナのウェブサイトやブログでは見つからないデータや説明が必要な場合は、イデナのコミュニティメンバーやイデナチームに気軽に声をかけてください。",
-    "4. While you have less than 100 Idena validated members in your community, send an email at info@idena.io or message to @AndrewIdena telegram account, receive invitations from the Idena team and get rewards for successful invitations.": "4. あなたのコミュニティにイデナの検証済みメンバーが100人未満の間は、info@idena.io にメールを送るか、@AndrewIdenaのtelegramアカウントにメッセージを送ると、イデナチームからの招待状を受け取り、招待状が成功すると報酬を得ることができます。"
+    "4. While you have less than 100 Idena validated members in your community, send an email at info@idena.io or message to @AndrewIdena telegram account, receive invitations from the Idena team and get rewards for successful invitations.": "4. あなたのコミュニティにイデナの検証済みメンバーが100人未満の間は、info@idena.io にメールを送るか、@AndrewIdenaのtelegramアカウントにメッセージを送ると、イデナチームからの招待状を受け取り、招待状が成功すると報酬を得ることができます。",
+    "applyForRefferalLink": "4. <2>紹介リンクの申請</2>、コミュニティでの共有、招待成功時の報酬の獲得。"
 }
