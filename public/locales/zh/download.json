@@ -1,3 +1,19 @@
 {
-    "Download": "下载"
+    "Download": "下载",
+    "Size": "文件大小",
+    "Published": "已发布",
+    "Version": "版本",
+    "Download Idena Node": "下载Idena节点",
+    "Loading...": "加载中…",
+    "Build": "版本",
+    "allBuildsGithubLink": "所有版本的Idena节点均在<2>Github</2>。<4></4>你也可以从 <7>原代码</7>自建Idena节点。",
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "下载稳定和开发版的Idena节点以及桌面版Idena软件。",
+    "remoreNodeGuideLink": "如果你独立或者在VPS上运行节点也可以通过远程连接idena节点(参照<2><0>指南</0></2>)。",
+    "Desktop Idena App (built-in node is included)": "桌面版Idena软件（包含内建节点）",
+    "Download the Desktop Idena app to run it on your computer. The Idena node will be downloaded automatically with the first start.": "下载桌面版Idena软件并在你的电脑上运行。Idena节点将会在第一次运行时自动下载下来。",
+    "All builds of the Desktop Idena App are available on": "所有版本的Idena桌面应用程序均可在",
+    "Idena Node builds": "Idena节点版本",
+    "nodeBuildGuideLink": "你可以在以下支持的平台下载最新的64位开发版的桌面Idena软件及节点.<1></1>参照 <4><0>安装及问题排查指南</0></4> 如果你遇到Idena相关安装及节点运行的问题。",
+    "buildFromSourceGuideLink": "你也可以在桌面版Idena建立源 (参照<2><0>指南</0></2>).",
+    "remoteNodeGuideLink": "下载Idena节点，如果你想单独或者在自己的远程VPS服务器运行(请参照 <2><0>VPS的最低要求</0></2>)."
 }

@@ -7,5 +7,13 @@
     "Loading...": "載入中...",
     "Size": "檔案大小",
     "Download Idena Node": "下載Idena節點",
-    "Download stable and develop builds of Idena Node and Desktop Idena App.": "下載穩定和開發版的Idena節點以及桌面版Idena 軟體。"
+    "Download stable and develop builds of Idena Node and Desktop Idena App.": "下載穩定和開發版的Idena節點以及桌面版Idena 軟體。",
+    "nodeBuildGuideLink": "你可以從下列支授的平台下載最新的 64位元開發版的桌面版Idena 軟體 。對於安裝和執行Idena節點過程中如果碰到問題，<1></1>參看<4><0>安裝及問題排除指南</0></4>。",
+    "remoteNodeGuideLink": "下載Idena節點軟體—如果你想要分開來執行它或是在遠端的虛擬專有伺服器上執行(請查看 <2><0>虛擬專有伺服器的最小需求</0></2>)。",
+    "All builds of the Desktop Idena App are available on": "所有版本的桌上型Idena軟體都提供於",
+    "Idena Node builds": "各版本Idena節點",
+    "Build": "版本",
+    "remoreNodeGuideLink": "你也可以連接到自己的遠端Idena節點—如果你是分別地執行或是在VPS上執行節點的話(詳看<2><0>指南</0></2>)。",
+    "buildFromSourceGuideLink": "你也可以從原始碼開始建置桌面版Idena軟體(詳見 <2><0>指南</0></2>)。",
+    "allBuildsGithubLink": "所有版本的Idena節點都提供在<2>Github</2>。<4></4>你也可以從 <7>原始源</7>自行建置Idena節點。"
 }
