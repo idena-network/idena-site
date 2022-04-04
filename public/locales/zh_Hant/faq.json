@@ -1,1 +1,26 @@
-{}
+{
+    "IDENA FAQ": "IDENA 常見問題",
+    "Solve the flips during the validation time. Be agile. The first 6 flips must be submitted in less than 2 minutes.": "在驗證時間內解決翻轉問題。 保持敏捷。 前 6 次翻轉答案必須在 2 分鐘內提交。",
+    "Network size": "網路大小",
+    "We are here to help you. Browse through the most frequently asked questions. Can’t find an answer? Email us at info@idena.io": "我們在這裡協助你。瀏覽最常問問題。找不到答案？寫電子郵件給info@idena.io告訴我們",
+    "Learn how to create flips. Don't forget to create three flips before the next validation in advance. Schedule your next validation.": "學習如何創作翻轉圖片。不要忘記在下次驗證前提早創作三組翻轉。安排好你下次接受驗證的時程。",
+    "How do you prevent users from buying or selling their accounts?": "你們如何防止用戶買賣帳號?",
+    "Technically, an account can be sold and bought. However, the Idena protocol introduces economic incentives to prevent participants from doing that. A person who sells their account can simply kill the cryptoidentity afterwards to unlock their frozen coins (frozen coins accumulate for each account as a part of UBI and cannot be spent while the account is valid).": "技術上來說，帳號是可以買賣的。但是Idena協定引 入經濟上的激勵來防止參與者如此做。一個人如果想賣帳號會為了解鎖被凍結的幣而先自我中止加密驗證身分(每個帳號在有效期間所累積的凍結幣是全面基本收入的一部分而且無法在帳號有效期間被消費)。",
+    "The uniqueness of participants is proven by the fact that they must solve and provide the answers for flip-puzzles synchronously. A single person is not able to validate herself multiple times because of the very limited timeframe for the submission of the answers.": "參與者必須同步解決翻轉謎題並提供答案，藉由這一事實來證明參與者的獨特性。 由於提交答案的時間非常有限，一個人無法同時多重驗證自己。",
+    "Please notice that validated members have limited number of invites (1 or 2 invites). The person who invites you gets invitation rewards for 3 subsequent validations passed by you. If you are not going to participate in the upcoming validation, please notify the person who invited you so he/she could have a chance to find another invitee and get an invitation reward.": "請記住合格的夥伴只有限量的邀請（一或二個）。給你邀請的人在你接下來三次的驗證都通過後會得到發出邀請的獎勵。如果你不會參與下一 次的驗證，請通知邀請你的人好讓他/她有機會再去找另一個受邀者以得到邀請獎勵。",
+    "To sell an account, the seller provides a copy of the account's private key. The buyer cannot be sure that another copy of the private key will not stay with the seller. Thus, the private key enables the seller to kill the cryptoidentity at any time, and the buyer would not have an economic reason to buy an Idena account.": "要賣掉帳號，賣方要提供帳號私鑰拷貝給買方。但是買方卻無法確認賣方手裡還有沒有私鑰備份。所以，在私鑰讓賣方可以隨時銷毀帳號的情況下，買方沒有任何經濟理由去購買Idena帳號。",
+    "Where to start": "從何開始",
+    "How do I join the network?": "我該如何加入這個網路？",
+    "To use Idena only for sending coins, you just need to download the app. To create a cryptoidentity and start mining coins, you should receive an invitation code from a validated participant of the network and use the code to apply for validation.": "如果只是為了收發幣而使用Idena，你只需要下載App即可。要創造個人加密身份驗證並且開始挖幣，你必需從一個驗證合格過的網路參與者取得一個邀請碼並用這個碼來申請驗證。",
+    "Be aware that person who invites you can terminate your cryptoidentity until you get Verified status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.": "請注意除非你取得了驗證合格的狀態，否則給你邀請的人可以終止你的加密驗證。如果你沒辦法參加下一次的驗證合格儀式，在這情況下他/她可以終止你的驗證並取得1/6 你的質押幣。",
+    "How do I start using Idena?": "我該如何開始使用Idena?",
+    "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch.": "參與者的驗證合格狀態並非是有永久的。它會在下次會期開始前終止。參與者必需為了每個新的會期而延長他們的有效狀態。",
+    "Proof of person": "個人證明",
+    "How do you ensure that the network does not have duplicate users?": "你們如何確認網路裡沒有重覆的使用者?",
+    "How can I get an invitation?": "我要如何得到邀請？",
+    "Make sure your node is synchronized, and activate the invitation code. Check your identity status; it should be \"Candidate.\"": "確認你的節點已經同步完畢，而且邀請碼己經啟用。檢 查你的身分狀態; 它應該是「候選人」",
+    "Once your account is validated, keep your node up and running in order to mine coins.": "一旦你的帳號驗合格，保持你的節點上線並運作以便挖掘 代幣。",
+    "Why do you need an invitation to join the Idena network?": "為何你需要邀請碼才能參加Idena網路?",
+    "The pace of network growth is restricted to minimize the probability of a Sybil attack.": "Idena網路成長的步伐受限於要將女巫攻擊的可能性降到最小。",
+    "Does the Idena protocol prevent users from buying or selling invitations?": "Idena協定能預防用戶買賣邀請碼嗎？"
+}
