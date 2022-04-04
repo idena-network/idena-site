@@ -20,7 +20,7 @@
     "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.": "検証された暗号化IDは、個人データを開示することなく、あなたが独立した人であることを保証します。これにより、シビル攻撃を受けた時でも、より多くの投票権で対抗することができます。イデナで認証したGitcoinアカウントは、Gitcoinにおいて+50%のグラントマッチボーナスを得ることができます。",
     "Congratulations! Your Idena account is now verified": "おめでとうございま！あなたのイデナアカウントが認証されました",
     "idenaCommunityDiscordLink": "<2>イデナコミュニティ Discord</2>に参加し、<5>#invite-requests</5>チャンネルでコミュニティに招待コードをリクエストしてください。",
-    "tweetSendingTip": "自分のアカウントからハッシュタグ#IdenaInviteをつけて<0>ツイートを送信 <0>してください。招待を受けるためには、あなたのアカウントが<4>1年以上または2ヶ月以上経過していて、少なくとも<1>{{followersCount}}</1>のフォロワーがいる<4>必要があります。ツイートの内容はこうです：",
+    "tweetSendingTip": "自分のアカウントからハッシュタグ#IdenaInviteをつけて<0>ツイートを送信 <0>してください。招待を受けるためには、そのアカウントが<4>2ヶ月以上経過していて、少なくとも<1>{{followersCount}}</1>のフォロワーがいる<4>必要があります。ツイートの内容はこうです：",
     "validationResults": "検証結果を待ちます。うまくフリップが解けていれば、<2>Newbie</2>という のステータスが表示されます。おめでとうございます！あなたは今、検証に合格しました！",
     "Please choose the platform where you have the most active account:": "最も良く使うプラットフォームを選択してください：",
     "Step 5": "ステップ５",

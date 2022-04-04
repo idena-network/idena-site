@@ -2,5 +2,13 @@
     "Next validation:": "Sledeća validacija:",
     "Add to calendar": "Dodaj u kalendar",
     "Verify your Gitcoin": "Verifikuj tvoj Gitcoin",
-    "How to verify your Gitcoin account with Idena": "Kako da verifikujes tvoj Gitcoin nalog sa Idenom"
+    "How to verify your Gitcoin account with Idena": "Kako da verifikujes tvoj Gitcoin nalog sa Idenom",
+    "Please choose the platform where you have the most active account:": "Molim Vas da odaberete platformu na kojoj ste najaktivniji:",
+    "Step 1": "Korak 1",
+    "Get an invitation code": "Nabavite pozivnicu",
+    "Step 2": "Korak 2",
+    "Create and activate your Idena account": "Napravite i aktivirajte Vaš Idena nalog",
+    "Step 3": "Korak 3",
+    "Follow the instructions to create your account": "Pratite instrukcije da napravite Vaš nalog",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Aktivirajte Vašu pozivnicu. Imajte na umu da pozivnica ne može da se iskoristi 5 minuta pre validacije!"
 }

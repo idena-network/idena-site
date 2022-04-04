@@ -38,5 +38,6 @@
     "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.": "La tua criptoidentità convalidata ti assicura di essere un umano unico senza rivelare alcun dato personale. Ti permette di avere più potere di voto quando il voto può essere soggetto a un attacco sybil. I conti Gitcoin verificati con Idena ottengono +50% di bonus per le sovvenzioni nei finanziamenti Gitcoin.",
     "Find Idena and click Verify": "Trova Idena e clicca Verifica",
     "tweetSendingTip": "<0>Invia un tweet</0> con l'hashtag #IdenaTrustBonus dal tuo account. Per ottenere un invito, il tuo account deve essere <4>più vecchio di 1 anno o più vecchio di due mesi e con almeno <1>{{followersCount}}</1> followers</4>. Il tweet dovrebbe dire:",
-    "gitcoinTrustBonusLink": "Vai alla <2>tab Trust Bonus</2> del tuo profilo Gitcoin"
+    "gitcoinTrustBonusLink": "Vai alla <2>tab Trust Bonus</2> del tuo profilo Gitcoin",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Attiva il tuo codice di invito. Tieni presente che il codice di invito scade 5 minuti prima della convalida!"
 }
