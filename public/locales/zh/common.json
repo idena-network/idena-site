@@ -20,5 +20,13 @@
     "Blog": "博客",
     "iDNA price": "iDNA 价格",
     "Validation rewards": "验证奖励",
-    "Rewards paid": "已發放奖励"
+    "Rewards paid": "已支付的奖励",
+    "Apps & Resources": "应用和资源",
+    "Idena price | 24h price change https://coingecko.com": "Idena价格 | 24小时价格变化 https://coingecko.com",
+    "Support Idena by making a donation": "捐赠以支持 Idena",
+    "Total rewards paid for last validation": "为上次验证支付的总奖励数量",
+    "Total nodes | Change since last validation": "节点总数 | 自上次验证以来的变化",
+    "Last validation rewards paid per user": "最近一次验证发给每个用户的奖励",
+    "Epoch mining rewards per user ({{epochDuration}} days)": "每个用户的 Epoch 挖矿奖励（{{epochDuration}} 天）",
+    "Epoch mining": "Epoch 挖矿"
 }
