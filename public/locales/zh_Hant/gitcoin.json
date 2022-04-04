@@ -34,5 +34,6 @@
     "idenaTelegramGroupLink": "參加官方<2>Idena電報群</2> 並且向社群請求邀請碼。",
     "idenaCommunityDiscordLink": "參加<2>Idena Discord社群</2>並且在<6>#invite-requests</6>頻道向社群請求邀請碼。",
     "tweetSendingTip": "用你的帳號<0>發一則推文</0>包含關鍵字標籤#IdenaTrustBonus。要能夠得到邀請，你的帳號必需是註冊<3>超過一年或是</3><6>註冊超過二個月並且擁有至少 <2>{{followersCount}}</2> 跟隨者</6>。 推文中應該提到:",
+    "tweeterFollowLink": "跟隨<2>@IdenaNetwork</2>推特帳號",
     "gitcoinTrustBonusLink": "瀏覽你的Gitcoin個人履歷表並且點擊<2>Trust Bonus tab</2>"
 }

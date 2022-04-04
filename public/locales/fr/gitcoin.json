@@ -1,7 +1,7 @@
 {
     "Next validation:": "Prochaine validation :",
     "Add to calendar": "Ajouter au calendrier",
-    "tweetSendingTip": "<0>Envoyez un tweet</0> avec un hashtag #IdenaTrustBonus depuis votre compte. Pour recevoir une invitation, votre compte doit avoir <4>plus d'un an ou plus de deux mois et au moins <1>{{followersCount}}</1> abonnés</4>. Vous devez tweeter :",
+    "tweetSendingTip": "<0>Envoyez un tweet</0> avec le hashtag #IdenaTrustBonus depuis votre compte. Pour recevoir une invitation, votre compte doit avoir <4>plus de deux mois et au moins <2>{{followersCount}}</2> abonnés</4>. Vous devez tweeter :",
     "The number of invitations is limited. To prevent invite drain and welcome more new users, we need to confirm you are a unique human. Invitations will be distributed on a competitive basis: the most trustworthy accounts will get invitations first.": "Le nombre d'invitations est limité. Pour éviter l'épuisement des invitations et accueillir davantage de nouveaux utilisateurs, nous devons confirmer que vous êtes un être humain unique. Les invitations seront distribuées sur une base compétitive : les comptes les plus fiables recevront les invitations en premier.",
     "Your validated cryptoidentity ensures you are a unique human without revealing any personal data. It allows you to have more voting power when the voting can be subject to a sybil attack. Gitcoin accounts verified with Idena get +50% grants match bonus in Gitcoin funding.": "Votre crypto-identité validée garantit que vous êtes un être humain unique sans révéler aucune donnée personnelle. Cela vous permet d'avoir plus de pouvoir de vote lorsque le vote peut faire l'objet d'une attaque sybil. Les comptes Gitcoin vérifiés avec Idena obtiennent un bonus de correspondance de +50% dans le financement Gitcoin.",
     "idenaWebAppSignIn": "<0>Connectez-vous</0> à votre application Web Idena <4>15 minutes avant le début de la prochaine session de validation</4>. Vérifiez que vous avez le statut \"En attente de validation\". Assurez-vous d'avoir une connexion Internet fiable et rapide. Nous vous conseillons d'utiliser un ordinateur portable/PC pour une meilleure expérience.",
@@ -30,5 +30,10 @@
     "validationResults": "Attendez les résultats de la validation. Si vous avez réussi à résoudre les flips, vous obtiendrez le statut <2>Newbie</2>. Félicitations, vous avez maintenant une crypto-identité validée !",
     "Please choose the platform where you have the most active account:": "Veuillez choisir la plateforme sur laquelle vous avez le compte le plus actif :",
     "Find Idena and click Verify": "Trouvez Idena et cliquez sur Vérifier",
-    "gitcoinTrustBonusLink": "Accédez à l'<2>onglet Trust Bonus</2> de votre profil Gitcoin"
+    "gitcoinTrustBonusLink": "Accédez à l'<2>onglet Trust Bonus</2> de votre profil Gitcoin",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Activez votre code lié à votre invitation. Veuillez noter que ce code expire 5 minutes avant la validation !",
+    "getInviteWithTwitterName": "Entrez votre nom Twitter et cliquez sur le bouton <2>Obtenir un code d'invitation</2>. Le code s'affichera automatiquement.",
+    "Follow the instructions to create your account": "Suivez les instructions pour créer votre compte",
+    "tweeterFollowLink": "Suivez <2>@IdenaNetwork</2>",
+    "idenaCommunityRedditLink": "Rejoignez <2>Idena subreddit</2> et demandez un code d'invitation à la communauté"
 }
