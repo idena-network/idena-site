@@ -26,12 +26,17 @@
     "Prolong your cryptoidentity status": "Prolonga tu estado de criptoidentidad",
     "ToStartMiningIdena": "Para comenzar a minar Idena, debe validar su criptoidentidad. No requiere la divulgación de ningún dato personal (no KYC). Debe aparecer en línea cuando comience la ceremonia de validación y resolver una serie de flip-tests (CAPTCHA).",
     "getInvitationNotes": "Para minimizar la probabilidad de un ataque Sybil, el ritmo de crecimiento de la red está restringido: la participación en la red de Idena se basa en invitaciones. Solo los usuarios validados pueden enviar nuevas invitaciones. El número de invitaciones es limitado y aumenta a medida que crece la red.",
-    "idenaWebAppLink": "Abrir <2> Idena Web App </2>",
-    "validationResults": "Espere los resultados de la validación. Si ha resuelto con éxito los giros, obtendrá un estado <2> Novato </2>. ¡Felicitaciones, ahora eres una criptoidentidad validada!",
+    "idenaWebAppLink": "Abrir <2>Aplicación Web de Idena</2>",
+    "validationResults": "Espera los resultados de la validación. Si haz resuelto con éxito los flips, obtendrás el estado de <2>Novato</2>. ¡Felicitaciones, ahora eres una cripto-identidad validada!",
     "DownloadIdena": "Descargue la Idena Desktop App.",
     "ActivateMiningStatus": "Active su estado de minería y mantenga su nodo Idena sincronizado para minar iDNA coins.",
     "SubmitFlips": "Aprenda a crear flips y enviar tres flips antes de la próxima validación. Si no envía 3 flips, no podrá participar en la próxima validación.",
     "ScheduleNextValidation": "Programe su próxima validación.",
     "ProlongCryptoidentityStatus": "Su estado de criptoidentidad es válido hasta la próxima época. Debe prolongar su estado de validación para cada nueva época.",
-    "idenaWebAppSignIn": "<0> Inicie sesión </0> en su aplicación web Idena <4> 15 minutos antes de que comience la próxima sesión de validación </4>. Compruebe que ha estado a la espera de la validación. Asegúrese de tener una buena conexión a Internet. Recomendamos Laptop / PC para una mejor experiencia."
+    "idenaWebAppSignIn": "<0> Inicie sesión </0> en su aplicación web Idena <4> 15 minutos antes de que comience la próxima sesión de validación </4>. Compruebe que ha estado a la espera de la validación. Asegúrese de tener una buena conexión a Internet. Recomendamos Laptop / PC para una mejor experiencia.",
+    "Follow the instructions to create your account": "Sigue las instrucciones para crear tu cuenta",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Activa tu código de invitación. Por favor, ten en cuenta que el código dejará de ser utilizable 5 minutos previos al horario de la validación, úsalo antes de que expire!",
+    "tweeterFollowLink": "Sigue a <2>@IdenaNetwork</2> en Twitter",
+    "getInviteWithTwitterName": "Ingresa tu @usuario de Twitter y haz clic en <2>Obtener un código de invitación</2>. El código será otorgado automáticamente.",
+    "idenaCommunityRedditLink": "Únete al <2>subreddit de Idena</2> y solicita a la comunidad un código de invitación"
 }
