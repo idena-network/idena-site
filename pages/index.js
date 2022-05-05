@@ -381,15 +381,15 @@ export default function Home() {
                       <div className="content">
                         <img
                           style={{opacity: '0.7'}}
-                          src="/static/images/logo-probit.svg"
-                          alt="Probit"
+                          src="/static/images/logo-bitmart.svg"
+                          alt="Bitmart"
                           height="40"
                         />
                         <div className="linkbar-value">
-                          <span>Probit</span>
+                          <span>Bitmart</span>
                         </div>
                         <a
-                          href="https://www.probit.com/app/exchange/IDNA-BTC"
+                          href="https://www.bitmart.com/trade/en?layout=basic&symbol=IDNA_USDT"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -915,6 +915,11 @@ export default function Home() {
                   tooltip="Coindesk"
                   href="https://www.coindesk.com/tech/2020/10/27/an-internet-for-humans-proof-of-personhood-explained/"
                   imageLink="logo-coindesk"
+                />
+                <TooltipLogo
+                  tooltip="Hackernoon"
+                  href="https://hackernoon.com/understanding-idena---the-human-centric-blockchain"
+                  imageLink="logo-hackernoon"
                 />
                 <TooltipLogo
                   tooltip="Publish0x"
