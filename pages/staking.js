@@ -182,10 +182,8 @@ export default function Staking() {
       return
     }
 
-    setAmountValue(parseFloat(amount).toFixed(2))
-    setAmountSlider([
-      amountLog.findIndex(item => item > parseFloat(amount)) - 1,
-    ])
+    setAmountValue(Math.round(parseFloat(amount) * 100) / 100)
+    setAmountSlider([amountLog.findIndex(item => item > parseInt(amount)) - 1])
     scroller.scrollTo(`stake calculator`)
   }, [amountLog, router.query, router.query.amount, scroller])
 
