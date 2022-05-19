@@ -14,12 +14,16 @@ import {
   Pie,
   Cell,
 } from 'recharts'
+import {useRouter} from 'next/router'
 import Layout from '../shared/components/layout'
 import {Tooltipicon} from '../shared/components/tooltip'
 import {useTotalValidatedCount} from '../shared/api'
 
+const Scroll = require('react-scroll')
+
 export default function Staking() {
   const {t} = useTranslation('stake')
+  const router = useRouter()
   const [amountValue, setAmountValue] = useState(1000)
   const [amountSlider, setAmountSlider] = useState([245])
   const [weight, setWeight] = useState(1)
@@ -33,6 +37,8 @@ export default function Staking() {
   })
   const [epochNum, setEpochNum] = useState(0)
   const validatedCount = useTotalValidatedCount()
+
+  const {scroller} = Scroll
 
   const STEP = 1
   const MIN = 0
@@ -118,7 +124,11 @@ export default function Staking() {
               }
 
         setWeight(stakingData.result.weight)
-        setEpochRewardFund(rewardsData.result.validation * 0.8)
+        setEpochRewardFund(
+          rewardsData.result.staking && rewardsData.result.staking > 0
+            ? rewardsData.result.staking
+            : rewardsData.result.validation * 0.9
+        )
         setTotalStake(coinsData.result.totalStake)
         setEpochNum(jsonEpoch.result.epoch)
         setEpochTime({
@@ -163,6 +173,20 @@ export default function Staking() {
     [xAxis]
   )
 
+  useEffect(() => {
+    const {amount} = router.query
+    if (!amount) {
+      return
+    }
+    if (!parseFloat(amount)) {
+      return
+    }
+
+    setAmountValue(Math.round(parseFloat(amount) * 100) / 100)
+    setAmountSlider([amountLog.findIndex(item => item > parseInt(amount)) - 1])
+    scroller.scrollTo(`stake calculator`)
+  }, [amountLog, router.query, router.query.amount, scroller])
+
   const updateAmountValue = value => setAmountValue(parseInt(amountLog[value]))
   const updateAmountSlider = amount =>
     setAmountSlider([amountLog.findIndex(item => item > amount) - 1])
@@ -184,7 +208,7 @@ export default function Staking() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1 header52px coming_soon" style={{position: 'relative'}}>
+                <h3 className="h1 header52px" style={{position: 'relative'}}>
                   {t('Stake iDNA to get Quadratic Staking rewards', {
                     ns: 'stake',
                   })}

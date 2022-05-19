@@ -480,7 +480,7 @@ export default function Home() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
-              <h1 className="h1 coming_soon" style={{textAlign: 'left'}}>
+              <h1 className="h1" style={{textAlign: 'left'}}>
                 {t('Quadratic Staking', {ns: 'index'})}
               </h1>
               <p>
