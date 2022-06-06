@@ -2,7 +2,7 @@ import axios from 'axios'
 import {useEffect, useState} from 'react'
 import {initializeClock} from '../public/countdown'
 
-const BASE_API_URL = 'https://api.idena.org/api'
+const BASE_API_URL = 'https://api.idena.io/api'
 const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3'
 
 const GOOGLE_CALENDAR_URL =
