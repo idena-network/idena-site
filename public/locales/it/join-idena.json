@@ -1,5 +1,5 @@
 {
-    "idenaCommunityDiscordLink": "Iscriviti a <2>Idena Community Discord</2> e richiedi un invito alla comunità nel canale <5>#invite-requests</5>.",
+    "idenaCommunityDiscordLink": "Iscriviti a <2>Idena Community Discord</2> e richiedi un codice d'invito alla comunità nel canale <5>#invite-requests</5>.",
     "idenaWebAppLink": "Apri la <2>Web App Idena</2>",
     "DownloadIdena": "Scarica la Desktop App Idena.",
     "ScheduleNextValidation": "Programma la tua prossima validazione.",
@@ -25,9 +25,23 @@
     "Prolong your cryptoidentity status": "Estendi lo stato della tua criptoidentità",
     "idenaWebAppSignIn": "<0>Accedi</0> alla Web app Idena <4>15 minuti prima dell'inizio della prossima sessione di validazione</4>. Controlla di avere come status in attesa della validazione. Assicurati di avere una buona connessione internet. Consigliamo di usare un laptop/PC per una migliore esperienza.",
     "Wait for the validation session to begin. Follow the instructions, solve flips and enjoy the process!": "Aspetta l'inizio della sessione di validazione. Segui le istruzioni, risolvi i flip e goditi il processo!",
-    "tweetSendingTip": "<0>Invia un tweet</0> con l'hashtag #IdenaInvite dal tuo account. Per ottenere un invito, il tuo account deve essere <4>più vecchio di 1 anno o più vecchio di due mesi e con almeno <1>{{followersCount}}</1> followers</4>. Il tweet dovrebbe dire:",
+    "tweetSendingTip": "<0>Invia un tweet</0> con l'hashtag #IdenaInvite dal tuo account. Per ottenere un invito, il tuo account deve essere <4>più vecchio di due mesi e con almeno <2>{{followersCount}}</2> followers</4>. Il tweet dovrebbe dire:",
     "Follow the instructions to create your account and activate it with your invitation code:": "Segui le istruzioni per creare il tuo account e attivarlo con il tuo codice d'invito:",
     "idenaTelegramGroupLink": "Unisciti al gruppo ufficiale <2>Idena Telegram</2> e chiedi un codice d'invito alla comunità.",
     "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Attiva il tuo codice di invito. Tieni presente che il codice di invito scade 5 minuti prima della convalida!",
-    "Stay updated": "Rimani aggiornato"
+    "Stay updated": "Rimani aggiornato",
+    "MigrateIdena": "Migra l'account Idena (utilizzando la pagina Impostazioni): esporta il backup della chiave privata dall'applicazione web Idena e importalo nell'applicazione desktop Idena.",
+    "ActivateMiningStatus": "Attiva il tuo stato di Mining e mantieni il tuo nodo Idena sincronizzato per minare iDNA.",
+    "ProlongCryptoidentityStatus": "Lo stato della tua criptoidentità è valido fino alla fine dell'epoca corrente. Per ogni nuova epoca successiva è necessario prolungare lo stato di convalida.",
+    "ToStartMiningIdena": "Per iniziare il mining di Idena, è necessario convalidare la propria criptoidentità. Non è richiesta la divulgazione di alcun dato personale (nessun KYC). È necessario essere online all'inizio della cerimonia di validazione e risolvere una serie di flip-test (CAPTCHA).",
+    "getInvitationNotes": "Per minimizzare la probabilità di un attacco di tipo Sybil, il tasso di crescita della rete è limitato: l'ingresso alla rete Idena è basato su inviti. I nuovi inviti possono essere inviati solo da utenti convalidati. Il numero di inviti è limitato e aumenta con la crescita della rete.",
+    "Follow the instructions to create your account": "Segui le istruzioni per creare il tuo conto",
+    "Validation ceremony is a time-sensitive event. It requires users to be strictly on time and to use the latest version of Idena app to be able to participate in validation. Even 1 minute late or outdated app version could lead to failure.": "La cerimonia di validazione è un evento in cui è importante rispettare le tempistiche. Richiede agli utenti di essere rigorosamente puntuali e di utilizzare l'ultima versione dell'applicazione Idena per poter partecipare alla validazione. Anche un solo minuto di ritardo o una versione dell'app non aggiornata possono portare al fallimento.",
+    "Twitter:": "Twitter:",
+    "After validation": "Dopo la validazione",
+    "getInviteWithTwitterName": "Inserisci il tuo nome Twitter e fai clic sul pulsante <2>Ottieni un codice di invito</2>. Il codice verrà visualizzato automaticamente.",
+    "tweeterFollowLink": "Segui <2>@IdenaNetwork</2>",
+    "idenaCommunityRedditLink": "Iscriviti a <2>Idena subreddit</2> e richiedi un codice di invito alla comunità",
+    "joinIdenaTelegramLink": "Telegram: <2>Canale Annunci di Idena</2> (solo aggiornamenti e annunci importanti)",
+    "SubmitFlips": "Impara a creare i flip e inviane tre prima della prossima validazione. Se non si inviano 3 flip, non sarà permesso partecipare alla prossima validazione."
 }
