@@ -48,5 +48,11 @@
     "use-cases-freedom-of-speech": "Ogni voce ha il diritto di essere ascoltata. Idena permette la diffusione di informazioni senza soluzione di continuità e rende il contenuto resistente alla censura.",
     "use-cases-universal-basic-income": "Minare le monete Idena è accessibile a chiunque possieda un laptop medio con una connessione Internet. Tutti i partecipanti di Idena sono autorizzati a mantenere la rete e guadagnare pari ricompense di mining. Queste ricompense possono essere considerate come una forma di reddito di base universale.",
     "technology-scalability-decentralization-security": "È possibile realizzare una blockchain scalabile che esegue migliaia di transazioni al secondo senza compromessi in termini di sicurezza e decentralizzazione. Lo sharding combinato con la criptoidentità è la soluzione al trilemma della blockchain: il throughput della rete aumenta con il numero di utenti convalidati che andranno a formare sempre più shard.",
-    "why-idena-eco-friendly-mining": "La blockchain di Idena è basata su un consenso ecologico di tipo Proof-of-Person. Per verificare le transazioni, il minatore di Idena deve avere una criptoidentità valida e mantenere il proprio nodo online. Il reddito di mining non dipende dal tuo hardware. Non richiede l'utilizzo di grandi volumi di elettricità, GPU o impianti di mining."
+    "why-idena-eco-friendly-mining": "La blockchain di Idena è basata su un consenso ecologico di tipo Proof-of-Person. Per verificare le transazioni, il minatore di Idena deve avere una criptoidentità valida e mantenere il proprio nodo online. Il reddito di mining non dipende dal tuo hardware. Non richiede l'utilizzo di grandi volumi di elettricità, GPU o impianti di mining.",
+    "Validated identities": "Identità validate",
+    "Quadratic Staking": "Staking Quadratico",
+    "whatIsQuadraticStaking": "Lo Staking Quadratico incoraggia a proteggere la propria identità mettendo in stake una quantità di iDNA, non importa quanto grande, e garantisce una distribuzione democratica delle ricompense di staking.",
+    "How to buy iDNA": "Come comprare iDNA",
+    "Partners and Media": "Partner e Media",
+    "Calculate my rewards": "Calcola le mie ricompense"
 }
