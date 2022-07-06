@@ -61,9 +61,9 @@ export default function Staking() {
         backgroundColor: 'white',
       }}
     >
-      <p style={{margin: 0, color: 'rgb(83, 86, 92)'}}>{`${Math.round(
+      <p style={{margin: 0, color: 'rgb(83, 86, 92)'}}>{`${Math.floor(
         value
-      ).toLocaleString()}.${Math.round((value % 1) * 100)} iDNA`}</p>
+      ).toLocaleString()}.${Math.floor((value % 1) * 100)} iDNA`}</p>
       <p style={{margin: 0, color: 'rgb(150, 153, 158)'}}>
         {t('Epoch reward', {ns: 'stake'})}
       </p>
@@ -544,9 +544,9 @@ export default function Staking() {
                         </div>
                         <div>
                           <span style={{fontWeight: 'bold'}}>
-                            {`${Math.round(
+                            {`${Math.floor(
                               calcValue(amountValue)
-                            ).toLocaleString()}.${Math.round(
+                            ).toLocaleString()}.${Math.floor(
                               (calcValue(amountValue) % 1) * 100
                             )} iDNA`}
                           </span>
