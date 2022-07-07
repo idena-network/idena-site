@@ -1,4 +1,4 @@
-import {i18n, useTranslation} from 'next-i18next'
+import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {getTrackBackground, Range} from 'react-range'
 import {useState, useEffect, useMemo, useCallback} from 'react'
