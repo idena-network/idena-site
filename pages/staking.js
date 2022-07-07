@@ -1,4 +1,4 @@
-import {useTranslation} from 'next-i18next'
+import {i18n, useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {getTrackBackground, Range} from 'react-range'
 import {useState, useEffect, useMemo, useCallback} from 'react'
@@ -61,9 +61,12 @@ export default function Staking() {
         backgroundColor: 'white',
       }}
     >
-      <p style={{margin: 0, color: 'rgb(83, 86, 92)'}}>{`${Math.floor(
-        value
-      ).toLocaleString()}.${Math.floor((value % 1) * 100)} iDNA`}</p>
+      <p style={{margin: 0, color: 'rgb(83, 86, 92)'}}>{`${value.toLocaleString(
+        undefined,
+        {
+          maximumFractionDigits: 2,
+        }
+      )} iDNA`}</p>
       <p style={{margin: 0, color: 'rgb(150, 153, 158)'}}>
         {t('Epoch reward', {ns: 'stake'})}
       </p>
@@ -544,10 +547,11 @@ export default function Staking() {
                         </div>
                         <div>
                           <span style={{fontWeight: 'bold'}}>
-                            {`${Math.floor(
-                              calcValue(amountValue)
-                            ).toLocaleString()}.${Math.floor(
-                              (calcValue(amountValue) % 1) * 100
+                            {`${calcValue(amountValue).toLocaleString(
+                              undefined,
+                              {
+                                maximumFractionDigits: 2,
+                              }
                             )} iDNA`}
                           </span>
                         </div>
