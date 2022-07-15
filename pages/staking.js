@@ -59,7 +59,7 @@ export default function Staking() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '116px',
+        width: '136px',
         borderRadius: '6px',
         border: '1px solid rgba(150, 153, 158, 0.5)',
         backgroundColor: 'white',
@@ -72,7 +72,7 @@ export default function Staking() {
         }
       )} iDNA`}</p>
       <p style={{margin: 0, color: 'rgb(150, 153, 158)'}}>
-        {t('Epoch reward', {ns: 'stake'})}
+        {t('Total epoch reward', {ns: 'stake'})}
       </p>
     </div>
   )
@@ -160,7 +160,7 @@ export default function Staking() {
   )
 
   const calcMiningReward = useCallback(
-    amount => TOTAL_FUND * ((amount * STAKING_POWER) / totalShares),
+    amount => (TOTAL_FUND * amount ** STAKING_POWER) / totalShares,
     [TOTAL_FUND, totalShares]
   )
 
@@ -207,7 +207,9 @@ export default function Staking() {
     setAmountSlider([amountLog.findIndex(item => item > amount) - 1])
 
   const renderTooltip = () => (
-    <CustomTooltip value={calcStakingReward(amountValue)} />
+    <CustomTooltip
+      value={calcStakingReward(amountValue) + calcMiningReward(amountValue)}
+    />
   )
 
   return (
@@ -458,12 +460,12 @@ export default function Staking() {
                             content={renderTooltip}
                             position={{
                               x: Math.min(
-                                230,
+                                210,
                                 parseInt(amountValue / 3000) + 20
                               ),
                               y: Math.max(
                                 20,
-                                150 *
+                                130 *
                                   (1 -
                                     Math.log(amountValue) / Math.log(10000000))
                               ),
