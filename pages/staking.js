@@ -27,6 +27,8 @@ export default function Staking() {
   const [amountValue, setAmountValue] = useState(1000)
   const [amountSlider, setAmountSlider] = useState([245])
   const [weight, setWeight] = useState(1)
+  const [averageMinerWeight, setAverageMinerWeight] = useState(1)
+  const [onlineSize, setOnlineSize] = useState(1)
   const [totalShares, setTotalShares] = useState(1)
   const [totalStake, setTotalStake] = useState('0')
   const [epochRewardFund, setEpochRewardFund] = useState([0])
@@ -86,6 +88,11 @@ export default function Staking() {
         const stakeResponse = await fetch('https://api.idena.io/api/staking')
         const stakingData = await stakeResponse.json()
 
+        const onlineResponse = await fetch(
+          'https://api.idena.io/api/onlineminers/count'
+        )
+        const onlineData = await onlineResponse.json()
+
         const epochResponse = await fetch('https://api.idena.io/api/epoch/last')
         const jsonEpoch = await epochResponse.json()
         const epochNumber = jsonEpoch.result.epoch - 1
@@ -132,6 +139,8 @@ export default function Staking() {
 
         setWeight(stakingData.result.weight)
         setTotalShares(stakingData.result.minersWeight)
+        setAverageMinerWeight(stakingData.result.averageMinerWeight)
+        setOnlineSize(onlineData.result)
         setEpochRewardFund(
           rewardsData.result.staking && rewardsData.result.staking > 0
             ? rewardsData.result.staking
@@ -160,8 +169,32 @@ export default function Staking() {
   )
 
   const calcMiningReward = useCallback(
-    amount => (TOTAL_FUND * amount ** STAKING_POWER) / totalShares,
-    [TOTAL_FUND, totalShares]
+    amount => {
+      const myStakeWeight = amount ** STAKING_POWER
+      const proposerOnlyReward =
+        (6 * myStakeWeight * 20) /
+        (myStakeWeight * 20 + averageMinerWeight * 100)
+      const committeeOnlyReward =
+        (6 * myStakeWeight) / (myStakeWeight + averageMinerWeight * 119)
+      const proposerAndCommitteeReward =
+        (6 * myStakeWeight * 21) /
+        (myStakeWeight * 21 + averageMinerWeight * 99)
+      const proposerProbability = 1 / onlineSize
+      const committeeProbability = 100 / onlineSize
+      const proposerOnlyProbability =
+        proposerProbability * (1 - committeeProbability)
+      const committeeOnlyProbability =
+        committeeProbability * (1 - proposerProbability)
+      const proposerAndCommitteeProbability =
+        proposerOnlyProbability * committeeOnlyProbability
+      const estimatedReward =
+        85000 *
+        (proposerProbability * proposerOnlyReward +
+          committeeOnlyProbability * committeeOnlyReward +
+          proposerAndCommitteeProbability * proposerAndCommitteeReward)
+      return estimatedReward
+    },
+    [averageMinerWeight, onlineSize]
   )
 
   const isNotAmount = !amountValue || parseInt(amountValue) === 0
