@@ -381,12 +381,12 @@ export default function Staking() {
                     }}
                   >
                     <input
-                      type="text"
+                      type="number"
                       maxLength={7}
                       placeholder="0"
                       value={amountValue}
                       onChange={n => {
-                        const value = n.target.value.replace(/\D/g, '')
+                        const {value} = n.target
                         setAmountValue(value)
                         updateAmountSlider(value)
                       }}

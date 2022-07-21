@@ -1206,6 +1206,16 @@ button {
     display: block;
     color: #53565c;
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 }
 
 .stakingStat {
