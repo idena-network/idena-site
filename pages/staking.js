@@ -27,10 +27,13 @@ export default function Staking() {
   const [amountValue, setAmountValue] = useState(1000)
   const [amountSlider, setAmountSlider] = useState([245])
   const [weight, setWeight] = useState(1)
+  const [averageMinerWeight, setAverageMinerWeight] = useState(1)
+  const [onlineSize, setOnlineSize] = useState(1)
+  const [totalShares, setTotalShares] = useState(1)
   const [totalStake, setTotalStake] = useState('0')
   const [epochRewardFund, setEpochRewardFund] = useState([0])
   const [epochTime, setEpochTime] = useState({
-    epochDuration: '-',
+    epochDuration: 21,
     epochLeftPercent: 100,
     epochLeft: '-',
     epochLeftUnit: '-',
@@ -43,6 +46,9 @@ export default function Staking() {
   const STEP = 1
   const MIN = 0
   const MAX = 999
+  const STAKING_POWER = 0.9
+  const BLOCKS_IN_EPOCH = epochTime.epochDuration * 24 * 60 * 3
+  const TOTAL_FUND = BLOCKS_IN_EPOCH * 6
 
   // eslint-disable-next-line react/prop-types
   const CustomTooltip = ({value}) => (
@@ -55,7 +61,7 @@ export default function Staking() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '116px',
+        width: '136px',
         borderRadius: '6px',
         border: '1px solid rgba(150, 153, 158, 0.5)',
         backgroundColor: 'white',
@@ -68,7 +74,7 @@ export default function Staking() {
         }
       )} iDNA`}</p>
       <p style={{margin: 0, color: 'rgb(150, 153, 158)'}}>
-        {t('Epoch reward', {ns: 'stake'})}
+        {t('Total epoch reward', {ns: 'stake'})}
       </p>
     </div>
   )
@@ -81,6 +87,11 @@ export default function Staking() {
 
         const stakeResponse = await fetch('https://api.idena.io/api/staking')
         const stakingData = await stakeResponse.json()
+
+        const onlineResponse = await fetch(
+          'https://api.idena.io/api/onlineminers/count'
+        )
+        const onlineData = await onlineResponse.json()
 
         const epochResponse = await fetch('https://api.idena.io/api/epoch/last')
         const jsonEpoch = await epochResponse.json()
@@ -127,10 +138,13 @@ export default function Staking() {
               }
 
         setWeight(stakingData.result.weight)
+        setTotalShares(stakingData.result.minersWeight)
+        setAverageMinerWeight(stakingData.result.averageMinerWeight)
+        setOnlineSize(onlineData.result)
         setEpochRewardFund(
           rewardsData.result.staking && rewardsData.result.staking > 0
             ? rewardsData.result.staking
-            : rewardsData.result.validation * 0.9
+            : rewardsData.result.validation * STAKING_POWER
         )
         setTotalStake(coinsData.result.totalStake)
         setEpochNum(jsonEpoch.result.epoch)
@@ -147,9 +161,40 @@ export default function Staking() {
     getData()
   }, [])
 
-  const calcValue = useCallback(
-    amount => (amount ** 0.9 / (amount ** 0.9 + weight)) * epochRewardFund,
+  const calcStakingReward = useCallback(
+    amount =>
+      (amount ** STAKING_POWER / (amount ** STAKING_POWER + weight)) *
+      epochRewardFund,
     [weight, epochRewardFund]
+  )
+
+  const calcMiningReward = useCallback(
+    amount => {
+      const myStakeWeight = amount ** STAKING_POWER
+      const proposerOnlyReward =
+        (6 * myStakeWeight * 20) /
+        (myStakeWeight * 20 + averageMinerWeight * 100)
+      const committeeOnlyReward =
+        (6 * myStakeWeight) / (myStakeWeight + averageMinerWeight * 119)
+      const proposerAndCommitteeReward =
+        (6 * myStakeWeight * 21) /
+        (myStakeWeight * 21 + averageMinerWeight * 99)
+      const proposerProbability = 1 / onlineSize
+      const committeeProbability = 100 / onlineSize
+      const proposerOnlyProbability =
+        proposerProbability * (1 - committeeProbability)
+      const committeeOnlyProbability =
+        committeeProbability * (1 - proposerProbability)
+      const proposerAndCommitteeProbability =
+        proposerOnlyProbability * committeeOnlyProbability
+      const estimatedReward =
+        85000 *
+        (proposerProbability * proposerOnlyReward +
+          committeeOnlyProbability * committeeOnlyReward +
+          proposerAndCommitteeProbability * proposerAndCommitteeReward)
+      return estimatedReward
+    },
+    [averageMinerWeight, onlineSize]
   )
 
   const isNotAmount = !amountValue || parseInt(amountValue) === 0
@@ -163,9 +208,9 @@ export default function Staking() {
     () =>
       xAxis.map((amount, index) => ({
         index,
-        amount: Math.max(calcValue(1000), calcValue(amount)),
+        amount: Math.max(calcStakingReward(1000), calcStakingReward(amount)),
       })),
-    [xAxis, calcValue]
+    [xAxis, calcStakingReward]
   )
 
   const amountLog = useMemo(
@@ -194,7 +239,11 @@ export default function Staking() {
   const updateAmountSlider = amount =>
     setAmountSlider([amountLog.findIndex(item => item > amount) - 1])
 
-  const renderTooltip = () => <CustomTooltip value={calcValue(amountValue)} />
+  const renderTooltip = () => (
+    <CustomTooltip
+      value={calcStakingReward(amountValue) + calcMiningReward(amountValue)}
+    />
+  )
 
   return (
     <Layout
@@ -332,13 +381,14 @@ export default function Staking() {
                     }}
                   >
                     <input
-                      type="text"
+                      type="number"
                       maxLength={7}
                       placeholder="0"
                       value={amountValue}
                       onChange={n => {
-                        setAmountValue(n.target.value)
-                        updateAmountSlider(n.target.value)
+                        const {value} = n.target
+                        setAmountValue(value)
+                        updateAmountSlider(value)
                       }}
                     />
                     <span
@@ -350,7 +400,10 @@ export default function Staking() {
                       isNotAmount
                         ? 0
                         : (
-                            (((calcValue(amountValue) * 100) / amountValue) *
+                            ((((calcStakingReward(amountValue) +
+                              calcMiningReward(amountValue)) *
+                              100) /
+                              amountValue) *
                               366) /
                             epochTime.epochDuration
                           )?.toFixed(1)
@@ -441,12 +494,12 @@ export default function Staking() {
                             content={renderTooltip}
                             position={{
                               x: Math.min(
-                                230,
+                                210,
                                 parseInt(amountValue / 3000) + 20
                               ),
                               y: Math.max(
                                 20,
-                                150 *
+                                130 *
                                   (1 -
                                     Math.log(amountValue) / Math.log(10000000))
                               ),
@@ -456,8 +509,11 @@ export default function Staking() {
                           <ReferenceDot
                             x={Math.min(999, parseInt(amountValue / 1000))}
                             y={Math.min(
-                              calcValue(999000),
-                              Math.max(calcValue(1000), calcValue(amountValue))
+                              calcStakingReward(999000),
+                              Math.max(
+                                calcStakingReward(1000),
+                                calcStakingReward(amountValue)
+                              )
                             )}
                             fill="#578fff"
                             stroke="white"
@@ -467,7 +523,7 @@ export default function Staking() {
                         </AreaChart>
                       </ResponsiveContainer>
                       <span style={{fontWeight: 500, marginTop: '24px'}}>
-                        {`${t('Staking power', {ns: 'stake'})} 0.9`}
+                        {`${t('Staking power', {ns: 'stake'})}`} {STAKING_POWER}
                       </span>
                       <span style={{fontWeight: 500, color: '#96999e'}}>
                         {t(
@@ -488,35 +544,37 @@ export default function Staking() {
                           value={`${
                             isNotAmount
                               ? 0
-                              : Math.round(amountValue).toLocaleString()
+                              : parseFloat(amountValue).toLocaleString(
+                                  undefined,
+                                  {
+                                    maximumFractionDigits: 2,
+                                  }
+                                )
                           } iDNA`}
                         />
                         <StakingData
-                          title={t('Share', {ns: 'stake'})}
+                          title={t('Staking reward', {ns: 'stake'})}
                           tooltip={t(
-                            'Share of your stake in the total amount of staked coins',
+                            'The amount of coins you get for a successful validation',
                             {ns: 'stake'}
                           )}
-                          value={`${
-                            isNotAmount
-                              ? 0
-                              : (
-                                  (amountValue * 100) /
-                                  (parseInt(amountValue) + parseInt(totalStake))
-                                )?.toFixed(1)
-                          } %`}
+                          value={`${calcStakingReward(
+                            amountValue
+                          ).toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })} iDNA`}
                         />
                         <StakingData
-                          title="EPY"
-                          tooltip={t('Epoch percentage yield', {ns: 'stake'})}
-                          value={`${
-                            isNotAmount
-                              ? 0
-                              : (
-                                  (calcValue(amountValue) * 100) /
-                                  amountValue
-                                )?.toFixed(1)
-                          } %`}
+                          title="Mining reward"
+                          tooltip={t(
+                            'The amount of coins you get per epoch by running a mining node. It will be available after the implementation of the IIP-5',
+                            {ns: 'stake'}
+                          )}
+                          value={`${calcMiningReward(
+                            amountValue
+                          ).toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })} iDNA`}
                         />
                         <StakingData
                           title="APY"
@@ -525,7 +583,9 @@ export default function Staking() {
                             isNotAmount
                               ? 0
                               : (
-                                  (((calcValue(amountValue) * 100) /
+                                  ((((calcStakingReward(amountValue) +
+                                    calcMiningReward(amountValue)) *
+                                    100) /
                                     amountValue) *
                                     366) /
                                   epochTime.epochDuration
@@ -542,17 +602,17 @@ export default function Staking() {
                       >
                         <div>
                           <span style={{fontWeight: 'bold'}}>
-                            {t('Epoch reward', {ns: 'stake'})}
+                            {t('Total epoch reward', {ns: 'stake'})}
                           </span>
                         </div>
                         <div>
                           <span style={{fontWeight: 'bold'}}>
-                            {`${calcValue(amountValue).toLocaleString(
-                              undefined,
-                              {
-                                maximumFractionDigits: 2,
-                              }
-                            )} iDNA`}
+                            {`${(
+                              calcStakingReward(amountValue) +
+                              calcMiningReward(amountValue)
+                            ).toLocaleString(undefined, {
+                              maximumFractionDigits: 2,
+                            })} iDNA`}
                           </span>
                         </div>
                       </div>
@@ -563,22 +623,15 @@ export default function Staking() {
               <div className="stakingStat">
                 <div className="stakingStatSection">
                   <StakingInfo
-                    title={`${t('Epoch', {ns: 'stake'})} #0${
-                      epochNum > 99 ? '' : '0'
-                    }${epochNum}`}
-                    value={`${epochTime.epochLeft} ${epochTime.epochLeftUnit} left`}
-                    isDivided
-                  >
-                    <MicroPie
-                      val={Math.trunc(100 - epochTime.epochLeftPercent)}
-                      maxVal={100}
-                    />
-                  </StakingInfo>
-                  <StakingInfo
                     title={t('Staking rewards fund', {ns: 'stake'})}
                     value={`${Math.round(
                       epochRewardFund
                     ).toLocaleString()} iDNA`}
+                    isDivided
+                  />
+                  <StakingInfo
+                    title={t('Mining rewards fund', {ns: 'stake'})}
+                    value={`${Math.round(TOTAL_FUND).toLocaleString()} iDNA`}
                     isDivided
                   />
                   <StakingInfo
