@@ -386,8 +386,9 @@ export default function Staking() {
                       placeholder="0"
                       value={amountValue}
                       onChange={n => {
-                        setAmountValue(n.target.value)
-                        updateAmountSlider(n.target.value)
+                        const value = n.target.value.replace(/\D/g, '')
+                        setAmountValue(value)
+                        updateAmountSlider(value)
                       }}
                     />
                     <span
@@ -549,7 +550,7 @@ export default function Staking() {
                         <StakingData
                           title={t('Staking reward', {ns: 'stake'})}
                           tooltip={t(
-                            'The amount of coins you get for the successfully passed validation',
+                            'The amount of coins you get for a successful validation',
                             {ns: 'stake'}
                           )}
                           value={`${calcStakingReward(

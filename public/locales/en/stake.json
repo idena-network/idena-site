@@ -18,7 +18,7 @@
   "Quadratic Staking encourages smaller players to increase their stakes. The lower the stake, the higher the percentage yield.": "Quadratic Staking encourages smaller players to increase their stakes. The lower the stake, the higher the percentage yield.",
   "Stake": "Stake",
   "Staking reward": "Staking reward",
-  "The amount of coins you get for the successfully passed validation": "The amount of coins you get for the successfully passed validation",
+  "The amount of coins you get for a successful validation": "The amount of coins you get for a successful validation",
   "The amount of coins you get per epoch by running a mining node. It will be available after the implementation of the IIP-5": "The amount of coins you get per epoch by running a mining node. It will be available after the implementation of the IIP-5",
   "Annual percentage yield": "Annual percentage yield",
   "Total epoch reward": "Total epoch reward",
