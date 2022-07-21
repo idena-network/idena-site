@@ -544,7 +544,12 @@ export default function Staking() {
                           value={`${
                             isNotAmount
                               ? 0
-                              : Math.round(amountValue).toLocaleString()
+                              : parseFloat(amountValue).toLocaleString(
+                                  undefined,
+                                  {
+                                    maximumFractionDigits: 2,
+                                  }
+                                )
                           } iDNA`}
                         />
                         <StakingData
