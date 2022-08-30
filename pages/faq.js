@@ -441,6 +441,12 @@ export default function Faq() {
                           {ns: 'faq'}
                         )}
                       </p>
+                      <p>
+                        {t(
+                          'Newbies cannot participate in the governance of the network. While adresses with this status can get rewards for mining and participating in oracle votes, their votes are not counted and do not make a difference in the final outcome of a voting: they cannot influence a hard fork voting or an oracle voting.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
                     </div>
                   </Accordion.Collapse>
                 </Card>
