@@ -212,7 +212,7 @@
   "nextValidationTimeCheck": "Check the next validation time: <2><0>{{validationTime}}</0></2>. Your node must be synchronized before the session starts.",
   "flipSolveLearningLink": "Learn how to solve flips: read <2>the article</2> in our blog and <6>test yourself</6>.",
   "invitationDistribution": "<0>Invitations are distributed as follows:</0><1><0> Identities with the Human status get one invitation starting with the highest Total score.</0><1> If there are non-distributed invitations left, identities with the Human or Verified status get one invitation starting from the highest total score.</1><2> After the distribution, the minimal Total score of those entitled to receive invitations is known.</2><3> All identities with this minimal Total score receive invitations. If needed, additional invitations are issued by the Idena protocol to cover the demand. </3></1>",
-  "availableInvitationsNumber": "The core Idena team is granted to issue a limited number of invitations per epoch to support the network growth. The number of available invitations for the foundation address is limited to <2>min(500, max(50, 1/3*NetworkSize))</2>",
+  "availableInvitationsNumber": "The core Idena team is granted to issue a limited number of invitations per epoch to support the network growth. The number of available invitations for the foundation address is limited to <2>max(500, NetworkSize*0.1)</2>",
   "frequencyInDays": "Frequency, <1></1> days",
   "frequencyWith9441NetworkSize": "21 if Saturday <1></1> 20 otherwise",
   "candidateDescription": "<0>Candidate.</0> A participant who has just joined the network via an invitation can participate in the subsequent validation session only.",
