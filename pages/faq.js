@@ -1997,9 +1997,11 @@ export default function Faq() {
                         </p>
                         <ul>
                           <li>Block mining cap: 50%</li>
-                          <li>Validation reward fund: 12%</li>
-                          <li>Flip reward fund: 16%</li>
-                          <li>Invitation reward fund: 16%</li>
+                          <li>Staking reward fund: 9%</li>
+                          <li>Candidate reward fund: 1%</li>
+                          <li>Flip reward fund: 17.5%</li>
+                          <li>Invitation reward fund: 9%</li>
+                          <li>Report reward fund: 7.5%</li>
                           <li>Idena foundation payouts: 5%</li>
                           <li>Zero wallet fund: 1%</li>
                         </ul>
