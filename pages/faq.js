@@ -166,7 +166,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'Be aware that person who invites you can terminate your cryptoidentity until you get Verified status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.',
+                          'Be aware that person who invites you can terminate your cryptoidentity until you pass your first validation.',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -311,7 +311,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. The person who sells an invitation can kill the invited participant and get the staked/locked coins during the next several epochs before their status is "Verified". The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
+                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. Invitations can be terminated after they are issued if it is done before the upcoming validation. The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -371,7 +371,7 @@ export default function Faq() {
                           number of invitations per epoch to support the network
                           growth. The number of available invitations for the
                           foundation address is limited to{' '}
-                          <code>min(500, max(50, 1/3*NetworkSize))</code>
+                          <code>max(500, NetworkSize*0.1)</code>
                         </Trans>
                       </p>
                     </div>
@@ -438,6 +438,12 @@ export default function Faq() {
                       <p>
                         {t(
                           'Newbies cannot terminate their identities to withdraw the stake.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Newbies cannot participate in the governance of the network. While adresses with this status can get rewards for mining and participating in oracle votes, their votes are not counted and do not make a difference in the final outcome of a voting: they cannot influence a hard fork voting or an oracle voting.',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -1678,7 +1684,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'You can disable delegation in the next epoch only.',
+                          'You can disable delegation in the next epoch only. After you undelegate you can not delegate your mining status for 3 epochs to a different pool.',
                           {ns: 'faq'}
                         )}
                       </p>
