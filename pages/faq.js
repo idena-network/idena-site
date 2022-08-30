@@ -166,7 +166,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'Be aware that person who invites you can terminate your cryptoidentity until you get Verified status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.',
+                          'Be aware that person who invites you can terminate your cryptoidentity until you pass your first validation.',
                           {ns: 'faq'}
                         )}
                       </p>
