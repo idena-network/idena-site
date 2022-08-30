@@ -189,7 +189,7 @@ export default function Staking() {
         proposerOnlyProbability * committeeOnlyProbability
       const estimatedReward =
         85000 *
-        (proposerProbability * proposerOnlyReward +
+        (proposerOnlyProbability * proposerOnlyReward +
           committeeOnlyProbability * committeeOnlyReward +
           proposerAndCommitteeProbability * proposerAndCommitteeReward)
       return estimatedReward
