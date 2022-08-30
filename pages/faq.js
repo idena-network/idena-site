@@ -311,7 +311,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. The person who sells an invitation can kill the invited participant and get the staked/locked coins during the next several epochs before their status is "Verified". The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
+                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. Invitations can be terminated after they are issued if it is done before the upcoming validation. The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
                           {ns: 'faq'}
                         )}
                       </p>
