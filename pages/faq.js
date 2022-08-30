@@ -1870,20 +1870,20 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The mining penalty is charged if a node is being offline for more that 1 hour with the miner status activated. The miner status for the penalized node is deactivated automatically.',
+                          'The mining penalty is charged if a node is being offline for more than 1.5 hours with the miner status activated. The miner status for the penalized node is deactivated automatically.',
                           {ns: 'faq'}
                         )}
                       </p>
                       <p>
                         {t(
-                          'In order to continue mining, the mining status has to be activated manually. All the newly mined coins will be spent to cover the penalty. Once the penalty is paid, mining will continue as usual. All mining penalties are discarded when a new epoch starts.',
+                          'In order to continue mining, the mining status has to be activated manually. All the newly mined coins will be spent to cover the penalty. Once the penalty duration passes, mining will continue as usual. All mining penalties are discarded when a new epoch starts.',
                           {ns: 'faq'}
                         )}
                       </p>
 
                       <p>
                         {t(
-                          'The penalty size depends on the network size: PenaltySize = 6 iDNA x 1800 blocks / NetworkSize',
+                          'The penalty duration is set to 8 hours',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
