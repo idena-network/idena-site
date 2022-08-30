@@ -2026,18 +2026,23 @@ export default function Faq() {
                         )}
                       </p>
                       <ul>
-                        <Trans i18nKey="validationRewardFund" t={t} ns="faq">
+                        <Trans i18nKey="stakingRewardFund" t={t} ns="faq">
                           <li>
-                            <b>Validation reward fund: 24%</b>
+                            <b>Staking reward fund: 18%</b>
                           </li>
-                          The validation reward is distributed according to age
-                          (proportional to <i>age</i>
-                          <sup>&#8531;</sup>). Older participants get more than
-                          younger ones.
+                          The staking reward is distributed according to stake.
+                          (proportional to <i>stake</i>
+                          <sup>0.9</sup>).
+                        </Trans>
+                        <Trans i18nKey="candidateRewardFund" t={t} ns="faq">
+                          <li>
+                            <b>Candidate reward fund: 2%</b>
+                          </li>
+                          The candidate reward fund is distributed to new users for passing their validation.
                         </Trans>
                         <Trans i18nKey="flipRewardFund" t={t} ns="faq">
                           <li>
-                            <b>Flip reward fund: 32%</b>
+                            <b>Flip reward fund: 35%</b>
                           </li>
                           The flip reward fund is distributed equally to all
                           validated participants proportionally to the number of
@@ -2046,7 +2051,7 @@ export default function Faq() {
                         </Trans>
                         <Trans i18nKey="invitationRewardFund" t={t} ns="faq">
                           <li>
-                            <b>Invitation reward fund: 32%</b>
+                            <b>Invitation reward fund: 18%</b>
                           </li>
                           The invitation reward fund is distributed to all
                           identities whose invitations have been validated.
@@ -2063,6 +2068,12 @@ export default function Faq() {
                           <br />
                           Invitation rewards for the 2nd and 3rd validation are
                           not paid to the Idena foundation.
+                        </Trans>
+                        <Trans i18nKey="reportRewardFund" t={t} ns="faq">
+                          <li>
+                            <b>Report reward fund: 15%</b>
+                          </li>
+                          The report reward fund is distributed for every reported flip to the identities who reported it.
                         </Trans>
                         <li>
                           <b>
