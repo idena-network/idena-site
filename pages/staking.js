@@ -18,6 +18,7 @@ import {useRouter} from 'next/router'
 import Layout from '../shared/components/layout'
 import {Tooltipicon} from '../shared/components/tooltip'
 import {useTotalValidatedCount} from '../shared/api'
+import {calculateEstimatedMiningReward} from '../shared/utils/utils'
 
 const Scroll = require('react-scroll')
 
@@ -171,28 +172,11 @@ export default function Staking() {
   const calcMiningReward = useCallback(
     amount => {
       const myStakeWeight = amount ** STAKING_POWER
-      const proposerOnlyReward =
-        (6 * myStakeWeight * 20) /
-        (myStakeWeight * 20 + averageMinerWeight * 100)
-      const committeeOnlyReward =
-        (6 * myStakeWeight) / (myStakeWeight + averageMinerWeight * 119)
-      const proposerAndCommitteeReward =
-        (6 * myStakeWeight * 21) /
-        (myStakeWeight * 21 + averageMinerWeight * 99)
-      const proposerProbability = 1 / onlineSize
-      const committeeProbability = 100 / onlineSize
-      const proposerOnlyProbability =
-        proposerProbability * (1 - committeeProbability)
-      const committeeOnlyProbability =
-        committeeProbability * (1 - proposerProbability)
-      const proposerAndCommitteeProbability =
-        proposerOnlyProbability * committeeOnlyProbability
-      const estimatedReward =
-        85000 *
-        (proposerOnlyProbability * proposerOnlyReward +
-          committeeOnlyProbability * committeeOnlyReward +
-          proposerAndCommitteeProbability * proposerAndCommitteeReward)
-      return estimatedReward
+      return calculateEstimatedMiningReward(
+        myStakeWeight,
+        averageMinerWeight,
+        onlineSize
+      )
     },
     [averageMinerWeight, onlineSize]
   )

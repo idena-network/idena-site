@@ -141,3 +141,39 @@ export const LinkText = ({href, children, ...props}) => (
     <a>{children}</a>
   </Link>
 )
+
+export function calculateEstimatedMiningReward(
+  stakeWeight,
+  averageMinerWeight,
+  onlineMinersCount
+) {
+  const proposerOnlyReward =
+    (6 * stakeWeight * 20) / (stakeWeight * 20 + averageMinerWeight * 100)
+
+  const committeeOnlyReward =
+    (6 * stakeWeight) / (stakeWeight + averageMinerWeight * 119)
+
+  const proposerAndCommitteeReward =
+    (6 * stakeWeight * 21) / (stakeWeight * 21 + averageMinerWeight * 99)
+
+  const proposerProbability = 1 / onlineMinersCount
+
+  const committeeProbability =
+    Math.min(100, onlineMinersCount) / onlineMinersCount
+
+  const proposerOnlyProbability =
+    proposerProbability * (1 - committeeProbability)
+
+  const committeeOnlyProbability =
+    committeeProbability * (1 - proposerProbability)
+
+  const proposerAndCommitteeProbability =
+    proposerOnlyProbability * committeeOnlyProbability
+
+  return (
+    85000 *
+    (proposerOnlyProbability * proposerOnlyReward +
+      committeeOnlyProbability * committeeOnlyReward +
+      proposerAndCommitteeProbability * proposerAndCommitteeReward)
+  )
+}
