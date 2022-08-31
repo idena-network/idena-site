@@ -4,7 +4,12 @@
 import {useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next'
 import {TooltipText} from './tooltip'
-import {usdFmt, precise1, precise2} from '../utils/utils'
+import {
+  usdFmt,
+  precise1,
+  precise2,
+  calculateEstimatedMiningReward,
+} from '../utils/utils'
 
 import {
   getOnlineIdentitiesCount,
@@ -15,6 +20,7 @@ import {
   getEpoch,
   getEpochIdentitiesSummary,
   getEpochRewardBounds,
+  getStaking,
 } from '../api'
 
 const COUNT_IDNA_PER_MONTH = 6 * 3 * 60 * 24 * 30
@@ -141,6 +147,29 @@ export default function TopHeader() {
     getData()
   }, [])
 
+  const [stakingData, setStakingData] = useState()
+
+  useEffect(() => {
+    async function getData() {
+      setStakingData(await getStaking())
+    }
+    getData()
+  }, [])
+
+  const maxMinerWeight = (stakingData && stakingData.maxMinerWeight) || 0
+  const estimatedMiningReward =
+    (stakingData &&
+      stakingData.averageMinerWeight &&
+      maxMinerWeight &&
+      nodesData &&
+      nodesData.onlineCount &&
+      calculateEstimatedMiningReward(
+        maxMinerWeight,
+        stakingData.averageMinerWeight,
+        nodesData.onlineCount
+      )) ||
+    0
+
   return (
     <div>
       <div className="topheader">
@@ -160,33 +189,29 @@ export default function TopHeader() {
 
             <Card
               name={t('Epoch mining')}
-              value={usdFmt(
-                precise1(
-                  (marketData.price * 25920 * epochData.epochDuration) /
-                    nodesData.onlineCount
-                )
-              )}
+              value={usdFmt(precise1(marketData.price * estimatedMiningReward))}
               tooltip={t(
-                'Epoch mining rewards per user ({{epochDuration}} days)',
+                'Max epoch mining rewards per user ({{epochDuration}} days)',
                 {
                   epochDuration: epochData.epochDuration,
                 }
               )}
+              href={
+                maxMinerWeight
+                  ? `/staking?amount=${maxMinerWeight ** (1 / 0.9)}`
+                  : ''
+              }
             />
             <Card
-              name={t('Validation rewards')}
+              name={t('Validation reward')}
               value={
-                rewardsData.minRewardPaid &&
-                rewardsData.maxRewardPaid &&
-                marketData.price
+                rewardsData.maxRewardPaid && marketData.price
                   ? `${usdFmt(
-                      precise1(rewardsData.minRewardPaid * marketData.price)
-                    )} - ${usdFmt(
                       precise1(rewardsData.maxRewardPaid * marketData.price)
                     )}`
                   : '-'
               }
-              tooltip={t('Last validation rewards paid per user')}
+              tooltip={t('Max reward paid per user for the last validation')}
               href={`https://scan.idena.io/epoch/${epoch + 1}/rewards`}
               blank
             />

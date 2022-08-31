@@ -182,6 +182,10 @@ export async function getIdentity(address) {
   return getResponse(apiClient().get(`identity/${address}`))
 }
 
+export async function getStaking() {
+  return getResponse(apiClient().get(`staking`))
+}
+
 export function getGoogleCalendarLink(jsonDate) {
   if (!jsonDate) return null
   const validationDate = jsonDate.replaceAll('-', '').substring(0, 8)
