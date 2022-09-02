@@ -1684,7 +1684,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'You can disable delegation in the next epoch only.',
+                          'You can disable delegation in the next epoch only. After you disable delegation you can not delegate your mining status for 3 epochs to a different pool.',
                           {ns: 'faq'}
                         )}
                       </p>
