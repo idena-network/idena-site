@@ -257,7 +257,6 @@ export default function Staking() {
                   <br />
                   <LinkText href="/faq#faq-economy-9">
                     <a
-                      href="https://docs.idena.io/docs/iip/iip-4"
                       target="_blank"
                       rel="noreferrer"
                       style={{
