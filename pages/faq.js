@@ -371,7 +371,7 @@ export default function Faq() {
                           number of invitations per epoch to support the network
                           growth. The number of available invitations for the
                           foundation address is limited to{' '}
-                          <code>min(500, max(50, 1/3*NetworkSize))</code>
+                          <code>max(500, NetworkSize*0.1)</code>
                         </Trans>
                       </p>
                     </div>
