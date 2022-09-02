@@ -18,7 +18,7 @@ import {useRouter} from 'next/router'
 import Layout from '../shared/components/layout'
 import {Tooltipicon} from '../shared/components/tooltip'
 import {useTotalValidatedCount} from '../shared/api'
-import {calculateEstimatedMiningReward} from '../shared/utils/utils'
+import {calculateEstimatedMiningReward, LinkText} from '../shared/utils/utils'
 
 const Scroll = require('react-scroll')
 
@@ -255,28 +255,29 @@ export default function Staking() {
                     {ns: 'stake'}
                   )}
                   <br />
-                  <a
-                    href="https://docs.idena.io/docs/iip/iip-4"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      fontSize: '14px',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      marginTop: '20px',
-                    }}
-                  >
-                    {t('Read more about Quadratic Staking (IIP-4)', {
-                      ns: 'stake',
-                    })}
-                    <img
-                      style={{marginLeft: '4px'}}
-                      src="/static/images/link-arrow.svg"
-                      alt="staking"
-                      width="12"
-                    />
-                  </a>
+                  <LinkText href="/faq#faq-economy-9">
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        fontSize: '14px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginTop: '20px',
+                      }}
+                    >
+                      {t('Read more about Quadratic Staking', {
+                        ns: 'stake',
+                      })}
+                      <img
+                        style={{marginLeft: '4px'}}
+                        src="/static/images/link-arrow.svg"
+                        alt="staking"
+                        width="12"
+                      />
+                    </a>
+                  </LinkText>
                 </p>
               </div>
             </div>
@@ -551,7 +552,7 @@ export default function Staking() {
                         <StakingData
                           title="Mining reward"
                           tooltip={t(
-                            'The amount of coins you get per epoch by running a mining node. It will be available after the implementation of the IIP-5',
+                            'The amount of coins you get per epoch by running a mining node.',
                             {ns: 'stake'}
                           )}
                           value={`${calcMiningReward(

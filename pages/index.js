@@ -268,20 +268,19 @@ export default function Home() {
               <p>
                 <Trans i18nKey="whatIsIdenaNotes" t={t} ns="index">
                   Idena is the first Proof-of-Person blockchain based on
-                  democratic principles. Every mining node is linked to a
-                  cryptoidentity – one single person with equal voting power and
-                  mining income.
+                  democratic principles. Every Idena validator is linked to a
+                  cryptoidentity – one single person with equal voting power.
                 </Trans>
               </p>
 
               <p>
                 <Trans i18nKey="whatIsIdenaToStartMining" t={t} ns="index">
-                  Every unique human can become an Idena validator no matter who
-                  they are and where they live. To start mining Idena, you need
-                  to prove you are a unique human. It does not require the
-                  disclosure of any personal data (no KYC). You need to appear
-                  online when the validation ceremony starts and solve a series
-                  of flip-tests (CAPTCHAs).
+                  Anyone can get their cryptoidentity no matter who they are and
+                  where they live. To become an Idena validator and start
+                  earning with Idena, you need to prove you are a unique human.
+                  It does not require the disclosure of any personal data (no
+                  KYC). You need to appear online when the validation ceremony
+                  starts and solve a series of flip-tests (CAPTCHAs).
                 </Trans>
               </p>
 
@@ -701,11 +700,11 @@ export default function Home() {
                       t={t}
                       ns="index"
                     >
-                      Mining Idena coins is accessible for everyone who owns an
-                      average laptop with an Internet connection. All Idena
-                      participants are empowered to maintain the network and
-                      earn equal mining rewards. These rewards can be considered
-                      as a form of universal basic income.
+                      Participation in the Idena protocol is accessible for
+                      everyone who owns an average laptop with an Internet
+                      connection. All Idena participants are empowered to
+                      maintain the network and earn basic rewards. These rewards
+                      can be considered as a form of universal basic income.
                     </Trans>
                   </p>
                 </div>
