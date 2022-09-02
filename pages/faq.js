@@ -166,7 +166,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'Be aware that person who invites you can terminate your cryptoidentity until you get Verified status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.',
+                          'Be aware that person who invites you can terminate your cryptoidentity until you get Newbie status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -1788,6 +1788,271 @@ export default function Faq() {
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
               >
+                <Card id="faq-economy-9">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-economy-9">
+                      {t('What is Quadratic staking?', {ns: 'faq'})}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-economy-9">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'In addition to the basic rewards for invites, flips, and reporting flips, the Idena protocol offers rewards for staking. In contrast to the traditional (linear) staking where large coin holders extract the major part of the profits Quadratic staking lets small-scale stakeholders earn higher APY than large stakeholders. The Quadratic staking rewards are paid only to validated identities proportional to their stake to the power of 0,9.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-economy-10">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-economy-10">
+                      {t('How can I earn Quadratic staking rewards?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-economy-10">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'Only validated identities can earn Quadratic staking rewards. There are two types of rewards you can earn.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <ol>
+                        <li>
+                          <Trans i18nKey="quadValidationRewards" t={t} ns="faq">
+                            <b>Validation rewards.</b> You can get Quadratic
+                            staking rewards for the successful validation once
+                            per epoch in addition to the basic rewards for
+                            invites, flips and reporting. The bigger your stake
+                            the more you get for validation.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadMiningRewards" t={t} ns="faq">
+                            <b>Mining rewards.</b> Mining rewards are paid out
+                            in real time as long as you keep your Idena node up
+                            and running while your mining status is activated.
+                            You can run the Idena node on your laptop in the
+                            background. It does not require a mining rig and
+                            does not consume much electricity. By running your
+                            own node you contribute to the network security and
+                            decentralization.
+                          </Trans>
+                        </li>
+                      </ol>
+                      <p>
+                        {t(
+                          'You can calculate your estimated Quadratic staking rewards here:',
+                          {ns: 'faq', nsSeparator: '!'}
+                        )}
+                        <br />
+                        <LinkText href="/staking">
+                          <a>https://www.idena.io/staking</a>
+                        </LinkText>
+                      </p>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card id="faq-economy-11">
+                  <Card.Header>
+                    <CustomToggle eventKey="#faq-economy-11">
+                      {t('What are the risks of Quadratic staking?', {
+                        ns: 'faq',
+                      })}
+                    </CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="#faq-economy-11">
+                    <div className="card-body">
+                      <p>
+                        {t(
+                          'Please be careful as you can lose your stake for missing or failing validation depending on your identity status.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'If you want to withdraw your stake you need to terminate your identity. You can not withdraw your stake until you get Verified status. We recommend you to start staking your coins only when you have Human or at least Verified status. However you can take a risk and start earning staking rewards even with Candidate status.',
+                          {ns: 'faq'}
+                        )}
+                      </p>
+                      <div className="tab-content block">
+                        <div className="tab-pane show active" role="tabpanel">
+                          <div className="table-responsive">
+                            <table className="table">
+                              <tr>
+                                <th>{t('Status', {ns: 'faq'})}</th>
+                                <th>{t('Validation rewards', {ns: 'faq'})}</th>
+                                <th>{t('Mining rewards', {ns: 'faq'})}</th>
+                                <th>{t('Stake protection', {ns: 'faq'})}</th>
+                              </tr>
+                              <tr>
+                                <td>{t('Candidate', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>{t('N/A', {ns: 'faq'})}</td>
+                                <td>{t('No', {ns: 'faq'})}</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Newbie', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>+</td>
+                                <td>{t('No', {ns: 'faq'})}</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Verified', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>+</td>
+                                <td>{t('Partially', {ns: 'faq'})}</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Human', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>+</td>
+                                <td>{t('Yes', {ns: 'faq'})}</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>{t('N/A', {ns: 'faq'})}</td>
+                                <td>{t('Depends on age', {ns: 'faq'})}</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Zombie', {ns: 'faq'})}</td>
+                                <td>+</td>
+                                <td>{t('N/A', {ns: 'faq'})}</td>
+                                <td>{t('Depends on age', {ns: 'faq'})}</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li>
+                          <Trans i18nKey="quadStakeCandidate" t={t} ns="faq">
+                            <b>Candidate.</b> You can stake the coins and get
+                            staking rewards for your 1st validation. However,
+                            before your 1st validation the user who gave you the
+                            invitation code can terminate your identity and burn
+                            your stake. If you still want to stake, please do
+                            not miss or fail your validation. Otherwise, the
+                            stake will be burnt. You won’t be able to withdraw
+                            your stake until you get validated at least 3 times
+                            in a row and get the Verified status.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadStakeNewbie" t={t} ns="faq">
+                            <b>Newbie.</b> You can stake your coins and earn
+                            both rewards for validation and rewards for running
+                            your own Idena node. 80% of your rewards will be
+                            locked in your stake until you get Verified status.
+                            60% of these rewards will be sent back to your
+                            wallet once you reach Verified status.
+                            <br />
+                            Please keep in mind that while you have a Newbie
+                            status you can not terminate your identity and
+                            withdraw your stake. You need to reach Verified
+                            status to be able to do it.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadStakeVerified" t={t} ns="faq">
+                            <b>Verified.</b> You can not fail the next
+                            validation, otherwise your coins will be burnt.
+                            However, you can miss validation and get Suspended
+                            status. With Verified status you can terminate your
+                            identity to withdraw your stake.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadStakeHuman" t={t} ns="faq">
+                            <b>Human.</b> Human status allows you to stake your
+                            coins safely. You will not lose your stake even if
+                            you fail or miss the next validation. However, your
+                            status will be switched to Suspended.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadStakeSuspended" t={t} ns="faq">
+                            <b>Suspended.</b> You can not earn mining rewards
+                            with Suspended status. However, if you join the next
+                            validation you can earn the staking rewards for
+                            validation and restore your Human status. If you
+                            fail your next validation your stake may be burnt
+                            depending on your age (see table below). If you miss
+                            your next validation your stake will remain and you
+                            will get Zombie status.
+                          </Trans>
+                        </li>
+                        <li>
+                          <Trans i18nKey="quadStakeZombie" t={t} ns="faq">
+                            <b>Zombie.</b> If you miss the next validation the
+                            stake will be burnt. However, if you fail your next
+                            validation then only a part of your stake can be
+                            burnt depending on your age. Remaining part will be
+                            sent to your main wallet.
+                          </Trans>
+                        </li>
+                      </ul>
+                      <div className="tab-content block">
+                        <div className="tab-pane show active" role="tabpanel">
+                          <div className="table-responsive">
+                            <table className="table">
+                              <tr>
+                                <th>{t('Status', {ns: 'faq'})}</th>
+                                <th>{t('Age', {ns: 'faq'})}</th>
+                                <th>{t('Burnt stake', {ns: 'faq'})}</th>
+                                <th>{t('Sent to main wallet', {ns: 'faq'})}</th>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>5</td>
+                                <td>5%</td>
+                                <td>95%</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>6</td>
+                                <td>4%</td>
+                                <td>96%</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>7</td>
+                                <td>3%</td>
+                                <td>97%</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>8</td>
+                                <td>2%</td>
+                                <td>98%</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>9</td>
+                                <td>1%</td>
+                                <td>99%</td>
+                              </tr>
+                              <tr>
+                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
+                                <td>10+</td>
+                                <td>0%</td>
+                                <td>100%</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
                 <Card id="faq-economy-2">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-economy-2">
@@ -1870,20 +2135,20 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The mining penalty is charged if a node is being offline for more that 1 hour with the miner status activated. The miner status for the penalized node is deactivated automatically.',
+                          'Account gets a penalty equal to 8 hours of burning mining.',
                           {ns: 'faq'}
                         )}
                       </p>
                       <p>
                         {t(
-                          'In order to continue mining, the mining status has to be activated manually. All the newly mined coins will be spent to cover the penalty. Once the penalty is paid, mining will continue as usual. All mining penalties are discarded when a new epoch starts.',
+                          'An Idena validator receives the mining penalty if their node is inactive for more than 1.5 hours. The miner status for the penalized account is deactivated automatically. Account gets a penalty equal to 8 hours of burning.',
                           {ns: 'faq'}
                         )}
                       </p>
 
                       <p>
                         {t(
-                          'The penalty size depends on the network size: PenaltySize = 6 iDNA x 1800 blocks / NetworkSize',
+                          'To continue mining, the mining status has to be activated manually. As the validator’s node returns to mining, the penalty time decreases, and the mined coins are burnt.',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
