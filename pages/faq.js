@@ -2342,6 +2342,12 @@ export default function Faq() {
                           Invitation rewards for the 2nd and 3rd validation are
                           not paid to the Idena foundation.
                         </Trans>
+                        <Trans i18nKey="reportRewardFund" t={t} ns="faq">
+                          <li>
+                            <b>Report reward fund: 15%</b>
+                          </li>
+                          The report reward fund is distributed for every reported flip to the identities who reported it.
+                        </Trans>
                         <li>
                           <b>
                             {t('Idena foundation payouts: 10%', {
