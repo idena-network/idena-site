@@ -145,7 +145,8 @@ export const LinkText = ({href, children, ...props}) => (
 export function calculateEstimatedMiningReward(
   stakeWeight,
   averageMinerWeight,
-  onlineMinersCount
+  onlineMinersCount,
+  epochDays
 ) {
   const proposerOnlyReward =
     (6 * stakeWeight * 20) / (stakeWeight * 20 + averageMinerWeight * 100)
@@ -171,7 +172,7 @@ export function calculateEstimatedMiningReward(
     proposerOnlyProbability * committeeOnlyProbability
 
   return (
-    85000 *
+    ((85000 * epochDays) / 21.0) *
     (proposerOnlyProbability * proposerOnlyReward +
       committeeOnlyProbability * committeeOnlyReward +
       proposerAndCommitteeProbability * proposerAndCommitteeReward)

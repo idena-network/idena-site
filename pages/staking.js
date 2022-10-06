@@ -175,10 +175,11 @@ export default function Staking() {
       return calculateEstimatedMiningReward(
         myStakeWeight,
         averageMinerWeight,
-        onlineSize
+        onlineSize,
+        epochTime.epochDuration
       )
     },
-    [averageMinerWeight, onlineSize]
+    [averageMinerWeight, epochTime.epochDuration, onlineSize]
   )
 
   const isNotAmount = !amountValue || parseInt(amountValue) === 0
