@@ -163,10 +163,13 @@ export default function TopHeader() {
       maxMinerWeight &&
       nodesData &&
       nodesData.onlineCount &&
+      epochData &&
+      epochData.epochDuration &&
       calculateEstimatedMiningReward(
         maxMinerWeight,
         stakingData.averageMinerWeight,
-        nodesData.onlineCount
+        nodesData.onlineCount,
+        epochData.epochDuration
       )) ||
     0
 
