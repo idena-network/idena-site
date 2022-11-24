@@ -25,7 +25,7 @@ const ResponseState = {
   Success: 1,
   Error: 3,
 }
-const followersCount = process.env.TWITTER_MINIMUM_SUBS_COUNT || 100
+const followersCount = process.env.NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT || 100
 
 // eslint-disable-next-line react/prop-types
 function Alert({state, message}) {

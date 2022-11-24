@@ -8,6 +8,7 @@ module.exports = withFonts({
   },
   i18n,
   env: {
-    TWITTER_MINIMUM_SUBS_COUNT: process.env.TWITTER_MINIMUM_SUBS_COUNT,
+    NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT:
+      process.env.NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT,
   },
 })
