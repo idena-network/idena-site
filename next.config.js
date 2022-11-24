@@ -7,8 +7,4 @@ module.exports = withFonts({
     includePaths: [path.join(__dirname, 'styles')],
   },
   i18n,
-  env: {
-    NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT:
-      process.env.NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT,
-  },
 })
