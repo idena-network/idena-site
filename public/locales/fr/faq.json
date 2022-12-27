@@ -225,7 +225,6 @@
     "subscribeTelegramLink": "Abonnez-vous à la chaîne Telegram <2>Idena Announcements</2> pour suivre les mises à jour.",
     "loinOfficialTelegram": "Rejoignez le chat officiel<2>Idena Telegram chat</2> et suivez les instructions du message épinglé pour obtenir un code d'invitation.",
     "\"Friendly flips\" attack": "Attaque \"Friendly flips\"",
-    "availableInvitationsNumber": "L'équipe de base d'Idena est autorisée à émettre un nombre limité d'invitations par époque pour soutenir la croissance du réseau. Le nombre d'invitations disponibles pour l'adresse de la fondation est limité à <2>min(500, max(50, 1/3*NetworkSize))</2>",
     "frequencyInDays": "Fréquence, <1></1> jours",
     "frequencyWith9441NetworkSize": "21 si samedi <1></1> 20 sinon",
     "candidateDescription": "<0>Candidat.</0> Un participant qui vient de rejoindre le réseau via une invitation ne peut participer qu'à la session de validation suivante.",
@@ -244,6 +243,5 @@
     "rewardExplanation": "Récompense de bloc : 6 iDNA<1></1>Nombre maximum de blocs par jour : 4 320<3></3>Capacité de minage par jour : 25 920 iDNA (50 %)<5></5>Fonds accumulés par jour : 25 920 iDNA (50 %)<7></7>Cap total : 51 840 iDNA",
     "penaltyProposalBlock": "1. Blocage de la proposition de pénalité (le bit <1>OfflinePropose</1> est activé)<4></4>Les nœuds votent pour une proposition de pénalité par un bit spécial dans leurs messages de vote : <6>TurnOffline</6>.",
     "penaltyExecutionBlock": "2. Blocage d'exécution de pénalité (le bit <1>OfflineCommit</1> est activé)<4></4>Le bloc est créé si le consensus pour la proposition de pénalité extraite dans le bloc précédent est atteint.",
-    "fixedMiningCaps": "<0>Il existe un plafond fixe pour le minage des coins Idena égal à 51 840 iDNA par jour :</0><1><0>Capacité de minage de bloc : 50 %</0><1>Fonds de récompense de validation : 12 %</ 1><2>Fonds de récompense des flips : 16 %</2><3>Fonds de récompense d'invitation : 16 %</3><4>Paiements de la fondation Idena : 5 %</4><5>Fonds de portefeuille zéro : 1 % </5></1>",
     "flipRewardFund": "<0><0>Fonds de récompense flip : 32 %</0></0>Le fonds de récompense flip est distribué de manière égale à tous les participants validés proportionnellement au nombre de leurs flips qualifiés. Les flips non qualifiés ne sont pas payés."
 }
