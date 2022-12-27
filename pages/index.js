@@ -399,15 +399,16 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <img
-                          src="/static/images/logo_qtrade.svg"
-                          alt="qTrade"
-                          width="40"
+                          style={{opacity: '0.7'}}
+                          src="/static/images/logo-probit.svg"
+                          alt="Probit"
+                          height="40"
                         />
                         <div className="linkbar-value">
-                          <span>qTrade</span>
+                          <span>Probit</span>
                         </div>
                         <a
-                          href="https://qtrade.io/market/IDNA_BTC"
+                          href="https://www.probit.com/app/exchange/IDNA-BTC"
                           target="_blank"
                           rel="noreferrer"
                         >
