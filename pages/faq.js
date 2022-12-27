@@ -46,7 +46,14 @@ export default function Faq() {
                     </LinkText>{' '}
                     if you're experiencing issues with installation and running
                     the Idena Node. Can’t find an answer? Email us at{' '}
-                    <a href="mailto:info@idena.io">info@idena.io</a>.
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="mailto:info@idena.io"
+                    >
+                      info@idena.io
+                    </a>
+                    .
                   </Trans>
                 </p>
                 <p className="hint text-center"></p>
@@ -147,7 +154,11 @@ export default function Faq() {
                         <Trans i18nKey="joinOfficialTelegram" t={t} ns="faq">
                           New invitations can only be sent out by validated
                           members. Join the official{' '}
-                          <a href="https://t.me/IdenaNetworkPublic">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://t.me/IdenaNetworkPublic"
+                          >
                             Idena Telegram chat
                           </a>{' '}
                           and follow instructions in the pinned message to get
@@ -160,13 +171,38 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'Please notice that validated members have limited number of invites (1 or 2 invites). The person who invites you gets invitation rewards for 3 subsequent validations passed by you. If you are not going to participate in the upcoming validation, please notify the person who invited you so he/she could have a chance to find another invitee and get an invitation reward.',
+                          'Please notice that validated members have limited number of invites (1 or 2 invites). The person who invites you gets invitation rewards for 3 subsequent validations passed by you. If you are not going to participate in the upcoming validation, please notify the person who invited you so they could have a chance to find another invitee and get an invitation reward.',
                           {ns: 'faq'}
                         )}
                       </p>
                       <p>
+                        <Trans
+                          i18nKey="invitationRewardsHowCanIGet"
+                          t={t}
+                          ns="faq"
+                        >
+                          You also get a part of invitation rewards based on the
+                          inviter's stake. The higher the inviter's stake, the
+                          more reward you get if you pass the validation. The
+                          reward are sent to your stake. If your inviter is
+                          penalized for a reported flip, the invitation rewards
+                          are not paid neither to the inviter nor to you. Please
+                          see details{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/wp/economics#invitation-reward-fund"
+                          >
+                            {' '}
+                            here
+                          </a>
+                          .
+                        </Trans>
+                      </p>
+
+                      <p>
                         {t(
-                          'Be aware that person who invites you can terminate your cryptoidentity until you get Newbie status. In this case he/she can take 1/6 of your stake if you are not going to participate in the upcoming validation.',
+                          'Be aware that person who invites you can terminate your Candidate account until you get Newbie status.',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -191,7 +227,11 @@ export default function Faq() {
                           >
                             <a href="./?view=download">Download and install</a>{' '}
                             the Idena Node and Idena Client executable files or{' '}
-                            <a href="https://github.com/idena-network">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://github.com/idena-network"
+                            >
                               build them from source
                             </a>
                             .
@@ -200,7 +240,11 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="subscribeTelegramLink" t={t} ns="faq">
                             Subscribe to the{' '}
-                            <a href="https://t.me/IdenaAnnouncements">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaAnnouncements"
+                            >
                               Idena Announcements
                             </a>{' '}
                             Telegram channel to follow updates.
@@ -209,7 +253,11 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="loinOfficialTelegram" t={t} ns="faq">
                             Join the official{' '}
-                            <a href="https://t.me/IdenaNetworkPublic">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaNetworkPublic"
+                            >
                               Idena Telegram chat
                             </a>{' '}
                             and follow instructions in the pinned message to get
@@ -244,11 +292,19 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="flipSolveLearningLink" t={t} ns="faq">
                             Learn how to solve flips: read{' '}
-                            <a href="https://medium.com/idena/how-to-prove-your-identity-anonymously-919bdfe5249a">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://medium.com/idena/how-to-prove-your-identity-anonymously-919bdfe5249a"
+                            >
                               the article
                             </a>{' '}
                             in our blog and{' '}
-                            <a href="https://flips.idena.io/?pass=idena.io">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://flips.idena.io/?pass=idena.io"
+                            >
                               test yourself
                             </a>
                             .
@@ -311,7 +367,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. The person who sells an invitation can kill the invited participant and get the staked/locked coins during the next several epochs before their status is "Verified". The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
+                          'The Idena protocol introduces incentives to prevent participants from buying and selling invitations. The person who sells an invitation can kill the invited participant and get the staked/locked coins during the next several epochs before their status is "Newbie". The seller can double-spend the invitation by selling it multiple times. Invitations should be granted for free to trusted people only (relatives, friends, and so on).',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -371,7 +427,7 @@ export default function Faq() {
                           number of invitations per epoch to support the network
                           growth. The number of available invitations for the
                           foundation address is limited to{' '}
-                          <code>min(500, max(50, 1/3*NetworkSize))</code>
+                          <code>min(500, NetworkSize*0.1))</code>
                         </Trans>
                       </p>
                     </div>
@@ -439,6 +495,12 @@ export default function Faq() {
                         {t(
                           'Newbies cannot terminate their identities to withdraw the stake.',
                           {ns: 'faq'}
+                        )}
+                      </p>
+                      <p>
+                        {t(
+                          'Newbies cannot participate in the governance of the network. While adresses with this status can get rewards for mining and participating in oracle votes, their votes are not counted and do not make a difference in the final outcome of a voting: they cannot influence a hard fork voting or an oracle voting.',
+                          {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
                     </div>
@@ -2262,9 +2324,12 @@ export default function Faq() {
                         </p>
                         <ul>
                           <li>Block mining cap: 50%</li>
-                          <li>Validation reward fund: 12%</li>
-                          <li>Flip reward fund: 16%</li>
-                          <li>Invitation reward fund: 16%</li>
+                          <li>Staking reward fund: 9%</li>
+                          <li>Candidate reward fund: 1%</li>
+                          <li>Flip reward fund: 7.5%</li>
+                          <li>Extra flip reward fund: 10%</li>
+                          <li>Invitation reward fund: 9%</li>
+                          <li>Report reward fund: 7.5%</li>
                           <li>Idena foundation payouts: 5%</li>
                           <li>Zero wallet fund: 1%</li>
                         </ul>
@@ -2285,68 +2350,22 @@ export default function Faq() {
                   <Accordion.Collapse eventKey="#faq-economy-4">
                     <div className="card-body">
                       <p>
-                        {t(
-                          'The validation session fund is capped at 25,920 iDNA per day. It accumulates daily (according to the number of blocks issued) and gets distributed at the end of the validation session as follows:',
-                          {ns: 'faq', nsSeparator: '!'}
-                        )}
+                        <Trans i18nKey="stakingRewardFund" t={t} ns="faq">
+                          The validation session fund is capped at 25,920 iDNA
+                          per day. It accumulates daily (according to the number
+                          of blocks issued) and gets distributed at the end of
+                          the validation session. Please see the validation
+                          rewards distribution{' '}
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/wp/economics#economics-of-the-idna"
+                          >
+                            here
+                          </a>
+                          .
+                        </Trans>
                       </p>
-                      <ul>
-                        <Trans i18nKey="validationRewardFund" t={t} ns="faq">
-                          <li>
-                            <b>Validation reward fund: 24%</b>
-                          </li>
-                          The validation reward is distributed according to age
-                          (proportional to <i>age</i>
-                          <sup>&#8531;</sup>). Older participants get more than
-                          younger ones.
-                        </Trans>
-                        <Trans i18nKey="flipRewardFund" t={t} ns="faq">
-                          <li>
-                            <b>Flip reward fund: 32%</b>
-                          </li>
-                          The flip reward fund is distributed equally to all
-                          validated participants proportionally to the number of
-                          their qualified flips. Non-qualified flips are not
-                          paid for.
-                        </Trans>
-                        <Trans i18nKey="invitationRewardFund" t={t} ns="faq">
-                          <li>
-                            <b>Invitation reward fund: 32%</b>
-                          </li>
-                          The invitation reward fund is distributed to all
-                          identities whose invitations have been validated.
-                          Invitation reward is paid up to 3 epochs in a row
-                          proportionally to the invited person's age:
-                          <br />
-                          - A reward for the second validation of an invitee is
-                          3 times bigger than a basic reward for a validated
-                          Candidate.
-                          <br />
-                          - A reward for a Verified invitee is 6 times bigger
-                          than a basic reward for a validated Candidate.
-                          <br />
-                          <br />
-                          Invitation rewards for the 2nd and 3rd validation are
-                          not paid to the Idena foundation.
-                        </Trans>
-                        <li>
-                          <b>
-                            {t('Idena foundation payouts: 10%', {
-                              ns: 'faq',
-                              nsSeparator: '!',
-                            })}
-                          </b>
-                        </li>
-                        <li>
-                          <b>
-                            {t('Zero wallet fund: 2%', {
-                              ns: 'faq',
-                              nsSeparator: '!',
-                            })}
-                          </b>
-                        </li>
-                      </ul>
-
                       <p>
                         {t(
                           'No rewards are paid to those participants who fall into one of the following groups:',
@@ -2357,7 +2376,7 @@ export default function Faq() {
                       <ol type="1">
                         <li>
                           {t(
-                            'Participants who have at least one flip irrelevant to key words',
+                            'Participants who have at least one reported flip',
                             {ns: 'faq'}
                           )}
                         </li>
@@ -2426,7 +2445,11 @@ export default function Faq() {
                       <p>
                         <Trans i18nKey="onePercentWallet" t={t} ns="faq">
                           1% of all issued coins is accumulated at{' '}
-                          <a href="https://scan.idena.io/address/0x0000000000000000000000000000000000000000">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://scan.idena.io/address/0x0000000000000000000000000000000000000000"
+                          >
                             the zero wallet address
                           </a>
                           . We believe that a governance for the zero wallet
@@ -2610,8 +2633,9 @@ export default function Faq() {
                         <Trans i18nKey="bitcoinPow" t={t} ns="faq">
                           Let's look at Bitcoin proof-of-work. Consider{' '}
                           <a
+                            rel="noreferrer"
+                            target="_blank"
                             href="https://arxiv.org/abs/1811.08263"
-                            rel="nofollow"
                           >
                             selfish mining
                           </a>{' '}
