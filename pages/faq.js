@@ -46,7 +46,14 @@ export default function Faq() {
                     </LinkText>{' '}
                     if you're experiencing issues with installation and running
                     the Idena Node. Can’t find an answer? Email us at{' '}
-                    <a href="mailto:info@idena.io">info@idena.io</a>.
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="mailto:info@idena.io"
+                    >
+                      info@idena.io
+                    </a>
+                    .
                   </Trans>
                 </p>
                 <p className="hint text-center"></p>
@@ -147,7 +154,11 @@ export default function Faq() {
                         <Trans i18nKey="joinOfficialTelegram" t={t} ns="faq">
                           New invitations can only be sent out by validated
                           members. Join the official{' '}
-                          <a href="https://t.me/IdenaNetworkPublic">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://t.me/IdenaNetworkPublic"
+                          >
                             Idena Telegram chat
                           </a>{' '}
                           and follow instructions in the pinned message to get
@@ -177,7 +188,11 @@ export default function Faq() {
                           penalized for a reported flip, the invitation rewards
                           are not paid neither to the inviter nor to you. Please
                           see details{' '}
-                          <a href="https://docs.idena.io/docs/wp/economics#invitation-reward-fund">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/wp/economics#invitation-reward-fund"
+                          >
                             {' '}
                             here
                           </a>
@@ -212,7 +227,11 @@ export default function Faq() {
                           >
                             <a href="./?view=download">Download and install</a>{' '}
                             the Idena Node and Idena Client executable files or{' '}
-                            <a href="https://github.com/idena-network">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://github.com/idena-network"
+                            >
                               build them from source
                             </a>
                             .
@@ -221,7 +240,11 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="subscribeTelegramLink" t={t} ns="faq">
                             Subscribe to the{' '}
-                            <a href="https://t.me/IdenaAnnouncements">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaAnnouncements"
+                            >
                               Idena Announcements
                             </a>{' '}
                             Telegram channel to follow updates.
@@ -230,7 +253,11 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="loinOfficialTelegram" t={t} ns="faq">
                             Join the official{' '}
-                            <a href="https://t.me/IdenaNetworkPublic">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://t.me/IdenaNetworkPublic"
+                            >
                               Idena Telegram chat
                             </a>{' '}
                             and follow instructions in the pinned message to get
@@ -265,11 +292,19 @@ export default function Faq() {
                         <li>
                           <Trans i18nKey="flipSolveLearningLink" t={t} ns="faq">
                             Learn how to solve flips: read{' '}
-                            <a href="https://medium.com/idena/how-to-prove-your-identity-anonymously-919bdfe5249a">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://medium.com/idena/how-to-prove-your-identity-anonymously-919bdfe5249a"
+                            >
                               the article
                             </a>{' '}
                             in our blog and{' '}
-                            <a href="https://flips.idena.io/?pass=idena.io">
+                            <a
+                              rel="noreferrer"
+                              target="_blank"
+                              href="https://flips.idena.io/?pass=idena.io"
+                            >
                               test yourself
                             </a>
                             .
@@ -2321,7 +2356,11 @@ export default function Faq() {
                           of blocks issued) and gets distributed at the end of
                           the validation session. Please see the validation
                           rewards distribution{' '}
-                          <a href="https://docs.idena.io/docs/wp/economics#economics-of-the-idna">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://docs.idena.io/docs/wp/economics#economics-of-the-idna"
+                          >
                             here
                           </a>
                           .
@@ -2406,7 +2445,11 @@ export default function Faq() {
                       <p>
                         <Trans i18nKey="onePercentWallet" t={t} ns="faq">
                           1% of all issued coins is accumulated at{' '}
-                          <a href="https://scan.idena.io/address/0x0000000000000000000000000000000000000000">
+                          <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://scan.idena.io/address/0x0000000000000000000000000000000000000000"
+                          >
                             the zero wallet address
                           </a>
                           . We believe that a governance for the zero wallet
@@ -2590,8 +2633,9 @@ export default function Faq() {
                         <Trans i18nKey="bitcoinPow" t={t} ns="faq">
                           Let's look at Bitcoin proof-of-work. Consider{' '}
                           <a
+                            rel="noreferrer"
+                            target="_blank"
                             href="https://arxiv.org/abs/1811.08263"
-                            rel="nofollow"
                           >
                             selfish mining
                           </a>{' '}
