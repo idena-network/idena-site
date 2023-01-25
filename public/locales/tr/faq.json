@@ -1,4 +1,11 @@
 {
     "Network size": "Ağ boyutu",
-    "Flip challenge": "Flip challenge"
+    "Flip challenge": "Flip challenge",
+    "We are here to help you. Browse through the most frequently asked questions. Can’t find an answer? Email us at info@idena.io": "Size yardım etmek için burdayız. En sık sorulan sorulara göz atın. Bir cevap bulamıyor musunuz? Bize info@idena.io adresinden e-posta gönderin",
+    "How do you ensure that the network does not have duplicate users?": "Ağın yinelenen kullanıcılara sahip olmadığından nasıl emin olabilirsiniz?",
+    "IDENA FAQ": "Idena SSS",
+    "Proof of person": "Kişinin kanıtı",
+    "The validation status of a participant is not forever. It expires when the next epoch starts. Participants should prolong their validation status for every new epoch.": "Bir katılımcının doğrulama durumu sonsuza kadar değildir. Bir sonraki dönem başladığında sona erer. Katılımcılar doğrulama durumlarını her yeni dönem için uzatmalıdır.",
+    "How do you prevent users from buying or selling their accounts?": "Kullanıcıların hesaplarını satın almalarını veya satmalarını nasıl engellersiniz?",
+    "The uniqueness of participants is proven by the fact that they must solve and provide the answers for flip-puzzles synchronously. A single person is not able to validate herself multiple times because of the very limited timeframe for the submission of the answers.": "Katılımcıların benzersizliği, eş zamanlı olarak flip-bulmacaları çözmeleri ve cevapları vermeleri gerektiği gerçeğiyle kanıtlanmıştır. Cevapların sunulması için çok sınırlı zaman çerçevesi nedeniyle, tek bir kişi kendini birden çok kez doğrulayamaz."
 }
