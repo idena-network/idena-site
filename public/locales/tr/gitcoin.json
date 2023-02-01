@@ -1,1 +1,12 @@
-{}
+{
+    "Step 1": "1. aşama",
+    "Get an invitation code": "Davetiye kodu al",
+    "Step 2": "2. aşama",
+    "Create and activate your Idena account": "Idena hesabınızı oluşturun ve etkinleştirin",
+    "Step 3": "3. aşama",
+    "Please choose the platform where you have the most active account:": "Lütfen en aktif hesaba sahip olduğunuz platformu seçin:",
+    "Next validation:": "Sonraki doğrulama:",
+    "Add to calendar": "Takvime ekle",
+    "Follow the instructions to create your account": "Hesabınızı oluşturmak için talimatları izleyin",
+    "Activate your invitation code. Please note that the invitation code expires 5 mins before validation!": "Davet kodunuzu etkinleştirin. Lütfen davetiye kodunun geçerlilik süresinin doğrulamadan 5 dakika önce sona erdiğini unutmayın!"
+}
