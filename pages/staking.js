@@ -29,6 +29,8 @@ export default function Staking() {
   const [amountSlider, setAmountSlider] = useState([245])
   const [weight, setWeight] = useState(1)
   const [averageMinerWeight, setAverageMinerWeight] = useState(1)
+  const [rewardFund, setRewardFund] = useState({})
+  const [rewardWeight, setRewardWeight] = useState({})
   const [onlineSize, setOnlineSize] = useState(1)
   const [totalShares, setTotalShares] = useState(1)
   const [totalStake, setTotalStake] = useState('0')
@@ -141,6 +143,14 @@ export default function Staking() {
         setWeight(stakingData.result.weight)
         setTotalShares(stakingData.result.minersWeight)
         setAverageMinerWeight(stakingData.result.averageMinerWeight)
+        setRewardFund({
+          extraFlips: rewardsData.result.extraFlips,
+          invitations: rewardsData.result.invitations,
+        })
+        setRewardWeight({
+          extraFlips: stakingData.result.extraFlipsWeight,
+          invitations: stakingData.result.invitationsWeight,
+        })
         setOnlineSize(onlineData.result)
         setEpochRewardFund(
           rewardsData.result.staking && rewardsData.result.staking > 0
@@ -167,6 +177,20 @@ export default function Staking() {
       (amount ** STAKING_POWER / (amount ** STAKING_POWER + weight)) *
       epochRewardFund,
     [weight, epochRewardFund]
+  )
+
+  const calcExtraFlipReward = useCallback(
+    amount =>
+      (amount ** STAKING_POWER / rewardWeight.extraFlips) *
+      rewardFund.extraFlips,
+    [rewardWeight.extraFlips, rewardFund.extraFlips]
+  )
+
+  const calcInvitationReward = useCallback(
+    amount =>
+      (amount ** STAKING_POWER / rewardWeight.invitations) *
+      rewardFund.invitations,
+    [rewardWeight.invitations, rewardFund.invitations]
   )
 
   const calcMiningReward = useCallback(
@@ -226,7 +250,12 @@ export default function Staking() {
 
   const renderTooltip = () => (
     <CustomTooltip
-      value={calcStakingReward(amountValue) + calcMiningReward(amountValue)}
+      value={
+        calcStakingReward(amountValue) +
+        calcMiningReward(amountValue) +
+        calcExtraFlipReward(amountValue) +
+        calcInvitationReward(amountValue)
+      }
     />
   )
 
@@ -387,7 +416,9 @@ export default function Staking() {
                         ? 0
                         : (
                             ((((calcStakingReward(amountValue) +
-                              calcMiningReward(amountValue)) *
+                              calcMiningReward(amountValue) +
+                              calcExtraFlipReward(amountValue) +
+                              calcInvitationReward(amountValue)) *
                               100) /
                               amountValue) *
                               366) /
@@ -526,25 +557,36 @@ export default function Staking() {
                         }}
                       >
                         <StakingData
-                          title={t('Stake', {ns: 'stake'})}
-                          value={`${
-                            isNotAmount
-                              ? 0
-                              : parseFloat(amountValue).toLocaleString(
-                                  undefined,
-                                  {
-                                    maximumFractionDigits: 2,
-                                  }
-                                )
-                          } iDNA`}
-                        />
-                        <StakingData
                           title={t('Staking reward', {ns: 'stake'})}
                           tooltip={t(
                             'The amount of coins you get for a successful validation',
                             {ns: 'stake'}
                           )}
                           value={`${calcStakingReward(
+                            amountValue
+                          ).toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })} iDNA`}
+                        />
+                        <StakingData
+                          title={t('Reward for extra flip', {ns: 'stake'})}
+                          tooltip={t(
+                            'The amount of coins you get for making one extra flip',
+                            {ns: 'stake'}
+                          )}
+                          value={`${calcExtraFlipReward(
+                            amountValue
+                          ).toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })} iDNA`}
+                        />
+                        <StakingData
+                          title={t('Reward for invitation', {ns: 'stake'})}
+                          tooltip={t(
+                            'The amount of coins you get for 3 successful validations of one invited user',
+                            {ns: 'stake'}
+                          )}
+                          value={`${calcInvitationReward(
                             amountValue
                           ).toLocaleString(undefined, {
                             maximumFractionDigits: 2,
@@ -561,22 +603,6 @@ export default function Staking() {
                           ).toLocaleString(undefined, {
                             maximumFractionDigits: 2,
                           })} iDNA`}
-                        />
-                        <StakingData
-                          title="APY"
-                          tooltip={t('Annual percentage yield', {ns: 'stake'})}
-                          value={`${
-                            isNotAmount
-                              ? 0
-                              : (
-                                  ((((calcStakingReward(amountValue) +
-                                    calcMiningReward(amountValue)) *
-                                    100) /
-                                    amountValue) *
-                                    366) /
-                                  epochTime.epochDuration
-                                )?.toFixed(1)
-                          } %`}
                         />
                       </div>
                       <div
@@ -595,7 +621,9 @@ export default function Staking() {
                           <span style={{fontWeight: 'bold'}}>
                             {`${(
                               calcStakingReward(amountValue) +
-                              calcMiningReward(amountValue)
+                              calcMiningReward(amountValue) +
+                              calcExtraFlipReward(amountValue) +
+                              calcInvitationReward(amountValue)
                             ).toLocaleString(undefined, {
                               maximumFractionDigits: 2,
                             })} iDNA`}
