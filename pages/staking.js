@@ -253,8 +253,8 @@ export default function Staking() {
       value={
         calcStakingReward(amountValue) +
         calcMiningReward(amountValue) +
-        calcExtraFlipReward(amountValue) +
-        calcInvitationReward(amountValue)
+        2 * calcExtraFlipReward(amountValue) +
+        2 * calcInvitationReward(amountValue)
       }
     />
   )
@@ -417,8 +417,8 @@ export default function Staking() {
                         : (
                             ((((calcStakingReward(amountValue) +
                               calcMiningReward(amountValue) +
-                              calcExtraFlipReward(amountValue) +
-                              calcInvitationReward(amountValue)) *
+                              2 * calcExtraFlipReward(amountValue) +
+                              2 * calcInvitationReward(amountValue)) *
                               100) /
                               amountValue) *
                               366) /
@@ -569,7 +569,7 @@ export default function Staking() {
                           })} iDNA`}
                         />
                         <StakingData
-                          title={t('Reward for extra flip', {ns: 'stake'})}
+                          title={t('Extra flip premium', {ns: 'stake'})}
                           tooltip={t(
                             'The amount of coins you get for making one extra flip',
                             {ns: 'stake'}
@@ -622,8 +622,8 @@ export default function Staking() {
                             {`${(
                               calcStakingReward(amountValue) +
                               calcMiningReward(amountValue) +
-                              calcExtraFlipReward(amountValue) +
-                              calcInvitationReward(amountValue)
+                              2 * calcExtraFlipReward(amountValue) +
+                              2 * calcInvitationReward(amountValue)
                             ).toLocaleString(undefined, {
                               maximumFractionDigits: 2,
                             })} iDNA`}

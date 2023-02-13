@@ -1,4 +1,5 @@
 {
+  "Total epoch reward": "Total epoch reward",
   "Stake iDNA to get rewards": "Stake iDNA to get rewards",
   "Stake iDNA to get Quadratic Staking rewards": "Stake iDNA to get Quadratic Staking rewards",
   "Quadratic Staking encourages people to secure their identities with iDNA stakes, no matter how small, and ensures a democratic distribution of staking rewards.": "Quadratic Staking encourages people to secure their identities with iDNA stakes, no matter how small, and ensures a democratic distribution of staking rewards.",
@@ -18,6 +19,10 @@
   "Stake": "Stake",
   "Staking reward": "Staking reward",
   "The amount of coins you get for a successful validation": "The amount of coins you get for a successful validation",
+  "Extra flip premium": "Extra flip premium",
+  "The amount of coins you get for making one extra flip": "The amount of coins you get for making one extra flip",
+  "Reward for invitation": "Reward for invitation",
+  "The amount of coins you get for 3 successful validations of one invited user": "The amount of coins you get for 3 successful validations of one invited user",
   "The amount of coins you get per epoch by running a mining node.": "The amount of coins you get per epoch by running a mining node.",
   "Annual percentage yield": "Annual percentage yield",
   "Total epoch reward": "Total epoch reward",
