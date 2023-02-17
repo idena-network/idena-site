@@ -571,7 +571,7 @@ export default function Staking() {
                         <StakingData
                           title={t('Extra flip premium', {ns: 'stake'})}
                           tooltip={t(
-                            'The amount of coins you get for making one extra flip',
+                            'The amount of coins you get for 1 extra flip in addition to the basic flip reward',
                             {ns: 'stake'}
                           )}
                           value={`${calcExtraFlipReward(

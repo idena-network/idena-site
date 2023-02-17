@@ -20,7 +20,7 @@
   "Staking reward": "Staking reward",
   "The amount of coins you get for a successful validation": "The amount of coins you get for a successful validation",
   "Extra flip premium": "Extra flip premium",
-  "The amount of coins you get for making one extra flip": "The amount of coins you get for making one extra flip",
+  "The amount of coins you get for 1 extra flip in addition to the basic flip reward": "The amount of coins you get for 1 extra flip in addition to the basic flip reward",
   "Reward for invitation": "Reward for invitation",
   "The amount of coins you get for 3 successful validations of one invited user": "The amount of coins you get for 3 successful validations of one invited user",
   "The amount of coins you get per epoch by running a mining node.": "The amount of coins you get per epoch by running a mining node.",
