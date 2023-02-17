@@ -253,8 +253,8 @@ export default function Staking() {
       value={
         calcStakingReward(amountValue) +
         calcMiningReward(amountValue) +
-        2 * calcExtraFlipReward(amountValue) +
-        2 * calcInvitationReward(amountValue)
+        calcExtraFlipReward(amountValue) +
+        calcInvitationReward(amountValue)
       }
     />
   )
@@ -417,8 +417,8 @@ export default function Staking() {
                         : (
                             ((((calcStakingReward(amountValue) +
                               calcMiningReward(amountValue) +
-                              2 * calcExtraFlipReward(amountValue) +
-                              2 * calcInvitationReward(amountValue)) *
+                              calcExtraFlipReward(amountValue) +
+                              calcInvitationReward(amountValue)) *
                               100) /
                               amountValue) *
                               366) /
@@ -622,8 +622,8 @@ export default function Staking() {
                             {`${(
                               calcStakingReward(amountValue) +
                               calcMiningReward(amountValue) +
-                              2 * calcExtraFlipReward(amountValue) +
-                              2 * calcInvitationReward(amountValue)
+                              calcExtraFlipReward(amountValue) +
+                              calcInvitationReward(amountValue)
                             ).toLocaleString(undefined, {
                               maximumFractionDigits: 2,
                             })} iDNA`}
