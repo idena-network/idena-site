@@ -1525,18 +1525,37 @@ export default function Faq() {
                       <Trans i18nKey="flipCreationRules" t={t} ns="faq">
                         <p>Please follow the rules when creating flips:</p>
                         <ul>
-                          <li>flips should be relevant to both keywords</li>
                           <li>
-                            flips should not contain any inappropriate content
+                            both keywords should be clearly visible in the
+                            images
+                          </li>
+                          <li>
+                            flips should not contain any numbers or letters or
+                            other labels on top of the images indicating their
+                            order
+                          </li>
+                          <li>
+                            flips should not contain any sequence of enumerated
+                            objects
                           </li>
                           <li>
                             flips should not content any text that is necessary
                             to understand to solve this flip
                           </li>
                           <li>
-                            flips should not contain any numbers or letters or
-                            other labels on top of the images indicating their
-                            order
+                            flips should not contain any adult content (18+,
+                            NSFW)
+                          </li>
+                          <li>
+                            flips should not contain several unrelated stories
+                          </li>
+                          <li>flips should not include waking up template</li>
+                          <li>
+                            there should not be thumbs up/down image at the end
+                          </li>
+                          <li>
+                            do not insert images of both keywords into a
+                            page/screen/painting
                           </li>
                         </ul>
                         <p>
