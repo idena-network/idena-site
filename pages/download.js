@@ -75,7 +75,10 @@ export default function Download() {
         rawAssets.nodeWindows = asset
       } else if (asset.name.search(/^idena-node-mac-.*/) !== -1) {
         rawAssets.nodeDarwin = asset
-      } else if (asset.name.search(/^idena-node-linux-.*/) !== -1) {
+      } else if (
+        asset.name.search(/^idena-node-linux-.*/) !== -1 &&
+        asset.name.search(/^idena-node-linux-aarch64-.*/) === -1
+      ) {
         rawAssets.nodeLinux = asset
       }
     })
