@@ -42,10 +42,10 @@ export default function Faq() {
                   <Trans i18nKey="faqGuideLink" t={t} ns="faq">
                     Browse through the most frequently asked questions. See{' '}
                     <LinkText href="/guide">
-                      <a>Installation and troubleshooting guide</a>
+                      <a>guide</a>
                     </LinkText>{' '}
-                    if you're experiencing issues with installation and running
-                    the Idena Node. Can’t find an answer? Email us at{' '}
+                    if you're experiencing issues with Idena Node. Can’t find an
+                    answer? Email us at{' '}
                     <a
                       rel="noreferrer"
                       target="_blank"
@@ -59,7 +59,7 @@ export default function Faq() {
                 <p className="hint text-center"></p>
               </div>
 
-              <h3>{t('Proof of person', {ns: 'faq'})}</h3>
+              <h2>{t('Proof of person', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -119,7 +119,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Where to start', {ns: 'faq'})}</h3>
+              <h2>{t('Where to start', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -508,7 +508,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Validation session', {ns: 'faq'})}</h3>
+              <h2>{t('Validation session', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -1111,7 +1111,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Flip challenge', {ns: 'faq'})}</h3>
+              <h2>{t('Flip challenge', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -1489,7 +1489,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Flip creation', {ns: 'faq'})}</h3>
+              <h2>{t('Flip creation', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -1718,7 +1718,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Delegation', {ns: 'faq'})}</h3>
+              <h2>{t('Delegation', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -1864,7 +1864,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Economy', {ns: 'faq'})}</h3>
+              <h2>{t('Economy', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -1872,14 +1872,14 @@ export default function Faq() {
                 <Card id="faq-economy-9">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-economy-9">
-                      {t('What is Quadratic staking?', {ns: 'faq'})}
+                      {t('What is Identity staking?', {ns: 'faq'})}
                     </CustomToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="#faq-economy-9">
                     <div className="card-body">
                       <p>
                         {t(
-                          'In addition to the basic rewards for invites, flips, and reporting flips, the Idena protocol offers rewards for staking. In contrast to the traditional (linear) staking where large coin holders extract the major part of the profits Quadratic staking lets small-scale stakeholders earn higher APY than large stakeholders. The Quadratic staking rewards are paid only to validated identities proportional to their stake to the power of 0,9.',
+                          'In addition to the rewards for flips, reporting "bad" flips, invites, the Idena protocol offers rewards for staking. Unlike traditional linear staking, where large coin holders benefit the most, Identity Staking allows small-scale stakeholders to earn a higher APY than larger stakeholders. The Identity staking rewards are paid only to validated identities in proportion to their stake raised to the power of 0.9',
                           {ns: 'faq'}
                         )}
                       </p>
@@ -1890,7 +1890,7 @@ export default function Faq() {
                 <Card id="faq-economy-10">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-economy-10">
-                      {t('How can I earn Quadratic staking rewards?', {
+                      {t('How can I earn Identity staking rewards?', {
                         ns: 'faq',
                       })}
                     </CustomToggle>
@@ -1899,14 +1899,14 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'Only validated identities can earn Quadratic staking rewards. There are two types of rewards you can earn.',
+                          'Only validated identities can earn Identity staking rewards. There are two types of rewards you can earn.',
                           {ns: 'faq'}
                         )}
                       </p>
                       <ol>
                         <li>
                           <Trans i18nKey="quadValidationRewards" t={t} ns="faq">
-                            <b>Validation rewards.</b> You can get Quadratic
+                            <b>Validation rewards.</b> You can get Identity
                             staking rewards for the successful validation once
                             per epoch in addition to the basic rewards for
                             invites, flips and reporting. The bigger your stake
@@ -1928,7 +1928,7 @@ export default function Faq() {
                       </ol>
                       <p>
                         {t(
-                          'You can calculate your estimated Quadratic staking rewards here:',
+                          'You can calculate your estimated Identity staking rewards here:',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                         <br />
@@ -1943,7 +1943,7 @@ export default function Faq() {
                 <Card id="faq-economy-11">
                   <Card.Header>
                     <CustomToggle eventKey="#faq-economy-11">
-                      {t('What are the risks of Quadratic staking?', {
+                      {t('What are the risks of Identity staking?', {
                         ns: 'faq',
                       })}
                     </CustomToggle>
@@ -2489,7 +2489,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('How to buy iDNA?', {ns: 'faq'})}</h3>
+              <h2>{t('How to buy iDNA?', {ns: 'faq'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -2626,7 +2626,7 @@ export default function Faq() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Attacks', {ns: 'faq  '})}</h3>
+              <h2>{t('Attacks', {ns: 'faq  '})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}

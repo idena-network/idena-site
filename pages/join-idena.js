@@ -137,7 +137,7 @@ export default function JoinIdena() {
       description="How to verify your Idena cryptoidentity"
     >
       <section
-        className="section section_content menu_section_content menu_join_idena"
+        className="section section_header section_content menu_section_content menu_join_idena"
         id="join-idena"
       >
         <div className="container">

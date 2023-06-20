@@ -67,6 +67,45 @@ export function useTotalValidatedCount() {
   return count
 }
 
+export function useNodesCount() {
+  const [validatorsCount, setValidatorsCount] = useState(null)
+  const [totalNodeCount, setTotalNodesCount] = useState(null)
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch(
+          'https://api.idena.io/api/onlineValidators/count'
+        )
+        const jsonEpoch = await response.json()
+        setValidatorsCount(jsonEpoch.result)
+      } catch (e) {
+        console.error('cannot fetch API')
+      }
+
+      try {
+        const response = await fetch(
+          'https://api.idena.io/api/Peers/History?limit=1'
+        )
+        const jsonPeers = await response.json()
+
+        setTotalNodesCount(
+          jsonPeers.result &&
+            jsonPeers.result.length > 0 &&
+            jsonPeers.result[0] &&
+            jsonPeers.result[0].count
+        )
+      } catch (e) {
+        console.error('cannot fetch API')
+      }
+    }
+
+    getData()
+  }, [])
+
+  return {validatorsCount, totalNodeCount}
+}
+
 export function useNextValidationTime() {
   const [state, setState] = useState({localeTime: null, jsonDateString: null})
 
@@ -176,6 +215,10 @@ export async function getTxs(address) {
   return getResponse(
     apiClient().get(`address/${address}/txs`, {params: {limit: 10}})
   )
+}
+
+export async function getMaxStake() {
+  return getResponse(apiClient().get(`balances?sortBy=stake&limit=1`))
 }
 
 export async function getIdentity(address) {

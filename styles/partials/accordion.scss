@@ -15,9 +15,9 @@
 }
 
 .card-header {
-  font-weight: 600;
-  font-size: rem(21px);
-  line-height: rem(32px);
+  font-weight: 500;
+  font-size: rem(16px);
+  line-height: rem(21px);
   color: $gray-dark;
   letter-spacing: -0.25px;
   font-family: $font-family-base;
@@ -34,6 +34,7 @@
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0;
+    text-align: left;
 
     a {
       padding: 16px 40px;
@@ -56,6 +57,7 @@
 
   @media (#{$max_phones--big}) {
     padding:  0 40px 20px;
+    text-align: left;
   }
 }
 

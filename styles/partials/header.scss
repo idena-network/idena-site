@@ -2,7 +2,12 @@
   margin-bottom: 36px;
 
   img {
-    width: 161px;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 0%);
   }
 
   @media (#{$max_phones--big}) {
@@ -17,11 +22,12 @@
 }
 
 .header_nav__link {
-  padding: rem(8px 20px);
+  padding: rem(8px 19px);
+
 }
 
 .header_nav__item {
-  font-size: rem(16px);
+  font-size: rem($font-size-base);
   line-height: rem(24px);
   text-align: center;
   font-weight: 500;
@@ -44,7 +50,6 @@
     .header_nav__link {
       color: $gray-dark;
 
-      // статичная подсветка навигации хэдера
       background-color: white;
       border-radius: 20px;
       @media (max-width: 767px) {
@@ -54,14 +59,73 @@
   }
 }
 
+
+.navbar-side-btn {
+  float: right;
+  top: rem(-43px);
+  background: #1E2E45;
+  line-height: 34px;
+  margin: 3px 0 0 0;
+  color: white;
+  padding: 0px 20px;
+
+  &:hover {
+    color: white;
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  &._link{
+    color: $black;
+    background: transparent;
+  }
+
+  &._brand{
+    color: $black;
+    background: transparent;
+    img{
+      width: 42px;
+      top: -8px;
+
+    }
+  }
+
+  @media (#{$max_phones--big}) {
+    display: none;
+  }
+
+}
+
+
 .header {
   position: relative;
   top: 0;
-  padding: 30px 40px;
+  padding: 12px 12px;
   z-index: 100;
+  
+  [class*='col-'] {
+    padding: 0;
+  }
 
   .navbar-brand {
-    margin-left: -38px;
+    img{
+      width: 45px;
+      position: absolute;
+      top: -8px;
+      left: 0px;
+    }
+    p{
+      margin: 0 0 0 60px;
+      line-height: 30px;
+    }
+    //margin-left: -38px;
+    z-index: 100;
+    position: relative;
+    color: #53565C;
+    font-size: rem($font-size-base);
+    font-weight: 500;
+
+    margin-top: 5px;
     margin-right: 0;
     float: left;
     opacity: 0;
@@ -105,7 +169,7 @@
 
     .menu-opened & {
       visibility: visible;
-      background: $gray-dark;
+      background: #0F172A;//$gray-dark;
       opacity: 1;
       transition: all 200ms ease-in-out;
 
@@ -244,7 +308,7 @@
 
       .header_nav__link {
         padding: 12px;
-        color: #53565c;
+        color: white;
         font-weight: 600 !important;
 
         &:hover {
@@ -257,12 +321,12 @@
         border: 0;
 
         &:last-child {
-          border-bottom: 1px solid rgba(#e8eaed, 1);
+          border-bottom: 1px solid rgba($gray-dark, 1);
         }
 
         &.active ~ .header_nav__item {
           height: auto;
-          border-top: 1px solid rgba(#e8eaed, 1);
+          border-top: 1px solid rgba($gray-dark, 1);
         }
       }
     }
@@ -270,6 +334,15 @@
 }
 
 .header_nav {
+  //margin-right: rem(55px);
+  //@media (#{$max_phones--big}) {
+  //  margin-right: 0;
+  //}
+
+  @media (#{$max_tablets}) {
+    margin-top: 5px;
+  }
+
   &__indicator {
     position: absolute;
     left: 0;
@@ -338,7 +411,7 @@
     margin-right: auto;
     height: 2px;
     transition: all 0.4s ease;
-    background-color: $gray;
+    background-color: #1e2e45;//$gray;
 
     &:first-child {
       top: 14px;
@@ -366,7 +439,7 @@
 
     i {
       width: 18px;
-      background-color: #d2d4d9 !important;
+      background-color: white !important;
 
       &:first-child {
         top: 19px;
@@ -409,13 +482,13 @@
   border-radius: 100px;
   box-shadow: 0px 2px 4px rgba(83, 86, 92, 0.06) !important;
 
-  background-color: #578fff;
+  background-color: #1E2E45;
   a {
     color: $white;
   }
 
   &:hover {
-    background-color: darken(#578fff, 3%) !important;
+    opacity: 0.9;
   }
 
   &.active {
@@ -442,7 +515,7 @@
 }
 
 .toolTipPopper {
-  margin-top: -1.3rem;
+  margin-top: -10px;
   opacity: 1 !important;
   padding: 0.4rem 0;
 }

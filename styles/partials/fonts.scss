@@ -1,3 +1,28 @@
+
+
+@font-face {
+  font-family: 'Bluescreens';
+  src: url('/static/fonts/TT Bluescreens Light.woff2') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+@font-face {
+  font-family: 'Bluescreens';
+  src: url('/static/fonts/TT Bluescreens Regular.woff2') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Bluescreens';
+  src: url('/static/fonts/TT Bluescreens Medium.woff2') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+
 @font-face {
   font-family: 'Inter';
   src: url('/static/fonts/Inter-Regular.woff2') format('woff2'),

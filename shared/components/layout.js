@@ -59,24 +59,23 @@ export default function Layout({children, title = '', description = ''}) {
   return (
     <div className={menuOpened ? `menu-opened` : ``}>
       <Header title={title} description={description} />
-      <TopHeader />
+
       <header className="header">
         <div className="container">
-          <div className="row align-items-center justify-content-center align-items-center">
-            <Link href="/">
-              <a
-                className={`navbar-brand nav-link d-none d-md-block ${router.pathname !==
-                  '/' && 'show'}`}
-                data-target="menu_main"
-              >
-                <img
-                  src="/static/images/idena_black.svg"
-                  alt="logo"
-                  width="38px"
-                />
-              </a>
-            </Link>
-            <div className="col-md-12 text-center">
+          <div className="row justify-content-center text-center">
+            <div className="col-md-3">
+              <Link href="/">
+                <a
+                  className="navbar-brand nav-link d-none d-md-block show"
+                  data-target="menu_main"
+                >
+                  <img src="/static/images/idena_black.svg" alt="logo" />
+                  <p>Idena</p>
+                </a>
+              </Link>
+            </div>
+
+            <div className="col-md-6 text-center">
               <ul className="header_nav nav justify-content-center">
                 <li className="nav-item header_nav__item mobile_only">
                   <Link href="/">
@@ -90,25 +89,25 @@ export default function Layout({children, title = '', description = ''}) {
                 </li>
 
                 <LiActive className="nav-item header_nav__item">
-                  <a
-                    href="https://scan.idena.io/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="nav-link header_nav__link"
-                  >
-                    {t('Explorer')}
-                  </a>
+                  <Link href="/staking">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_contribute"
+                    >
+                      {t('Staking')}
+                    </a>
+                  </Link>
                 </LiActive>
 
-                <LiActive className="nav-item header_nav__item">
-                  <a
-                    href="https://bridge.idena.io/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="nav-link header_nav__link"
-                  >
-                    {t('BSC bridge')}
-                  </a>
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/download">
+                    <a
+                      className="nav-link header_nav__link"
+                      data-target="menu_download"
+                    >
+                      {t('Download')}
+                    </a>
+                  </Link>
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
@@ -122,7 +121,16 @@ export default function Layout({children, title = '', description = ''}) {
                   </Link>
                 </LiActive>
 
-                {/* <li className="header_nav__indicator"></li> */}
+                <LiActive className="nav-item header_nav__item">
+                  <a
+                    href="https://scan.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    {t('Explorer')}
+                  </a>
+                </LiActive>
 
                 <LiActive className="nav-item header_nav__item mobile_only">
                   <a
@@ -147,38 +155,46 @@ export default function Layout({children, title = '', description = ''}) {
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="/contribute">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_contribute"
-                    >
-                      {t('Contribute')}
+                  <a
+                    href="https://bridge.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    {t('Bridge')}
+                  </a>
+                </LiActive>
+
+                <LiActive className="nav-item header_nav__item mobile_only">
+                  <Link href="/join-idena">
+                    <a className="nav-link header_nav__link">
+                      {t('How to join')}
                     </a>
                   </Link>
                 </LiActive>
 
-                <LiActive className="nav-item header_nav__item">
-                  <Link href="/download">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_download"
-                    >
-                      {t('Download')}
-                    </a>
-                  </Link>
-                </LiActive>
-
-                <LiActive className="nav-item header_nav__item highlighted">
+                <LiActive className="nav-item header_nav__item mobile_only">
                   <Link href="https://app.idena.io">
-                    <a
-                      className="nav-link header_nav__link"
-                      data-target="menu_webclient"
-                    >
+                    <a className="nav-link header_nav__link" data-target="">
                       {t('Web app')}
                     </a>
                   </Link>
                 </LiActive>
               </ul>
+            </div>
+
+            <div className="col-md-3">
+              <Link href="https://app.idena.io">
+                <a className="navbar-side-btn" data-target="menu_main">
+                  {t('Web app')}
+                </a>
+              </Link>
+
+              <Link href="/download">
+                <a className="navbar-side-btn _link" data-target="menu_main">
+                  {t('Node')}
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -229,14 +245,6 @@ export default function Layout({children, title = '', description = ''}) {
               </Link>
             </LiActive>
 
-            <li className="nav-item header_nav__item">
-              <Link href="/join-idena">
-                <a className="nav-link header_nav__link where_to_start">
-                  {t('How to join Idena')}
-                </a>
-              </Link>
-            </li>
-
             {/* <li className="nav-item header_nav__item"> */}
             {/*  <a */}
             {/*    className="nav-link header_nav__link" */}
@@ -271,9 +279,39 @@ export default function Layout({children, title = '', description = ''}) {
             {/* </li> */}
 
             <LiActive className="nav-item header_nav__item">
+              <Link href="/staking">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_staking"
+                >
+                  {t('Staking')}
+                </a>
+              </Link>
+            </LiActive>
+
+            <LiActive className="header_nav__item">
+              <Link href="/join-idena">
+                <a className="nav-link header_nav__link">
+                  {t('How to join Idena')}
+                </a>
+              </Link>
+            </LiActive>
+
+            <LiActive className="nav-item header_nav__item">
               <Link href="/faq">
                 <a className="nav-link header_nav__link" data-target="menu_faq">
                   {t('FAQ')}
+                </a>
+              </Link>
+            </LiActive>
+
+            <LiActive className="nav-item header_nav__item">
+              <Link href="/contribute">
+                <a
+                  className="nav-link header_nav__link"
+                  data-target="menu_contribute"
+                >
+                  {t('How to contribute')}
                 </a>
               </Link>
             </LiActive>
@@ -300,17 +338,6 @@ export default function Layout({children, title = '', description = ''}) {
               </a>
             </li>
 
-            <LiActive className="nav-item header_nav__item">
-              <Link href="/contribute">
-                <a
-                  className="nav-link header_nav__link"
-                  data-target="menu_contribute"
-                >
-                  {t('How to contribute')}
-                </a>
-              </Link>
-            </LiActive>
-
             <li className="nav-item header_nav__item">
               <a
                 href="https://scan.idena.io/"
@@ -319,17 +346,6 @@ export default function Layout({children, title = '', description = ''}) {
                 className="nav-link header_nav__link"
               >
                 {t('Blockchain explorer')}
-              </a>
-            </li>
-
-            <li className="nav-item header_nav__item">
-              <a
-                href="https://idena-apps.org/"
-                rel="noreferrer"
-                target="_blank"
-                className="nav-link header_nav__link"
-              >
-                {t('Apps & Resources')}
               </a>
             </li>
 
@@ -441,7 +457,7 @@ export default function Layout({children, title = '', description = ''}) {
           </div>
           <div className="row justify-content-center text-center">
             <div className="donate">
-              <a href="/donate">{t('Support Idena by making a donation')}</a>
+              <a href="/donate">{t('Donate')}</a>
             </div>
           </div>
         </div>

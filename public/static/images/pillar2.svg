@@ -1,0 +1,29 @@
+<svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1328_4979" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="7" width="56" height="64">
+<path d="M42.5878 70.101C40.9585 71.0438 38.9495 71.0438 37.3202 70.101L14.7204 57.0235C13.0958 56.0835 12.0955 54.3488 12.0955 52.4719L12.0955 26.2965C12.0955 24.4196 13.0958 22.685 14.7204 21.745L37.3202 8.66753C38.9495 7.72473 40.9585 7.72473 42.5878 8.66753L65.1876 21.745C66.8121 22.685 67.8125 24.4196 67.8125 26.2966L67.8125 52.4719C67.8125 54.3489 66.8121 56.0835 65.1876 57.0235L42.5878 70.101Z" fill="url(#paint0_radial_1328_4979)"/>
+</mask>
+<g mask="url(#mask0_1328_4979)">
+<g filter="url(#filter0_f_1328_4979)">
+<ellipse cx="-31.334" cy="10.5" rx="53" ry="53.5" transform="rotate(-180 -31.334 10.5)" fill="#6087EA"/>
+</g>
+<g filter="url(#filter1_f_1328_4979)">
+<ellipse cx="40.166" cy="-37.5" rx="55.5" ry="55.5" transform="rotate(-180 40.166 -37.5)" fill="#DB6CBC"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_1328_4979" x="-126.334" y="-85" width="190" height="191" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="21" result="effect1_foregroundBlur_1328_4979"/>
+</filter>
+<filter id="filter1_f_1328_4979" x="-55.334" y="-133" width="191" height="191" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_1328_4979"/>
+</filter>
+<radialGradient id="paint0_radial_1328_4979" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(61.4588 61.5641) rotate(-121.598) scale(98.2554 142.929)">
+<stop offset="0.442708" stop-color="#F5F7F8"/>
+<stop offset="1" stop-color="#A9BCEA"/>
+</radialGradient>
+</defs>
+</svg>
