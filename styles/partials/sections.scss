@@ -992,9 +992,9 @@
 }
 
 @property --rl{
-  syntax: '<percentage>';
+  syntax: '<number>';
   inherits: false;
-  initial-value: 0%;
+  initial-value: 0;
 }
 
 .ripple-red{
@@ -1025,20 +1025,20 @@
     height: 350px;
     width: 350px;
     z-index: -1;
-    --rl: 0%;
+    --rl: 0;
     transition: --rl 0.5s 0.1s;
     background: 
       radial-gradient(circle at 100% 40%, white 30%, #FFFFFF00 40%),   
       radial-gradient(circle at 0% 60%, white 30%, #FFFFFF00 40%),
       radial-gradient(closest-side, #FFFFFF00 0%,
-        rgba(#DB6CBC, 0%   ) calc(0% + var(--rl)),
-        rgba(#DB6CBC, calc(-10% + var(--rl))) calc(10% + var(--rl)),
-        rgba(#DB6CBC, 0%   ) calc(20% + var(--rl)),
-        rgba(#DB6CBC, 10%  ) calc(30% + var(--rl)),
-        rgba(#DB6CBC, 0%   ) calc(40% + var(--rl)),
-        rgba(#DB6CBC, calc(10% - var(--rl))) calc(50% + var(--rl)),
-        rgba(#DB6CBC, 0%   ) calc(60% + var(--rl)),
-        #FFFFFF00 100%);  
+        rgba(#DB6CBC, 0   ) calc(0% + var(--rl) * 100%),
+        rgba(#DB6CBC, calc(-0.1 + var(--rl))) calc(10% + var(--rl) * 100%),
+        rgba(#DB6CBC, 0   ) calc(20% + var(--rl) * 100%),
+        rgba(#DB6CBC, 0.1 ) calc(30% + var(--rl) * 100%),
+        rgba(#DB6CBC, 0   ) calc(40% + var(--rl) * 100%),
+        rgba(#DB6CBC, calc(0.1 - var(--rl))) calc(50% + var(--rl) * 100%),
+        rgba(#DB6CBC, 0   ) calc(60% + var(--rl) * 100%),
+        #FFFFFF00 100%);
     transform: translate3d(-50%, -53%, 0);
     will-change: opacity;
     animation: RippleAnimation 7s linear infinite;
@@ -1065,23 +1065,22 @@
     height: 450px;
     width: 450px;
     z-index: -1;
-    --rl: 0%;
+    --rl: 0;
     transition: --rl 0.5s 0.1s;
   
     background: 
       radial-gradient(circle at 100% 40%, white 30%, #FFFFFF00 40%),   
       radial-gradient(circle at 0% 60%, white 30%, #FFFFFF00 40%),
       radial-gradient(closest-side, #FFFFFF00 0%,
-        rgba(#6087EA, 0%   ) calc(0% + var(--rl)),
-        rgba(#6087EA, calc(-10% + var(--rl))) calc(10% + var(--rl)),
-        rgba(#6087EA, 0%   ) calc(20% + var(--rl)),
-        rgba(#6087EA, 10%  ) calc(30% + var(--rl)),
-        rgba(#6087EA, 0%   ) calc(40% + var(--rl)),
-        rgba(#6087EA, 10%  ) calc(50% + var(--rl)),
-        rgba(#6087EA, 0%   ) calc(60% + var(--rl)),
-        rgba(#6087EA, calc(10% - var(--rl))) calc(70% + var(--rl)),
-        rgba(#6087EA, 0%   ) calc(80% + var(--rl)),
-        #FFFFFF00 100%);  
+        rgba(#6087EA, 0   ) calc(0% + var(--rl) * 100%),
+        rgba(#6087EA, calc(-0.1 + var(--rl))) calc(10% + var(--rl) * 100%),
+        rgba(#6087EA, 0   ) calc(20% + var(--rl) * 100%),
+        rgba(#6087EA, 0.1  ) calc(30% + var(--rl) * 100%),
+        rgba(#6087EA, 0   ) calc(40% + var(--rl) * 100%),
+        rgba(#6087EA, 0.1  ) calc(50% + var(--rl) * 100%),
+        rgba(#6087EA, 0   ) calc(60% + var(--rl) * 100%),
+        rgba(#6087EA, calc(0.1 - var(--rl))) calc(70% + var(--rl) * 100%),
+        rgba(#6087EA, 0   ) calc(80% + var(--rl) * 100%));        
       transform: translate3d(-50%, -53%, 0);
       will-change: opacity;
       animation: RippleAnimation 4s linear infinite;
@@ -1090,16 +1089,16 @@
 
   @keyframes RippleAnimation{
     from {
-    --rl: 0%;
+      --rl: 0;
     }
     to {
-    --rl: 20%;
+      --rl: 0.2;
     }
   }
 
 
 
-.index-price-info {
+  .index-price-info {
   margin-top: 1rem;
   text-align: center;
   font-feature-settings: 'tnum';
