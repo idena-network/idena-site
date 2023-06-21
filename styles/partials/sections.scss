@@ -1038,7 +1038,7 @@
         rgba(#DB6CBC, 0%   ) calc(40% + var(--rl)),
         rgba(#DB6CBC, calc(10% - var(--rl))) calc(50% + var(--rl)),
         rgba(#DB6CBC, 0%   ) calc(60% + var(--rl)),
-        transparent 100%);  
+        #FFFFFF00 100%);  
     transform: translate3d(-50%, -53%, 0);
     will-change: opacity;
     animation: RippleAnimation 7s linear infinite;
@@ -1081,7 +1081,7 @@
         rgba(#6087EA, 0%   ) calc(60% + var(--rl)),
         rgba(#6087EA, calc(10% - var(--rl))) calc(70% + var(--rl)),
         rgba(#6087EA, 0%   ) calc(80% + var(--rl)),
-        transparent 100%);  
+        #FFFFFF00 100%);  
       transform: translate3d(-50%, -53%, 0);
       will-change: opacity;
       animation: RippleAnimation 4s linear infinite;
