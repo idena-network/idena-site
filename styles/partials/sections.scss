@@ -21,14 +21,6 @@
 .section_lead {
   padding: rem(0 0 158px);
 
-  h2 {
-    //margin-top: rem(12px);
-  }
-
-  h1 {
-    //margin-bottom: rem(19px);
-  }
-
   .nav {
     margin-left: rem(-15px);
     padding: rem(20px) 0;
@@ -262,7 +254,6 @@
         
         background-image: url(/static/images/run-node.png);
         background-repeat: no-repeat ;
-        //background-blend-mode: multiply;
         background-position-y: 36%;
         background-size: 80%;
         &._left{  
@@ -321,20 +312,12 @@
 }
 
 .section_content {
-  .h1 {
-    //margin-top: rem(75px);
-    //text-align: center;
-  }
   .hint {
     color: $gray;
     margin-bottom: rem(50px);
   }
 
   @media (#{$max_phones--big}) {
-    .h1 {
-   //   margin-top: 20px;
-    }
-
     .hint {
       margin-bottom: 60px;
     }
@@ -475,7 +458,7 @@
 
     &__counter {
       border-left: 0;
-      border-top: 0;//1px solid #e8eaed;
+      border-top: 0;
     }
   }
 }
@@ -733,10 +716,7 @@
 }
 
 .linkbar {
-  //overflow: hidden;
-  //position: relative;
   border-radius: 12px;
-  //height: 7.75rem;
   margin-top: rem(30px);  
 
   img{
@@ -746,33 +726,10 @@
     }
   }
 
-  .linkbar-div {
-  //  position: absolute;
-    //background-color: #ffffff; // #f5f6f7;
-  //  left: 0;
-  //  right: 0;
-  //  top: 0;
-  //  bottom: -30px;
-  //  overflow-x: hide;
 
-    //.container {
-    //  display: flex;
-    //  justify-content: space-between;
-    //}
-  }
 
   .item {
-    //white-space: nowrap;
-    //padding: 0.5rem;
-    //height: 6.75rem;
-    //width: 8.75rem;
-    //display: table-cell;
-    //font-size: 0.875rem;
-    //font-weight: 500;
-    //color: #96999e;
-
     .content {
-    //  position: relative;
       cursor: default;
       text-align: center;
       filter: grayscale(100%) contrast(2);
@@ -785,7 +742,7 @@
         }
         filter: none;
         color: #578fff;
-        background-color: white;// #f5f6f7;
+        background-color: white;
       }
 
       display: block;
@@ -816,8 +773,8 @@
 
 .section_magic{
     background-image: url(/static/images/fingerprint.svg), 
-      radial-gradient(60% 100% at 100% 90%, #0F172A, transparent),
-      radial-gradient(60% 100% at 0% 90%, #0F172A, transparent);
+      radial-gradient(60% 100% at 100% 90%, #0F172A, #FFFFFF00),
+      radial-gradient(60% 100% at 0% 90%, #0F172A, #FFFFFF00);
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 100%;
@@ -825,7 +782,7 @@
 
  
 .face {
-  background-image: radial-gradient(at 50% center, transparent 55%, white 70%), url(/static/images/face.png);
+  background-image: radial-gradient(at 50% center, #FFFFFF00 55%, white 70%), url(/static/images/face.png);
   background-repeat: no-repeat;
   background-position: 51% 78%;
   width: 100%;
@@ -892,7 +849,7 @@
     left: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(white, transparent),
+    background: linear-gradient(white, #FFFFFF00),
   }
   &:after{
     content: "";
@@ -901,7 +858,7 @@
     left: 0;
     width: 100%;
     height: 350px;
-    background: linear-gradient(transparent, white),
+    background: linear-gradient(#FFFFFF00, white),
   }
 
 }
@@ -953,7 +910,7 @@
     margin-left: auto; 
     margin-right: auto;  
     bottom: -28px;
-    background: linear-gradient(#1E2E45 0%, #3d4d6630 30%, transparent 30%);
+    background: linear-gradient(#1E2E45 0%, #3d4d6630 30%, #FFFFFF00 30%);
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom: 0;    
@@ -1071,9 +1028,9 @@
     --rl: 0%;
     transition: --rl 0.5s 0.1s;
     background: 
-      radial-gradient(circle at 100% 40%, white 30%, transparent 40%),   
-      radial-gradient(circle at 0% 60%, white 30%, transparent 40%),
-      radial-gradient(closest-side, transparent 0%,
+      radial-gradient(circle at 100% 40%, white 30%, #FFFFFF00 40%),   
+      radial-gradient(circle at 0% 60%, white 30%, #FFFFFF00 40%),
+      radial-gradient(closest-side, #FFFFFF00 0%,
         rgba(#DB6CBC, 0%   ) calc(0% + var(--rl)),
         rgba(#DB6CBC, calc(-10% + var(--rl))) calc(10% + var(--rl)),
         rgba(#DB6CBC, 0%   ) calc(20% + var(--rl)),
@@ -1112,9 +1069,9 @@
     transition: --rl 0.5s 0.1s;
   
     background: 
-      radial-gradient(circle at 100% 40%, white 30%, transparent 40%),   
-      radial-gradient(circle at 0% 60%, white 30%, transparent 40%),
-      radial-gradient(closest-side, transparent 0%,
+      radial-gradient(circle at 100% 40%, white 30%, #FFFFFF00 40%),   
+      radial-gradient(circle at 0% 60%, white 30%, #FFFFFF00 40%),
+      radial-gradient(closest-side, #FFFFFF00 0%,
         rgba(#6087EA, 0%   ) calc(0% + var(--rl)),
         rgba(#6087EA, calc(-10% + var(--rl))) calc(10% + var(--rl)),
         rgba(#6087EA, 0%   ) calc(20% + var(--rl)),
