@@ -958,7 +958,7 @@ export default function Home() {
                             rel="noreferrer"
                           >
                             <div className="video-preview-img">
-                              <img src="/static/images/kevin.png" alt="" />
+                              <img src="/static/images/kevin.jpg" alt="" />
                             </div>
                           </a>
                           <p className="quote">
@@ -987,7 +987,7 @@ export default function Home() {
                             rel="noreferrer"
                           >
                             <div className="video-preview-img" href="#">
-                              <img src="/static/images/tristan.png" alt="" />
+                              <img src="/static/images/tristan.jpg" alt="" />
                             </div>
                           </a>
                           <p className="quote">
