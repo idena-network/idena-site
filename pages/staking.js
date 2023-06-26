@@ -336,7 +336,7 @@ export default function Staking() {
                   <h2 className="h2">{t('Rewards', {ns: 'stake'})}</h2>
                   <p>
                     {t(
-                      'Earn rewards by locking IDNA in your identity stake and optimize your stake amount to increase rewards. Small-scale stakeholders earn a higher APY compared to larger stakeholders.',
+                      'Earn rewards by locking IDNA in your identity stake. Optimize your stake amount to increase rewards. Small-scale stakeholders earn a higher APY compared to larger stakeholders.',
                       {ns: 'stake'}
                     )}{' '}
                   </p>
