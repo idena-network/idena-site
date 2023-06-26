@@ -57,7 +57,7 @@ export default function Staking() {
   const CustomTooltip = ({value}) => (
     <div
       style={{
-        fontSize: '14px',
+        fontSize: '0.875rem',
         paddingTop: '8px',
         paddingBottom: '8px',
         lineHeight: '20px',
@@ -75,7 +75,7 @@ export default function Staking() {
         {
           maximumFractionDigits: 2,
         }
-      )} iDNA`}</p>
+      )} IDNA`}</p>
       <p style={{margin: 0, color: 'rgb(150, 153, 158)'}}>
         {t('Total epoch reward', {ns: 'stake'})}
       </p>
@@ -261,8 +261,8 @@ export default function Staking() {
 
   return (
     <Layout
-      title={t(`Stake iDNA to get rewards`, {ns: 'stake'})}
-      description={t(`Stake iDNA to get Quadratic Staking rewards`, {
+      title={t(`Stake IDNA to get rewards`, {ns: 'stake'})}
+      description={t(`Stake IDNA to get Identity Staking rewards`, {
         ns: 'stake',
       })}
     >
@@ -274,14 +274,24 @@ export default function Staking() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1 header52px" style={{position: 'relative'}}>
-                  {t('Stake iDNA to get Quadratic Staking rewards', {
+                <h3 className="h1" style={{position: 'relative'}}>
+                  {t('Identity staking', {
                     ns: 'stake',
                   })}
                 </h3>
+
+                <h3
+                  className="h2"
+                  style={{display: 'none', position: 'relative'}}
+                >
+                  {t('Stake IDNA to get identity staking rewards', {
+                    ns: 'stake',
+                  })}
+                </h3>
+
                 <p className="hint text-center">
                   {t(
-                    'Quadratic Staking encourages people to secure their identities with iDNA stakes, no matter how small, and ensures a democratic distribution of staking rewards.',
+                    'Identity staking offers higher APY for small-scale stakeholders, preventing capital concentration in staking pools and encouraging individual mining.',
                     {ns: 'stake'}
                   )}
                   <br />
@@ -297,7 +307,7 @@ export default function Staking() {
                         marginTop: '20px',
                       }}
                     >
-                      {t('Read more about Quadratic Staking', {
+                      {t('Read more about Identity Staking', {
                         ns: 'stake',
                       })}
                       <img
@@ -321,41 +331,50 @@ export default function Staking() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-9 col-lg-9">
-              <div className="info-two-col">
-                <div className="info-block">
-                  <h4>{t('Rewards', {ns: 'stake'})}</h4>
+              <div className="row">
+                <div className="col-lg-6 info-block">
+                  <h2 className="h2">{t('Rewards', {ns: 'stake'})}</h2>
                   <p>
                     {t(
-                      'Get staking rewards for improving security of the protocol by locking iDNA in your identity stake. The larger the stake the higher the value of your identity.',
+                      'Earn rewards by locking IDNA in your identity stake. Optimize your stake amount to increase rewards. Small-scale stakeholders earn a higher APY compared to larger stakeholders.',
                       {ns: 'stake'}
                     )}{' '}
                   </p>
                 </div>
-                <div className="info-block">
-                  <h4>{t('Risks', {ns: 'stake'})}</h4>
+                <div className="col-lg-6 info-block">
+                  <h2 className="h2">{t('Risks', {ns: 'stake'})}</h2>
                   <p>
                     {t(
-                      'Although you can earn rewards for securing your identity, you can lose IDNA for missing or failing validation depending on your identity status.',
+                      'You may lose IDNA for missing or failing validation depending on your identity status.',
+                      {ns: 'stake'}
+                    )}{' '}
+                    {t('Learn more about', {ns: 'stake'})}{' '}
+                    <LinkText href="https://docs.idena.io/docs/wp/technology#losing-stake">
+                      <a target="_blank" rel="noreferrer">
+                        {t('stake protection', {
+                          ns: 'stake',
+                        })}
+                      </a>
+                    </LinkText>
+                    .
+                  </p>
+                </div>
+                <div className="col-lg-6 info-block">
+                  <h2 className="h2">{t('Requirements', {ns: 'stake'})}</h2>
+                  <p>
+                    {t(
+                      'You need to get a validated identity to be able to stake IDNA.',
                       {ns: 'stake'}
                     )}{' '}
                   </p>
                 </div>
-                <div className="info-block">
-                  <h4>{t('Requirements', {ns: 'stake'})}</h4>
+                <div className="col-lg-6 info-block">
+                  <h2 className="h2">{t('Voting power', {ns: 'stake'})}</h2>
                   <p>
                     {t(
-                      'You need to get a validated identity to be able to stake iDNA.',
+                      'The amount of staked coins does not affect the voting power of your validated identity, unless it is below a certain threshold.',
                       {ns: 'stake'}
-                    )}{' '}
-                  </p>
-                </div>
-                <div className="info-block">
-                  <h4>{t('Voting power', {ns: 'stake'})}</h4>
-                  <p>
-                    {t(
-                      'The amount of staked coins does not affect the voting power of your validated identity.',
-                      {ns: 'stake'}
-                    )}{' '}
+                    )}
                   </p>
                 </div>
               </div>
@@ -371,21 +390,28 @@ export default function Staking() {
           <div className="row justify-content-center">
             <div className="col-md-9 col-lg-9">
               <div className="page-area">
-                <h3 className="h1" style={{fontSize: '52px', marginTop: '0px'}}>
+                <h3 className="h1" style={{marginTop: '0px'}}>
                   {t('Staking calculator', {
                     ns: 'stake',
                   })}
                 </h3>
+
                 <div>
-                  <span
+                  <div
                     style={{
+                      marginBottom: '0',
+                      marginLeft: '0px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
                       fontWeight: '500',
                       color: '#96999e',
-                      marginLeft: '2px',
                     }}
                   >
-                    {t('Amount, iDNA', {ns: 'stake'})}
-                  </span>
+                    <span>{t('Amount, IDNA', {ns: 'stake'})}</span>
+                    <span>{t('APY, %', {ns: 'stake'})}</span>
+                  </div>
+
                   {/* eslint-disable-next-line jsx-a11y/label-has-associated-control,jsx-a11y/label-has-for */}
                   <div
                     style={{
@@ -396,6 +422,10 @@ export default function Staking() {
                     }}
                   >
                     <input
+                      style={{
+                        fontSize: '40px',
+                      }}
+                      className="h2"
                       type="number"
                       maxLength={7}
                       placeholder="0"
@@ -407,11 +437,13 @@ export default function Staking() {
                       }}
                     />
                     <span
+                      className="h2"
                       style={{
+                        fontSize: '40px',
                         fontWeight: 500,
-                        color: '#96999e',
+                        // color: '#96999e',
                       }}
-                    >{`APY ${
+                    >{`${
                       isNotAmount
                         ? 0
                         : (
@@ -424,7 +456,7 @@ export default function Staking() {
                               366) /
                             epochTime.epochDuration
                           )?.toFixed(1)
-                    } %`}</span>
+                    }`}</span>
                   </div>
                   <Range
                     values={amountSlider}
@@ -480,154 +512,170 @@ export default function Staking() {
                     )}
                   />
                   <div className="illustrated-data">
-                    <div className="diagram-block">
-                      <div
-                        style={{
-                          zIndex: 1,
-                          position: 'absolute',
-                          top: 0,
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      />
-                      <ResponsiveContainer height={160} width="100%">
-                        <AreaChart data={yAxis}>
-                          <Area
-                            type="monotone"
-                            dataKey="amount"
-                            stroke="#578fff"
-                            fill="rgba(87,143,255,0.12)"
-                            strokeWidth={2}
-                          />
-                          <YAxis
-                            domain={[30, 100000]}
-                            allowDataOverflow
-                            scale="log"
-                            type="category"
-                            hide
-                          />
-                          <XAxis padding={{left: 2}} tick={false} hide />
-                          <ChartTooltip
-                            content={renderTooltip}
-                            position={{
-                              x: Math.min(
-                                210,
-                                parseInt(amountValue / 3000) + 20
-                              ),
-                              y: Math.max(
-                                20,
-                                130 *
-                                  (1 -
-                                    Math.log(amountValue) / Math.log(10000000))
-                              ),
+                    <div className="row justify-content-center">
+                      <div className="col-md-6 col-lg-6">
+                        <div className="diagram-block">
+                          <div
+                            style={{
+                              zIndex: 1,
+                              position: 'absolute',
+                              top: 0,
+                              width: '100%',
+                              height: '100%',
                             }}
-                            wrapperStyle={{visibility: 'visible'}}
                           />
-                          <ReferenceDot
-                            x={Math.min(999, parseInt(amountValue / 1000))}
-                            y={Math.min(
-                              calcStakingReward(999000),
-                              Math.max(
-                                calcStakingReward(1000),
-                                calcStakingReward(amountValue)
-                              )
+                          <ResponsiveContainer height={160} width="100%">
+                            <AreaChart data={yAxis}>
+                              <Area
+                                type="monotone"
+                                dataKey="amount"
+                                stroke="#578fff"
+                                fill="rgba(87,143,255,0.12)"
+                                strokeWidth={2}
+                              />
+                              <YAxis
+                                domain={[30, 100000]}
+                                allowDataOverflow
+                                scale="log"
+                                type="category"
+                                hide
+                              />
+                              <XAxis padding={{left: 2}} tick={false} hide />
+                              <ChartTooltip
+                                content={renderTooltip}
+                                position={{
+                                  x: Math.min(
+                                    210,
+                                    parseInt(amountValue / 3000) + 20
+                                  ),
+                                  y: Math.max(
+                                    20,
+                                    130 *
+                                      (1 -
+                                        Math.log(amountValue) /
+                                          Math.log(10000000))
+                                  ),
+                                }}
+                                wrapperStyle={{visibility: 'visible'}}
+                              />
+                              <ReferenceDot
+                                x={Math.min(999, parseInt(amountValue / 1000))}
+                                y={Math.min(
+                                  calcStakingReward(999000),
+                                  Math.max(
+                                    calcStakingReward(1000),
+                                    calcStakingReward(amountValue)
+                                  )
+                                )}
+                                fill="#578fff"
+                                stroke="white"
+                                strokeWidth={2}
+                                r={4}
+                              />
+                            </AreaChart>
+                          </ResponsiveContainer>
+                          <span style={{fontWeight: 500, marginTop: '24px'}}>
+                            {`${t('Staking power', {ns: 'stake'})}`}{' '}
+                            {STAKING_POWER}
+                          </span>
+                          <span style={{fontWeight: 400, color: '#96999e'}}>
+                            {t(
+                              'Your share of the reward pie is proportional to the stake',
+                              {ns: 'stake'}
                             )}
-                            fill="#578fff"
-                            stroke="white"
-                            strokeWidth={2}
-                            r={4}
-                          />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                      <span style={{fontWeight: 500, marginTop: '24px'}}>
-                        {`${t('Staking power', {ns: 'stake'})}`} {STAKING_POWER}
-                      </span>
-                      <span style={{fontWeight: 500, color: '#96999e'}}>
-                        {t(
-                          'Quadratic Staking encourages smaller players to increase their stakes. The lower the stake, the higher the percentage yield.',
-                          {ns: 'stake'}
-                        )}
-                      </span>
-                    </div>
-                    <div className="user-info-block">
-                      <div
-                        style={{
-                          paddingBottom: '6px',
-                          borderBottom: 'solid 1px #e8eaed',
-                        }}
-                      >
-                        <StakingData
-                          title={t('Staking reward', {ns: 'stake'})}
-                          tooltip={t(
-                            'The amount of coins you get for a successful validation',
-                            {ns: 'stake'}
-                          )}
-                          value={`${calcStakingReward(
-                            amountValue
-                          ).toLocaleString(undefined, {
-                            maximumFractionDigits: 2,
-                          })} iDNA`}
-                        />
-                        <StakingData
-                          title={t('Extra flip premium', {ns: 'stake'})}
-                          tooltip={t(
-                            'The amount of coins you get for 1 extra flip in addition to the basic flip reward',
-                            {ns: 'stake'}
-                          )}
-                          value={`${calcExtraFlipReward(
-                            amountValue
-                          ).toLocaleString(undefined, {
-                            maximumFractionDigits: 2,
-                          })} iDNA`}
-                        />
-                        <StakingData
-                          title={t('Reward for invitation', {ns: 'stake'})}
-                          tooltip={t(
-                            'The amount of coins you get for 3 successful validations of one invited user',
-                            {ns: 'stake'}
-                          )}
-                          value={`${calcInvitationReward(
-                            amountValue
-                          ).toLocaleString(undefined, {
-                            maximumFractionDigits: 2,
-                          })} iDNA`}
-                        />
-                        <StakingData
-                          title="Mining reward"
-                          tooltip={t(
-                            'The amount of coins you get per epoch by running a mining node.',
-                            {ns: 'stake'}
-                          )}
-                          value={`${calcMiningReward(
-                            amountValue
-                          ).toLocaleString(undefined, {
-                            maximumFractionDigits: 2,
-                          })} iDNA`}
-                        />
+                            <sup>0.9</sup>
+                            {'. '}
+                            {t(
+                              'The smaller the stake, the higher the percentage yield.',
+                              {ns: 'stake'}
+                            )}
+                          </span>
+                        </div>{' '}
                       </div>
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          marginTop: '24px',
-                        }}
-                      >
-                        <div>
-                          <span style={{fontWeight: 'bold'}}>
-                            {t('Total epoch reward', {ns: 'stake'})}
-                          </span>
-                        </div>
-                        <div>
-                          <span style={{fontWeight: 'bold'}}>
-                            {`${(
-                              calcStakingReward(amountValue) +
-                              calcMiningReward(amountValue) +
-                              calcExtraFlipReward(amountValue) +
-                              calcInvitationReward(amountValue)
-                            ).toLocaleString(undefined, {
-                              maximumFractionDigits: 2,
-                            })} iDNA`}
-                          </span>
+
+                      <div className="col-md-6 col-lg-6">
+                        <div className="user-info-block">
+                          <div
+                            style={{
+                              paddingBottom: '6px',
+                              borderBottom: 'solid 1px #e8eaed',
+                            }}
+                          >
+                            <StakingData
+                              title="Mining reward"
+                              tooltip={t(
+                                'The amount of coins you get per epoch by running a mining node.',
+                                {ns: 'stake'}
+                              )}
+                              value={`${calcMiningReward(
+                                amountValue
+                              ).toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })} IDNA`}
+                            />
+
+                            <StakingData
+                              title={t('Validation reward', {ns: 'stake'})}
+                              tooltip={t(
+                                'The amount of coins you get for a successful validation',
+                                {ns: 'stake'}
+                              )}
+                              value={`${calcStakingReward(
+                                amountValue
+                              ).toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })} IDNA`}
+                            />
+                            <StakingData
+                              title={t('Extra flip premium', {ns: 'stake'})}
+                              tooltip={t(
+                                'The amount of coins you get for 1 extra flip in addition to the basic flip reward',
+                                {ns: 'stake'}
+                              )}
+                              value={`${calcExtraFlipReward(
+                                amountValue
+                              ).toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })} IDNA`}
+                            />
+                            <StakingData
+                              title={t('Invitation reward', {ns: 'stake'})}
+                              tooltip={t(
+                                'The amount of coins you get for 3 successful validations of one invited user',
+                                {ns: 'stake'}
+                              )}
+                              value={`${calcInvitationReward(
+                                amountValue
+                              ).toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })} IDNA`}
+                            />
+                          </div>
+                          <div
+                            style={{
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              marginTop: '24px',
+                            }}
+                          >
+                            <div>
+                              <span style={{fontWeight: 'bold'}}>
+                                {t('Total epoch reward', {ns: 'stake'})}
+                              </span>
+                            </div>
+                            <div>
+                              <span style={{fontWeight: 'bold'}}>
+                                {`${(
+                                  calcStakingReward(amountValue) +
+                                  calcMiningReward(amountValue) +
+                                  calcExtraFlipReward(amountValue) +
+                                  calcInvitationReward(amountValue)
+                                ).toLocaleString(undefined, {
+                                  maximumFractionDigits: 2,
+                                })} IDNA`}
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -640,12 +688,12 @@ export default function Staking() {
                     title={t('Staking rewards fund', {ns: 'stake'})}
                     value={`${Math.round(
                       epochRewardFund
-                    ).toLocaleString()} iDNA`}
+                    ).toLocaleString()} IDNA`}
                     isDivided
                   />
                   <StakingInfo
                     title={t('Mining rewards fund', {ns: 'stake'})}
-                    value={`${Math.round(TOTAL_FUND).toLocaleString()} iDNA`}
+                    value={`${Math.round(TOTAL_FUND).toLocaleString()} IDNA`}
                     isDivided
                   />
                   <StakingInfo
@@ -659,7 +707,7 @@ export default function Staking() {
                       totalStake > 1000000
                         ? `${Math.round(totalStake / 100000) / 10}M`
                         : Math.round(totalStake).toLocaleString()
-                    } iDNA`}
+                    } IDNA`}
                   />
                 </div>
               </div>
@@ -698,15 +746,18 @@ function StakingData({title, value, tooltip}) {
 // eslint-disable-next-line react/prop-types
 function StakingInfo({title, value, children, isDivided}) {
   return (
-    <div className={`stakingStatBlock ${isDivided ? 'divided' : ''}`}>
+    <div className={`col-md-3 stakingStatBlock ${isDivided ? 'divided' : ''}`}>
       <div style={{display: 'flex', alignItems: 'center'}}>
         {children}
-        <span style={{fontSize: '21px', fontWeight: 500, color: '#53565c'}}>
+        <h2
+          className="h2"
+          style={{fontSize: '40px', fontWeight: 500, color: '#53565c'}}
+        >
           {value}
-        </span>
+        </h2>
       </div>
       <div>
-        <span style={{fontSize: '14px', fontWeight: 500, color: '#96999e'}}>
+        <span style={{fontSize: '0.875rem', fontWeight: 400, color: '#96999e'}}>
           {title}
         </span>
       </div>

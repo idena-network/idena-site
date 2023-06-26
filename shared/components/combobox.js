@@ -47,6 +47,7 @@ export function Combobox(
             }}
             onSelect={onItemClick}
             eventKey={lang.key}
+            key={lang.key}
           >
             {lang.title}
           </Dropdown.Item>

@@ -119,13 +119,13 @@
 }
 
 .btn {
-  padding: rem(17px 28px 19px);
+  padding: rem(12px 28px 14px);
   color: $white;
-  background-color: $dark;
+  background-color: $white;
   border: 0;
-  border-radius: 0;
+  border-radius: rem(30px);
   box-shadow: none;
-  font-size: rem(18px);
+  font-size: rem($font-size-base);
   line-height: normal;
   letter-spacing: -0.28px;
   text-align: center;
@@ -196,12 +196,13 @@
 }
 
 .btn.btn-secondary {
-  background-color: #578fff;
-  border-radius: 6px;
+  background-image: linear-gradient(90deg, #1E2E45 0%, #DB6CBC 70%, #E9922D 100%);// #578fff;
+  border-radius: 30px;
   color: $white;
 
   &:hover {
     background-color: darken(#578fff, 3%) !important;
+    opacity: 95%;
   }
 
   &:focus,
@@ -212,14 +213,71 @@
 }
 
 .btn.btn-light {
-  background-color: #e8eaed;
-  border-radius: 6px;
-  color: #96999e;
-  font-weight: 500;
+  padding-top: rem(13px);
+  background-color: white;
+  border-radius: 30px;
+  color: #1E2E45;
 
   &:hover {
-    color: #578fff;
+    opacity: 0.9;
   }
+
+  @media (#{$max_phones--big}) {
+    padding-top: rem(17px);
+  }
+}
+
+
+.h2-image{
+  position: absolute;
+  top: -35px;
+  left: -15px;
+  @media (#{$max_phones--big}) {
+    top: 0; //22px;
+    left: 0; //38%;
+    position: relative;  
+  }
+
+}
+
+.h2-image-above {
+  position: absolute;
+  top: -70px;
+  left: 15px;
+  height: 64px;
+
+  &._ellipse{
+    opacity: 80%;
+    
+    @media (#{$max_phones--big}) {
+      left: 10px;
+      margin-Left: -18px !important;
+    }
+  
+  }
+
+  @media (#{$max_phones--big}) {
+    top: -4px;
+    left: -4px;//42%;
+    position: relative;  
+  }
+
+}
+
+.technology-img {
+  @media (#{$max_phones--big}) {
+    margin-bottom: 9px;
+  }
+}
+
+.days, .hours, .seconds, .minutes{
+  font-feature-settings: "tnum";
+  color: #DB6CBC;
+}
+
+.networksize{
+  font-feature-settings: "tnum";
+  color: #6087EA;
 }
 
 .btn.btn-cta {
@@ -247,16 +305,8 @@
   }
 }
 
-.btn.btn-light {
-  background-color: #e8eaed;
-  border-radius: 6px;
-  color: #96999e;
-  font-weight: 500;
 
-  &:hover {
-    color: #578fff;
-  }
-}
+
 
 .btn-sm {
   padding: rem(11px 16px);

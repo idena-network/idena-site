@@ -17,9 +17,23 @@ export function dnaFmt(amount, curency = ' iDNA') {
   return `${Number(amount).toLocaleString()}${curency}`
 }
 
-export function usdFmt(amount, curency = '$') {
+export function usdFmt(
+  amount,
+  curency = '$',
+  minFractions = 0,
+  maxFractions = 2
+) {
   if (!amount || amount === 0) return '-'
-  return `${curency}${Number(amount).toLocaleString()}`
+  return `${curency}${Number(amount).toLocaleString(undefined, {
+    minimumFractionDigits: minFractions,
+    maximumFractionDigits: maxFractions,
+  })}`
+}
+
+export function addLeadingZeros(value, length = 6) {
+  const v = `${value}`
+  const z = `${'0'.repeat(length - v.length)}${v}`
+  return z
 }
 
 export function txTypeFmt(txType, data) {

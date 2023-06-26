@@ -35,13 +35,13 @@ export default function Header({title, description}) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
         <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="628" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="https://idena.io" />
         <meta
           property="og:image"
-          content="https://idena.io/static/images/Content_Image.png"
+          content="https://idena.io/static/images/content.png"
         />
         <meta property="og:type" content="website" />
 
@@ -53,7 +53,7 @@ export default function Header({title, description}) {
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content="https://idena.io/static/images/cover.png"
+          content="https://idena.io/static/images/content.png"
         />
 
         <script

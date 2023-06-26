@@ -1,9 +1,11 @@
 .footer {
   padding: rem(40px 0);
-  color: $cloud;
+  background-color: #0F172A;
+  color: #BCC1C7;//$cloud;
   font-size: rem(18px);
   line-height: rem(32px);
   letter-spacing: 0;
+  margin-top: rem(38px);
 
   @media (#{$max_phones--big}) {
     padding: 16px 0;
@@ -21,11 +23,15 @@
 }
 
 .donate {
+  display: none;
   margin-top: rem(32px);
   a {
     font-size: rem(16px);
     line-height: rem(24px);
-    color: $gray;
+    color: #BCC1C7;
+    &:hover{
+      color: white;
+    }
 
     @media (#{$max_phones--big}) {
       font-size: 16px;

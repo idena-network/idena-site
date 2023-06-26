@@ -33,13 +33,29 @@ export default function Donate() {
                 <Tab.Container defaultActiveKey="#btc-content" id="tab_wallet">
                   <Tab.Content>
                     <Tab.Pane eventKey="#btc-content">
-                      <h4 className="h4">Bitcoin</h4>
-                      <p>bc1qpy9v4ew097g4sa0eghvsp0kpult8ckturhc98j</p>
+                      <h2 className="h2">Bitcoin</h2>
+                      <p
+                        style={{
+                          width: '100%',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                      >
+                        bc1qpy9v4ew097g4sa0eghvsp0kpult8ckturhc98j
+                      </p>
                       <img src="/static/images/btc.png" alt="btc" width="208" />
                     </Tab.Pane>
                     <Tab.Pane eventKey="#eth-content">
-                      <h4 className="h4">Ethereum</h4>
-                      <p>0x730f10D119058253e995BAF1FC0AD66eAbE94453</p>
+                      <h2 className="h2">Ethereum</h2>
+                      <p
+                        style={{
+                          width: '100%',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                      >
+                        0x730f10D119058253e995BAF1FC0AD66eAbE94453
+                      </p>
                       <img src="/static/images/eth.png" alt="eth" width="208" />
                     </Tab.Pane>
                   </Tab.Content>

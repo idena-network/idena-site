@@ -2,18 +2,21 @@
   font-weight: 600;
   line-height: 1.5;
   white-space: nowrap;
-  margin-bottom: rem(30px);
+  margin-bottom: rem(5px);
 
   &__item {
-    padding: rem(12px);
+    padding: rem(15px);
+    @media (#{$max_phones--big}) {
+      padding: rem(10px) rem(30px);
+    }
     text-decoration: none !important;
     display: inline-block;
     vertical-align: middle;
     line-height: 0;
-    color: $gray-dark;
+    color: #BCC1C7;//$gray-dark;
 
     &:hover {
-      color: $dark;
+      color: white;
     }
 
     .icon {

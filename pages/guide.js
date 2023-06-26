@@ -53,9 +53,9 @@ export default function Guide() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1">
+                <h1 className="h1">
                   {t('Installation and troubleshooting guide', {ns: 'guide'})}
-                </h3>
+                </h1>
                 <p className="hint text-center">
                   <Trans i18nKey="idenaSiteHint" t={t} ns="guide">
                     You can find step by step Idena installation guide at{' '}
@@ -69,7 +69,7 @@ export default function Guide() {
                 </p>
               </div>
 
-              <h3>{t('Idena installation', {ns: 'guide'})}</h3>
+              <h2>{t('Idena installation', {ns: 'guide'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -328,9 +328,9 @@ export default function Guide() {
                 </Card>
               </Accordion>
 
-              <h3>
+              <h2>
                 {t('Running the Idena node on a remote server', {ns: 'guide'})}
-              </h3>
+              </h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}
@@ -586,7 +586,7 @@ export default function Guide() {
                 </Card>
               </Accordion>
 
-              <h3>{t('Troubleshooting', {ns: 'guide'})}</h3>
+              <h2>{t('Troubleshooting', {ns: 'guide'})}</h2>
               <Accordion
                 activeKey={activeHash}
                 onSelect={e => setActiveHash(e)}

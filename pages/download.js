@@ -116,7 +116,7 @@ export default function Download() {
     <Layout
       title={t('Download Idena Node', {ns: 'download'})}
       description={t(
-        'Download stable and develop builds of Idena Node and Desktop Idena App.',
+        'Download stable builds of Idena Node and Desktop Idena App.',
         {ns: 'download'}
       )}
     >
@@ -128,32 +128,65 @@ export default function Download() {
           <div className="row justify-content-center">
             <div className="col-md-7 col-lg-6">
               <div className="section_header">
-                <h3 className="h1">Download</h3>
-                <p className="hint text-center">
-                  <Trans i18nKey="nodeBuildGuideLink" t={t} ns="download">
-                    You can download the latest 64-bit develop builds of the
-                    Desktop Idena App and node for the supported platforms
-                    below.
-                    <br />
-                    See{' '}
-                    <LinkText href="/guide">
-                      <a>Installation and troubleshooting guide</a>
-                    </LinkText>{' '}
-                    if you're experiencing issues with installation and running
-                    the Idena node.
-                  </Trans>
-                  <br />
-                  {t('DISCLAIMER: You run this software at your own risk(*)', {
+                <h1 className="h1">
+                  {t('Download node', {
                     ns: 'download',
                   })}
+                </h1>
+                <p className="hint text-center">
+                  <Trans i18nKey="download_1" t={t} ns="download">
+                    Download the latest 64-bit builds of the Idena node for the
+                    supported platforms below.
+                  </Trans>
+                  <br />
+                  <Trans i18nKey="nodeBuildGuideLink_2" t={t} ns="download">
+                    See{' '}
+                    <LinkText href="/guide">
+                      <a>guide</a>
+                    </LinkText>{' '}
+                    if you're experiencing issues with Idena node.
+                  </Trans>
                 </p>
               </div>
 
-              <h3>
-                {t('Desktop Idena App (built-in node is included)', {
+              <div className="" style={{marginBottom: '50px'}}>
+                <div className="row justify-content-center">
+                  <div className="col-md-12 col-lg-12 section_panel__cell section_black">
+                    <div className="container">
+                      <h2
+                        className="h2 h2-light text-center1"
+                        style={{fontSize: '40px'}}
+                      >
+                        {t('Validation ceremony risk', {
+                          ns: 'download',
+                        })}
+                      </h2>
+
+                      <p className="disclaimer-hint">
+                        <Trans
+                          i18nKey="DownloadNodeValidationWarning"
+                          t={t}
+                          ns="download"
+                        >
+                          Your Idena node requires stable Internet connection
+                          and consumes more memory and CPU resources during the
+                          validation ceremony. If peers are disconnected you may
+                          fail validation. We recommend you to keep your{' '}
+                          <LinkText href="https://app.idena.io">
+                            <a>Web app</a>
+                          </LinkText>{' '}
+                          open in case of your node crash.
+                        </Trans>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 className="h2">
+                {t('Desktop App with built-in node', {
                   ns: 'download',
                 })}
-              </h3>
+              </h2>
 
               <p>
                 {t(
@@ -175,7 +208,7 @@ export default function Download() {
               <div className="block_list">
                 <div className="row justify-content-center">
                   <div className="col-sm-6">
-                    <div className="block text-center">
+                    <div className="block text-center section_gray">
                       <div className="block__title">
                         <i className="icon icon--macos"></i>
                         <span>macOS</span>
@@ -196,7 +229,7 @@ export default function Download() {
                   </div>
 
                   <div className="col-sm-6">
-                    <div className="block text-center">
+                    <div className="block text-center section_gray">
                       <div className="block__title">
                         <i className="icon icon--windows"></i>
                         <span>Windows</span>
@@ -217,7 +250,7 @@ export default function Download() {
                   </div>
 
                   <div className="col-sm-6">
-                    <div className="block text-center">
+                    <div className="block text-center section_gray">
                       <div className="block__title">
                         <i className="icon icon--linux"></i>
                         <span>Linux</span>
@@ -263,7 +296,7 @@ export default function Download() {
               <br />
               <br />
 
-              <h3>{t('Idena Node builds', {ns: 'download'})}</h3>
+              <h2 className="h2">{t('Idena Node', {ns: 'download'})}</h2>
 
               <p>
                 <Trans i18nKey="remoteNodeGuideLink" t={t} ns="download">
@@ -282,7 +315,10 @@ export default function Download() {
                 id="tab_node"
               >
                 <Tab eventKey="#node_darwin" title="macOS">
-                  <div className="tab-content block" id="tab_node_content">
+                  <div
+                    className="tab-content block section_gray"
+                    id="tab_node_content"
+                  >
                     <div className="table-responsive">
                       <table className="table" id="node_darwin_table">
                         <tr>
@@ -297,7 +333,10 @@ export default function Download() {
                   </div>
                 </Tab>
                 <Tab eventKey="#node_windows" title="Windows">
-                  <div className="tab-content block" id="tab_node_content">
+                  <div
+                    className="tab-content block section_gray"
+                    id="tab_node_content"
+                  >
                     <div className="table-responsive">
                       <table className="table" id="node_windows_table">
                         <tr>
@@ -312,7 +351,10 @@ export default function Download() {
                   </div>
                 </Tab>
                 <Tab eventKey="#node_linux" title="Linux">
-                  <div className="tab-content block" id="tab_node_content">
+                  <div
+                    className="tab-content block section_gray"
+                    id="tab_node_content"
+                  >
                     <div className="table-responsive">
                       <table className="table" id="node_linux_table">
                         <tr>
