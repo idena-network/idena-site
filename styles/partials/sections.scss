@@ -782,7 +782,7 @@
 
  
 .face {
-  background-image: radial-gradient(at 50% center, #FFFFFF00 55%, white 70%), url(/static/images/face.png);
+  background-image: radial-gradient(at 50% center, #FFFFFF00 55%, white 70%), url(/static/images/face.jpg);
   background-repeat: no-repeat;
   background-position: 51% 78%;
   width: 100%;
@@ -827,7 +827,7 @@
 }
 
 .hand {
-  background: url(/static/images/hand.png);
+  background: url(/static/images/hand.jpg);
   background-size: 100%;
   background-origin: content-box;
   background-attachment: fixed;

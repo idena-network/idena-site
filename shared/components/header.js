@@ -41,7 +41,7 @@ export default function Header({title, description}) {
         <meta property="og:url" content="https://idena.io" />
         <meta
           property="og:image"
-          content="https://idena.io/static/images/content.png"
+          content="https://idena.io/static/images/content.jpg"
         />
         <meta property="og:type" content="website" />
 
@@ -53,7 +53,7 @@ export default function Header({title, description}) {
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content="https://idena.io/static/images/content.png"
+          content="https://idena.io/static/images/content.jpg"
         />
 
         <script
