@@ -10,7 +10,8 @@ export default async (req, res) => {
   })
 
   const ONE_YEAR = 1000 * 60 * 60 * 24 * 365
-  const minTwitterSubs = process.env.NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT || 100
+  const minTwitterSubs =
+    process.env.NEXT_PUBLIC_TWITTER_MINIMUM_SUBS_COUNT || 100
   const minTwitterAge = process.env.TWITTER_AGE_MILLIS || 2592000000
   const currentEpoch = await fetch('https://api.idena.io/api/epoch/last')
   const currentEpochJson = await currentEpoch.json()
@@ -65,7 +66,11 @@ export default async (req, res) => {
         }
       )
     } else {
-      return res.status(400).send('Something went wrong')
+      return res
+        .status(400)
+        .send(
+          'Twitter API is unavailable. Please use Telegram or Discord to get an invite code.'
+        )
     }
   })
 }
