@@ -437,7 +437,7 @@ export default function Home() {
                             t={t}
                             ns="index"
                           >
-                            Open your Idena app on validation date before 13:30
+                            Open your Idena app on validation date before 15:00
                             UTC
                           </Trans>
                         </p>
@@ -797,7 +797,7 @@ export default function Home() {
                               <span>Probit</span>
                             </div>
                             <a
-                              href="https://www.probit.com/app/exchange/IDNA-BTC"
+                              href="https://www.probit.com/app/exchange/IDNA-USDT"
                               target="_blank"
                               rel="noreferrer"
                             >
