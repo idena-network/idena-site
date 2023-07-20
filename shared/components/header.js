@@ -12,6 +12,18 @@ export default function Header({title, description}) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         />
+        <link
+          rel="preload"
+          as="font"
+          crossOrigin="anonimous"
+          href="/static/fonts/TT Bluescreens Light.woff2"
+        ></link>
+        <link
+          rel="preload"
+          as="font"
+          crossOrigin="anonimous"
+          href="/static/fonts/TT Bluescreens Regular.woff2"
+        ></link>
         <link rel="shortcut icon" href="favicon.ico" />
         <link
           rel="apple-touch-icon"
