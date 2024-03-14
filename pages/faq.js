@@ -526,7 +526,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The date of the validation session is calculated by the network and is shown in the Idena app. The time is always fixed: 13:30 UTC.',
+                          'The date of the validation session is calculated by the network and is shown in the Idena app. The time is always fixed: 15:00 UTC.',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
@@ -535,112 +535,15 @@ export default function Faq() {
                         {t(
                           'The bigger the network is, the less frequently the validation sessions happen.',
                           {ns: 'faq'}
-                        )}
+                        )}{' '}
+                        <a
+                          href="https://docs.idena.io/docs/wp/technology#validation-session-schedule"
+                          target="blank"
+                        >
+                          {t('Read more', {ns: 'faq'})}.
+                        </a>
                       </p>
-                      <p>
-                        {t(
-                          'The validation date will be adjusted to Saturdays once the network reaches 9441 identities. The total epoch duration is limited to 28 days.',
-                          {ns: 'faq'}
-                        )}
-                      </p>
-
-                      <div className="tab-content block">
-                        <div className="tab-pane show active" role="tabpanel">
-                          <div className="table-responsive">
-                            <table className="table">
-                              <tr>
-                                <th>{t('Network size', {ns: 'faq'})}</th>
-                                <th>
-                                  <Trans
-                                    i18nKey="frequencyInDays"
-                                    t={t}
-                                    ns="faq"
-                                  >
-                                    Frequency, <br /> days
-                                  </Trans>
-                                </th>
-                              </tr>
-                              <tr>
-                                <td>17+</td>
-                                <td>3</td>
-                              </tr>
-
-                              <tr>
-                                <td>45+</td>
-                                <td>4</td>
-                              </tr>
-
-                              <tr>
-                                <td>96+</td>
-                                <td>5</td>
-                              </tr>
-
-                              <tr>
-                                <td>176+</td>
-                                <td>6</td>
-                              </tr>
-
-                              <tr>
-                                <td>291+</td>
-                                <td>7</td>
-                              </tr>
-
-                              <tr>
-                                <td>449+</td>
-                                <td>8</td>
-                              </tr>
-
-                              <tr>
-                                <td>
-                                  <code>N</code>
-                                </td>
-                                <td>
-                                  <code>round(N^0.33)</code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>...</td>
-                                <td>...</td>
-                              </tr>
-
-                              <tr>
-                                <td>9441+</td>
-                                <td>
-                                  <code>
-                                    <Trans
-                                      i18nKey="frequencyWith9441NetworkSize"
-                                      t={t}
-                                      ns="faq"
-                                    >
-                                      21 if Saturday <br /> 20 otherwise
-                                    </Trans>
-                                  </code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>
-                                  <code>N</code>
-                                </td>
-                                <td>
-                                  <code>round(N^(0.33)/7)*7</code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>...</td>
-                                <td>...</td>
-                              </tr>
-
-                              <tr>
-                                <td>16203+</td>
-                                <td>28</td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
+                      <p></p>
                     </div>
                   </Accordion.Collapse>
                 </Card>
@@ -658,7 +561,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          `The validation time of 13:30 UTC covers most countries when most people are awake. These are the local times for some of the world's cities (as of June 1, 2019):`,
+                          `The validation time of 15:00 UTC covers most countries when most people are awake. These are the local times for some of the world's cities (as of June 1, 2019):`,
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
@@ -1050,7 +953,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 13:32 UTC.',
+                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 15:02 UTC.',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
@@ -1314,7 +1217,7 @@ export default function Faq() {
                             t={t}
                             ns="faq"
                           >
-                            Once the validation ceremony starts at 1:30pm UTC,
+                            Once the validation ceremony starts at 15:00 UTC,
                             all the authors broadcast their{' '}
                             <code>FlipPublicSecret</code>.
                             <br />- Candidates decrypt arrays{' '}
