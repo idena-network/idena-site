@@ -839,15 +839,15 @@ export default function JoinIdena() {
                       <ul style={{paddingLeft: '1.25rem'}}>
                         <li>
                           <Link href="/download">
-                            <a>
-                              <Trans
-                                i18nKey="DownloadIdena"
-                                t={t}
-                                ns="join-idena"
-                              >
-                                Download the Idena Desktop App.
-                              </Trans>
-                            </a>
+
+                            <Trans
+                              i18nKey="DownloadIdena"
+                              t={t}
+                              ns="join-idena"
+                            >
+                              Download the Idena Desktop App.
+                            </Trans>
+
                           </Link>
                         </li>
 
@@ -925,7 +925,7 @@ export default function JoinIdena() {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps = async ({locale}) => ({

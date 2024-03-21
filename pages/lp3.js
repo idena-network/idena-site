@@ -146,99 +146,97 @@ export default function Contribute() {
         (marketData.price * 25920 * 30) / nodesData.onlineCount) ||
     45
 
-  return (
-    <>
-      <Header
-        title="Welcome to Idena"
-        description={`Create and validate your cryptoidentity to earn up to ${usdFmt(
-          precise1(reward)
-        )} every month for supporting the network`}
-      />
-      <div className="landingpage">
+  return <>
+    <Header
+      title="Welcome to Idena"
+      description={`Create and validate your cryptoidentity to earn up to ${usdFmt(
+        precise1(reward)
+      )} every month for supporting the network`}
+    />
+    <div className="landingpage">
+      <div
+        className="row align-items-center justify-content-center align-items-center"
+        style={{height: '100%'}}
+      >
         <div
-          className="row align-items-center justify-content-center align-items-center"
+          className="col-md-12 col-lg-6 text-center"
           style={{height: '100%'}}
         >
-          <div
-            className="col-md-12 col-lg-6 text-center"
-            style={{height: '100%'}}
-          >
-            <section className="section section_lead" id="lead">
-              <div className="section_lead__header text-center centered">
-                <div className="container" data-target="menu_main">
-                  <div
-                    className="logo nav-link"
-                    title={t('IDENA: Proof-of-Person blockchain', {
-                      ns: 'index',
-                      nsSeparator: '!',
-                    })}
-                    descriptioncontent={t(
-                      'Join the mining of the first human-centric cryptocurrency',
-                      {ns: 'index'}
-                    )}
-                  >
-                    <img
-                      src="/static/images/idena-logo-round.svg"
-                      alt=""
-                      width="135px"
-                    />
-                  </div>
-
-                  <h1 className="title">
-                    {t('Human-centric Blockchain', {ns: 'index'})}
-                  </h1>
-                  <div className="subtitle">
-                    {t('Join the democratic borderless world', {
-                      ns: 'index',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div
-            className="col-md-12 col-lg-6 text-center"
-            style={{height: '100%'}}
-          >
-            <div className="section lead_info" style={{height: '100%'}}>
-              <div className="centered">
-                <div className="item-image">
+          <section className="section section_lead" id="lead">
+            <div className="section_lead__header text-center centered">
+              <div className="container" data-target="menu_main">
+                <div
+                  className="logo nav-link"
+                  title={t('IDENA: Proof-of-Person blockchain', {
+                    ns: 'index',
+                    nsSeparator: '!',
+                  })}
+                  descriptioncontent={t(
+                    'Join the mining of the first human-centric cryptocurrency',
+                    {ns: 'index'}
+                  )}
+                >
                   <img
-                    src="/static/images/main-cryptoidentity.svg"
-                    alt="Cryptoidentity"
+                    src="/static/images/idena-logo-round.svg"
+                    alt=""
+                    width="135px"
                   />
                 </div>
 
-                <p className="text-center" style={{color: '#96999E'}}>
-                  <Trans i18nKey="whatIsIdenaNotes_lp3" t={t} ns="index">
-                    Idena is the first Proof-of-Person blockchain based on
-                    democratic principles. Everyone can mine on any hardware and
-                    with no investments.
-                  </Trans>
-                </p>
-                <p className="text-center" style={{fontWeight: 500}}>
-                  <Trans i18nKey="CallToAction_lp3" t={t} ns="index">
-                    Validate your cryptoidentity and mine up to{' '}
-                    {usdFmt(precise1(reward))} every month!
-                  </Trans>
-                </p>
+                <h1 className="title">
+                  {t('Human-centric Blockchain', {ns: 'index'})}
+                </h1>
+                <div className="subtitle">
+                  {t('Join the democratic borderless world', {
+                    ns: 'index',
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          className="col-md-12 col-lg-6 text-center"
+          style={{height: '100%'}}
+        >
+          <div className="section lead_info" style={{height: '100%'}}>
+            <div className="centered">
+              <div className="item-image">
+                <img
+                  src="/static/images/main-cryptoidentity.svg"
+                  alt="Cryptoidentity"
+                />
+              </div>
 
-                <div className="container">
-                  <div className="row justify-content-center">
-                    <Link href="https://app.idena.io">
-                      <a className="btn btn-secondary">
-                        {t('Create my cryptoidentity', {ns: 'index'})}
-                      </a>
-                    </Link>
-                  </div>
+              <p className="text-center" style={{color: '#96999E'}}>
+                <Trans i18nKey="whatIsIdenaNotes_lp3" t={t} ns="index">
+                  Idena is the first Proof-of-Person blockchain based on
+                  democratic principles. Everyone can mine on any hardware and
+                  with no investments.
+                </Trans>
+              </p>
+              <p className="text-center" style={{fontWeight: 500}}>
+                <Trans i18nKey="CallToAction_lp3" t={t} ns="index">
+                  Validate your cryptoidentity and mine up to{' '}
+                  {usdFmt(precise1(reward))} every month!
+                </Trans>
+              </p>
+
+              <div className="container">
+                <div className="row justify-content-center">
+                  <Link href="https://app.idena.io" className="btn btn-secondary">
+
+                    {t('Create my cryptoidentity', {ns: 'index'})}
+
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
-  )
+    </div>
+  </>;
 }
 
 export const getStaticProps = async ({locale}) => ({

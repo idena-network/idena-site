@@ -87,16 +87,18 @@ h5,
 
 .h1-font{
   font-family: $font-family-header;
-  font-size: rem(80px);
+  font-size: 4rem;//rem(80px);
   line-height: normal;
   font-weight: 400;
 }
 
 .h2-font{
   font-family: $font-family-header;
-  font-size: rem(54px);
-  line-height: rem(54px);
+  font-size: 2.5rem;
+  line-height: 3.375rem;
   font-weight: 400;
+  letter-spacing: 0.07em;
+  transform: scale(1, 1.4);  
 }
 
 
@@ -108,14 +110,16 @@ h1,
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: rem(80px);
-  line-height: normal;
+  letter-spacing: 0.06em;
+  font-size: 4rem;
+  line-height: 4rem;
+  margin-bottom: 2rem;
   font-weight: 400;
   text-align: center;
+  transform: scale(1, 1.2);
 
   @media (#{$max_phones--big}) {
-    font-size: rem(80px);
+    font-size: 3.8rem;
     line-height: normal;
     margin-bottom: 25px;
   }
@@ -143,17 +147,18 @@ h1,
   color: white;
 }
 
-//
-
 .title {
-  font-size: rem(90px);
-  line-height: rem(90px);
+  margin-bottom: 0;
+  font-size: 5.625rem;
+  line-height: 5.625rem;
   margin-bottom: 0;
   font-weight: 500;
+  transform: scale(0.8, 1);
+  letter-spacing: 0.3rem; 
 
   @media (#{$max_phones--big}) {
-    font-size: rem(110px);
-    line-height: rem(110px);
+    font-size: 6rem;
+    line-height: 5.725rem;
     margin-bottom: 30px;
     margin-top: 0;
   }
@@ -171,14 +176,16 @@ h2,
   font-family: $font-family-header;
   text-transform: uppercase;
 
-  font-size: rem(54px);
+  font-size: 2.5rem;
   line-height: rem(54px);
   font-weight: 400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.07em;
+  transform: scale(1, 1.4);  
+
 
   @media (#{$max_phones--big}) {
-    font-size: 50px;
-    line-height: normal;
+    font-size: 2.2rem;// 50px;
+    line-height: 3.6rem;
     margin-bottom: 24px;
     text-align: center;
   }

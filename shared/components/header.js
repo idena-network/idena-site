@@ -16,13 +16,7 @@ export default function Header({title, description}) {
           rel="preload"
           as="font"
           crossOrigin="anonimous"
-          href="/static/fonts/TT Bluescreens Light.woff2"
-        ></link>
-        <link
-          rel="preload"
-          as="font"
-          crossOrigin="anonimous"
-          href="/static/fonts/TT Bluescreens Regular.woff2"
+          href="/static/fonts/font.woff2"
         ></link>
         <link rel="shortcut icon" href="favicon.ico" />
         <link

@@ -924,18 +924,19 @@
     animation: ScalesAnimation 2s cubic-bezier(0.61, 0.07, 0.77, 0.99) infinite alternate;
     .item{
       position: absolute;
-      top: 0;
-      font-size: 50px;
+      top: 5px;
+      font-size: 40px;
       font-family: $font-family-header;
       font-weight: 600;
       letter-spacing: -2px;
       border-radius: 4px;
+      vertical-align: middle;
       color: #0f172a;
       background:
         radial-gradient(40% 40% at 20% 0%, #3D4D6590 0%, rgba(61, 77, 101, 0%) 100%), 
         radial-gradient(40% 40% at 80% 75%, #3D4D6590 0%, rgba(61, 77, 101, 0%) 100%), 
         #1e2e4580;
-      line-height: 90%;
+      line-height: 100%;
       padding: 0 3%;
     }
     .item1{
@@ -977,7 +978,7 @@
     radial-gradient(40% 40% at 20% 0%, #3d4d6630 0%, rgba(61, 77, 101, 0%) 100%), 
     radial-gradient(40% 40% at 80% 75%, #3D4D6530 0%, rgba(61, 77, 101, 0%) 100%), 
     #1e2e4580;
-  line-height: 90%;
+  line-height: 100%;
   padding: 0 3%;
 }
 
@@ -998,12 +999,13 @@
 }
 
 .ripple-red{
-  span{
+  div{
     font-family: $font-family-header;
     color: #DB6CBC !important;
     font-size: rem(40px);
     line-height: rem(55px);
     font-weight: 500;
+    transform: scaleX(0.9);
     @media (#{$max_phones--big}) {
       font-size: rem(55px);
       line-height: rem(55px);
@@ -1046,12 +1048,13 @@
 }
 
 .ripple-blue {
-  span{
+  div{
     font-family: $font-family-header;
     color: #6087EA !important;
     font-size: rem(55px);
     line-height: rem(55px);
     font-weight: 500;  
+    transform: scaleX(0.8);
   }  
   &:before {
     content: "";
