@@ -138,10 +138,8 @@ export default function Home() {
           }}
         >
           <div className="row justify-content-center">
-            <Link href="https://app.idena.io">
-              <a className="btn btn-secondary">
-                {t('Become a validator', {ns: 'index'})}
-              </a>
+            <Link href="https://app.idena.io" className="btn btn-secondary">
+              {t('Become a validator', {ns: 'index'})}
             </Link>
           </div>
         </div>
@@ -220,7 +218,7 @@ export default function Home() {
                     <div className="item">
                       <div className="content">
                         <div className="value ripple-blue">
-                          <span>{userAPY ? `${userAPY}%` : ' '}</span>
+                          <div>{userAPY ? `${userAPY}%` : ' '}</div>
                         </div>
                         <div className="description">
                           <span>
@@ -245,7 +243,7 @@ export default function Home() {
                       <div className="item">
                         <div className="content">
                           <div className="value ripple-red">
-                            <span>{richestAPY ? `${richestAPY}%` : ' '}</span>
+                            <div>{richestAPY ? `${richestAPY}%` : ' '}</div>
                           </div>
                           <div className="description">
                             <span>
@@ -325,10 +323,8 @@ export default function Home() {
 
               <div className="container1" style={{margin: '25px 0 60px'}}>
                 <div className="row justify-content-center">
-                  <Link href="https://app.idena.io">
-                    <a className="btn btn-light">
-                      {t('Create an account', {ns: 'index'})}
-                    </a>
+                  <Link href="https://app.idena.io" className="btn btn-light">
+                    {t('Create an account', {ns: 'index'})}
                   </Link>
                 </div>
               </div>
@@ -567,10 +563,11 @@ export default function Home() {
 
                 <div className="container1" style={{margin: '150px 0'}}>
                   <div className="row justify-content-center">
-                    <Link href="https://app.idena.io">
-                      <a className="btn btn-secondary">
-                        {t('Open Idena app', {ns: 'index'})}
-                      </a>
+                    <Link
+                      href="https://app.idena.io"
+                      className="btn btn-secondary"
+                    >
+                      {t('Open Idena app', {ns: 'index'})}
                     </Link>
                   </div>
                 </div>
@@ -1306,10 +1303,8 @@ export default function Home() {
 
               <div className="container1" style={{margin: '40px 0'}}>
                 <div className="row justify-content-center">
-                  <Link href="https://app.idena.io">
-                    <a className="btn btn-light">
-                      {t('Join Idena', {ns: 'index'})}
-                    </a>
+                  <Link href="https://app.idena.io" className="btn btn-light">
+                    {t('Join Idena', {ns: 'index'})}
                   </Link>
                 </div>
               </div>
@@ -1334,7 +1329,10 @@ export default function Home() {
                 {t('Partners and Media', {ns: 'index'})}
               </h1>
 
-              <div className="row justify-content-center">
+              <div
+                className="row justify-content-center"
+                style={{marginBottom: '80px'}}
+              >
                 <div className="col-md-8 col-lg-8">
                   <div className="index-partners-info">
                     <TooltipLogo
@@ -1369,11 +1367,6 @@ export default function Home() {
                       tooltip="humanetics"
                       href="https://humanetics.super.site/"
                       imageLink="logo-humanetics"
-                    />
-                    <TooltipLogo
-                      tooltip="MyAltcoins"
-                      href="https://myaltcoins.info/idena-review/"
-                      imageLink="logo-myaltcoins"
                     />
                     <TooltipLogo
                       tooltip="CoinLore"
@@ -1421,11 +1414,6 @@ export default function Home() {
                       href="https://crypto.com/price/idena"
                       imageLink="logo-crypto"
                     />
-                    <TooltipLogo
-                      tooltip="Nomics"
-                      href="https://nomics.com/assets/dna2-idena/reviews"
-                      imageLink="logo-nomics"
-                    />
                   </div>
                 </div>
               </div>
@@ -1442,9 +1430,9 @@ export default function Home() {
                     }}
                   >
                     Gitcoin Radicalexchange Cosmos Aragon Amasa Discord Coindesk
-                    Humanetics Myaltcoins CoinLore Hackernoon Publish0x
-                    Frontiers in blockchain Bitcourier Newsbit Сoingecko
-                    Сoinmarketcap Сrypto Nomics
+                    Humanetics CoinLore Hackernoon Publish0x Frontiers in
+                    blockchain Bitcourier Newsbit Сoingecko Сoinmarketcap
+                    Сrypto.com
                   </h2>
                 </div>
               </div>
@@ -1494,10 +1482,11 @@ export default function Home() {
                           }}
                         >
                           <div className="row justify-content-center">
-                            <Link href="https://app.idena.io">
-                              <a className="btn btn-secondary">
-                                {t('Start Idena journey', {ns: 'index'})}
-                              </a>
+                            <Link
+                              href="https://app.idena.io"
+                              className="btn btn-secondary"
+                            >
+                              {t('Start Idena journey', {ns: 'index'})}
                             </Link>
                           </div>
                         </div>
@@ -1516,10 +1505,10 @@ export default function Home() {
                           </div>
                           <div className="description">
                             <LinkText href="https://t.me/IdenaNetworkPublic">
-                              <a>Telegram</a>
+                              Telegram
                             </LinkText>{' '}
                             <LinkText href="https://discord.gg/8BusRj7">
-                              <a>Discord</a>
+                              Discord
                             </LinkText>
                           </div>
                         </div>
@@ -1535,10 +1524,10 @@ export default function Home() {
                           </div>
                           <div className="description">
                             <LinkText href="https://docs.idena.io">
-                              <a>Docs</a>
+                              Docs
                             </LinkText>{' '}
                             <LinkText href="https://github.com/idena-network">
-                              <a>Github</a>
+                              Github
                             </LinkText>
                           </div>
                         </div>

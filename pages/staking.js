@@ -71,7 +71,7 @@ export default function Staking() {
       }}
     >
       <p style={{margin: 0, color: 'rgb(83, 86, 92)'}}>{`${value.toLocaleString(
-        undefined,
+        'en-US',
         {
           maximumFractionDigits: 2,
         }
@@ -295,28 +295,25 @@ export default function Staking() {
                     {ns: 'stake'}
                   )}
                   <br />
-                  <LinkText href="/faq#faq-economy-9">
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        fontSize: '14px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginTop: '20px',
-                      }}
-                    >
-                      {t('Read more about Identity Staking', {
-                        ns: 'stake',
-                      })}
-                      <img
-                        style={{marginLeft: '4px'}}
-                        src="/static/images/link-arrow.svg"
-                        alt="staking"
-                        width="12"
-                      />
-                    </a>
+                  <LinkText
+                    href="/faq#faq-economy-9"
+                    style={{
+                      fontSize: '14px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginTop: '20px',
+                    }}
+                  >
+                    {t('Read more about Identity Staking', {
+                      ns: 'stake',
+                    })}
+                    <img
+                      style={{marginLeft: '4px'}}
+                      src="/static/images/link-arrow.svg"
+                      alt="staking"
+                      width="12"
+                    />
                   </LinkText>
                 </p>
               </div>
@@ -349,13 +346,15 @@ export default function Staking() {
                       {ns: 'stake'}
                     )}{' '}
                     {t('Learn more about', {ns: 'stake'})}{' '}
-                    <LinkText href="https://docs.idena.io/docs/wp/technology#losing-stake">
-                      <a target="_blank" rel="noreferrer">
-                        {t('stake protection', {
-                          ns: 'stake',
-                        })}
-                      </a>
-                    </LinkText>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://docs.idena.io/docs/wp/technology#losing-stake"
+                    >
+                      {t('stake protection', {
+                        ns: 'stake',
+                      })}
+                    </a>
                     .
                   </p>
                 </div>
@@ -424,6 +423,8 @@ export default function Staking() {
                     <input
                       style={{
                         fontSize: '40px',
+                        padding: 0,
+                        margin: 0,
                       }}
                       className="h2"
                       type="number"
@@ -609,7 +610,7 @@ export default function Staking() {
                               )}
                               value={`${calcMiningReward(
                                 amountValue
-                              ).toLocaleString(undefined, {
+                              ).toLocaleString('en-US', {
                                 maximumFractionDigits: 2,
                               })} IDNA`}
                             />
@@ -622,7 +623,7 @@ export default function Staking() {
                               )}
                               value={`${calcStakingReward(
                                 amountValue
-                              ).toLocaleString(undefined, {
+                              ).toLocaleString('en-US', {
                                 maximumFractionDigits: 2,
                               })} IDNA`}
                             />
@@ -634,7 +635,7 @@ export default function Staking() {
                               )}
                               value={`${calcExtraFlipReward(
                                 amountValue
-                              ).toLocaleString(undefined, {
+                              ).toLocaleString('en-US', {
                                 maximumFractionDigits: 2,
                               })} IDNA`}
                             />
@@ -646,7 +647,7 @@ export default function Staking() {
                               )}
                               value={`${calcInvitationReward(
                                 amountValue
-                              ).toLocaleString(undefined, {
+                              ).toLocaleString('en-US', {
                                 maximumFractionDigits: 2,
                               })} IDNA`}
                             />
@@ -670,7 +671,7 @@ export default function Staking() {
                                   calcMiningReward(amountValue) +
                                   calcExtraFlipReward(amountValue) +
                                   calcInvitationReward(amountValue)
-                                ).toLocaleString(undefined, {
+                                ).toLocaleString('en-US', {
                                   maximumFractionDigits: 2,
                                 })} IDNA`}
                               </span>
@@ -686,19 +687,21 @@ export default function Staking() {
                 <div className="stakingStatSection">
                   <StakingInfo
                     title={t('Staking rewards fund', {ns: 'stake'})}
-                    value={`${Math.round(
-                      epochRewardFund
-                    ).toLocaleString()} IDNA`}
+                    value={`${Math.round(epochRewardFund).toLocaleString(
+                      'en-US'
+                    )} IDNA`}
                     isDivided
                   />
                   <StakingInfo
                     title={t('Mining rewards fund', {ns: 'stake'})}
-                    value={`${Math.round(TOTAL_FUND).toLocaleString()} IDNA`}
+                    value={`${Math.round(TOTAL_FUND).toLocaleString(
+                      'en-US'
+                    )} IDNA`}
                     isDivided
                   />
                   <StakingInfo
                     title={t('Total identities', {ns: 'stake'})}
-                    value={validatedCount?.toLocaleString()}
+                    value={validatedCount?.toLocaleString('en-US')}
                     isDivided
                   />
                   <StakingInfo
@@ -706,7 +709,7 @@ export default function Staking() {
                     value={`${
                       totalStake > 1000000
                         ? `${Math.round(totalStake / 100000) / 10}M`
-                        : Math.round(totalStake).toLocaleString()
+                        : Math.round(totalStake).toLocaleString('en-US')
                     } IDNA`}
                   />
                 </div>
@@ -749,10 +752,7 @@ function StakingInfo({title, value, children, isDivided}) {
     <div className={`col-md-3 stakingStatBlock ${isDivided ? 'divided' : ''}`}>
       <div style={{display: 'flex', alignItems: 'center'}}>
         {children}
-        <h2
-          className="h2"
-          style={{fontSize: '40px', fontWeight: 500, color: '#53565c'}}
-        >
+        <h2 className="h2" style={{color: '#53565c'}}>
           {value}
         </h2>
       </div>

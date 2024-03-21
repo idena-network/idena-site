@@ -24,7 +24,7 @@ export function usdFmt(
   maxFractions = 2
 ) {
   if (!amount || amount === 0) return '-'
-  return `${curency}${Number(amount).toLocaleString(undefined, {
+  return `${curency}${Number(amount).toLocaleString('en-US', {
     minimumFractionDigits: minFractions,
     maximumFractionDigits: maxFractions,
   })}`
@@ -151,9 +151,7 @@ export function isIdentityPassed(state) {
 
 // eslint-disable-next-line react/prop-types
 export const LinkText = ({href, children, ...props}) => (
-  <Link href={href || ''}>
-    <a>{children}</a>
-  </Link>
+  <Link href={href || ''}>{children}</Link>
 )
 
 export function calculateEstimatedMiningReward(

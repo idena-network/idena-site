@@ -17,20 +17,23 @@ export default function Guide() {
 
   const {t} = useTranslation('guide')
 
-  useEffect(async () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const releseData = await useLatestGithubReleaseDownload()
-    releseData.clientAssets.forEach(asset => {
-      if (asset.name.search(/.dmg$/) !== -1) {
-        releseData.darwinClientLink = asset.browser_download_url
-      }
-    })
-    releseData.nodeAssets.forEach(asset => {
-      if (asset.name.search(/^idena-node-mac-.*/) !== -1) {
-        releseData.darwinNodeLink = asset.browser_download_url
-      }
-    })
-    setRelease(releseData)
+  useEffect(() => {
+    async function FetchData() {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const releseData = await useLatestGithubReleaseDownload()
+      releseData.clientAssets.forEach(asset => {
+        if (asset.name.search(/.dmg$/) !== -1) {
+          releseData.darwinClientLink = asset.browser_download_url
+        }
+      })
+      releseData.nodeAssets.forEach(asset => {
+        if (asset.name.search(/^idena-node-mac-.*/) !== -1) {
+          releseData.darwinNodeLink = asset.browser_download_url
+        }
+      })
+      setRelease(releseData)
+    }
+    FetchData()
   }, [])
 
   useEffect(() => {
@@ -408,7 +411,7 @@ export default function Guide() {
                           Create the following config file at the same folder
                           where the node is located (download example:{' '}
                           <LinkText href="/examples/guide-remote-1/config.json">
-                            <a>config.json</a>
+                            config.json
                           </LinkText>
                           ):
                         </Trans>

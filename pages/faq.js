@@ -41,11 +41,9 @@ export default function Faq() {
                 <p className="hint text-center">
                   <Trans i18nKey="faqGuideLink" t={t} ns="faq">
                     Browse through the most frequently asked questions. See{' '}
-                    <LinkText href="/guide">
-                      <a>guide</a>
-                    </LinkText>{' '}
-                    if you're experiencing issues with Idena Node. Can’t find an
-                    answer? Email us at{' '}
+                    <LinkText href="/guide">guide</LinkText> if you're
+                    experiencing issues with Idena Node. Can’t find an answer?
+                    Email us at{' '}
                     <a
                       rel="noreferrer"
                       target="_blank"
@@ -526,7 +524,7 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          'The date of the validation session is calculated by the network and is shown in the Idena app. The time is always fixed: 13:30 UTC.',
+                          'The date of the validation session is calculated by the network and is shown in the Idena app. The time is always fixed: 15:00 UTC.',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
@@ -535,112 +533,14 @@ export default function Faq() {
                         {t(
                           'The bigger the network is, the less frequently the validation sessions happen.',
                           {ns: 'faq'}
-                        )}
+                        )}{' '}
+                        <a
+                          href="https://docs.idena.io/docs/wp/technology#validation-session-schedule"
+                          target="blank"
+                        >
+                          {t('Read more', {ns: 'faq'})}.
+                        </a>
                       </p>
-                      <p>
-                        {t(
-                          'The validation date will be adjusted to Saturdays once the network reaches 9441 identities. The total epoch duration is limited to 28 days.',
-                          {ns: 'faq'}
-                        )}
-                      </p>
-
-                      <div className="tab-content block">
-                        <div className="tab-pane show active" role="tabpanel">
-                          <div className="table-responsive">
-                            <table className="table">
-                              <tr>
-                                <th>{t('Network size', {ns: 'faq'})}</th>
-                                <th>
-                                  <Trans
-                                    i18nKey="frequencyInDays"
-                                    t={t}
-                                    ns="faq"
-                                  >
-                                    Frequency, <br /> days
-                                  </Trans>
-                                </th>
-                              </tr>
-                              <tr>
-                                <td>17+</td>
-                                <td>3</td>
-                              </tr>
-
-                              <tr>
-                                <td>45+</td>
-                                <td>4</td>
-                              </tr>
-
-                              <tr>
-                                <td>96+</td>
-                                <td>5</td>
-                              </tr>
-
-                              <tr>
-                                <td>176+</td>
-                                <td>6</td>
-                              </tr>
-
-                              <tr>
-                                <td>291+</td>
-                                <td>7</td>
-                              </tr>
-
-                              <tr>
-                                <td>449+</td>
-                                <td>8</td>
-                              </tr>
-
-                              <tr>
-                                <td>
-                                  <code>N</code>
-                                </td>
-                                <td>
-                                  <code>round(N^0.33)</code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>...</td>
-                                <td>...</td>
-                              </tr>
-
-                              <tr>
-                                <td>9441+</td>
-                                <td>
-                                  <code>
-                                    <Trans
-                                      i18nKey="frequencyWith9441NetworkSize"
-                                      t={t}
-                                      ns="faq"
-                                    >
-                                      21 if Saturday <br /> 20 otherwise
-                                    </Trans>
-                                  </code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>
-                                  <code>N</code>
-                                </td>
-                                <td>
-                                  <code>round(N^(0.33)/7)*7</code>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td>...</td>
-                                <td>...</td>
-                              </tr>
-
-                              <tr>
-                                <td>16203+</td>
-                                <td>28</td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </Accordion.Collapse>
                 </Card>
@@ -658,55 +558,56 @@ export default function Faq() {
                     <div className="card-body">
                       <p>
                         {t(
-                          `The validation time of 13:30 UTC covers most countries when most people are awake. These are the local times for some of the world's cities (as of June 1, 2019):`,
+                          `The validation time of 15:00 UTC covers most countries when most people are awake. These are the local times for some of the world's cities (as of June 1, 2019):`,
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
                       <ul>
                         <li>
-                          {t('San Francisco, USA 6:30', {
+                          {t('San Francisco, USA 8:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('New York, USA 9:30', {
+                          {t('New York, USA 11:00', {
+                            ns: 'faq',
+                            nsSeparator: '!',
+                          })}
+                        </li>
+
+                        <li>
+                          {t('London, UK 15:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('Tunis, Tunisia 14:30', {
+                          {t('Berlin, Germany 16:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('Berlin, Germany 15:30', {
+                          {t('Moscow, Russia 18:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('Moscow, Russia 16:30', {
+                          {t('Delhi, India 20:30', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('Delhi, India 19:00', {
+                          {t('Beijing, China 23:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
                         </li>
                         <li>
-                          {t('Beijing, China 21:30', {
-                            ns: 'faq',
-                            nsSeparator: '!',
-                          })}
-                        </li>
-                        <li>
-                          {t('Sydney, Australia 23:30', {
+                          {t('Tokio, Japan 24:00', {
                             ns: 'faq',
                             nsSeparator: '!',
                           })}
@@ -819,7 +720,7 @@ export default function Faq() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="#faq-validation-6">
                     <div className="card-body">
-                      <p>
+                      <div>
                         {t(
                           'There are different statuses of participants in Idena:',
                           {ns: 'faq', nsSeparator: '!'}
@@ -907,7 +808,7 @@ export default function Faq() {
                             network anymore.
                           </Trans>
                         </li>
-                      </p>
+                      </div>
                     </div>
                   </Accordion.Collapse>
                 </Card>
@@ -1050,7 +951,7 @@ export default function Faq() {
                       </p>
                       <p>
                         {t(
-                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 13:32 UTC.',
+                          'To consider your answers valid they should reach more than 50% of validated nodes no later than 15:02 UTC.',
                           {ns: 'faq', nsSeparator: '!'}
                         )}
                       </p>
@@ -1066,25 +967,27 @@ export default function Faq() {
                           {ns: 'faq'}
                         )}
                       </p>
-                      <p>
-                        <Trans
-                          i18nKey="validationConnectionLost"
-                          t={t}
-                          ns="faq"
-                        >
-                          Node disconnection happens if your node doesn’t have
-                          enough peers to maintain the stable data channel. This
-                          could be in 2 cases:
-                          <ol>
-                            <li>Low-performance computer or home router;</li>
-                            <li>
-                              You have synced the node right before validation
-                              and the node did not manage to find enough peers
-                              for stable connection.
-                            </li>
-                          </ol>
-                        </Trans>
-                      </p>
+                      <div>
+                        <div>
+                          <Trans
+                            i18nKey="validationConnectionLost"
+                            t={t}
+                            ns="faq"
+                          >
+                            Node disconnection happens if your node doesn’t have
+                            enough peers to maintain the stable data channel.
+                            This could be in 2 cases:
+                            <ol>
+                              <li>Low-performance computer or home router;</li>
+                              <li>
+                                You have synced the node right before validation
+                                and the node did not manage to find enough peers
+                                for stable connection.
+                              </li>
+                            </ol>
+                          </Trans>
+                        </div>
+                      </div>
                       <p>
                         <Trans
                           i18nKey="desktopNodeSyncRecommendation"
@@ -1314,7 +1217,7 @@ export default function Faq() {
                             t={t}
                             ns="faq"
                           >
-                            Once the validation ceremony starts at 1:30pm UTC,
+                            Once the validation ceremony starts at 15:00 UTC,
                             all the authors broadcast their{' '}
                             <code>FlipPublicSecret</code>.
                             <br />- Candidates decrypt arrays{' '}
@@ -1933,7 +1836,7 @@ export default function Faq() {
                         )}
                         <br />
                         <LinkText href="/staking">
-                          <a>https://www.idena.io/staking</a>
+                          https://www.idena.io/staking
                         </LinkText>
                       </p>
                     </div>
@@ -1966,48 +1869,52 @@ export default function Faq() {
                         <div className="tab-pane show active" role="tabpanel">
                           <div className="table-responsive">
                             <table className="table">
-                              <tr>
-                                <th>{t('Status', {ns: 'faq'})}</th>
-                                <th>{t('Validation rewards', {ns: 'faq'})}</th>
-                                <th>{t('Mining rewards', {ns: 'faq'})}</th>
-                                <th>{t('Stake protection', {ns: 'faq'})}</th>
-                              </tr>
-                              <tr>
-                                <td>{t('Candidate', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>{t('N/A', {ns: 'faq'})}</td>
-                                <td>{t('No', {ns: 'faq'})}</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Newbie', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>+</td>
-                                <td>{t('No', {ns: 'faq'})}</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Verified', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>+</td>
-                                <td>{t('Partially', {ns: 'faq'})}</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Human', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>+</td>
-                                <td>{t('Yes', {ns: 'faq'})}</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>{t('N/A', {ns: 'faq'})}</td>
-                                <td>{t('Depends on age', {ns: 'faq'})}</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Zombie', {ns: 'faq'})}</td>
-                                <td>+</td>
-                                <td>{t('N/A', {ns: 'faq'})}</td>
-                                <td>{t('Depends on age', {ns: 'faq'})}</td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <th>{t('Status', {ns: 'faq'})}</th>
+                                  <th>
+                                    {t('Validation rewards', {ns: 'faq'})}
+                                  </th>
+                                  <th>{t('Mining rewards', {ns: 'faq'})}</th>
+                                  <th>{t('Stake protection', {ns: 'faq'})}</th>
+                                </tr>
+                                <tr>
+                                  <td>{t('Candidate', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>{t('N/A', {ns: 'faq'})}</td>
+                                  <td>{t('No', {ns: 'faq'})}</td>
+                                </tr>
+                                <tr>
+                                  <td>{t('Newbie', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>+</td>
+                                  <td>{t('No', {ns: 'faq'})}</td>
+                                </tr>
+                                <tr>
+                                  <td>{t('Verified', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>+</td>
+                                  <td>{t('Partially', {ns: 'faq'})}</td>
+                                </tr>
+                                <tr>
+                                  <td>{t('Human', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>+</td>
+                                  <td>{t('Yes', {ns: 'faq'})}</td>
+                                </tr>
+                                <tr>
+                                  <td>{t('Suspended', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>{t('N/A', {ns: 'faq'})}</td>
+                                  <td>{t('Depends on age', {ns: 'faq'})}</td>
+                                </tr>
+                                <tr>
+                                  <td>{t('Zombie', {ns: 'faq'})}</td>
+                                  <td>+</td>
+                                  <td>{t('N/A', {ns: 'faq'})}</td>
+                                  <td>{t('Depends on age', {ns: 'faq'})}</td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
                         </div>
@@ -2084,48 +1991,64 @@ export default function Faq() {
                         <div className="tab-pane show active" role="tabpanel">
                           <div className="table-responsive">
                             <table className="table">
-                              <tr>
-                                <th>{t('Status', {ns: 'faq'})}</th>
-                                <th>{t('Age', {ns: 'faq'})}</th>
-                                <th>{t('Burnt stake', {ns: 'faq'})}</th>
-                                <th>{t('Sent to main wallet', {ns: 'faq'})}</th>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>5</td>
-                                <td>5%</td>
-                                <td>95%</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>6</td>
-                                <td>4%</td>
-                                <td>96%</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>7</td>
-                                <td>3%</td>
-                                <td>97%</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>8</td>
-                                <td>2%</td>
-                                <td>98%</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>9</td>
-                                <td>1%</td>
-                                <td>99%</td>
-                              </tr>
-                              <tr>
-                                <td>{t('Suspended or Zombie', {ns: 'faq'})}</td>
-                                <td>10+</td>
-                                <td>0%</td>
-                                <td>100%</td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <th>{t('Status', {ns: 'faq'})}</th>
+                                  <th>{t('Age', {ns: 'faq'})}</th>
+                                  <th>{t('Burnt stake', {ns: 'faq'})}</th>
+                                  <th>
+                                    {t('Sent to main wallet', {ns: 'faq'})}
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>5</td>
+                                  <td>5%</td>
+                                  <td>95%</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>6</td>
+                                  <td>4%</td>
+                                  <td>96%</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>7</td>
+                                  <td>3%</td>
+                                  <td>97%</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>8</td>
+                                  <td>2%</td>
+                                  <td>98%</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>9</td>
+                                  <td>1%</td>
+                                  <td>99%</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    {t('Suspended or Zombie', {ns: 'faq'})}
+                                  </td>
+                                  <td>10+</td>
+                                  <td>0%</td>
+                                  <td>100%</td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
                         </div>

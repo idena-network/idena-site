@@ -359,6 +359,7 @@ export function Staking({price}) {
                   style={{
                     fontSize: '50px',
                     fontWeight: 500,
+                    padding: 0,
                   }}
                   type="number"
                   maxLength={7}
