@@ -67,21 +67,22 @@ export default function Layout({children, title = '', description = ''}) {
               <Link
                 href="/"
                 className="navbar-brand nav-link d-none d-md-block show"
-                data-target="menu_main">
-
+                data-target="menu_main"
+              >
                 <img src="/static/images/idena_black.svg" alt="logo" />
                 <p>Idena</p>
-
               </Link>
             </div>
 
             <div className="col-md-6 text-center">
               <ul className="header_nav nav justify-content-center">
                 <li className="nav-item header_nav__item mobile_only">
-                  <Link href="/" className="nav-link header_nav__link" data-target="menu_main">
-
+                  <Link
+                    href="/"
+                    className="nav-link header_nav__link"
+                    data-target="menu_main"
+                  >
                     {t('Home')}
-
                   </Link>
                 </li>
 
@@ -89,10 +90,9 @@ export default function Layout({children, title = '', description = ''}) {
                   <Link
                     href="/staking"
                     className="nav-link header_nav__link"
-                    data-target="menu_contribute">
-
+                    data-target="menu_contribute"
+                  >
                     {t('Staking')}
-
                   </Link>
                 </LiActive>
 
@@ -100,18 +100,19 @@ export default function Layout({children, title = '', description = ''}) {
                   <Link
                     href="/download"
                     className="nav-link header_nav__link"
-                    data-target="menu_download">
-
+                    data-target="menu_download"
+                  >
                     {t('Download')}
-
                   </Link>
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item">
-                  <Link href="/faq" className="nav-link header_nav__link" data-target="menu_faq">
-
+                  <Link
+                    href="/faq"
+                    className="nav-link header_nav__link"
+                    data-target="menu_faq"
+                  >
                     {t('FAQ')}
-
                   </Link>
                 </LiActive>
 
@@ -123,6 +124,31 @@ export default function Layout({children, title = '', description = ''}) {
                     className="nav-link header_nav__link"
                   >
                     {t('Explorer')}
+                  </a>
+                </LiActive>
+
+                <LiActive
+                  className="nav-item header_nav__item"
+                  style={{overflow: 'visible'}}
+                >
+                  <a
+                    href="https://ai.idena.io/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="nav-link header_nav__link"
+                  >
+                    {t('AI')}
+                    <span
+                      style={{
+                        fontSize: '0.654rem',
+                        position: 'relative',
+                        top: '-9px',
+                        left: '5px',
+                        color: 'rgb(39 217 128)',
+                      }}
+                    >
+                      beta
+                    </span>
                   </a>
                 </LiActive>
 
@@ -160,10 +186,11 @@ export default function Layout({children, title = '', description = ''}) {
                 </LiActive>
 
                 <LiActive className="nav-item header_nav__item mobile_only">
-                  <Link href="/join-idena" className="nav-link header_nav__link">
-
+                  <Link
+                    href="/join-idena"
+                    className="nav-link header_nav__link"
+                  >
                     {t('How to join')}
-
                   </Link>
                 </LiActive>
 
@@ -171,10 +198,9 @@ export default function Layout({children, title = '', description = ''}) {
                   <Link
                     href="https://app.idena.io"
                     className="nav-link header_nav__link"
-                    data-target="">
-
+                    data-target=""
+                  >
                     {t('Web app')}
-
                   </Link>
                 </LiActive>
               </ul>
@@ -184,19 +210,17 @@ export default function Layout({children, title = '', description = ''}) {
               <Link
                 href="https://app.idena.io"
                 className="navbar-side-btn"
-                data-target="menu_main">
-
+                data-target="menu_main"
+              >
                 {t('Web app')}
-
               </Link>
 
               <Link
                 href="/download"
                 className="navbar-side-btn _link"
-                data-target="menu_main">
-
+                data-target="menu_main"
+              >
                 {t('Node')}
-
               </Link>
             </div>
           </div>
@@ -230,18 +254,19 @@ export default function Layout({children, title = '', description = ''}) {
               <Link
                 href="/download"
                 className="nav-link header_nav__link"
-                data-target="menu_download">
-
+                data-target="menu_download"
+              >
                 {t('Download')}
-
               </Link>
             </LiActive>
 
             <LiActive className="header_nav__item">
-              <Link href="/" className="nav-link header_nav__link" data-target="menu_main">
-
+              <Link
+                href="/"
+                className="nav-link header_nav__link"
+                data-target="menu_main"
+              >
                 {t('Home')}
-
               </Link>
             </LiActive>
 
@@ -282,26 +307,25 @@ export default function Layout({children, title = '', description = ''}) {
               <Link
                 href="/staking"
                 className="nav-link header_nav__link"
-                data-target="menu_staking">
-
+                data-target="menu_staking"
+              >
                 {t('Staking')}
-
               </Link>
             </LiActive>
 
             <LiActive className="header_nav__item">
               <Link href="/join-idena" className="nav-link header_nav__link">
-
                 {t('How to join Idena')}
-
               </Link>
             </LiActive>
 
             <LiActive className="nav-item header_nav__item">
-              <Link href="/faq" className="nav-link header_nav__link" data-target="menu_faq">
-
+              <Link
+                href="/faq"
+                className="nav-link header_nav__link"
+                data-target="menu_faq"
+              >
                 {t('FAQ')}
-
               </Link>
             </LiActive>
 
@@ -309,10 +333,9 @@ export default function Layout({children, title = '', description = ''}) {
               <Link
                 href="/contribute"
                 className="nav-link header_nav__link"
-                data-target="menu_contribute">
-
+                data-target="menu_contribute"
+              >
                 {t('How to contribute')}
-
               </Link>
             </LiActive>
 
@@ -463,5 +486,5 @@ export default function Layout({children, title = '', description = ''}) {
         </div>
       </footer>
     </div>
-  );
+  )
 }
