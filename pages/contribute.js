@@ -616,12 +616,6 @@ export default function Contribute() {
                   {ns: 'contribute'}
                 )}
               </p>
-              <p>
-                <Trans i18nKey="communityAppExamples" t={t} ns="contribute">
-                  See <a href="https://idena-apps.org">examples</a> of apps
-                  developed by Idena community members
-                </Trans>
-              </p>
 
               <h2>{t('4. Bug bounty program', {ns: 'contribute'})}</h2>
 
