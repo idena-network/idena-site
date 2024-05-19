@@ -66,7 +66,7 @@ export default function Contribute() {
                   })}
                 </li>
                 <li>
-                  <a href="https://discord.gg/8BusRj7">Discord</a>{' '}
+                  <a href="https://discord.gg/idena-community-634481767352369162">Discord</a>{' '}
                   {t(
                     'English-speaking with Serbian/Croatian/French/Polish language local room (Sign-in with Idena enabled)',
                     {ns: 'contribute'}
