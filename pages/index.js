@@ -1507,7 +1507,7 @@ export default function Home() {
                             <LinkText href="https://t.me/IdenaNetworkPublic">
                               Telegram
                             </LinkText>{' '}
-                            <LinkText href="https://discord.gg/8BusRj7">
+                            <LinkText href="https://discord.gg/idena-community-634481767352369162">
                               Discord
                             </LinkText>
                           </div>
