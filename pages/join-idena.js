@@ -300,7 +300,7 @@ export default function JoinIdena() {
                               <a
                                 rel="noreferrer"
                                 target="_blank"
-                                href="https://discord.gg/8BusRj7"
+                                href="https://discord.gg/idena-community-634481767352369162"
                               >
                                 Idena Community Discord
                               </a>{' '}
